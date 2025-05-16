@@ -167,42 +167,6 @@
               <p>Enter data or use the import options described above</p>
             </li>
           </ol>
-          
-          <figure xml:id="fig-codap-import">
-            <caption>Data Import Options in CODAP</caption>
-            <image source="codap-import.png" width="80%">
-              <description>Screenshot showing the CODAP import menu with various options for bringing data into the platform.</description>
-            </image>
-          </figure>
-          
-          <exercise xml:id="exercise-codap-import">
-            <title>Practice Importing Data</title>
-            <statement>
-              <p>
-                Try these steps to practice importing data into CODAP:
-              </p>
-              <ol>
-                <li>
-                  <p>Go to <url href="https://codap.concord.org" visual="codap.concord.org">codap.concord.org</url></p>
-                </li>
-                <li>
-                  <p>Click on "Example Documents" from the main menu</p>
-                </li>
-                <li>
-                  <p>Select "Mammals" from the list of examples</p>
-                </li>
-                <li>
-                  <p>Explore the data table that appears</p>
-                </li>
-                <li>
-                  <p>Now, try downloading a CSV file from <url href="https://data.gov" visual="data.gov">data.gov</url> or another source</p>
-                </li>
-                <li>
-                  <p>In a new CODAP document, use the Import feature to bring in your downloaded file</p>
-                </li>
-              </ol>
-            </statement>
-          </exercise>
         </subsection>
       </section>
 
@@ -267,13 +231,7 @@
               </p>
             </li>
           </dl>
-          
-          <figure xml:id="fig-codap-table">
-            <caption>CODAP Table Features</caption>
-            <image source="codap-table.png" width="90%">
-              <description>Annotated screenshot of a CODAP table showing key elements like attribute headers, cell values, and row selectors.</description>
-            </image>
-          </figure>
+
           
           <p>
             <term>Tips for working with tables:</term>
@@ -357,13 +315,6 @@
             </li>
           </dl>
           
-          <figure xml:id="fig-codap-graph-types">
-            <caption>CODAP Graph Types</caption>
-            <image source="codap-graph-types.png" width="90%">
-              <description>Examples of different graph types available in CODAP: scatter plot, dot plot, box plot, histogram, and bar chart.</description>
-            </image>
-          </figure>
-          
           <p>
             To customize a graph:
           </p>
@@ -436,13 +387,6 @@
               <p>Click "Apply" to create the calculated attribute</p>
             </li>
           </ol>
-          
-          <figure xml:id="fig-codap-calculator">
-            <caption>CODAP Formula Editor</caption>
-            <image source="codap-calculator.png" width="70%">
-              <description>Screenshot of the CODAP formula editor showing the interface for creating calculated attributes.</description>
-            </image>
-          </figure>
           
           <p>
             Common operators and functions available in the formula editor:
@@ -582,13 +526,6 @@
             </li>
           </ul>
           
-          <figure xml:id="fig-codap-map">
-            <caption>CODAP Map View</caption>
-            <image source="codap-map.png" width="80%">
-              <description>Screenshot of a CODAP map showing geographic data points with controls for zoom, layers, and styling.</description>
-            </image>
-          </figure>
-          
           <p>
             <term>Requirements for mapping:</term>
           </p>
@@ -666,13 +603,7 @@
               <p>Maintain relationships between different units of analysis</p>
             </li>
           </ul>
-          
-          <figure xml:id="fig-hierarchical-data">
-            <caption>Hierarchical Data Structure in CODAP</caption>
-            <image source="hierarchical-data.png" width="90%">
-              <description>Screenshot showing a hierarchical data structure in CODAP with parent and child collections.</description>
-            </image>
-          </figure>
+        
         </subsection>
         
         <subsection xml:id="subsec-filtering-techniques">
@@ -863,13 +794,6 @@
               <p><term>Multiple representations</term>: Show the same data in different ways (e.g., table, graph, map)</p>
             </li>
           </ul>
-          
-          <figure xml:id="fig-codap-dashboard">
-            <caption>Example CODAP Dashboard</caption>
-            <image source="codap-dashboard.png" width="100%">
-              <description>Screenshot of a CODAP dashboard with multiple linked components including tables, graphs, and explanatory text.</description>
-            </image>
-          </figure>
           
           <p>
             <term>Dashboard design tips:</term>
@@ -1144,13 +1068,6 @@
               </p>
             </li>
           </dl>
-          
-          <figure xml:id="fig-codap-ruler">
-            <caption>CODAP Ruler Tool in Action</caption>
-            <image source="codap-ruler.png" width="80%">
-              <description>Screenshot showing the ruler tool being used to create segments in a graph.</description>
-            </image>
-          </figure>
         </subsection>
         
         <subsection xml:id="subsec-best-practices">

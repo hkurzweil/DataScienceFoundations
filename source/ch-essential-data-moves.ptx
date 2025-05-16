@@ -730,13 +730,6 @@
             </li>
           </dl>
           
-          <figure xml:id="fig-codap-filtering">
-            <caption>Filtering Data in CODAP</caption>
-            <image source="codap-filtering.png" width="90%">
-              <description>Screenshot showing CODAP's filtering interface with formula input and filtered results.</description>
-            </image>
-          </figure>
-          
           <p>
             When filtering data, it's important to:
           </p>
@@ -793,90 +786,66 @@
             </task>
           </activity>
           
-          <exercise xml:id="exercise-filtering-statements">
-            <title>Translating Filter Statements</title>
-            <introduction>
-              <p>For each of the following filtering objectives, select the CODAP filter formula that would accomplish it.</p>
-            </introduction>
-            <exercise>
-              <statement>
-                <p>Show only neighborhoods with both above-average income and above-average green space.</p>
-              </statement>
-              <choices>
-                <choice>
-                  <statement>
-                    <p><c>Income &gt; AverageIncome OR GreenSpace &gt; AverageGreenSpace</c></p>
-                  </statement>
-                  <feedback>
-                    <p>This formula uses OR, which would show neighborhoods with either above-average income OR above-average green space, not necessarily both.</p>
-                  </feedback>
-                </choice>
-                <choice correct="yes">
-                  <statement>
-                    <p><c>Income &gt; AverageIncome AND GreenSpace &gt; AverageGreenSpace</c></p>
-                  </statement>
-                  <feedback>
-                    <p>Correct! This formula uses AND to require that both conditions (above-average income and above-average green space) must be true for a neighborhood to be included in the filter.</p>
-                  </feedback>
-                </choice>
-                <choice>
-                  <statement>
-                    <p><c>Income = AverageIncome AND GreenSpace = AverageGreenSpace</c></p>
-                  </statement>
-                  <feedback>
-                    <p>This formula would only show neighborhoods with exactly average income and exactly average green space, not those above average.</p>
-                  </feedback>
-                </choice>
-                <choice>
-                  <statement>
-                    <p><c>Income &gt; AverageIncome</c></p>
-                  </statement>
-                  <feedback>
-                    <p>This formula only checks for above-average income and doesn't consider green space at all.</p>
-                  </feedback>
-                </choice>
-              </choices>
-            </exercise>
-            <exercise>
-              <statement>
-                <p>Show neighborhoods that are either in the North region or have low pollution levels.</p>
-              </statement>
-              <choices>
-                <choice>
-                  <statement>
-                    <p><c>Region = "North" AND PollutionLevel = "Low"</c></p>
-                  </statement>
-                  <feedback>
-                    <p>This formula uses AND, which would only show neighborhoods that are both in the North region AND have low pollution levels, not either condition.</p>
-                  </feedback>
-                </choice>
-                <choice>
-                  <statement>
-                    <p><c>NOT(Region = "North") OR NOT(PollutionLevel = "Low")</c></p>
-                  </statement>
-                  <feedback>
-                    <p>This formula would show neighborhoods that are either NOT in the North region OR do NOT have low pollution levels, which is almost the opposite of what we want.</p>
-                  </feedback>
-                </choice>
-                <choice correct="yes">
-                  <statement>
-                    <p><c>Region = "North" OR PollutionLevel = "Low"</c></p>
-                  </statement>
-                  <feedback>
-                    <p>Correct! This formula uses OR to include neighborhoods that meet either condition: being in the North region OR having low pollution levels.</p>
-                  </feedback>
-                </choice>
-                <choice>
-                  <statement>
-                    <p><c>Region != "North" AND PollutionLevel != "Low"</c></p>
-                  </statement>
-                  <feedback>
-                    <p>This formula would show only neighborhoods that are NOT in the North region AND do NOT have low pollution levels, which is the exact opposite of what we want.</p>
-                  </feedback>
-                </choice>
-              </choices>
-            </exercise>
-          </exercise>
+        <exercise xml:id="exercise-filtering-statements">
+          <title>Translating Filter Statements</title>
+          <introduction>
+            <p>For each of the following filtering objectives, select the CODAP filter formula that would accomplish it.</p>
+          </introduction>
+          <webwork>
+            <setup>
+              <pg-code>
+                $neighborhoods = RadioButtons(
+                  [
+                    "Income > AverageIncome OR GreenSpace > AverageGreenSpace",
+                    "Income > AverageIncome AND GreenSpace > AverageGreenSpace",
+                    "Income = AverageIncome AND GreenSpace = AverageGreenSpace",
+                    "Income > AverageIncome"
+                  ],
+                  1,
+                  labels => ["a", "b", "c", "d"]
+                );
+                
+                $regions = RadioButtons(
+                  [
+                    "Region = 'North' AND PollutionLevel = 'Low'",
+                    "NOT(Region = 'North') OR NOT(PollutionLevel = 'Low')",
+                    "Region = 'North' OR PollutionLevel = 'Low'",
+                    "Region != 'North' AND PollutionLevel != 'Low'"
+                  ],
+                  2,
+                  labels => ["a", "b", "c", "d"]
+                );
+              </pg-code>
+            </setup>
+            
+            <statement>
+              <p>Question 1: Show only neighborhoods with both above-average income and above-average green space.</p>
+              <p>Select the correct CODAP filter formula:</p>
+              <p><var name="$neighborhoods" form="buttons"/></p>
+              
+              <p>Question 2: Show neighborhoods that are either in the North region or have low pollution levels.</p>
+              <p>Select the correct CODAP filter formula:</p>
+              <p><var name="$regions" form="buttons"/></p>
+            </statement>
+            
+            <solution>
+              <p>Question 1: The correct formula is <c>Income > AverageIncome AND GreenSpace > AverageGreenSpace</c></p>
+              <p>This formula uses AND to require that both conditions (above-average income and above-average green space) must be true for a neighborhood to be included in the filter.</p>
+              
+              <p>Question 2: The correct formula is <c>Region = 'North' OR PollutionLevel = 'Low'</c></p>
+              <p>This formula uses OR to include neighborhoods that meet either condition: being in the North region OR having low pollution levels.</p>
+            </solution>
+            
+            <hint>
+              <p>Remember the difference between AND and OR operators:</p>
+              <ul>
+                <li>AND requires both conditions to be true</li>
+                <li>OR requires at least one condition to be true</li>
+              </ul>
+              <p>Also pay attention to comparison operators (=, >, !=) and make sure they match what the question is asking for.</p>
+            </hint>
+          </webwork>
+        </exercise>
         </subsection>
         
         <subsection xml:id="subsec-meaningful-subsets">
