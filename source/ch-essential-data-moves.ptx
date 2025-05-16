@@ -384,6 +384,7 @@
             </statement>
           </example>
           
+          <p>This <url href="https://www.simplypsychology.org/boxplots.html" visual="https://www.simplypsychology.org/boxplots.html">figure</url> shows a box and whisker plot with outliers.</p>
           <figure xml:id="fig-outlier-detection">
             <caption>Detecting Outliers with Box Plots</caption>
             <image source="outlier-detection.png" width="70%">
@@ -1594,13 +1595,6 @@
             </li>
           </dl>
           
-          <figure xml:id="fig-grouping-aggregation">
-            <caption>Grouping and Aggregation in CODAP</caption>
-            <image source="grouping-aggregation.png" width="90%">
-              <description>Screenshot showing CODAP's interface for grouping data by categories and displaying aggregated metrics for each group.</description>
-            </image>
-          </figure>
-          
           <example xml:id="example-grouping-health">
             <title>Grouping in Community Health Analysis</title>
             <statement>
@@ -1777,7 +1771,11 @@
             <title>Comparing Group Variations</title>
             <statement>
               <p>Based on the box plots below, which statement is most accurate?</p>
-              <p>(Imagine a figure showing box plots of test scores for three teaching methods: A, B, and C. Method A has scores ranging from 60-80 with median 70, Method B has scores ranging from 65-85 with median 75, and Method C has scores ranging from 40-95 with median 72.)</p>
+              <caption>Within- and Between-Group Variation</caption>
+              <image source="variation-testscore-ex.png" width="90%">
+              <description>Two scenarios: one showing large between-group differences with small within-group variation, and another showing small between-group differences with large within-group variation.</description>
+            </image>
+              <p>Method A has scores ranging from 60-80 with median 70, Method B has scores ranging from 65-85 with median 75, and Method C has scores ranging from 40-95 with median 72.</p>
             </statement>
             <choices>
               <choice>
@@ -1862,13 +1860,6 @@
             </li>
           </dl>
           
-          <figure xml:id="fig-meaningful-comparison">
-            <caption>Visualizing Group Comparisons</caption>
-            <image source="group-comparison-viz.png" width="80%">
-              <description>Various visualization types for comparing groups: box plots, bar charts with error bars, and overlaid distributions.</description>
-            </image>
-          </figure>
-          
           <example xml:id="example-comparison-health">
             <title>Meaningful Comparisons in Community Health</title>
             <statement>
@@ -1950,89 +1941,57 @@
           </activity>
           
           <exercise xml:id="exercise-comparison-pitfalls">
-            <title>Group Comparison Pitfalls</title>
-            <introduction>
-              <p>For each scenario, identify the primary issue that could lead to misleading conclusions when comparing groups.</p>
-            </introduction>
-            <exercise>
-              <statement>
-                <p>A researcher compares the performance of students who chose to participate in an optional after-school program with those who did not.</p>
-              </statement>
-              <choices>
-                <choice>
-                  <statement>
-                    <p>Inadequate sample size</p>
-                  </statement>
-                  <feedback>
-                    <p>The scenario doesn't mention sample size, so this isn't the primary issue.</p>
-                  </feedback>
-                </choice>
-                <choice correct="yes">
-                  <statement>
-                    <p>Self-selection bias</p>
-                  </statement>
-                  <feedback>
-                    <p>Correct! Students who choose to participate in optional programs may already be more motivated or higher-performing than those who don't. This self-selection bias means the groups differ in ways beyond just program participation.</p>
-                  </feedback>
-                </choice>
-                <choice>
-                  <statement>
-                    <p>Comparing unlike time periods</p>
-                  </statement>
-                  <feedback>
-                    <p>The scenario doesn't involve time period comparisons, so this isn't the issue.</p>
-                  </feedback>
-                </choice>
-                <choice>
-                  <statement>
-                    <p>Using inappropriate statistical tests</p>
-                  </statement>
-                  <feedback>
-                    <p>The scenario doesn't mention what statistical tests were used, so this isn't identified as the primary issue.</p>
-                  </feedback>
-                </choice>
-              </choices>
-            </exercise>
-            <exercise>
-              <statement>
-                <p>An analyst reports that neighborhoods with more parks have lower crime rates, suggesting that parks reduce crime.</p>
-              </statement>
-              <choices>
-                <choice>
-                  <statement>
-                    <p>Insufficient visualization of the data</p>
-                  </statement>
-                  <feedback>
-                    <p>While visualization is important, the primary issue here is about the conclusion being drawn rather than how the data is presented.</p>
-                  </feedback>
-                </choice>
-                <choice>
-                  <statement>
-                    <p>High within-group variation</p>
-                  </statement>
-                  <feedback>
-                    <p>The scenario doesn't mention variation within groups, so this isn't identified as the primary issue.</p>
-                  </feedback>
-                </choice>
-                <choice correct="yes">
-                  <statement>
-                    <p>Confusing correlation with causation</p>
-                  </statement>
-                  <feedback>
-                    <p>Correct! The analyst observes a correlation (neighborhoods with more parks have lower crime) but suggests causation (parks reduce crime). Other factors like neighborhood wealth, housing density, or policing could explain both the presence of parks and lower crime rates.</p>
-                  </feedback>
-                </choice>
-                <choice>
-                  <statement>
-                    <p>Outlier influence</p>
-                  </statement>
-                  <feedback>
-                    <p>The scenario doesn't mention outliers, so this isn't identified as the primary issue.</p>
-                  </feedback>
-                </choice>
-              </choices>
-            </exercise>
-          </exercise>
+          <title>Group Comparison Pitfalls</title>
+          <introduction>
+            <p>For each scenario, identify the primary issue that could lead to misleading conclusions when comparing groups.</p>
+          </introduction>
+          <webwork>
+            <setup>
+              <pg-code>
+                $selection_bias = RadioButtons(
+                  ["Inadequate sample size",
+                  "Self-selection bias",
+                  "Comparing unlike time periods",
+                  "Using inappropriate statistical tests"],
+                  1,  # index of correct answer (0-based)
+                  labels => ["a", "b", "c", "d"]
+                );
+                
+                $correlation_causation = RadioButtons(
+                  ["Insufficient visualization of the data",
+                  "High within-group variation",
+                  "Confusing correlation with causation",
+                  "Outlier influence"],
+                  2,  # index of correct answer (0-based)
+                  labels => ["a", "b", "c", "d"]
+                );
+              </pg-code>
+            </setup>
+            
+            <statement>
+              <p>Scenario 1: A researcher compares the performance of students who chose to participate in an optional after-school program with those who did not.</p>
+              <p>What is the primary issue in this scenario?</p>
+              <p><var name="$selection_bias" form="buttons"/></p>
+              
+              <p>Scenario 2: An analyst reports that neighborhoods with more parks have lower crime rates, suggesting that parks reduce crime.</p>
+              <p>What is the primary issue in this scenario?</p>
+              <p><var name="$correlation_causation" form="buttons"/></p>
+            </statement>
+            
+            <solution>
+              <p><b>Scenario 1:</b> The primary issue is <b>self-selection bias</b>.</p>
+              <p>Students who choose to participate in optional programs may already be more motivated or higher-performing than those who don't. This self-selection bias means the groups differ in ways beyond just program participation.</p>
+              
+              <p><b>Scenario 2:</b> The primary issue is <b>confusing correlation with causation</b>.</p>
+              <p>The analyst observes a correlation (neighborhoods with more parks have lower crime) but suggests causation (parks reduce crime). Other factors like neighborhood wealth, housing density, or policing could explain both the presence of parks and lower crime rates.</p>
+            </solution>
+            
+            <hint>
+              <p>Think about what assumptions or inferences are being made in each scenario, and whether they are supported by the data collection method or analysis.</p>
+            </hint>
+          </webwork>
+        </exercise>
+          
         </subsection>
       </section>
 
