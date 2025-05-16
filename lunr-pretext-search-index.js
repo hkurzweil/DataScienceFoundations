@@ -1630,6 +1630,1203 @@ var ptx_lunr_docs = [
   "body": " Unit 3 Review   Which sequence of data moves best represents a typical data analysis workflow?      Grouping → Cleaning → Filtering → Creating visualizations    This sequence is problematic because grouping data before cleaning it could lead to incorrect aggregations based on errors or missing values.      Cleaning → Creating derived variables → Filtering → Grouping and comparing    Correct! This sequence represents a logical workflow: first clean the data to address quality issues, then create any needed derived variables, then filter to focus on relevant subsets, and finally group and compare to identify patterns.      Filtering → Cleaning → Summarizing → Creating derived variables    Filtering before cleaning could result in removing data that might be valuable once cleaned, potentially introducing bias.      Creating derived variables → Summarizing → Cleaning → Grouping    Creating derived variables before cleaning could propagate errors into new variables, and summarizing before cleaning could lead to misleading statistics.     "
 },
 {
+  "id": "sec-visualization-fundamentals",
+  "level": "1",
+  "url": "sec-visualization-fundamentals.html",
+  "type": "Section",
+  "number": "",
+  "title": "Visualization Fundamentals",
+  "body": " Visualization Fundamentals   The Power of Data Visualization  Data visualization serves several crucial functions in the data science process:    Exploration  Visualizations help us discover patterns, relationships, and outliers that might not be apparent in raw data or summary statistics.    Analysis  Visual representations allow us to compare groups, identify trends, and test hypotheses about our data.    Communication  Well-designed visualizations make complex findings accessible to others, supporting decision-making and action.    Engagement  Visual elements capture attention and make data more engaging and memorable than text or numbers alone.    The power of visualization is illustrated by Anscombe's Quartet, a set of four datasets with nearly identical statistical properties but dramatically different visual patterns:   Anscombe's Quartet   Four scatter plots showing datasets with identical summary statistics but very different patterns: a linear relationship, a curved relationship, a linear relationship with an outlier, and a vertical line with an outlier.    Wikipedia    Each of the four datasets in Anscombe's Quartet has the same mean, variance, correlation, and linear regression line. If we relied only on these summary statistics, we'd miss the crucial differences between these datasets. Visualization reveals what statistics alone can hide.   Visualization Purpose   Which of the following is NOT a primary purpose of data visualization?      To discover patterns and relationships in data    This is a primary purpose of data visualization - helping analysts discover patterns, trends, and relationships that might not be apparent in raw data.      To communicate insights to diverse audiences    This is a primary purpose of data visualization - making complex findings accessible and understandable to various stakeholders.      To increase the volume of data that can be presented    Correct! While visualizations can represent large datasets, the primary goal is not to maximize the volume of data presented. In fact, effective visualization often involves carefully selecting what data to present to avoid overwhelming the viewer.      To identify outliers and unusual patterns    This is a primary purpose of data visualization - making outliers and anomalies in the data immediately visible for further investigation.        Choosing the Right Visualization  Different types of data and questions call for different visualization approaches. Selecting the right chart type is essential for effectively representing your data.  Here are some common visualization types and their appropriate uses:    Bar Charts\/Column Charts  Best for comparing values across discrete categories.  Vertical bars (columns): Good for comparing values across categories  Horizontal bars: Useful when category names are long or there are many categories  Grouped bars: For comparing multiple measurements across categories  Stacked bars: For showing composition within categories      Line Charts  Best for showing trends over time or continuous variables.  Single line: Shows trend in one variable  Multiple lines: Compares trends across groups  Area charts: Emphasize magnitude along with trend      Scatter Plots  Best for examining relationships between two numerical variables.  Simple scatter: Shows correlation between two variables  Bubble charts: Add a third dimension through point size  Scatter with groups: Compare relationships across categories      Pie Charts  Best for showing parts of a whole (composition) when there are few categories.  Use only when the sum is meaningful and categories are few (preferably 5 or fewer)  Consider alternatives like stacked bars for more effective comparison      Histograms  Best for showing the distribution of a single numerical variable.  Shows frequency of values falling within specific ranges (bins)  Reveals shape of distribution (normal, skewed, bimodal, etc.)      Box Plots  Best for showing distribution summary and comparing distributions.  Shows median, quartiles, range, and outliers  Excellent for comparing distributions across groups      Heat Maps  Best for showing patterns across two categorical dimensions.  Uses color intensity to represent a third variable  Good for large datasets with complex patterns      Maps  Best for showing spatial patterns and geographic distributions.  Choropleth maps: Color regions based on data values  Dot maps: Show individual locations or events       Common Chart Types   Examples of various chart types including bar chart, line chart, scatter plot, pie chart, histogram, box plot, heat map, and map.    When choosing a visualization type, consider:    What question are you trying to answer?    What types of variables are you working with (categorical, numerical, time-based)?    What relationship or pattern are you trying to show (comparison, composition, distribution, relationship)?    Who is your audience and what is their level of data literacy?     Matching Chart Types to Questions   Match each data visualization question with the most appropriate chart type.     How has unemployment rate changed over the past 10 years?  Line chart    What is the relationship between study time and test scores?  Scatter plot    How do average incomes compare across different education levels?  Bar chart    What is the distribution of home prices in a neighborhood?  Histogram    How do temperature distributions vary across seasons?  Box plot    How is the city budget allocated across departments?  Pie chart      Chart Selection for Your Dataset   In this activity, you'll identify appropriate visualization types for different aspects of your dataset.     Write down at least three specific questions you want to answer with visualizations of your dataset.      For each question, identify:    The variables involved (including their types: categorical, numerical, time-based)    The most appropriate visualization type to answer the question    Why this visualization type is the best choice for your specific question        Share your choices with a classmate and provide feedback on each other's selections.       Principles of Effective Visualization  Creating effective visualizations requires more than just selecting the right chart type. Well-designed visualizations follow these key principles:    Show the Data  The primary purpose of a visualization is to clearly present the data. Avoid unnecessary decorations or \"chart junk\" that distracts from the data.    Reduce Cognitive Load  Make it as easy as possible for viewers to extract insights. Minimize the mental effort required to interpret the visualization.    Focus Attention  Use visual elements like color, size, and position to direct attention to the most important aspects of the data.    Provide Context  Include reference points, comparisons, or baselines that help viewers understand the significance of the data.    Be Truthful  Represent the data accurately without distortion. Ensure that visual encodings are proportional to the data values.    Specific design principles include:    Clear labeling : Include descriptive titles, axis labels, and legends    Thoughtful color use : Choose accessible color schemes and use color consistently and purposefully    Appropriate scales : Use scales that accurately represent the data, generally starting at zero for bar charts    Data-ink ratio : Maximize the ratio of \"ink\" used to display data versus decorative elements    Simplicity : Include only what's necessary, removing redundant or distracting elements    Consistency : Use consistent formats, scales, and styles across related visualizations     Good vs. Problematic Visualization   Two versions of the same chart: one with clear labeling, appropriate scale, and thoughtful design; the other with misleading scale, excessive decoration, and unclear labeling.     Visualizing Community Health Data   For our Community Health dataset, effective visualizations might include:    A scatter plot showing the relationship between air quality index and asthma rates across neighborhoods, with points colored by income level to reveal potential socioeconomic patterns    A grouped bar chart comparing multiple health metrics (asthma, obesity, heart disease) across different regions of the city, allowing for direct comparison of health outcomes    A choropleth map showing the spatial distribution of environmental risk factors across the city, revealing geographic patterns and potential hotspots    Box plots comparing the distribution of health outcomes across neighborhoods with different levels of green space access, showing both central tendency and variation    A connected scatter plot showing how the relationship between environmental factors and health outcomes has changed over time       Steps for Creating Effective Visualizations   Arrange the following steps in a logical order for creating an effective data visualization.     Clarify the specific question or insight you want the visualization to address.     Add as many decorative elements as possible to make the visualization attractive.    Select the appropriate chart type based on your data and question.    Use the most complex visualization possible to impress your audience.     Prepare and transform your data as needed for the visualization.    Create a first draft of the visualization with the essential elements.    Add clear titles, labels, and other contextual information.    Refine the design by removing clutter and emphasizing key insights.    Manipulate the scales to make patterns look more dramatic.     Think about how you would first plan what you want to show before deciding how to show it.     Visualization Critique   In this activity, you'll analyze and critique existing visualizations using the principles we've discussed.     Find three different data visualizations from news articles, reports, or websites. Try to include at least one visualization that you think is particularly effective and one that could be improved.      For each visualization, evaluate:    Is the chart type appropriate for the data and question?    How well does it follow the principles of effective visualization?    What works well about this visualization?    How could it be improved?        For the visualization that needs improvement, sketch or describe how you would redesign it to be more effective.       Creating Visualizations in CODAP  CODAP offers a variety of tools for creating interactive visualizations. Let's explore how to use these tools effectively.  Key visualization features in CODAP include:    Graph tool : Create scatter plots, line plots, and dot plots by dragging attributes to axes    Plot type menu : Change between dot plots, box plots, histograms, and other display types    Axis options : Adjust scales, binning, and other axis properties    Grouping : Split data into categories using the ruler tool    Legend attributes : Add color, size, or shape encoding by dragging attributes to the legend area    Connecting lines : Show connections between related points    Map tool : Display geographic data on interactive maps     CODAP Visualization Tools   Screenshot showing CODAP's interface for creating and customizing visualizations, with labeled tools for graphs, plot types, axis options, and other features.    Steps for creating effective visualizations in CODAP:    Open the Graph or Map tool from the main toolbar    Drag attributes from your dataset to the axes or legend area    Select the appropriate plot type from the menu    Adjust axis scales, binning, and other properties as needed    Add additional attributes to the legend to encode with color, size, or shape    Use the ruler tool to create groupings or reference lines    Add text objects with titles, labels, or explanatory notes    Arrange multiple visualizations to create a dashboard     Creating Visualizations in CODAP   In this activity, you'll practice creating various types of visualizations in CODAP using your dataset.     Create at least one of each of the following visualization types using your dataset:    Scatter plot showing the relationship between two numerical variables    Bar chart or dot plot comparing values across categories    Histogram showing the distribution of a numerical variable    Box plot comparing distributions across groups        For each visualization:    Add appropriate titles and labels    Adjust scales and binning as needed    Use color or other visual encodings to add an additional dimension    Write a brief interpretation of what the visualization reveals        Arrange your visualizations to create a simple dashboard with at least three different charts that together tell a story about your data.      CODAP Visualization Features   Which CODAP feature would be MOST appropriate for examining how a relationship between two numerical variables differs across categories?      Changing from a dot plot to a histogram    Changing to a histogram would show the distribution of a single variable, not the relationship between two variables across categories.      Adding connecting lines between points    Connecting lines are typically used to show sequences or paths between related points, not to distinguish between categories.      Dragging a categorical attribute to the legend area to color points by category    Correct! By dragging a categorical attribute to the legend area, points in the scatter plot will be colored according to their category, allowing you to visually distinguish how the relationship differs across categories.      Using the ruler tool to add reference lines    While reference lines can be helpful markers, they don't specifically help examine how relationships differ across categories.       "
+},
+{
+  "id": "fig-anscombe",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#fig-anscombe",
+  "type": "Figure",
+  "number": "88",
+  "title": "",
+  "body": " Anscombe's Quartet   Four scatter plots showing datasets with identical summary statistics but very different patterns: a linear relationship, a curved relationship, a linear relationship with an outlier, and a vertical line with an outlier.    Wikipedia   "
+},
+{
+  "id": "mc-viz-purpose",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#mc-viz-purpose",
+  "type": "Checkpoint",
+  "number": "89",
+  "title": "Visualization Purpose.",
+  "body": " Visualization Purpose   Which of the following is NOT a primary purpose of data visualization?      To discover patterns and relationships in data    This is a primary purpose of data visualization - helping analysts discover patterns, trends, and relationships that might not be apparent in raw data.      To communicate insights to diverse audiences    This is a primary purpose of data visualization - making complex findings accessible and understandable to various stakeholders.      To increase the volume of data that can be presented    Correct! While visualizations can represent large datasets, the primary goal is not to maximize the volume of data presented. In fact, effective visualization often involves carefully selecting what data to present to avoid overwhelming the viewer.      To identify outliers and unusual patterns    This is a primary purpose of data visualization - making outliers and anomalies in the data immediately visible for further investigation.     "
+},
+{
+  "id": "fig-chart-types",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#fig-chart-types",
+  "type": "Figure",
+  "number": "90",
+  "title": "",
+  "body": " Common Chart Types   Examples of various chart types including bar chart, line chart, scatter plot, pie chart, histogram, box plot, heat map, and map.   "
+},
+{
+  "id": "matching-chart-selection",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#matching-chart-selection",
+  "type": "Checkpoint",
+  "number": "91",
+  "title": "Matching Chart Types to Questions.",
+  "body": " Matching Chart Types to Questions   Match each data visualization question with the most appropriate chart type.     How has unemployment rate changed over the past 10 years?  Line chart    What is the relationship between study time and test scores?  Scatter plot    How do average incomes compare across different education levels?  Bar chart    What is the distribution of home prices in a neighborhood?  Histogram    How do temperature distributions vary across seasons?  Box plot    How is the city budget allocated across departments?  Pie chart    "
+},
+{
+  "id": "activity-chart-selection",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#activity-chart-selection",
+  "type": "Activity",
+  "number": "25",
+  "title": "Chart Selection for Your Dataset.",
+  "body": " Chart Selection for Your Dataset   In this activity, you'll identify appropriate visualization types for different aspects of your dataset.     Write down at least three specific questions you want to answer with visualizations of your dataset.      For each question, identify:    The variables involved (including their types: categorical, numerical, time-based)    The most appropriate visualization type to answer the question    Why this visualization type is the best choice for your specific question        Share your choices with a classmate and provide feedback on each other's selections.    "
+},
+{
+  "id": "subsec-visualization-principles-5-1-1",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#subsec-visualization-principles-5-1-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Clear labeling "
+},
+{
+  "id": "subsec-visualization-principles-5-2-1",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#subsec-visualization-principles-5-2-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Thoughtful color use "
+},
+{
+  "id": "subsec-visualization-principles-5-3-1",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#subsec-visualization-principles-5-3-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Appropriate scales "
+},
+{
+  "id": "subsec-visualization-principles-5-4-1",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#subsec-visualization-principles-5-4-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Data-ink ratio "
+},
+{
+  "id": "subsec-visualization-principles-5-5-1",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#subsec-visualization-principles-5-5-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Simplicity "
+},
+{
+  "id": "subsec-visualization-principles-5-6-1",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#subsec-visualization-principles-5-6-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Consistency "
+},
+{
+  "id": "fig-good-bad-viz",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#fig-good-bad-viz",
+  "type": "Figure",
+  "number": "92",
+  "title": "",
+  "body": " Good vs. Problematic Visualization   Two versions of the same chart: one with clear labeling, appropriate scale, and thoughtful design; the other with misleading scale, excessive decoration, and unclear labeling.   "
+},
+{
+  "id": "example-viz-health",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#example-viz-health",
+  "type": "Example",
+  "number": "93",
+  "title": "Visualizing Community Health Data.",
+  "body": " Visualizing Community Health Data   For our Community Health dataset, effective visualizations might include:    A scatter plot showing the relationship between air quality index and asthma rates across neighborhoods, with points colored by income level to reveal potential socioeconomic patterns    A grouped bar chart comparing multiple health metrics (asthma, obesity, heart disease) across different regions of the city, allowing for direct comparison of health outcomes    A choropleth map showing the spatial distribution of environmental risk factors across the city, revealing geographic patterns and potential hotspots    Box plots comparing the distribution of health outcomes across neighborhoods with different levels of green space access, showing both central tendency and variation    A connected scatter plot showing how the relationship between environmental factors and health outcomes has changed over time     "
+},
+{
+  "id": "parsons-viz-design",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#parsons-viz-design",
+  "type": "Checkpoint",
+  "number": "94",
+  "title": "Steps for Creating Effective Visualizations.",
+  "body": " Steps for Creating Effective Visualizations   Arrange the following steps in a logical order for creating an effective data visualization.     Clarify the specific question or insight you want the visualization to address.     Add as many decorative elements as possible to make the visualization attractive.    Select the appropriate chart type based on your data and question.    Use the most complex visualization possible to impress your audience.     Prepare and transform your data as needed for the visualization.    Create a first draft of the visualization with the essential elements.    Add clear titles, labels, and other contextual information.    Refine the design by removing clutter and emphasizing key insights.    Manipulate the scales to make patterns look more dramatic.     Think about how you would first plan what you want to show before deciding how to show it.   "
+},
+{
+  "id": "activity-visualization-critique",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#activity-visualization-critique",
+  "type": "Activity",
+  "number": "26",
+  "title": "Visualization Critique.",
+  "body": " Visualization Critique   In this activity, you'll analyze and critique existing visualizations using the principles we've discussed.     Find three different data visualizations from news articles, reports, or websites. Try to include at least one visualization that you think is particularly effective and one that could be improved.      For each visualization, evaluate:    Is the chart type appropriate for the data and question?    How well does it follow the principles of effective visualization?    What works well about this visualization?    How could it be improved?        For the visualization that needs improvement, sketch or describe how you would redesign it to be more effective.    "
+},
+{
+  "id": "subsec-codap-viz-4-1-1",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#subsec-codap-viz-4-1-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Graph tool "
+},
+{
+  "id": "subsec-codap-viz-4-2-1",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#subsec-codap-viz-4-2-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Plot type menu "
+},
+{
+  "id": "subsec-codap-viz-4-3-1",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#subsec-codap-viz-4-3-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Axis options "
+},
+{
+  "id": "subsec-codap-viz-4-4-1",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#subsec-codap-viz-4-4-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Grouping "
+},
+{
+  "id": "subsec-codap-viz-4-5-1",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#subsec-codap-viz-4-5-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Legend attributes "
+},
+{
+  "id": "subsec-codap-viz-4-6-1",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#subsec-codap-viz-4-6-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Connecting lines "
+},
+{
+  "id": "subsec-codap-viz-4-7-1",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#subsec-codap-viz-4-7-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Map tool "
+},
+{
+  "id": "fig-codap-viz-tools",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#fig-codap-viz-tools",
+  "type": "Figure",
+  "number": "95",
+  "title": "",
+  "body": " CODAP Visualization Tools   Screenshot showing CODAP's interface for creating and customizing visualizations, with labeled tools for graphs, plot types, axis options, and other features.   "
+},
+{
+  "id": "activity-codap-viz",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#activity-codap-viz",
+  "type": "Activity",
+  "number": "27",
+  "title": "Creating Visualizations in CODAP.",
+  "body": " Creating Visualizations in CODAP   In this activity, you'll practice creating various types of visualizations in CODAP using your dataset.     Create at least one of each of the following visualization types using your dataset:    Scatter plot showing the relationship between two numerical variables    Bar chart or dot plot comparing values across categories    Histogram showing the distribution of a numerical variable    Box plot comparing distributions across groups        For each visualization:    Add appropriate titles and labels    Adjust scales and binning as needed    Use color or other visual encodings to add an additional dimension    Write a brief interpretation of what the visualization reveals        Arrange your visualizations to create a simple dashboard with at least three different charts that together tell a story about your data.    "
+},
+{
+  "id": "mc-codap-features",
+  "level": "2",
+  "url": "sec-visualization-fundamentals.html#mc-codap-features",
+  "type": "Checkpoint",
+  "number": "96",
+  "title": "CODAP Visualization Features.",
+  "body": " CODAP Visualization Features   Which CODAP feature would be MOST appropriate for examining how a relationship between two numerical variables differs across categories?      Changing from a dot plot to a histogram    Changing to a histogram would show the distribution of a single variable, not the relationship between two variables across categories.      Adding connecting lines between points    Connecting lines are typically used to show sequences or paths between related points, not to distinguish between categories.      Dragging a categorical attribute to the legend area to color points by category    Correct! By dragging a categorical attribute to the legend area, points in the scatter plot will be colored according to their category, allowing you to visually distinguish how the relationship differs across categories.      Using the ruler tool to add reference lines    While reference lines can be helpful markers, they don't specifically help examine how relationships differ across categories.     "
+},
+{
+  "id": "sec-ethics-misleading",
+  "level": "1",
+  "url": "sec-ethics-misleading.html",
+  "type": "Section",
+  "number": "",
+  "title": "Ethics Spotlight: Avoiding Misleading Visualizations",
+  "body": " Ethics Spotlight: Avoiding Misleading Visualizations  Visualizations can powerfully communicate data insights, but they can also mislead viewers if not created responsibly. Understanding common ways visualizations can mislead helps us create more ethical data presentations.  Common misleading visualization practices include:    Truncated Axes  Starting bar charts or line charts at values other than zero can exaggerate differences. While non-zero baselines can be appropriate for line charts showing trends, they should be clearly indicated.    Manipulated Aspect Ratios  Changing the height-to-width ratio of a chart can make trends appear steeper or flatter than they actually are.    Cherry-Picking Data  Selectively including or excluding data points to support a particular narrative rather than showing the complete picture.    Problematic Color Scales  Using colors that imply judgment (e.g., red\/green) for neutral data, or using color scales that perceptually distort the data.    3D Charts for 2D Data  Using 3D effects for 2D data can distort proportions and make accurate comparisons difficult.    Inappropriate Chart Types  Using chart types that are not suited to the data or question, leading to misinterpretation.    Missing Context  Failing to provide necessary context, such as sample sizes, time periods, or relevant comparisons.     Misleading Visualization Examples   Examples of misleading visualizations: a bar chart with a truncated y-axis making small differences look large, a pie chart with distorted 3D perspective, and a cherry-picked time series showing only a favorable portion of data.    To create ethical visualizations:    Present data completely and accurately    Choose appropriate scales and chart types    Provide necessary context and uncertainty information    Use color and design elements thoughtfully    Consider diverse audience perspectives    Be transparent about data sources and processing     Ethical Considerations in Community Health Visualization   When visualizing our Community Health data, ethical considerations might include:    Ensuring bar charts comparing health outcomes across neighborhoods start at zero to avoid exaggerating differences    Including confidence intervals or other uncertainty indicators when showing health metrics based on small sample sizes    Using culturally sensitive color schemes when mapping data by neighborhood to avoid reinforcing stereotypes    Providing context about historical factors that might explain environmental disparities rather than just showing current differences    Being careful about implying causation when visualizing correlations between environmental factors and health outcomes    Including complete data rather than cherry-picking neighborhoods or time periods that support a particular narrative       Identifying Misleading Visualizations   For each visualization description, identify the primary way it might mislead viewers.     A bar chart comparing company profits starts the y-axis at $50 million instead of zero, making a $5 million difference between competitors look very large.      Truncated axis    Correct! Starting the y-axis above zero on a bar chart violates the principle that the length of bars should be proportional to the values they represent. This exaggerates the differences between values.      Cherry-picking data    There's no indication that data points were selectively included or excluded; rather, the issue is with how the included data is presented.      3D effects    The description doesn't mention any 3D effects being used in the visualization.      Inappropriate chart type    A bar chart is an appropriate type for comparing values across categories; the issue is with the scaling, not the chart type itself.        A line chart shows a company's stock performance over only the three months when it performed best, without indicating that this is a selected portion of a longer time series.      Problematic color scale    The description doesn't mention any issues with color usage in the visualization.      Cherry-picking data    Correct! By selectively showing only the three best-performing months without proper context, the visualization presents an incomplete and potentially misleading picture of the company's overall performance.      Manipulated aspect ratio    While aspect ratio manipulation could make the trend look steeper, the primary issue described is the selective inclusion of only favorable data points.      Missing uncertainty information    While context is missing, the primary issue is the selective inclusion of only favorable data points rather than the omission of uncertainty information.        Creating Ethical Alternatives   In this activity, you'll practice identifying and correcting misleading visualizations.     Working with a partner, create a deliberately misleading visualization using your dataset (or the Community Health dataset) in CODAP. Use at least one of the misleading techniques discussed.      Exchange your misleading visualization with another pair of students. For the visualization you receive:    Identify how the visualization might mislead viewers    Create an ethical alternative that presents the same data more accurately    Explain why your alternative is more ethical and effective        Discuss as a class: What responsibility do data scientists have to create ethical visualizations? How can we balance creating impactful visualizations with ensuring they're not misleading?     "
+},
+{
+  "id": "fig-misleading-viz",
+  "level": "2",
+  "url": "sec-ethics-misleading.html#fig-misleading-viz",
+  "type": "Figure",
+  "number": "97",
+  "title": "",
+  "body": " Misleading Visualization Examples   Examples of misleading visualizations: a bar chart with a truncated y-axis making small differences look large, a pie chart with distorted 3D perspective, and a cherry-picked time series showing only a favorable portion of data.   "
+},
+{
+  "id": "example-ethical-viz-health",
+  "level": "2",
+  "url": "sec-ethics-misleading.html#example-ethical-viz-health",
+  "type": "Example",
+  "number": "98",
+  "title": "Ethical Considerations in Community Health Visualization.",
+  "body": " Ethical Considerations in Community Health Visualization   When visualizing our Community Health data, ethical considerations might include:    Ensuring bar charts comparing health outcomes across neighborhoods start at zero to avoid exaggerating differences    Including confidence intervals or other uncertainty indicators when showing health metrics based on small sample sizes    Using culturally sensitive color schemes when mapping data by neighborhood to avoid reinforcing stereotypes    Providing context about historical factors that might explain environmental disparities rather than just showing current differences    Being careful about implying causation when visualizing correlations between environmental factors and health outcomes    Including complete data rather than cherry-picking neighborhoods or time periods that support a particular narrative     "
+},
+{
+  "id": "exercise-misleading-viz",
+  "level": "2",
+  "url": "sec-ethics-misleading.html#exercise-misleading-viz",
+  "type": "Checkpoint",
+  "number": "99",
+  "title": "Identifying Misleading Visualizations.",
+  "body": " Identifying Misleading Visualizations   For each visualization description, identify the primary way it might mislead viewers.     A bar chart comparing company profits starts the y-axis at $50 million instead of zero, making a $5 million difference between competitors look very large.      Truncated axis    Correct! Starting the y-axis above zero on a bar chart violates the principle that the length of bars should be proportional to the values they represent. This exaggerates the differences between values.      Cherry-picking data    There's no indication that data points were selectively included or excluded; rather, the issue is with how the included data is presented.      3D effects    The description doesn't mention any 3D effects being used in the visualization.      Inappropriate chart type    A bar chart is an appropriate type for comparing values across categories; the issue is with the scaling, not the chart type itself.        A line chart shows a company's stock performance over only the three months when it performed best, without indicating that this is a selected portion of a longer time series.      Problematic color scale    The description doesn't mention any issues with color usage in the visualization.      Cherry-picking data    Correct! By selectively showing only the three best-performing months without proper context, the visualization presents an incomplete and potentially misleading picture of the company's overall performance.      Manipulated aspect ratio    While aspect ratio manipulation could make the trend look steeper, the primary issue described is the selective inclusion of only favorable data points.      Missing uncertainty information    While context is missing, the primary issue is the selective inclusion of only favorable data points rather than the omission of uncertainty information.      "
+},
+{
+  "id": "activity-ethical-viz",
+  "level": "2",
+  "url": "sec-ethics-misleading.html#activity-ethical-viz",
+  "type": "Activity",
+  "number": "28",
+  "title": "Creating Ethical Alternatives.",
+  "body": " Creating Ethical Alternatives   In this activity, you'll practice identifying and correcting misleading visualizations.     Working with a partner, create a deliberately misleading visualization using your dataset (or the Community Health dataset) in CODAP. Use at least one of the misleading techniques discussed.      Exchange your misleading visualization with another pair of students. For the visualization you receive:    Identify how the visualization might mislead viewers    Create an ethical alternative that presents the same data more accurately    Explain why your alternative is more ethical and effective        Discuss as a class: What responsibility do data scientists have to create ethical visualizations? How can we balance creating impactful visualizations with ensuring they're not misleading?    "
+},
+{
+  "id": "sec-advanced-visualization",
+  "level": "1",
+  "url": "sec-advanced-visualization.html",
+  "type": "Section",
+  "number": "",
+  "title": "Advanced Visualization and Analysis",
+  "body": " Advanced Visualization and Analysis   Visualizing Multi-Variable Relationships  Real-world data often involves complex relationships between multiple variables. Advanced visualization techniques help us explore and communicate these multi-dimensional relationships.  Techniques for visualizing multi-variable relationships include:    Adding Dimensions with Visual Encodings    Color : Encoding categorical or numerical variables with color  Size : Encoding numerical variables with point or line size  Shape : Encoding categorical variables with different point shapes  Transparency : Using opacity to handle overplotting or indicate certainty      Small Multiples  Creating a series of similar charts for different categories or time periods, allowing for comparison across a third variable.    Faceting  Splitting a single visualization into multiple panels based on categories, creating a grid of related charts.    Layering  Overlaying multiple series or variables on the same visualization, using different colors or styles to distinguish them.    Interactive Techniques    Brushing and linking : Selections in one visualization highlight corresponding points in others  Filtering : Dynamically including or excluding data based on selection  Details on demand : Showing additional information when hovering over or selecting elements       Multi-Variable Visualization Techniques   Examples of multi-variable visualizations: a scatter plot with color and size encoding, small multiples showing the same relationship across different categories, and a visualization with interactive elements.     Multi-Variable Community Health Visualizations   For our Community Health dataset, advanced multi-variable visualizations might include:    A scatter plot showing the relationship between green space access and asthma rates, with points colored by income level and sized by population density    Small multiples displaying the air quality-health relationship separately for each region of the city    A layered line chart showing trends in multiple health metrics over time, highlighting their relative changes    An interactive dashboard with linked visualizations where selecting high-pollution areas highlights corresponding neighborhoods in health outcome charts    A composite environmental quality score visualized as color on a map, with the ability to filter by different health outcome ranges      When creating multi-variable visualizations, be careful to:    Avoid overwhelming viewers with too much information at once    Ensure that each additional variable adds meaningful insight    Use visual encodings that are easy to distinguish and interpret    Provide clear legends and explanations for all encodings    Consider accessibility (e.g., colorblind-friendly palettes)     Multi-Variable Visualization Techniques   Which technique would be MOST appropriate for examining how the relationship between income and health outcomes varies across different regions of a city?      A pie chart showing the proportion of total health issues by region    A pie chart would only show the distribution of a single variable across regions, not the relationship between income and health outcomes.      A 3D scatter plot with x=income, y=health, z=region    Since region is a categorical variable, a 3D scatter plot with region as the z-axis would not be appropriate and would likely be difficult to interpret.      Small multiples showing income-health scatter plots separately for each region    Correct! Small multiples would create a separate scatter plot for each region, allowing direct comparison of how the income-health relationship varies across regions while maintaining the ability to see the full relationship within each region.      A stacked bar chart of health outcomes for each income bracket    A stacked bar chart would show composition but would make it difficult to clearly see the relationship between income and health outcomes across different regions.       Creating Multi-Variable Visualizations   In this activity, you'll create advanced visualizations that incorporate multiple variables from your dataset.     Create a scatter plot in CODAP that shows the relationship between two numerical variables in your dataset. Then enhance it by:    Adding color to represent a categorical variable    Using point size to represent a third numerical variable    Adding reference lines or other annotations to highlight patterns        Create small multiples for your data by:    Identifying a key categorical variable in your dataset    Creating separate but identical visualizations for each category    Arranging them in a grid for easy comparison        Explore the interactive capabilities of CODAP by:    Creating multiple linked visualizations of your data    Testing how selections in one visualization highlight corresponding points in others    Using this interactivity to identify patterns or relationships that weren't apparent in single visualizations         Building Effective Dashboards  Dashboards combine multiple visualizations into a cohesive whole, allowing viewers to see different aspects of the data and gain a more comprehensive understanding. Well-designed dashboards can powerfully communicate complex findings.    A dashboard is a collection of multiple visual displays organized on a single screen to monitor conditions, track performance, or communicate insights. Dashboards typically include charts, graphs, maps, and other visual elements that together tell a coherent data story.    Principles for effective dashboard design:    Purpose-Driven Design  Design around specific questions or decisions the dashboard should inform, not just to display available data.    Logical Organization  Arrange visualizations in a meaningful sequence or grouping that guides the viewer through the data story.    Visual Hierarchy  Make the most important information most prominent, with secondary information less visually dominant.    Consistency  Use consistent colors, scales, and design elements across visualizations to create unity.    Complementary Views  Include visualizations that show different aspects of the data or answer different but related questions.    Appropriate Context  Provide necessary reference points, comparison values, or explanatory text to help interpret the visualizations.    Interactivity  When possible, include interactive elements that allow viewers to explore details, filter data, or change perspective.     Example Dashboard Layout   A sample dashboard layout showing multiple related visualizations arranged in a logical flow with a clear visual hierarchy and consistent design elements.     Community Health Dashboard   For our Community Health project, an effective dashboard might include:    Central visualization : A map showing neighborhoods colored by an environmental health risk index    Supporting charts :   A scatter plot showing the relationship between air quality and asthma rates  Bar charts comparing key health metrics across regions  A small multiples display showing health trends over time     Interactive elements :   The ability to select neighborhoods on the map and see corresponding data points highlighted in other charts  Filters to focus on specific regions or income brackets  Options to toggle between different health metrics     Context : Brief text explaining key findings, methodology, and important caveats      CODAP allows you to create simple dashboards by:    Creating multiple visualizations using different tools (graphs, maps, tables)    Arranging these visualizations on the workspace by dragging and resizing    Creating links between visualizations so selections in one affect others    Adding text objects to provide context, explanations, or titles    Saving the entire configuration as a single CODAP document     Dashboard Elements and Purposes   Match each dashboard element with its primary purpose.     Overview visualization (e.g., map or summary chart)  Providing a big-picture view and orientation to the data    Linked selection across visualizations  Helping viewers identify the same entities across different views of the data    Consistent color scheme across charts  Creating visual unity and reducing cognitive load for interpretation    Text annotations and highlights  Directing attention to key insights and providing necessary context    Interactive filters  Allowing viewers to focus on specific subsets of data relevant to their questions      Creating a Dashboard in CODAP   In this activity, you'll create a comprehensive dashboard for your project dataset.     Plan your dashboard by:    Identifying 3-5 key questions your dashboard should answer    Sketching a layout with placeholder visualizations    Deciding on a logical flow or organization for your visualizations        Create the individual visualizations needed for your dashboard, including:    An overview visualization that provides a big-picture view of your data    Supporting visualizations that show different aspects or details    Any necessary reference information or context        Arrange your visualizations in CODAP to create your dashboard:    Position elements according to your planned layout    Resize visualizations as needed for visual hierarchy    Add text objects for titles, explanations, and context    Ensure that visualizations are linked so selections in one affect others        Test your dashboard with a classmate. Ask them to:    Navigate through your dashboard without instruction    Identify the main insights or findings    Provide feedback on clarity, organization, and effectiveness         Statistical Thinking: Correlation and Relationships  As we create more complex visualizations, it's important to develop statistical thinking about the relationships we observe. Understanding correlation and other statistical relationships helps us interpret our visualizations more accurately.     Correlation is a statistical measure that expresses the extent to which two variables are linearly related. The correlation coefficient (r) ranges from -1 to +1, with values closer to +\/-1 indicating stronger relationships and 0 indicating no linear relationship.    Key concepts in understanding relationships:    Correlation vs. Causation  Correlation indicates that two variables change together but does not necessarily imply that one causes the other. Causal relationships require additional evidence beyond correlation.    Types of Relationships    Linear : Variables change at a constant rate relative to each other  Non-linear : The relationship follows a curve or more complex pattern  Monotonic : Variables change in the same direction but not necessarily at a constant rate  No relationship : Changes in one variable are not associated with changes in the other      Strength of Relationships    Strong : Points closely follow a pattern with little scatter  Moderate : Points generally follow a pattern but with noticeable scatter  Weak : Points loosely follow a pattern with substantial scatter      Direction of Relationships    Positive : Variables increase or decrease together  Negative : As one variable increases, the other decreases      Confounding Variables  Variables not included in the analysis that affect both variables being studied, potentially creating or masking relationships.    Simpson's Paradox  A phenomenon where a trend appears in several different groups of data but disappears or reverses when these groups are combined.     Types of Statistical Relationships   A grid of scatter plots showing different types of relationships: strong positive linear, weak positive linear, strong negative linear, no relationship, and various non-linear relationships.     Relationships in Community Health Data   In our Community Health dataset, we might observe various relationships:    A negative correlation between green space access and asthma rates, suggesting that neighborhoods with more green space tend to have lower asthma prevalence    A non-linear relationship between air pollution and distance from major highways, with pollution decreasing rapidly at first but then leveling off    No apparent relationship between neighborhood age and obesity rates, suggesting these variables aren't directly connected    A relationship between income and health outcomes that appears strong overall but weakens when examining specific regions separately (a potential Simpson's Paradox)    A correlation between air quality and asthma that might be confounded by income, as lower-income areas often have both worse air quality and less access to healthcare      When interpreting relationships in visualizations:    Look for patterns but be cautious about inferring causation    Consider potential confounding variables    Examine relationships within subgroups, not just overall    Be aware that correlation measures only capture linear relationships    Consider whether outliers are affecting the apparent relationship    Look for contextual factors that might explain observed relationships     Interpreting Correlations   A data scientist finds a strong positive correlation (r = 0.85) between ice cream sales and drowning incidents in a coastal city. Which of the following is the MOST appropriate interpretation?      Eating ice cream causes people to drown.    This incorrectly assumes causation from correlation. There's no logical mechanism by which ice cream consumption would directly cause drowning.      The correlation must be coincidental since these variables are unrelated.    This dismisses the strong correlation without considering possible explanations. A high correlation coefficient (0.85) suggests a relationship, even if indirect.      A third factor, such as hot weather or summer season, likely influences both variables.    Correct! This recognizes the correlation while identifying a plausible confounding variable. Hot weather\/summer likely increases both ice cream consumption and swimming activity (which increases drowning risk), creating an indirect relationship between the variables.      Drowning incidents cause increased ice cream sales.    This incorrectly assumes causation in the reverse direction, which is even less plausible than ice cream causing drowning.       Exploring Relationships in Your Dataset   In this activity, you'll explore and analyze relationships between variables in your dataset.     Create scatter plots for at least three different pairs of numerical variables in your dataset. For each pair:    Describe the pattern you observe (linear, non-linear, no relationship)    Estimate the strength (strong, moderate, weak) and direction (positive, negative) of any relationship    Calculate the correlation coefficient using CODAP's calculator        Select the strongest relationship you found and explore it further by:    Creating separate scatter plots for different subgroups (using a categorical variable)    Comparing the relationship across these subgroups    Looking for evidence of Simpson's Paradox or other subgroup differences        For the relationship you've been exploring:    Identify potential confounding variables that might influence both variables    Discuss whether the relationship might indicate causation or just correlation    Consider how you would communicate this relationship, including appropriate caveats, in your final presentation        "
+},
+{
+  "id": "subsec-multi-variable-4-1-2",
+  "level": "2",
+  "url": "sec-advanced-visualization.html#subsec-multi-variable-4-1-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Color Size Shape Transparency "
+},
+{
+  "id": "subsec-multi-variable-4-5-2",
+  "level": "2",
+  "url": "sec-advanced-visualization.html#subsec-multi-variable-4-5-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Brushing and linking Filtering Details on demand "
+},
+{
+  "id": "fig-multi-variable",
+  "level": "2",
+  "url": "sec-advanced-visualization.html#fig-multi-variable",
+  "type": "Figure",
+  "number": "100",
+  "title": "",
+  "body": " Multi-Variable Visualization Techniques   Examples of multi-variable visualizations: a scatter plot with color and size encoding, small multiples showing the same relationship across different categories, and a visualization with interactive elements.   "
+},
+{
+  "id": "example-multi-var-health",
+  "level": "2",
+  "url": "sec-advanced-visualization.html#example-multi-var-health",
+  "type": "Example",
+  "number": "101",
+  "title": "Multi-Variable Community Health Visualizations.",
+  "body": " Multi-Variable Community Health Visualizations   For our Community Health dataset, advanced multi-variable visualizations might include:    A scatter plot showing the relationship between green space access and asthma rates, with points colored by income level and sized by population density    Small multiples displaying the air quality-health relationship separately for each region of the city    A layered line chart showing trends in multiple health metrics over time, highlighting their relative changes    An interactive dashboard with linked visualizations where selecting high-pollution areas highlights corresponding neighborhoods in health outcome charts    A composite environmental quality score visualized as color on a map, with the ability to filter by different health outcome ranges     "
+},
+{
+  "id": "mc-multi-var-techniques",
+  "level": "2",
+  "url": "sec-advanced-visualization.html#mc-multi-var-techniques",
+  "type": "Checkpoint",
+  "number": "102",
+  "title": "Multi-Variable Visualization Techniques.",
+  "body": " Multi-Variable Visualization Techniques   Which technique would be MOST appropriate for examining how the relationship between income and health outcomes varies across different regions of a city?      A pie chart showing the proportion of total health issues by region    A pie chart would only show the distribution of a single variable across regions, not the relationship between income and health outcomes.      A 3D scatter plot with x=income, y=health, z=region    Since region is a categorical variable, a 3D scatter plot with region as the z-axis would not be appropriate and would likely be difficult to interpret.      Small multiples showing income-health scatter plots separately for each region    Correct! Small multiples would create a separate scatter plot for each region, allowing direct comparison of how the income-health relationship varies across regions while maintaining the ability to see the full relationship within each region.      A stacked bar chart of health outcomes for each income bracket    A stacked bar chart would show composition but would make it difficult to clearly see the relationship between income and health outcomes across different regions.     "
+},
+{
+  "id": "activity-multi-var",
+  "level": "2",
+  "url": "sec-advanced-visualization.html#activity-multi-var",
+  "type": "Activity",
+  "number": "29",
+  "title": "Creating Multi-Variable Visualizations.",
+  "body": " Creating Multi-Variable Visualizations   In this activity, you'll create advanced visualizations that incorporate multiple variables from your dataset.     Create a scatter plot in CODAP that shows the relationship between two numerical variables in your dataset. Then enhance it by:    Adding color to represent a categorical variable    Using point size to represent a third numerical variable    Adding reference lines or other annotations to highlight patterns        Create small multiples for your data by:    Identifying a key categorical variable in your dataset    Creating separate but identical visualizations for each category    Arranging them in a grid for easy comparison        Explore the interactive capabilities of CODAP by:    Creating multiple linked visualizations of your data    Testing how selections in one visualization highlight corresponding points in others    Using this interactivity to identify patterns or relationships that weren't apparent in single visualizations      "
+},
+{
+  "id": "def-dashboard",
+  "level": "2",
+  "url": "sec-advanced-visualization.html#def-dashboard",
+  "type": "Definition",
+  "number": "103",
+  "title": "",
+  "body": "  A dashboard is a collection of multiple visual displays organized on a single screen to monitor conditions, track performance, or communicate insights. Dashboards typically include charts, graphs, maps, and other visual elements that together tell a coherent data story.   "
+},
+{
+  "id": "fig-dashboard-example",
+  "level": "2",
+  "url": "sec-advanced-visualization.html#fig-dashboard-example",
+  "type": "Figure",
+  "number": "104",
+  "title": "",
+  "body": " Example Dashboard Layout   A sample dashboard layout showing multiple related visualizations arranged in a logical flow with a clear visual hierarchy and consistent design elements.   "
+},
+{
+  "id": "example-dashboard-health",
+  "level": "2",
+  "url": "sec-advanced-visualization.html#example-dashboard-health",
+  "type": "Example",
+  "number": "105",
+  "title": "Community Health Dashboard.",
+  "body": " Community Health Dashboard   For our Community Health project, an effective dashboard might include:    Central visualization : A map showing neighborhoods colored by an environmental health risk index    Supporting charts :   A scatter plot showing the relationship between air quality and asthma rates  Bar charts comparing key health metrics across regions  A small multiples display showing health trends over time     Interactive elements :   The ability to select neighborhoods on the map and see corresponding data points highlighted in other charts  Filters to focus on specific regions or income brackets  Options to toggle between different health metrics     Context : Brief text explaining key findings, methodology, and important caveats     "
+},
+{
+  "id": "matching-dashboard-elements",
+  "level": "2",
+  "url": "sec-advanced-visualization.html#matching-dashboard-elements",
+  "type": "Checkpoint",
+  "number": "106",
+  "title": "Dashboard Elements and Purposes.",
+  "body": " Dashboard Elements and Purposes   Match each dashboard element with its primary purpose.     Overview visualization (e.g., map or summary chart)  Providing a big-picture view and orientation to the data    Linked selection across visualizations  Helping viewers identify the same entities across different views of the data    Consistent color scheme across charts  Creating visual unity and reducing cognitive load for interpretation    Text annotations and highlights  Directing attention to key insights and providing necessary context    Interactive filters  Allowing viewers to focus on specific subsets of data relevant to their questions    "
+},
+{
+  "id": "activity-dashboard",
+  "level": "2",
+  "url": "sec-advanced-visualization.html#activity-dashboard",
+  "type": "Activity",
+  "number": "30",
+  "title": "Creating a Dashboard in CODAP.",
+  "body": " Creating a Dashboard in CODAP   In this activity, you'll create a comprehensive dashboard for your project dataset.     Plan your dashboard by:    Identifying 3-5 key questions your dashboard should answer    Sketching a layout with placeholder visualizations    Deciding on a logical flow or organization for your visualizations        Create the individual visualizations needed for your dashboard, including:    An overview visualization that provides a big-picture view of your data    Supporting visualizations that show different aspects or details    Any necessary reference information or context        Arrange your visualizations in CODAP to create your dashboard:    Position elements according to your planned layout    Resize visualizations as needed for visual hierarchy    Add text objects for titles, explanations, and context    Ensure that visualizations are linked so selections in one affect others        Test your dashboard with a classmate. Ask them to:    Navigate through your dashboard without instruction    Identify the main insights or findings    Provide feedback on clarity, organization, and effectiveness      "
+},
+{
+  "id": "def-correlation",
+  "level": "2",
+  "url": "sec-advanced-visualization.html#def-correlation",
+  "type": "Definition",
+  "number": "107",
+  "title": "",
+  "body": "   Correlation is a statistical measure that expresses the extent to which two variables are linearly related. The correlation coefficient (r) ranges from -1 to +1, with values closer to +\/-1 indicating stronger relationships and 0 indicating no linear relationship.   "
+},
+{
+  "id": "subsec-statistical-relationships-5-2-2",
+  "level": "2",
+  "url": "sec-advanced-visualization.html#subsec-statistical-relationships-5-2-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Linear Non-linear Monotonic No relationship "
+},
+{
+  "id": "subsec-statistical-relationships-5-3-2",
+  "level": "2",
+  "url": "sec-advanced-visualization.html#subsec-statistical-relationships-5-3-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Strong Moderate Weak "
+},
+{
+  "id": "subsec-statistical-relationships-5-4-2",
+  "level": "2",
+  "url": "sec-advanced-visualization.html#subsec-statistical-relationships-5-4-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Positive Negative "
+},
+{
+  "id": "fig-correlation-types",
+  "level": "2",
+  "url": "sec-advanced-visualization.html#fig-correlation-types",
+  "type": "Figure",
+  "number": "108",
+  "title": "",
+  "body": " Types of Statistical Relationships   A grid of scatter plots showing different types of relationships: strong positive linear, weak positive linear, strong negative linear, no relationship, and various non-linear relationships.   "
+},
+{
+  "id": "example-correlation-health",
+  "level": "2",
+  "url": "sec-advanced-visualization.html#example-correlation-health",
+  "type": "Example",
+  "number": "109",
+  "title": "Relationships in Community Health Data.",
+  "body": " Relationships in Community Health Data   In our Community Health dataset, we might observe various relationships:    A negative correlation between green space access and asthma rates, suggesting that neighborhoods with more green space tend to have lower asthma prevalence    A non-linear relationship between air pollution and distance from major highways, with pollution decreasing rapidly at first but then leveling off    No apparent relationship between neighborhood age and obesity rates, suggesting these variables aren't directly connected    A relationship between income and health outcomes that appears strong overall but weakens when examining specific regions separately (a potential Simpson's Paradox)    A correlation between air quality and asthma that might be confounded by income, as lower-income areas often have both worse air quality and less access to healthcare     "
+},
+{
+  "id": "mc-correlation-interpretation",
+  "level": "2",
+  "url": "sec-advanced-visualization.html#mc-correlation-interpretation",
+  "type": "Checkpoint",
+  "number": "110",
+  "title": "Interpreting Correlations.",
+  "body": " Interpreting Correlations   A data scientist finds a strong positive correlation (r = 0.85) between ice cream sales and drowning incidents in a coastal city. Which of the following is the MOST appropriate interpretation?      Eating ice cream causes people to drown.    This incorrectly assumes causation from correlation. There's no logical mechanism by which ice cream consumption would directly cause drowning.      The correlation must be coincidental since these variables are unrelated.    This dismisses the strong correlation without considering possible explanations. A high correlation coefficient (0.85) suggests a relationship, even if indirect.      A third factor, such as hot weather or summer season, likely influences both variables.    Correct! This recognizes the correlation while identifying a plausible confounding variable. Hot weather\/summer likely increases both ice cream consumption and swimming activity (which increases drowning risk), creating an indirect relationship between the variables.      Drowning incidents cause increased ice cream sales.    This incorrectly assumes causation in the reverse direction, which is even less plausible than ice cream causing drowning.     "
+},
+{
+  "id": "activity-relationships",
+  "level": "2",
+  "url": "sec-advanced-visualization.html#activity-relationships",
+  "type": "Activity",
+  "number": "31",
+  "title": "Exploring Relationships in Your Dataset.",
+  "body": " Exploring Relationships in Your Dataset   In this activity, you'll explore and analyze relationships between variables in your dataset.     Create scatter plots for at least three different pairs of numerical variables in your dataset. For each pair:    Describe the pattern you observe (linear, non-linear, no relationship)    Estimate the strength (strong, moderate, weak) and direction (positive, negative) of any relationship    Calculate the correlation coefficient using CODAP's calculator        Select the strongest relationship you found and explore it further by:    Creating separate scatter plots for different subgroups (using a categorical variable)    Comparing the relationship across these subgroups    Looking for evidence of Simpson's Paradox or other subgroup differences        For the relationship you've been exploring:    Identify potential confounding variables that might influence both variables    Discuss whether the relationship might indicate causation or just correlation    Consider how you would communicate this relationship, including appropriate caveats, in your final presentation      "
+},
+{
+  "id": "sec-data-storytelling",
+  "level": "1",
+  "url": "sec-data-storytelling.html",
+  "type": "Section",
+  "number": "",
+  "title": "Project Synthesis and Presentation",
+  "body": " Project Synthesis and Presentation   Data Storytelling Principles  Data storytelling combines data analysis, visualization, and narrative to effectively communicate insights and inspire action. A good data story makes complex findings accessible, engaging, and memorable.     Data storytelling is the practice of building a narrative around data to help an audience understand the context, significance, and implications of the data. It combines analytical, visual, and narrative elements to transform data into insights that drive understanding and action.    Key elements of effective data storytelling:    Narrative Structure  A clear beginning, middle, and end that guides the audience through the data journey.  Setup : Introduce the context, question, or problem  Conflict\/Tension : Present the data, challenges, or unexpected findings  Resolution : Share insights, implications, and potential actions      Audience Focus  Tailoring the presentation to the specific needs, interests, and technical literacy of your audience.    Clear Message  A central insight or \"so what\" that the audience should remember.    Compelling Visuals  Well-designed visualizations that support and enhance the narrative.    Context and Relevance  Information that helps the audience understand why the data matters and how it connects to broader issues.    Human Element  Connecting data to human experiences, decisions, or impacts to increase engagement.     Data Story Structure   A diagram showing the flow of a data story from context\/question through data presentation to insights and actions, with annotations for key elements at each stage.    Common data storytelling approaches:    Change over time : Showing evolution, trends, or transformations    Comparison : Highlighting similarities and differences between groups    Connection : Revealing relationships or networks    Outlier : Focusing on exceptional cases or anomalies    Zoom in\/out : Moving between big picture and specific details    Personal relevance : Connecting broad patterns to individual experiences     Community Health Data Story   A data story for our Community Health project might follow this structure:    Setup :   Introduce the context of environmental health disparities in the city  Establish the key questions about how environmental factors relate to health outcomes  Provide background on why this matters for public health and equity     Data Presentation :   Share a map visualizing health indicators across neighborhoods  Show key relationships between environmental factors and health outcomes  Highlight unexpected patterns or particularly affected areas     Insights :   Present the three most significant findings about environmental health relationships  Discuss how socioeconomic factors interact with these relationships  Address limitations and areas of uncertainty in the analysis     Resolution\/Call to Action :   Suggest potential interventions based on the findings  Identify neighborhoods most in need of environmental health improvements  Propose next steps for research or policy consideration        Data Storytelling Approaches   Which data storytelling approach would be MOST effective for communicating how unequal access to healthcare affects different demographic groups?      A technical analysis focusing on statistical significance and p-values    A highly technical approach focusing on statistical details would likely not be as effective for communicating inequities to a broad audience or driving understanding of human impact.      A comprehensive dashboard with all available metrics without narrative structure    While comprehensive data is valuable, presenting all metrics without a narrative structure or focus on human impact would make it difficult for the audience to identify key inequities or their implications.      A narrative that combines broad patterns of inequality with specific examples of how these affect individuals    Correct! This approach effectively combines data-driven patterns with human impact, making the inequities both statistically clear and emotionally resonant. Connecting aggregate data to individual experiences helps the audience understand both the scope and the human consequences of healthcare access disparities.      A presentation focused primarily on data collection methodology and limitations    While methodology and limitations are important to address, making them the primary focus would detract from communicating the actual inequities and their impact.       Planning Your Data Story   In this activity, you'll develop a structured data story for your project.     Define your data story by answering these questions:    Who is your primary audience? (e.g., classmates, general public, specific stakeholders)    What is the main message or insight you want to communicate?    Why should your audience care about this topic?    What action or response do you hope to inspire?        Create an outline for your data story with these components:    Introduction : Context, motivation, and key questions    Main sections : 2-4 key findings or insights, each supported by visualizations    Conclusion : Summary of main message, implications, and potential next steps        For each section of your story, identify:    The specific data or visualization that will support this part of the narrative    How you'll transition from one point to the next to create a coherent flow    Any potential questions or objections from your audience that you should address         Effective Presentation Techniques  Once you've developed your data story, you need to present it effectively to your audience. Good presentation techniques help ensure your insights are understood, remembered, and potentially acted upon.  Key aspects of effective data presentations:    Clear Structure  A logical flow that guides the audience through your analysis and findings.  Begin with a clear introduction of the topic and its importance  Present main findings in a logical sequence  End with conclusions, implications, and next steps      Visual Support  Well-designed slides or materials that enhance understanding.  Use consistent, clean design with minimal text  Ensure visualizations are large enough to be clearly visible  Highlight key points visually (through color, size, or position)      Engagement Techniques  Methods to maintain audience interest and involvement.  Start with a compelling hook or question  Use storytelling to create narrative flow  Include examples or scenarios that make data relevant      Clarity and Accessibility  Making your content understandable for your specific audience.  Define technical terms if necessary  Explain visualization types if they might be unfamiliar  Focus on insights rather than technical details (unless relevant for your audience)      Verbal Delivery  How you speak and present yourself.  Practice to ensure comfortable delivery and timing  Speak clearly and at an appropriate pace  Make eye contact with the audience      Tips for presenting data findings:    Start with the \"so what\" - the main insight or takeaway    Show the visualization, then explain what it shows (don't make the audience read and listen simultaneously)    Focus on the most important patterns or findings rather than describing every detail    Address limitations honestly but don't undermine your key findings    Be prepared for questions about methodology or alternative interpretations    End with clear implications or recommendations if appropriate     Example Presentation Slide Layout   Example slide layout showing a clear title, concise text for context, a large visualization as the focal point, and a key insight or takeaway highlighted at the bottom.     Organizing a Data Presentation   Arrange the following elements in a logical order for a data science presentation.     Introduction: Hook the audience with a compelling question or problem statement related to your data.    Context: Briefly explain the dataset, its sources, and why this analysis matters.     Technical details: Spend most of your time explaining data cleaning procedures and statistical methods.    Key findings: Present your most important insights, supported by clear visualizations.    Literature review: Extensively discuss how your work relates to previous research.     Implications: Discuss what your findings mean for understanding the issue or making decisions.    Limitations: Acknowledge constraints of your data or analysis to establish credibility.    Conclusion: Summarize key takeaways and suggest potential next steps or actions.    Detailed methodology appendix: Present all technical procedures in exhaustive detail.     Think about the logical flow of information that would help an audience understand and engage with your findings.     Preparing Your Presentation   In this activity, you'll prepare for your final project presentation.     Create an outline for your presentation, including:    Introduction: Hook, context, and main question(s)    Methods: Brief overview of your data sources and approach    Findings: 2-4 key insights from your analysis    Implications: What these findings mean and why they matter    Conclusion: Summary and potential next steps        Develop presentation materials:    Decide on presentation format (slides, live demo of CODAP dashboard, etc.)    Select key visualizations that best communicate your findings    Create any needed additional materials (handouts, reference sheets, etc.)        Practice your presentation:    Time yourself to ensure you stay within the allocated time    Practice explaining your visualizations clearly    Prepare for potential questions about your data or analysis        Peer review: Exchange presentation materials with a classmate and provide feedback on:    Clarity of main message    Effectiveness of visualizations    Flow and structure of the presentation    Any areas that might be confusing or need further explanation         Communicating Data Ethically and Effectively  The way we communicate data findings carries responsibility. Ethical and effective communication ensures that our analysis leads to understanding rather than misinterpretation.  Principles for ethical data communication:    Accuracy and Honesty  Present findings accurately without distortion, exaggeration, or omission of important context.    Transparency  Be open about data sources, methods, limitations, and uncertainties.    Respect for Audience  Avoid manipulation, oversimplification, or complexification that disrespects audience capabilities.    Cultural Sensitivity  Consider how findings might be interpreted by different groups and avoid reinforcing harmful stereotypes.    Privacy and Confidentiality  Protect individuals' privacy when communicating findings, especially with sensitive data.    Balanced Representation  Present multiple perspectives or interpretations when appropriate, rather than a single narrative.    Strategies for effective communication across different audiences:    For technical audiences : Include methodological details, statistical significance, and nuanced findings    For general audiences : Focus on clear insights, relatable examples, and visual explanation    For decision-makers : Emphasize implications, recommendations, and actionable insights    For diverse stakeholders : Consider multiple perspectives and potential impacts on different groups     Communicating Community Health Findings   When communicating findings from our Community Health project, we might:    Acknowledge limitations in our data, such as potential underreporting of health conditions in areas with less healthcare access    Present environmental disparities in historical and systemic context rather than implying they result from individual choices    Use neutral terminology when discussing neighborhood differences to avoid stigmatizing communities    Include perspectives from community members alongside statistical findings when possible    Be careful about how we present relationships between demographic factors and health outcomes to avoid reinforcing stereotypes    Clearly distinguish between correlation and causation in our environmental health findings       Ethical Data Communication   Which of the following represents the MOST ethical approach to communicating findings about educational achievement gaps between different demographic groups?      Avoid presenting the data entirely to prevent reinforcing stereotypes about any group.    While sensitivity is important, completely avoiding relevant data prevents understanding real disparities that might need addressing. Ethical communication involves presenting accurate information with appropriate context.      Present only the data that shows narrowing achievement gaps to focus on positive trends.    Selectively presenting only positive data creates an incomplete and potentially misleading picture. This approach lacks transparency and accuracy.      Present comprehensive data alongside contextual factors like historical inequities in school funding and resources.    Correct! This approach maintains accuracy by presenting the complete data while providing crucial context about systemic factors that influence educational outcomes. This helps audiences understand the complexities behind achievement gaps without reinforcing simplistic narratives about group differences.      Use dramatic visualizations to emphasize the gaps and create urgency for immediate action.    Using dramatic or exaggerated visualizations to evoke an emotional response can distort the data and manipulate the audience, which violates principles of accuracy and respect.       Communication Review   In this activity, you'll review and refine the communication aspects of your project.     Review your dashboard, presentation, or other communication materials with these questions:    Are there any ways your visualizations or narrative might inadvertently mislead viewers?    Have you adequately addressed limitations and uncertainty in your data and analysis?    Are there multiple perspectives or interpretations that should be acknowledged?    Does your communication respect the communities or populations represented in your data?        Based on your review, make at least three specific improvements to your communication materials to make them more ethical and effective.      Write a brief reflection (1-2 paragraphs) on the ethical considerations most relevant to your specific project and how you've addressed them in your communication.      "
+},
+{
+  "id": "def-data-storytelling",
+  "level": "2",
+  "url": "sec-data-storytelling.html#def-data-storytelling",
+  "type": "Definition",
+  "number": "111",
+  "title": "",
+  "body": "   Data storytelling is the practice of building a narrative around data to help an audience understand the context, significance, and implications of the data. It combines analytical, visual, and narrative elements to transform data into insights that drive understanding and action.   "
+},
+{
+  "id": "subsec-data-storytelling-5-1-2",
+  "level": "2",
+  "url": "sec-data-storytelling.html#subsec-data-storytelling-5-1-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Setup Conflict\/Tension Resolution "
+},
+{
+  "id": "fig-story-structure",
+  "level": "2",
+  "url": "sec-data-storytelling.html#fig-story-structure",
+  "type": "Figure",
+  "number": "112",
+  "title": "",
+  "body": " Data Story Structure   A diagram showing the flow of a data story from context\/question through data presentation to insights and actions, with annotations for key elements at each stage.   "
+},
+{
+  "id": "subsec-data-storytelling-8-1-1",
+  "level": "2",
+  "url": "sec-data-storytelling.html#subsec-data-storytelling-8-1-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Change over time "
+},
+{
+  "id": "subsec-data-storytelling-8-2-1",
+  "level": "2",
+  "url": "sec-data-storytelling.html#subsec-data-storytelling-8-2-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Comparison "
+},
+{
+  "id": "subsec-data-storytelling-8-3-1",
+  "level": "2",
+  "url": "sec-data-storytelling.html#subsec-data-storytelling-8-3-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Connection "
+},
+{
+  "id": "subsec-data-storytelling-8-4-1",
+  "level": "2",
+  "url": "sec-data-storytelling.html#subsec-data-storytelling-8-4-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Outlier "
+},
+{
+  "id": "subsec-data-storytelling-8-5-1",
+  "level": "2",
+  "url": "sec-data-storytelling.html#subsec-data-storytelling-8-5-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Zoom in\/out "
+},
+{
+  "id": "subsec-data-storytelling-8-6-1",
+  "level": "2",
+  "url": "sec-data-storytelling.html#subsec-data-storytelling-8-6-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Personal relevance "
+},
+{
+  "id": "example-storytelling-health",
+  "level": "2",
+  "url": "sec-data-storytelling.html#example-storytelling-health",
+  "type": "Example",
+  "number": "113",
+  "title": "Community Health Data Story.",
+  "body": " Community Health Data Story   A data story for our Community Health project might follow this structure:    Setup :   Introduce the context of environmental health disparities in the city  Establish the key questions about how environmental factors relate to health outcomes  Provide background on why this matters for public health and equity     Data Presentation :   Share a map visualizing health indicators across neighborhoods  Show key relationships between environmental factors and health outcomes  Highlight unexpected patterns or particularly affected areas     Insights :   Present the three most significant findings about environmental health relationships  Discuss how socioeconomic factors interact with these relationships  Address limitations and areas of uncertainty in the analysis     Resolution\/Call to Action :   Suggest potential interventions based on the findings  Identify neighborhoods most in need of environmental health improvements  Propose next steps for research or policy consideration      "
+},
+{
+  "id": "mc-storytelling",
+  "level": "2",
+  "url": "sec-data-storytelling.html#mc-storytelling",
+  "type": "Checkpoint",
+  "number": "114",
+  "title": "Data Storytelling Approaches.",
+  "body": " Data Storytelling Approaches   Which data storytelling approach would be MOST effective for communicating how unequal access to healthcare affects different demographic groups?      A technical analysis focusing on statistical significance and p-values    A highly technical approach focusing on statistical details would likely not be as effective for communicating inequities to a broad audience or driving understanding of human impact.      A comprehensive dashboard with all available metrics without narrative structure    While comprehensive data is valuable, presenting all metrics without a narrative structure or focus on human impact would make it difficult for the audience to identify key inequities or their implications.      A narrative that combines broad patterns of inequality with specific examples of how these affect individuals    Correct! This approach effectively combines data-driven patterns with human impact, making the inequities both statistically clear and emotionally resonant. Connecting aggregate data to individual experiences helps the audience understand both the scope and the human consequences of healthcare access disparities.      A presentation focused primarily on data collection methodology and limitations    While methodology and limitations are important to address, making them the primary focus would detract from communicating the actual inequities and their impact.     "
+},
+{
+  "id": "activity-story-planning",
+  "level": "2",
+  "url": "sec-data-storytelling.html#activity-story-planning",
+  "type": "Activity",
+  "number": "32",
+  "title": "Planning Your Data Story.",
+  "body": " Planning Your Data Story   In this activity, you'll develop a structured data story for your project.     Define your data story by answering these questions:    Who is your primary audience? (e.g., classmates, general public, specific stakeholders)    What is the main message or insight you want to communicate?    Why should your audience care about this topic?    What action or response do you hope to inspire?        Create an outline for your data story with these components:    Introduction : Context, motivation, and key questions    Main sections : 2-4 key findings or insights, each supported by visualizations    Conclusion : Summary of main message, implications, and potential next steps        For each section of your story, identify:    The specific data or visualization that will support this part of the narrative    How you'll transition from one point to the next to create a coherent flow    Any potential questions or objections from your audience that you should address      "
+},
+{
+  "id": "fig-presentation-example",
+  "level": "2",
+  "url": "sec-data-storytelling.html#fig-presentation-example",
+  "type": "Figure",
+  "number": "115",
+  "title": "",
+  "body": " Example Presentation Slide Layout   Example slide layout showing a clear title, concise text for context, a large visualization as the focal point, and a key insight or takeaway highlighted at the bottom.   "
+},
+{
+  "id": "parsons-presentation",
+  "level": "2",
+  "url": "sec-data-storytelling.html#parsons-presentation",
+  "type": "Checkpoint",
+  "number": "116",
+  "title": "Organizing a Data Presentation.",
+  "body": " Organizing a Data Presentation   Arrange the following elements in a logical order for a data science presentation.     Introduction: Hook the audience with a compelling question or problem statement related to your data.    Context: Briefly explain the dataset, its sources, and why this analysis matters.     Technical details: Spend most of your time explaining data cleaning procedures and statistical methods.    Key findings: Present your most important insights, supported by clear visualizations.    Literature review: Extensively discuss how your work relates to previous research.     Implications: Discuss what your findings mean for understanding the issue or making decisions.    Limitations: Acknowledge constraints of your data or analysis to establish credibility.    Conclusion: Summarize key takeaways and suggest potential next steps or actions.    Detailed methodology appendix: Present all technical procedures in exhaustive detail.     Think about the logical flow of information that would help an audience understand and engage with your findings.   "
+},
+{
+  "id": "activity-presentation-prep",
+  "level": "2",
+  "url": "sec-data-storytelling.html#activity-presentation-prep",
+  "type": "Activity",
+  "number": "33",
+  "title": "Preparing Your Presentation.",
+  "body": " Preparing Your Presentation   In this activity, you'll prepare for your final project presentation.     Create an outline for your presentation, including:    Introduction: Hook, context, and main question(s)    Methods: Brief overview of your data sources and approach    Findings: 2-4 key insights from your analysis    Implications: What these findings mean and why they matter    Conclusion: Summary and potential next steps        Develop presentation materials:    Decide on presentation format (slides, live demo of CODAP dashboard, etc.)    Select key visualizations that best communicate your findings    Create any needed additional materials (handouts, reference sheets, etc.)        Practice your presentation:    Time yourself to ensure you stay within the allocated time    Practice explaining your visualizations clearly    Prepare for potential questions about your data or analysis        Peer review: Exchange presentation materials with a classmate and provide feedback on:    Clarity of main message    Effectiveness of visualizations    Flow and structure of the presentation    Any areas that might be confusing or need further explanation      "
+},
+{
+  "id": "subsec-effective-communication-6-1-1",
+  "level": "2",
+  "url": "sec-data-storytelling.html#subsec-effective-communication-6-1-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "For technical audiences "
+},
+{
+  "id": "subsec-effective-communication-6-2-1",
+  "level": "2",
+  "url": "sec-data-storytelling.html#subsec-effective-communication-6-2-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "For general audiences "
+},
+{
+  "id": "subsec-effective-communication-6-3-1",
+  "level": "2",
+  "url": "sec-data-storytelling.html#subsec-effective-communication-6-3-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "For decision-makers "
+},
+{
+  "id": "subsec-effective-communication-6-4-1",
+  "level": "2",
+  "url": "sec-data-storytelling.html#subsec-effective-communication-6-4-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "For diverse stakeholders "
+},
+{
+  "id": "example-communication-health",
+  "level": "2",
+  "url": "sec-data-storytelling.html#example-communication-health",
+  "type": "Example",
+  "number": "117",
+  "title": "Communicating Community Health Findings.",
+  "body": " Communicating Community Health Findings   When communicating findings from our Community Health project, we might:    Acknowledge limitations in our data, such as potential underreporting of health conditions in areas with less healthcare access    Present environmental disparities in historical and systemic context rather than implying they result from individual choices    Use neutral terminology when discussing neighborhood differences to avoid stigmatizing communities    Include perspectives from community members alongside statistical findings when possible    Be careful about how we present relationships between demographic factors and health outcomes to avoid reinforcing stereotypes    Clearly distinguish between correlation and causation in our environmental health findings     "
+},
+{
+  "id": "mc-ethical-communication",
+  "level": "2",
+  "url": "sec-data-storytelling.html#mc-ethical-communication",
+  "type": "Checkpoint",
+  "number": "118",
+  "title": "Ethical Data Communication.",
+  "body": " Ethical Data Communication   Which of the following represents the MOST ethical approach to communicating findings about educational achievement gaps between different demographic groups?      Avoid presenting the data entirely to prevent reinforcing stereotypes about any group.    While sensitivity is important, completely avoiding relevant data prevents understanding real disparities that might need addressing. Ethical communication involves presenting accurate information with appropriate context.      Present only the data that shows narrowing achievement gaps to focus on positive trends.    Selectively presenting only positive data creates an incomplete and potentially misleading picture. This approach lacks transparency and accuracy.      Present comprehensive data alongside contextual factors like historical inequities in school funding and resources.    Correct! This approach maintains accuracy by presenting the complete data while providing crucial context about systemic factors that influence educational outcomes. This helps audiences understand the complexities behind achievement gaps without reinforcing simplistic narratives about group differences.      Use dramatic visualizations to emphasize the gaps and create urgency for immediate action.    Using dramatic or exaggerated visualizations to evoke an emotional response can distort the data and manipulate the audience, which violates principles of accuracy and respect.     "
+},
+{
+  "id": "activity-communication-review",
+  "level": "2",
+  "url": "sec-data-storytelling.html#activity-communication-review",
+  "type": "Activity",
+  "number": "34",
+  "title": "Communication Review.",
+  "body": " Communication Review   In this activity, you'll review and refine the communication aspects of your project.     Review your dashboard, presentation, or other communication materials with these questions:    Are there any ways your visualizations or narrative might inadvertently mislead viewers?    Have you adequately addressed limitations and uncertainty in your data and analysis?    Are there multiple perspectives or interpretations that should be acknowledged?    Does your communication respect the communities or populations represented in your data?        Based on your review, make at least three specific improvements to your communication materials to make them more ethical and effective.      Write a brief reflection (1-2 paragraphs) on the ethical considerations most relevant to your specific project and how you've addressed them in your communication.    "
+},
+{
+  "id": "sec-unit4-summary",
+  "level": "1",
+  "url": "sec-unit4-summary.html",
+  "type": "Section",
+  "number": "",
+  "title": "Unit 4 Summary",
+  "body": " Unit 4 Summary  In this unit, we've explored the art and science of data visualization and communication:    Visualization Fundamentals : We learned about the power of visualizations, principles for choosing the right chart types, and techniques for creating effective visual representations.    Ethics in Visualization : We examined how visualizations can mislead and how to create ethical representations that accurately convey data.    Advanced Visualization : We explored techniques for showing multi-variable relationships and building comprehensive dashboards to present our findings.    Statistical Thinking : We developed our understanding of correlation and other relationships, learning to interpret patterns with appropriate caution.    Data Storytelling : We discovered how to build compelling narratives around data that engage audiences and communicate insights effectively.    Presentation Techniques : We practiced methods for delivering our findings clearly and persuasively to different audiences.    Ethical Communication : We considered our responsibility to communicate findings accurately, transparently, and respectfully.    By applying these skills to both our Community Health dataset and your own chosen datasets, you've created visualizations, dashboards, and presentations that effectively communicate your findings and insights. These communication skills complement the technical data analysis abilities we've developed throughout the course, enabling you to not just analyze data but to share your discoveries in ways that inform, engage, and inspire action.   Unit 4 Reflection   Take some time to reflect on what you've learned in this unit and throughout the course:    What was the most valuable skill or concept you learned about data visualization and communication?    How has your understanding of effective data presentation changed during this unit?    What was the biggest challenge you faced in communicating your data findings, and how did you address it?    How might you apply the data science skills from this course in your future academic or professional work?       Unit 4 Review   Which of the following BEST describes the relationship between data analysis and data communication?      Data analysis is the only important aspect; communication is secondary and mainly for non-technical audiences.    This undervalues communication, which is essential for all audiences. Even the most sophisticated analysis has limited impact if not effectively communicated.      Data communication is about simplifying complex findings so non-experts can understand them.    While making findings accessible is important, effective data communication is not just about simplification; it's about conveying accurate insights appropriate to the audience and context.      Data visualization can make up for weaknesses in data analysis by making results look more impressive.    This approach would be misleading and unethical. Visualization should accurately represent analysis, not mask its weaknesses.      Data analysis and communication are equally essential parts of the data science process, with each informing and enhancing the other.    Correct! Analysis and communication are complementary, interdependent aspects of data science. Good analysis leads to meaningful insights, while effective communication ensures those insights are understood and can lead to action. The process is often iterative, with communication revealing needs for additional analysis.      "
+},
+{
+  "id": "sec-unit4-summary-3-1-1",
+  "level": "2",
+  "url": "sec-unit4-summary.html#sec-unit4-summary-3-1-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Visualization Fundamentals "
+},
+{
+  "id": "sec-unit4-summary-3-2-1",
+  "level": "2",
+  "url": "sec-unit4-summary.html#sec-unit4-summary-3-2-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Ethics in Visualization "
+},
+{
+  "id": "sec-unit4-summary-3-3-1",
+  "level": "2",
+  "url": "sec-unit4-summary.html#sec-unit4-summary-3-3-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Advanced Visualization "
+},
+{
+  "id": "sec-unit4-summary-3-4-1",
+  "level": "2",
+  "url": "sec-unit4-summary.html#sec-unit4-summary-3-4-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Statistical Thinking "
+},
+{
+  "id": "sec-unit4-summary-3-5-1",
+  "level": "2",
+  "url": "sec-unit4-summary.html#sec-unit4-summary-3-5-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Data Storytelling "
+},
+{
+  "id": "sec-unit4-summary-3-6-1",
+  "level": "2",
+  "url": "sec-unit4-summary.html#sec-unit4-summary-3-6-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Presentation Techniques "
+},
+{
+  "id": "sec-unit4-summary-3-7-1",
+  "level": "2",
+  "url": "sec-unit4-summary.html#sec-unit4-summary-3-7-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Ethical Communication "
+},
+{
+  "id": "exercise-unit4-reflection",
+  "level": "2",
+  "url": "sec-unit4-summary.html#exercise-unit4-reflection",
+  "type": "Checkpoint",
+  "number": "119",
+  "title": "Unit 4 Reflection.",
+  "body": " Unit 4 Reflection   Take some time to reflect on what you've learned in this unit and throughout the course:    What was the most valuable skill or concept you learned about data visualization and communication?    How has your understanding of effective data presentation changed during this unit?    What was the biggest challenge you faced in communicating your data findings, and how did you address it?    How might you apply the data science skills from this course in your future academic or professional work?     "
+},
+{
+  "id": "mc-unit4-review",
+  "level": "2",
+  "url": "sec-unit4-summary.html#mc-unit4-review",
+  "type": "Checkpoint",
+  "number": "120",
+  "title": "Unit 4 Review.",
+  "body": " Unit 4 Review   Which of the following BEST describes the relationship between data analysis and data communication?      Data analysis is the only important aspect; communication is secondary and mainly for non-technical audiences.    This undervalues communication, which is essential for all audiences. Even the most sophisticated analysis has limited impact if not effectively communicated.      Data communication is about simplifying complex findings so non-experts can understand them.    While making findings accessible is important, effective data communication is not just about simplification; it's about conveying accurate insights appropriate to the audience and context.      Data visualization can make up for weaknesses in data analysis by making results look more impressive.    This approach would be misleading and unethical. Visualization should accurately represent analysis, not mask its weaknesses.      Data analysis and communication are equally essential parts of the data science process, with each informing and enhancing the other.    Correct! Analysis and communication are complementary, interdependent aspects of data science. Good analysis leads to meaningful insights, while effective communication ensures those insights are understood and can lead to action. The process is often iterative, with communication revealing needs for additional analysis.     "
+},
+{
+  "id": "sec-project-overview",
+  "level": "1",
+  "url": "sec-project-overview.html",
+  "type": "Section",
+  "number": "",
+  "title": "Project Overview",
+  "body": " Project Overview  The course project is a semester-long data science investigation where you will:    Select a dataset aligned with your interests    Formulate meaningful statistical questions    Clean, organize, and transform the data    Create insightful visualizations    Build an interactive dashboard in CODAP    Present your findings in a clear, compelling manner    This project accounts for 60% of your overall course grade, with the remaining 40% coming from weekly assignments and participation. The project is designed to be completed incrementally throughout the semester, with specific milestones aligned to each unit of course content.   Learning Objectives  Through this project, you will demonstrate your ability to:    Apply data science concepts and techniques to real-world questions    Work effectively with data of varying quality and complexity    Create clear, accurate, and insightful data visualizations    Develop a coherent data narrative that communicates findings effectively    Critically evaluate data sources, limitations, and ethical considerations    Use CODAP to perform various data moves and create interactive visualizations      Dataset Selection Guidelines  Selecting an appropriate dataset is crucial for project success. Your dataset should:    Size and Complexity  Contain at least 100 records (rows) with at least 8 variables (columns). The dataset should be complex enough to support meaningful analysis but not so large that it becomes unmanageable in CODAP.    Variable Types  Include a mix of categorical and numerical variables to allow for diverse analysis and visualization techniques.    Quality and Completeness  Have reasonable completeness, but some missing values or quality issues are acceptable (and even educational to work with).    Interest and Relevance  Relate to a topic you find personally interesting or relevant, which will help sustain your engagement throughout the semester.    Accessibility  Be publicly available or properly licensed for educational use. You should be able to share the dataset with the instructor and classmates.    Recommended data repositories include:    Kaggle Datasets    Data.gov    Gapminder    Data.world    CDC Data & Statistics    World Bank Open Data     Dataset Evaluation Checklist   Use this checklist to evaluate potential datasets for your project. A suitable dataset should meet most of these criteria:      Contains at least 100 records (rows)    Includes at least 8 variables (columns)    Has a mix of categorical and numerical variables    Is on a topic that genuinely interests you    Has documentation about data collection methods and meanings of variables    Is reasonably clean but offers some opportunities for data cleaning practice    Can be easily imported into CODAP    Supports at least three meaningful statistical questions    Contains variables that might have interesting relationships    Is publicly available or properly licensed for educational use       "
+},
+{
+  "id": "exercise-dataset-evaluation",
+  "level": "2",
+  "url": "sec-project-overview.html#exercise-dataset-evaluation",
+  "type": "Checkpoint",
+  "number": "121",
+  "title": "Dataset Evaluation Checklist.",
+  "body": " Dataset Evaluation Checklist   Use this checklist to evaluate potential datasets for your project. A suitable dataset should meet most of these criteria:      Contains at least 100 records (rows)    Includes at least 8 variables (columns)    Has a mix of categorical and numerical variables    Is on a topic that genuinely interests you    Has documentation about data collection methods and meanings of variables    Is reasonably clean but offers some opportunities for data cleaning practice    Can be easily imported into CODAP    Supports at least three meaningful statistical questions    Contains variables that might have interesting relationships    Is publicly available or properly licensed for educational use     "
+},
+{
+  "id": "sec-project-workflow",
+  "level": "1",
+  "url": "sec-project-workflow.html",
+  "type": "Section",
+  "number": "",
+  "title": "Project Workflow and Timeline",
+  "body": " Project Workflow and Timeline  Your project will develop incrementally throughout the semester, with specific components aligned to the four main units of our course. Each phase builds on previous work, creating a coherent end-to-end data science project.   Data Science Project Workflow   A circular diagram showing the data science workflow: Ask Questions → Consider Data → Analyze Data → Interpret Results → Communicate Findings, with arrows showing the iterative nature of the process.     Phase 1: Dataset Selection and Exploration (Unit 1)  During this initial phase, you will:    Research and evaluate potential datasets based on the selection criteria    Select a dataset and document its source, contents, and relevance    Import your dataset into CODAP and perform initial exploration    Identify variable types and basic characteristics of your data    Consider potential ethical issues related to your dataset     Deliverable : Dataset Selection Report (5% of project grade)  A 1-2 page document that includes:    Dataset name, source, and link    Brief description of the dataset contents and context    Number of records and variables    List of key variables and their types    Why you selected this dataset and what interests you about it    Preliminary observations from initial exploration    Potential ethical considerations      Phase 2: Investigation Planning (Unit 2)  Building on your dataset exploration, you will:    Formulate 3-5 specific, meaningful statistical questions    Develop a comprehensive investigation plan    Identify data requirements for answering your questions    Assess data quality and potential limitations    Plan appropriate analysis approaches     Deliverable : Investigation Plan (10% of project grade)  A 2-3 page document that includes:    Refined statistical questions (clear, specific, answerable with data)    Required variables and data for each question    Assessment of data quality and completeness    Planned analysis methods and visualization approaches    Anticipated challenges and limitations    Expected outcomes or insights      Phase 3: Data Analysis and Processing (Unit 3)  In this phase, you will apply essential data moves to prepare your data for analysis:    Clean your dataset by handling missing values and outliers    Create derived variables as needed for your analysis    Filter and subset data to focus on relevant aspects    Calculate summary statistics and identify patterns    Group and aggregate data to gain higher-level insights    Document all transformations and decisions     Deliverable : Data Processing Documentation (15% of project grade)  A CODAP file and 2-3 page document that includes:    Summary of data quality issues encountered and how they were addressed    Description of derived variables created and their purpose    Documentation of filtering, grouping, and other data moves    Preliminary findings from summary statistics and grouping    Updated assessment of data limitations    CODAP file with processed data and basic visualizations      Phase 4: Visualization and Communication (Unit 4)  In the final phase, you will create effective visualizations and communicate your findings:    Design and create appropriate visualizations for your key findings    Build a comprehensive interactive dashboard in CODAP    Develop a clear data story based on your analysis    Prepare and deliver a final presentation    Document insights, implications, and limitations     Deliverables :    Visualization Dashboard (15% of project grade)   CODAP dashboard with multiple linked visualizations  Clear layout and organization  Appropriate visualization types for your data and questions  Interactive elements that enhance exploration  Text explanations and context within the dashboard     Final Presentation (15% of project grade)   5-7 minute presentation of your project  Clear communication of context, methods, and findings  Effective use of visualizations to support your narrative  Discussion of implications and limitations  Thoughtful responses to questions       Project Timeline Aligned with Course Units   A timeline showing the four project phases aligned with the four course units, with key deliverables marked at the end of each phase.    "
+},
+{
+  "id": "fig-project-workflow",
+  "level": "2",
+  "url": "sec-project-workflow.html#fig-project-workflow",
+  "type": "Figure",
+  "number": "122",
+  "title": "",
+  "body": " Data Science Project Workflow   A circular diagram showing the data science workflow: Ask Questions → Consider Data → Analyze Data → Interpret Results → Communicate Findings, with arrows showing the iterative nature of the process.   "
+},
+{
+  "id": "subsec-phase1-4",
+  "level": "2",
+  "url": "sec-project-workflow.html#subsec-phase1-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Deliverable "
+},
+{
+  "id": "subsec-phase2-4",
+  "level": "2",
+  "url": "sec-project-workflow.html#subsec-phase2-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Deliverable "
+},
+{
+  "id": "subsec-phase3-4",
+  "level": "2",
+  "url": "sec-project-workflow.html#subsec-phase3-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Deliverable "
+},
+{
+  "id": "subsec-phase4-4",
+  "level": "2",
+  "url": "sec-project-workflow.html#subsec-phase4-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Deliverables "
+},
+{
+  "id": "fig-project-timeline",
+  "level": "2",
+  "url": "sec-project-workflow.html#fig-project-timeline",
+  "type": "Figure",
+  "number": "123",
+  "title": "",
+  "body": " Project Timeline Aligned with Course Units   A timeline showing the four project phases aligned with the four course units, with key deliverables marked at the end of each phase.   "
+},
+{
+  "id": "sec-project-assessment",
+  "level": "1",
+  "url": "sec-project-assessment.html",
+  "type": "Section",
+  "number": "",
+  "title": "Assessment and Grading",
+  "body": " Assessment and Grading  Your project will be assessed based on how well you demonstrate data science skills and concepts across all phases of the work. The grading emphasizes both technical proficiency and communication effectiveness.   Grading Breakdown  The project accounts for 60% of your overall course grade, distributed across deliverables as follows:   Project Component Weights    Deliverable  Percentage of Project Grade  Percentage of Overall Course Grade    Dataset Selection Report  5%  3%    Investigation Plan  10%  6%    Data Processing Documentation  15%  9%    Visualization Dashboard  15%  9%    Final Presentation  15%  9%    Total  60%  36%     The remaining 40% of your course grade comes from weekly assignments (30%) and participation (10%).    Evaluation Rubrics  Each project component will be evaluated using the following rubrics:   Dataset Selection Report Rubric    Criterion  Excellent (A)  Satisfactory (B-C)  Needs Improvement (D-F)    Dataset Suitability  Dataset perfectly meets all selection criteria; rich with potential for analysis  Dataset meets most criteria; adequate for project purposes  Dataset fails to meet multiple criteria; limited potential for analysis    Documentation  Comprehensive documentation of source, contents, and context  Adequate documentation but missing some details  Minimal documentation; unclear source or context    Initial Exploration  Thorough initial exploration with insightful observations  Basic exploration with some relevant observations  Superficial exploration with few or no observations    Ethical Considerations  Thoughtful discussion of relevant ethical considerations  Basic mention of ethical considerations  No consideration of ethical dimensions      Investigation Plan Rubric    Criterion  Excellent (A)  Satisfactory (B-C)  Needs Improvement (D-F)    Statistical Questions  Clear, specific, meaningful questions that anticipate variability and are answerable with data  Mostly clear questions, but may lack specificity or clear connection to data  Vague, overly broad, or unanswerable questions    Data Assessment  Comprehensive assessment of data quality, completeness, and limitations  Basic assessment of data with some gaps  Minimal or unrealistic assessment of data    Analysis Approach  Well-reasoned approaches for each question, with clear justification  Reasonable approaches but limited justification  Inappropriate or vague analysis approaches    Plan Completeness  Thorough plan addressing all aspects of the investigation  Adequate plan but missing some elements  Incomplete or insufficient planning      Data Processing Documentation Rubric    Criterion  Excellent (A)  Satisfactory (B-C)  Needs Improvement (D-F)    Data Cleaning  Appropriate handling of missing values, outliers, and other quality issues with clear rationale  Basic cleaning with some rationale, but may miss some issues  Inadequate cleaning or inappropriate handling of data issues    Data Transformation  Creative and appropriate derived variables, filtering, and other transformations  Basic transformations that support analysis  Few or inappropriate transformations    Documentation  Clear, comprehensive documentation of all data moves and decisions  Adequate documentation but missing some details  Poor or insufficient documentation    Preliminary Analysis  Insightful summary statistics and group comparisons  Basic summary statistics with limited interpretation  Minimal or incorrect statistical analysis      Visualization Dashboard Rubric    Criterion  Excellent (A)  Satisfactory (B-C)  Needs Improvement (D-F)    Visualization Selection  Optimal chart types for each question and data type  Appropriate chart types with minor issues  Inappropriate or misleading chart types    Visual Design  Clear, accessible, and aesthetically pleasing design that enhances understanding  Functionally clear design with some issues  Cluttered, confusing, or poorly designed visualizations    Dashboard Organization  Logical flow with clear visual hierarchy and purposeful arrangement  Reasonable organization but lacking some coherence  Disorganized or illogical arrangement    Interactivity  Thoughtful interactive features that enhance exploration  Basic interactive functionality  Limited or no effective interactivity    Context and Labeling  Comprehensive titles, labels, and explanatory text  Adequate labeling with some context  Missing or confusing labels and context      Final Presentation Rubric    Criterion  Excellent (A)  Satisfactory (B-C)  Needs Improvement (D-F)    Content  Comprehensive coverage of context, methods, findings, and implications  Adequate coverage of key elements but lacking some depth  Incomplete or superficial treatment of the project    Data Story  Compelling narrative that effectively communicates insights  Clear narrative but lacking some engagement or coherence  Disjointed or unclear narrative    Visual Support  Excellent use of visualizations to support and enhance presentation  Adequate visual support with minor issues  Poor or distracting visual elements    Delivery  Clear, engaging delivery with strong command of material  Competent delivery with some room for improvement  Unclear, disorganized, or difficult to follow    Q&A Response  Thoughtful, knowledgeable responses to questions  Adequate responses to most questions  Unable to address questions effectively      "
+},
+{
+  "id": "subsec-grading-breakdown-3",
+  "level": "2",
+  "url": "sec-project-assessment.html#subsec-grading-breakdown-3",
+  "type": "Table",
+  "number": "124",
+  "title": "Project Component Weights",
+  "body": " Project Component Weights    Deliverable  Percentage of Project Grade  Percentage of Overall Course Grade    Dataset Selection Report  5%  3%    Investigation Plan  10%  6%    Data Processing Documentation  15%  9%    Visualization Dashboard  15%  9%    Final Presentation  15%  9%    Total  60%  36%    "
+},
+{
+  "id": "table-dataset-rubric",
+  "level": "2",
+  "url": "sec-project-assessment.html#table-dataset-rubric",
+  "type": "Table",
+  "number": "125",
+  "title": "Dataset Selection Report Rubric",
+  "body": " Dataset Selection Report Rubric    Criterion  Excellent (A)  Satisfactory (B-C)  Needs Improvement (D-F)    Dataset Suitability  Dataset perfectly meets all selection criteria; rich with potential for analysis  Dataset meets most criteria; adequate for project purposes  Dataset fails to meet multiple criteria; limited potential for analysis    Documentation  Comprehensive documentation of source, contents, and context  Adequate documentation but missing some details  Minimal documentation; unclear source or context    Initial Exploration  Thorough initial exploration with insightful observations  Basic exploration with some relevant observations  Superficial exploration with few or no observations    Ethical Considerations  Thoughtful discussion of relevant ethical considerations  Basic mention of ethical considerations  No consideration of ethical dimensions    "
+},
+{
+  "id": "table-investigation-rubric",
+  "level": "2",
+  "url": "sec-project-assessment.html#table-investigation-rubric",
+  "type": "Table",
+  "number": "126",
+  "title": "Investigation Plan Rubric",
+  "body": " Investigation Plan Rubric    Criterion  Excellent (A)  Satisfactory (B-C)  Needs Improvement (D-F)    Statistical Questions  Clear, specific, meaningful questions that anticipate variability and are answerable with data  Mostly clear questions, but may lack specificity or clear connection to data  Vague, overly broad, or unanswerable questions    Data Assessment  Comprehensive assessment of data quality, completeness, and limitations  Basic assessment of data with some gaps  Minimal or unrealistic assessment of data    Analysis Approach  Well-reasoned approaches for each question, with clear justification  Reasonable approaches but limited justification  Inappropriate or vague analysis approaches    Plan Completeness  Thorough plan addressing all aspects of the investigation  Adequate plan but missing some elements  Incomplete or insufficient planning    "
+},
+{
+  "id": "table-processing-rubric",
+  "level": "2",
+  "url": "sec-project-assessment.html#table-processing-rubric",
+  "type": "Table",
+  "number": "127",
+  "title": "Data Processing Documentation Rubric",
+  "body": " Data Processing Documentation Rubric    Criterion  Excellent (A)  Satisfactory (B-C)  Needs Improvement (D-F)    Data Cleaning  Appropriate handling of missing values, outliers, and other quality issues with clear rationale  Basic cleaning with some rationale, but may miss some issues  Inadequate cleaning or inappropriate handling of data issues    Data Transformation  Creative and appropriate derived variables, filtering, and other transformations  Basic transformations that support analysis  Few or inappropriate transformations    Documentation  Clear, comprehensive documentation of all data moves and decisions  Adequate documentation but missing some details  Poor or insufficient documentation    Preliminary Analysis  Insightful summary statistics and group comparisons  Basic summary statistics with limited interpretation  Minimal or incorrect statistical analysis    "
+},
+{
+  "id": "table-dashboard-rubric",
+  "level": "2",
+  "url": "sec-project-assessment.html#table-dashboard-rubric",
+  "type": "Table",
+  "number": "128",
+  "title": "Visualization Dashboard Rubric",
+  "body": " Visualization Dashboard Rubric    Criterion  Excellent (A)  Satisfactory (B-C)  Needs Improvement (D-F)    Visualization Selection  Optimal chart types for each question and data type  Appropriate chart types with minor issues  Inappropriate or misleading chart types    Visual Design  Clear, accessible, and aesthetically pleasing design that enhances understanding  Functionally clear design with some issues  Cluttered, confusing, or poorly designed visualizations    Dashboard Organization  Logical flow with clear visual hierarchy and purposeful arrangement  Reasonable organization but lacking some coherence  Disorganized or illogical arrangement    Interactivity  Thoughtful interactive features that enhance exploration  Basic interactive functionality  Limited or no effective interactivity    Context and Labeling  Comprehensive titles, labels, and explanatory text  Adequate labeling with some context  Missing or confusing labels and context    "
+},
+{
+  "id": "table-presentation-rubric",
+  "level": "2",
+  "url": "sec-project-assessment.html#table-presentation-rubric",
+  "type": "Table",
+  "number": "129",
+  "title": "Final Presentation Rubric",
+  "body": " Final Presentation Rubric    Criterion  Excellent (A)  Satisfactory (B-C)  Needs Improvement (D-F)    Content  Comprehensive coverage of context, methods, findings, and implications  Adequate coverage of key elements but lacking some depth  Incomplete or superficial treatment of the project    Data Story  Compelling narrative that effectively communicates insights  Clear narrative but lacking some engagement or coherence  Disjointed or unclear narrative    Visual Support  Excellent use of visualizations to support and enhance presentation  Adequate visual support with minor issues  Poor or distracting visual elements    Delivery  Clear, engaging delivery with strong command of material  Competent delivery with some room for improvement  Unclear, disorganized, or difficult to follow    Q&A Response  Thoughtful, knowledgeable responses to questions  Adequate responses to most questions  Unable to address questions effectively    "
+},
+{
+  "id": "sec-project-tips",
+  "level": "1",
+  "url": "sec-project-tips.html",
+  "type": "Section",
+  "number": "",
+  "title": "Tips for Success",
+  "body": " Tips for Success  Based on experiences of previous students, here are some tips to help you succeed in your data science project:    Start with a Great Dataset  Invest time in finding a dataset that genuinely interests you and meets the selection criteria. Your enthusiasm for the topic will sustain you through challenges.    Work Incrementally  Don't wait until the last minute for each deliverable. The project is designed to be developed continuously throughout the semester.    Document as You Go  Keep detailed notes on your data moves, decisions, and observations. This will make writing the documentation much easier.    Seek Feedback Early  Share your work with classmates and the instructor to get feedback at each stage, not just when deliverables are due.    Focus on Quality over Quantity  It's better to thoroughly explore a few meaningful questions than to superficially address many questions.    Embrace the Iterative Process  Be prepared to revisit and revise earlier work as you gain new insights. Data science is rarely a linear process.    Practice Your Presentation  Rehearse your final presentation multiple times to ensure clear communication and appropriate timing.    Remember that data science is both an art and a science. Technical skills matter, but so does the ability to ask good questions, find meaningful patterns, and communicate insights effectively.   Common Challenges and Solutions  Here are some common challenges students face in their projects and strategies to address them:    Dataset Too Large for CODAP  Solution: Consider using a relevant subset of the data, or aggregate the data at a higher level (e.g., monthly instead of daily).    Too Many Missing Values  Solution: Determine if the missing values follow a pattern. You might focus on a subset with more complete data or use the missing data pattern itself as an insight.    Not Finding Clear Patterns  Solution: Try different groupings, transformations, or visualization approaches. Sometimes, finding that expected relationships don't exist is itself an important finding.    Questions Too Broad or Narrow  Solution: Refine your questions based on initial data exploration. Iteratively adjust the scope to match what your data can reasonably answer.    Difficulty Telling a Coherent Story  Solution: Start with your most interesting finding and build your narrative around it. Consider how different insights relate to each other and to your central question.      Project Planning Reflection   Take some time to reflect on your approach to the project:    What topics or datasets are you most interested in exploring?    What specific skills from the course do you most want to develop through this project?    What do you anticipate being the most challenging aspect of the project for you?    What strategies will you use to stay on track throughout the semester?    How will you ensure that your final project effectively communicates your findings?      "
+},
+{
+  "id": "exercise-project-reflection",
+  "level": "2",
+  "url": "sec-project-tips.html#exercise-project-reflection",
+  "type": "Checkpoint",
+  "number": "130",
+  "title": "Project Planning Reflection.",
+  "body": " Project Planning Reflection   Take some time to reflect on your approach to the project:    What topics or datasets are you most interested in exploring?    What specific skills from the course do you most want to develop through this project?    What do you anticipate being the most challenging aspect of the project for you?    What strategies will you use to stay on track throughout the semester?    How will you ensure that your final project effectively communicates your findings?     "
+},
+{
+  "id": "sec-codap-basics",
+  "level": "1",
+  "url": "sec-codap-basics.html",
+  "type": "Section",
+  "number": "",
+  "title": "Getting Started with CODAP",
+  "body": " Getting Started with CODAP   Accessing CODAP  CODAP is a free, web-based application that runs in your browser. There's no need to download or install anything.    Access CODAP at codap.concord.org    No account is required to use CODAP, though creating an account allows you to save your work to the cloud    Documents can be saved locally to your computer as .codap files even without an account    CODAP works in all modern browsers (Chrome, Firefox, Safari, Edge)     CODAP Homepage   Screenshot of the CODAP homepage showing the welcome screen with options to create a new document, open examples, or open a local file.      Interface Overview  When you first open CODAP, you'll see a blank document with a menu bar at the top. The main workspace is where you'll create and arrange data views.  The primary components of the CODAP interface include:    Main Menu  Located at the top, providing access to file operations, examples, help, and tools.    Document Toolbar  Contains buttons for adding tables, graphs, text objects, maps, and other components.    Workspace  The main area where tables, graphs, and other components are displayed and arranged.    Component Windows  Individual windows for tables, graphs, etc., which can be moved, resized, minimized, or closed.     CODAP Interface Elements   Labeled screenshot showing the main elements of the CODAP interface including the menu bar, toolbar, workspace, and component windows.    Key features of the CODAP interface:    All components (tables, graphs, etc.) can be freely arranged in the workspace    Components can be resized by dragging their edges    Multiple components can be open simultaneously and interact with each other    Selected elements in one component are automatically highlighted in others      Importing Data  There are several ways to get data into CODAP:    Opening Example Documents  From the main menu, select \"Example Documents\" to explore pre-made CODAP files with data.    Importing from CSV or other file formats  From the main menu, select \"Import...\" to bring data from a local file.    Copy and Paste  Copy data from a spreadsheet and paste it directly into a CODAP table.    Manual Entry  Create a new table and enter data manually.    Using Plugins  Some plugins allow importing data from specific sources like Google Sheets.    To create a new table:    Click the \"Table\" button in the toolbar    Name your table when prompted    Click \"+\" to add attributes (columns)    Enter data or use the import options described above     Data Import Options in CODAP   Screenshot showing the CODAP import menu with various options for bringing data into the platform.     Practice Importing Data   Try these steps to practice importing data into CODAP:    Go to codap.concord.org    Click on \"Example Documents\" from the main menu    Select \"Mammals\" from the list of examples    Explore the data table that appears    Now, try downloading a CSV file from data.gov or another source    In a new CODAP document, use the Import feature to bring in your downloaded file       "
+},
+{
+  "id": "fig-codap-homepage",
+  "level": "2",
+  "url": "sec-codap-basics.html#fig-codap-homepage",
+  "type": "Figure",
+  "number": "131",
+  "title": "",
+  "body": " CODAP Homepage   Screenshot of the CODAP homepage showing the welcome screen with options to create a new document, open examples, or open a local file.   "
+},
+{
+  "id": "fig-codap-interface2",
+  "level": "2",
+  "url": "sec-codap-basics.html#fig-codap-interface2",
+  "type": "Figure",
+  "number": "132",
+  "title": "",
+  "body": " CODAP Interface Elements   Labeled screenshot showing the main elements of the CODAP interface including the menu bar, toolbar, workspace, and component windows.   "
+},
+{
+  "id": "fig-codap-import",
+  "level": "2",
+  "url": "sec-codap-basics.html#fig-codap-import",
+  "type": "Figure",
+  "number": "133",
+  "title": "",
+  "body": " Data Import Options in CODAP   Screenshot showing the CODAP import menu with various options for bringing data into the platform.   "
+},
+{
+  "id": "exercise-codap-import",
+  "level": "2",
+  "url": "sec-codap-basics.html#exercise-codap-import",
+  "type": "Checkpoint",
+  "number": "134",
+  "title": "Practice Importing Data.",
+  "body": " Practice Importing Data   Try these steps to practice importing data into CODAP:    Go to codap.concord.org    Click on \"Example Documents\" from the main menu    Select \"Mammals\" from the list of examples    Explore the data table that appears    Now, try downloading a CSV file from data.gov or another source    In a new CODAP document, use the Import feature to bring in your downloaded file     "
+},
+{
+  "id": "sec-core-features",
+  "level": "1",
+  "url": "sec-core-features.html",
+  "type": "Section",
+  "number": "",
+  "title": "Core CODAP Features",
+  "body": " Core CODAP Features   Working with Tables  Tables are the primary way to view and edit data in CODAP. Key operations include:    Adding and Renaming Attributes    Click \"+\" in the table header to add a new attribute (column)  Double-click an attribute name to rename it  Right-click an attribute for more options      Sorting Data    Click on an attribute name to sort ascending  Click again to sort descending  Click a third time to return to original order      Editing Values    Click directly on a cell to edit its value  Press Tab to move to the next cell  Press Enter to confirm an edit      Adding Cases (Rows)    Click \"+\" below the last row to add a new case  Right-click in the row area for options to insert or delete cases      Selecting Cases    Click on a row to select a single case  Shift+click to select a range of cases  Ctrl\/Cmd+click to select multiple non-adjacent cases       CODAP Table Features   Annotated screenshot of a CODAP table showing key elements like attribute headers, cell values, and row selectors.     Tips for working with tables:     Use consistent naming conventions for attributes (e.g., lowercase with underscores, or camelCase)    Right-click on attribute names to access additional options like hiding or deleting    Resize columns by dragging the dividers between attribute names    Hold Shift while resizing to maintain proportions of all columns    Use the ruler tool (available in the attribute menu) to create groups within a column      Creating and Customizing Graphs  CODAP's graphing capabilities are powerful yet easy to use. To create a graph:    Click the \"Graph\" button in the toolbar    Drag an attribute from the table to the horizontal (x) axis    Drag another attribute to the vertical (y) axis    Optionally, drag attributes to the legend area to encode with color, size, or shape    Graph types available in CODAP include:    Scatter Plots  Shows the relationship between two numerical attributes.    Dot Plots  Displays distributions of single attributes, with one axis showing values and the other showing counts.    Box Plots  Shows distributions with median, quartiles, and outliers.    Histograms  Displays frequency distributions with bins.    Bar Charts  Shows counts or other metrics for categorical data.     CODAP Graph Types   Examples of different graph types available in CODAP: scatter plot, dot plot, box plot, histogram, and bar chart.    To customize a graph:    Click the graph type icon to switch between plot types    Click on axis labels to adjust scales, titles, and other properties    Use the ruler tool to add reference lines or divide data into groups    Click on the palette icon to customize colors, point sizes, or other visual properties    Click \"Plot Options\" for additional settings specific to the current plot type     Tips for effective graphs:     Choose the appropriate graph type for your data and question    Use color, size, or shape to add additional dimensions to your visualization    Add meaningful axis labels by clicking on the default labels    Adjust axis scales if the default doesn't show your data effectively    For histograms, experiment with different bin widths to find meaningful patterns    Remember that selections in graphs automatically highlight corresponding data in tables and other graphs      Creating Calculated Attributes  One of CODAP's most powerful features is the ability to create new attributes based on calculations using existing data. To create a calculated attribute:    Click \"+\" in the table header to add a new attribute    Name your new attribute    Click the \"calculator\" icon that appears in the attribute header    Enter a formula in the formula editor    Click \"Apply\" to create the calculated attribute     CODAP Formula Editor   Screenshot of the CODAP formula editor showing the interface for creating calculated attributes.    Common operators and functions available in the formula editor:   CODAP Formula Elements    Category  Examples  Description    Basic Operators  +, -, *, \/, ^  Addition, subtraction, multiplication, division, exponentiation    Comparison Operators  <, >, =, <=, >=, !=  Less than, greater than, equal to, etc.    Logical Operators  and, or, not  Combine conditions    Math Functions  sqrt(), abs(), round(), log()  Square root, absolute value, rounding, logarithm    Text Functions  concat(), length(), upper()  Combine text, get length, convert to uppercase    Conditional Functions  if(condition, trueValue, falseValue)  Return different values based on a condition      Example Calculations in CODAP   Here are some useful calculations you might create:    Convert units: temperature_c * 9\/5 + 32 (Celsius to Fahrenheit)    Calculate a ratio: weight \/ height^2 (Body Mass Index)    Create a category: if(score >= 90, \"A\", if(score >= 80, \"B\", if(score >= 70, \"C\", \"D\")))    Calculate percent change: (new_value - old_value) \/ old_value * 100    Combine text: concat(first_name, \" \", last_name)       Tips for calculated attributes:     Use descriptive names for calculated attributes    Formulas automatically update if the source attributes change    You can reference other calculated attributes in your formulas    For complex calculations, consider breaking them into multiple attributes    Use the formula history to retrieve previous calculations    Right-click on attribute names to edit existing formulas      Geographic Mapping  CODAP includes basic mapping capabilities for visualizing geographic data:    Click the \"Map\" button in the toolbar to create a map    Drag attributes containing latitude and longitude to the appropriate fields    Optionally, drag another attribute to the legend to color points by category or value    Map features include:    Pan by dragging the map background    Zoom using the + and - buttons or scroll wheel    Change the base map using the layers icon    Select points on the map to highlight corresponding data in tables and graphs    Adjust point appearance using the point style controls     CODAP Map View   Screenshot of a CODAP map showing geographic data points with controls for zoom, layers, and styling.     Requirements for mapping:     Data must include latitude and longitude coordinates in decimal degrees    Latitude ranges from -90° (South) to 90° (North)    Longitude ranges from -180° (West) to 180° (East)    For data with location names but no coordinates, you may need to add coordinate attributes     "
+},
+{
+  "id": "fig-codap-table",
+  "level": "2",
+  "url": "sec-core-features.html#fig-codap-table",
+  "type": "Figure",
+  "number": "135",
+  "title": "",
+  "body": " CODAP Table Features   Annotated screenshot of a CODAP table showing key elements like attribute headers, cell values, and row selectors.   "
+},
+{
+  "id": "subsec-working-with-tables-5",
+  "level": "2",
+  "url": "sec-core-features.html#subsec-working-with-tables-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Tips for working with tables: "
+},
+{
+  "id": "fig-codap-graph-types",
+  "level": "2",
+  "url": "sec-core-features.html#fig-codap-graph-types",
+  "type": "Figure",
+  "number": "136",
+  "title": "",
+  "body": " CODAP Graph Types   Examples of different graph types available in CODAP: scatter plot, dot plot, box plot, histogram, and bar chart.   "
+},
+{
+  "id": "subsec-creating-graphs-9",
+  "level": "2",
+  "url": "sec-core-features.html#subsec-creating-graphs-9",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Tips for effective graphs: "
+},
+{
+  "id": "fig-codap-calculator",
+  "level": "2",
+  "url": "sec-core-features.html#fig-codap-calculator",
+  "type": "Figure",
+  "number": "137",
+  "title": "",
+  "body": " CODAP Formula Editor   Screenshot of the CODAP formula editor showing the interface for creating calculated attributes.   "
+},
+{
+  "id": "subsec-calculated-attributes-6",
+  "level": "2",
+  "url": "sec-core-features.html#subsec-calculated-attributes-6",
+  "type": "Table",
+  "number": "138",
+  "title": "CODAP Formula Elements",
+  "body": " CODAP Formula Elements    Category  Examples  Description    Basic Operators  +, -, *, \/, ^  Addition, subtraction, multiplication, division, exponentiation    Comparison Operators  <, >, =, <=, >=, !=  Less than, greater than, equal to, etc.    Logical Operators  and, or, not  Combine conditions    Math Functions  sqrt(), abs(), round(), log()  Square root, absolute value, rounding, logarithm    Text Functions  concat(), length(), upper()  Combine text, get length, convert to uppercase    Conditional Functions  if(condition, trueValue, falseValue)  Return different values based on a condition    "
+},
+{
+  "id": "example-calculations",
+  "level": "2",
+  "url": "sec-core-features.html#example-calculations",
+  "type": "Example",
+  "number": "139",
+  "title": "Example Calculations in CODAP.",
+  "body": " Example Calculations in CODAP   Here are some useful calculations you might create:    Convert units: temperature_c * 9\/5 + 32 (Celsius to Fahrenheit)    Calculate a ratio: weight \/ height^2 (Body Mass Index)    Create a category: if(score >= 90, \"A\", if(score >= 80, \"B\", if(score >= 70, \"C\", \"D\")))    Calculate percent change: (new_value - old_value) \/ old_value * 100    Combine text: concat(first_name, \" \", last_name)     "
+},
+{
+  "id": "subsec-calculated-attributes-8",
+  "level": "2",
+  "url": "sec-core-features.html#subsec-calculated-attributes-8",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Tips for calculated attributes: "
+},
+{
+  "id": "fig-codap-map",
+  "level": "2",
+  "url": "sec-core-features.html#fig-codap-map",
+  "type": "Figure",
+  "number": "140",
+  "title": "",
+  "body": " CODAP Map View   Screenshot of a CODAP map showing geographic data points with controls for zoom, layers, and styling.   "
+},
+{
+  "id": "subsec-mapping-7",
+  "level": "2",
+  "url": "sec-core-features.html#subsec-mapping-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Requirements for mapping: "
+},
+{
+  "id": "sec-advanced-techniques",
+  "level": "1",
+  "url": "sec-advanced-techniques.html",
+  "type": "Section",
+  "number": "",
+  "title": "Advanced CODAP Techniques",
+  "body": " Advanced CODAP Techniques   Working with Hierarchical Data  CODAP supports hierarchical data structures, where cases at one level contain cases at another level. Examples include:    Schools containing students    Countries containing cities    Experiments containing trials    To create hierarchical data:    Create a new collection (table) using the \"New Collection...\" option in the table menu    Specify the parent-child relationship between collections    Add attributes to each collection as needed    Benefits of hierarchical data:    Organize data at different levels of granularity    Analyze aggregated data (e.g., average test scores per school)    Easily filter across related collections    Maintain relationships between different units of analysis     Hierarchical Data Structure in CODAP   Screenshot showing a hierarchical data structure in CODAP with parent and child collections.      Advanced Filtering Techniques  CODAP offers several ways to filter your data:    Selection Filtering    Select cases in any view (table, graph, map)  Use the \"eyeball\" icon in the table to show only selected cases  Click again to show all cases      Formula-Based Filtering    Click the filter icon in the table header  Enter a formula that evaluates to true or false (e.g., price < 100 )  Only cases where the formula is true will be shown      Creating Subsets    Select cases of interest  Use \"New Collection From Selection\" from the table menu  This creates a new collection containing only the selected cases      Using Categorical Attributes    Create a categorical attribute using a formula (e.g., if(score > 70, \"Pass\", \"Fail\") )  Use this attribute in graphs to separate data into groups  Select specific categories to filter the data      Complex filtering examples:    Multiple conditions: (price < 100) and (rating >= 4)    Either\/or conditions: (category = \"Electronics\") or (category = \"Appliances\")    Exclusion: not(state = \"California\")    Range filtering: (age >= 18) and (age <= 65)    Text contains: contains(name, \"Smith\")      Advanced Data Import and Export  Beyond basic CSV importing, CODAP provides several advanced data handling options:    Importing from Plugins    Click the \"Plugins\" button in the toolbar  Select data connectors like \"Google Sheets\" or \"Data Interactives\"  Follow the plugin-specific instructions to import data      Importing Multiple Tables    Import each table separately  Use \"Relate Collections...\" to establish relationships between tables      Exporting Data    Use \"Export Case Data...\" from the table menu  Choose CSV or tab-delimited format  Select which attributes to include      Saving and Sharing CODAP Documents    Use \"Save\" to download as a .codap file  Use \"Share\" to generate a shareable link (requires account)  Use \"Create Poster\" to create a static view for presentation       Tips for data handling:     Keep original data intact by working with copies when making significant changes    Save your work frequently as CODAP files    When importing CSV files, check that numeric data is recognized correctly (not imported as text)    Use text attributes for identification codes, even if they contain numbers    Export your processed data if you need to use it in other applications      Building Interactive Dashboards  CODAP's flexible interface allows you to create interactive dashboards by combining multiple components:    Create tables, graphs, maps, and text objects that provide different views of your data    Arrange these components in a logical layout by dragging and resizing    Use text objects to add titles, explanations, or context    Take advantage of CODAP's automatic linking between components    Dashboard features to utilize:    Linked selection : Selecting items in one view highlights them in all views    Show\/hide components : Minimize components temporarily using the minimize button    Text objects : Add context with the \"Text\" button in the toolbar    Colored backgrounds : Use the gear icon in component windows to change background colors    Multiple representations : Show the same data in different ways (e.g., table, graph, map)     Example CODAP Dashboard   Screenshot of a CODAP dashboard with multiple linked components including tables, graphs, and explanatory text.     Dashboard design tips:     Place the most important visualizations prominently    Organize components in a logical flow (e.g., overview to detail)    Use consistent colors and styles across components    Include brief text explanations to guide users    Test the dashboard by selecting different data points to ensure linking works correctly    Resize the browser window to check how your dashboard adapts to different screen sizes     "
+},
+{
+  "id": "fig-hierarchical-data",
+  "level": "2",
+  "url": "sec-advanced-techniques.html#fig-hierarchical-data",
+  "type": "Figure",
+  "number": "141",
+  "title": "",
+  "body": " Hierarchical Data Structure in CODAP   Screenshot showing a hierarchical data structure in CODAP with parent and child collections.   "
+},
+{
+  "id": "subsec-data-import-export-4",
+  "level": "2",
+  "url": "sec-advanced-techniques.html#subsec-data-import-export-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Tips for data handling: "
+},
+{
+  "id": "subsec-building-dashboards-5-1-1",
+  "level": "2",
+  "url": "sec-advanced-techniques.html#subsec-building-dashboards-5-1-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Linked selection "
+},
+{
+  "id": "subsec-building-dashboards-5-2-1",
+  "level": "2",
+  "url": "sec-advanced-techniques.html#subsec-building-dashboards-5-2-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Show\/hide components "
+},
+{
+  "id": "subsec-building-dashboards-5-3-1",
+  "level": "2",
+  "url": "sec-advanced-techniques.html#subsec-building-dashboards-5-3-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Text objects "
+},
+{
+  "id": "subsec-building-dashboards-5-4-1",
+  "level": "2",
+  "url": "sec-advanced-techniques.html#subsec-building-dashboards-5-4-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Colored backgrounds "
+},
+{
+  "id": "subsec-building-dashboards-5-5-1",
+  "level": "2",
+  "url": "sec-advanced-techniques.html#subsec-building-dashboards-5-5-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Multiple representations "
+},
+{
+  "id": "fig-codap-dashboard",
+  "level": "2",
+  "url": "sec-advanced-techniques.html#fig-codap-dashboard",
+  "type": "Figure",
+  "number": "142",
+  "title": "",
+  "body": " Example CODAP Dashboard   Screenshot of a CODAP dashboard with multiple linked components including tables, graphs, and explanatory text.   "
+},
+{
+  "id": "subsec-building-dashboards-7",
+  "level": "2",
+  "url": "sec-advanced-techniques.html#subsec-building-dashboards-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Dashboard design tips: "
+},
+{
+  "id": "sec-tips-tricks",
+  "level": "1",
+  "url": "sec-tips-tricks.html",
+  "type": "Section",
+  "number": "",
+  "title": "CODAP Tips, Tricks, and Troubleshooting",
+  "body": " CODAP Tips, Tricks, and Troubleshooting   Keyboard Shortcuts and Efficiency Tips  Use these keyboard shortcuts and techniques to work more efficiently in CODAP:   Useful CODAP Shortcuts    Action  Windows\/Linux  Mac    Copy selected cells  Ctrl+C  Cmd+C    Paste into table  Ctrl+V  Cmd+V    Cut selection  Ctrl+X  Cmd+X    Select all cases  Ctrl+A  Cmd+A    Undo  Ctrl+Z  Cmd+Z    Redo  Ctrl+Y or Ctrl+Shift+Z  Cmd+Y or Cmd+Shift+Z    Save document  Ctrl+S  Cmd+S     Efficiency tips:    Duplicating Components  Right-click on a component's title bar and select \"Duplicate\" to create a copy.    Quick Graph Creation  Select attributes in the table by Ctrl\/Cmd+clicking their headers, then click the graph button.    Batch Editing  Select multiple cells in a column, right-click, and choose \"Edit Values\" to change them all at once.    Rearranging Components  Hold Shift while moving components to maintain their alignment with other components.    Quick Selections in Graphs  Click and drag to select multiple points in a graph; double-click background to select all points.      Common Issues and Solutions  If you encounter problems in CODAP, try these solutions for common issues:    Data Not Importing Correctly    Check that your CSV file uses consistent delimiters (commas or tabs)  Ensure text with commas is properly quoted in CSV files  Try opening the CSV in a text editor to check for formatting issues  For large files, try importing in smaller chunks      Formulas Not Working    Check for typos in attribute names (they are case-sensitive)  Verify parentheses are balanced  Make sure you're using the correct operators (e.g., = for equality, not ==)  Confirm that referenced attributes contain appropriate data types      Performance Issues    Close unnecessary components to reduce memory usage  Work with a subset of data if the full dataset is very large  Limit the number of simultaneously open graphs and tables  Save your work frequently to prevent loss from browser crashes      Display Issues    Try refreshing the browser if components aren't displaying correctly  Use a different browser if persistent display problems occur  Check that your browser is updated to the latest version  Adjust browser zoom level if components appear too large or small      Data Not Linking Between Components    Verify that all components are using the same data context (collection)  Check if any filters are applied that might be hiding selected data  Ensure that the components were created within the same document      If problems persist:    Try the \"Help\" menu for documentation and resources    Check the CODAP User Community at codap.concord.org\/help    Save your work and refresh the browser    Try a different browser (Chrome and Firefox work best with CODAP)      Advanced CODAP Tricks  These advanced techniques can help you get the most out of CODAP:    Using the Ruler Tool  The ruler tool allows you to create reference lines, divide data into segments, and more:  Click the ruler icon in graph axes or attribute headers  Click on the axis\/column to place dividers  Drag dividers to adjust their position  Use for creating bins, thresholds, or reference points      Creating Aggregate Functions  Calculate summaries across groups:  Create a graph with the grouping variable on one axis  Drag the variable to summarize to the other axis  Click the axis to change from \"Count\" to other aggregates (mean, median, sum)  Add these summaries back to your data using the \"Edit...\" menu option      Custom Color Palettes  Create custom color schemes for your data:  Drag an attribute to the legend area of a graph  Click on individual colors to change them  Use the color palette button to select from preset schemes  Choose colors that are colorblind-friendly for accessibility      Data Transformations  Transform data for better visualization:  Use log() for skewed distributions  Use (value - min) \/ (max - min) for normalization  Use (value - mean) \/ standardDeviation for standardization  Create binned categories with nested if() statements      Creating Custom Interactive Controls  Use formula-based approaches to create interactive controls:  Create a new collection with control parameters (e.g., threshold values)  Reference these values in formulas in your main dataset  Adjust the controls to see immediate effects on visualizations       CODAP Ruler Tool in Action   Screenshot showing the ruler tool being used to create segments in a graph.      CODAP Best Practices  Follow these best practices for effective and efficient work in CODAP:    Document Organization    Use descriptive titles for all components  Group related components together in the workspace  Add text objects to provide context and explanations  Organize your workflow from data import to final visualization      Data Management    Keep original data intact and use derived attributes for transformations  Use consistent naming conventions for attributes  Document the meaning of derived attributes and formulas  Save your work frequently and create backups      Visualization Practices    Choose appropriate visualization types for your data and questions  Use clear titles and labels for all visualizations  Apply consistent color schemes across related visualizations  Ensure visualizations are accessible (adequate contrast, colorblind-friendly)      Analysis Workflow    Start with exploratory visualizations to understand your data  Progress to focused visualizations that address specific questions  Create calculations to quantify relationships and patterns  Develop a comprehensive dashboard to communicate findings      By following these best practices, you'll create more effective, efficient, and communicative CODAP documents.   "
+},
+{
+  "id": "subsec-keyboard-shortcuts-3",
+  "level": "2",
+  "url": "sec-tips-tricks.html#subsec-keyboard-shortcuts-3",
+  "type": "Table",
+  "number": "143",
+  "title": "Useful CODAP Shortcuts",
+  "body": " Useful CODAP Shortcuts    Action  Windows\/Linux  Mac    Copy selected cells  Ctrl+C  Cmd+C    Paste into table  Ctrl+V  Cmd+V    Cut selection  Ctrl+X  Cmd+X    Select all cases  Ctrl+A  Cmd+A    Undo  Ctrl+Z  Cmd+Z    Redo  Ctrl+Y or Ctrl+Shift+Z  Cmd+Y or Cmd+Shift+Z    Save document  Ctrl+S  Cmd+S    "
+},
+{
+  "id": "fig-codap-ruler",
+  "level": "2",
+  "url": "sec-tips-tricks.html#fig-codap-ruler",
+  "type": "Figure",
+  "number": "144",
+  "title": "",
+  "body": " CODAP Ruler Tool in Action   Screenshot showing the ruler tool being used to create segments in a graph.   "
+},
+{
+  "id": "sec-codap-resources",
+  "level": "1",
+  "url": "sec-codap-resources.html",
+  "type": "Section",
+  "number": "",
+  "title": "Additional CODAP Resources",
+  "body": " Additional CODAP Resources  To continue developing your CODAP skills, explore these additional resources:    Official CODAP Documentation   codap.concord.org\/help - Comprehensive documentation, tutorials, and examples.    CODAP Sample Documents  Accessible from the CODAP homepage under \"Example Documents\" - Explore these to see diverse applications of CODAP.    Video Tutorials   YouTube: CODAP Tutorials - Step-by-step video guides for various CODAP features.    CODAP User Forum   codap.concord.org\/forums - Community discussions, questions, and answers.    Data Science Education Resources   HI-RiSE: Data Science Education Resources - Teaching materials using CODAP from Hollylynne Lee and colleagues.    Remember that the best way to learn CODAP is through practice. Experiment with different features, try new approaches, and don't be afraid to explore. The more you use CODAP, the more comfortable and proficient you'll become.   CODAP Exploration Challenge   To practice your CODAP skills, try this challenge:    Open the \"Mammals\" example document in CODAP    Create at least three different visualizations of the data (e.g., scatter plot, box plot, dot plot)    Create a calculated attribute that represents the brain weight as a percentage of body weight    Use the ruler tool to divide mammals into categories based on the new brain-to-body ratio    Create a dashboard that includes your visualizations, the data table, and a text object explaining what you've found    Save your CODAP document    This challenge will help you practice many of the skills described in this guide while exploring an interesting dataset.    "
+},
+{
+  "id": "exercise-codap-exploration",
+  "level": "2",
+  "url": "sec-codap-resources.html#exercise-codap-exploration",
+  "type": "Checkpoint",
+  "number": "145",
+  "title": "CODAP Exploration Challenge.",
+  "body": " CODAP Exploration Challenge   To practice your CODAP skills, try this challenge:    Open the \"Mammals\" example document in CODAP    Create at least three different visualizations of the data (e.g., scatter plot, box plot, dot plot)    Create a calculated attribute that represents the brain weight as a percentage of body weight    Use the ruler tool to divide mammals into categories based on the new brain-to-body ratio    Create a dashboard that includes your visualizations, the data table, and a text object explaining what you've found    Save your CODAP document    This challenge will help you practice many of the skills described in this guide while exploring an interesting dataset.   "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
