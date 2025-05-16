@@ -52,7 +52,7 @@
           </dl>
           
           <p>
-            The power of visualization is illustrated by Anscombe's Quartet, a set of four datasets with nearly identical statistical properties but dramatically different visual patterns:
+            The power of visualization is illustrated by <url href="https://en.wikipedia.org/wiki/Anscombe%27s_quartet" visual="https://en.wikipedia.org/wiki/Anscombe%27s_quartet">Anscombe's Quartet</url>, a set of four datasets with nearly identical statistical properties but dramatically different visual patterns:
           </p>
           
           <figure xml:id="fig-anscombe">
@@ -60,9 +60,6 @@
             <image source="anscombe-quartet.png" width="90%">
               <description>Four scatter plots showing datasets with identical summary statistics but very different patterns: a linear relationship, a curved relationship, a linear relationship with an outlier, and a vertical line with an outlier.</description>
             </image>
-            <credit>
-              <url href="https://en.wikipedia.org/wiki/Anscombe%27s_quartet">Wikipedia</url>
-            </credit>
           </figure>
           
           <p>
@@ -210,7 +207,7 @@
           </dl>
           
           <figure xml:id="fig-chart-types">
-            <caption>Common Chart Types</caption>
+            <caption>Common Chart Types from <url href="https://medium.com/@ThisIsShubhangi/data-visualization-choosing-the-right-chart-matters-d4f6b75f8ae0" visual="https://medium.com/@ThisIsShubhangi/data-visualization-choosing-the-right-chart-matters-d4f6b75f8ae0">Medium.com</url>.</caption>
             <image source="chart-types.png" width="90%">
               <description>Examples of various chart types including bar chart, line chart, scatter plot, pie chart, histogram, box plot, heat map, and map.</description>
             </image>
@@ -374,7 +371,9 @@
               <p><term>Consistency</term>: Use consistent formats, scales, and styles across related visualizations</p>
             </li>
           </ul>
-          
+          <p>
+            The Economist wrote a great article called, <url href="https://medium.economist.com/mistakes-weve-drawn-a-few-8cdd8a42d368" visual="https://medium.economist.com/mistakes-weve-drawn-a-few-8cdd8a42d368">Mistakes, We've Drawn a Few</url> that I would highly recommend reading to see several ways visuals are created that are misleading and better practices to follow when creating visuals from your data. Below you can see one of the graphs from that article, where the bad graph attempts to create a perfect correlation between dog weights and neck size by creating the y-axes disproportionally. 
+          </p>
           <figure xml:id="fig-good-bad-viz">
             <caption>Good vs. Problematic Visualization</caption>
             <image source="good-bad-viz.png" width="90%">
@@ -724,13 +723,6 @@
           </li>
         </dl>
         
-        <figure xml:id="fig-misleading-viz">
-          <caption>Misleading Visualization Examples</caption>
-          <image source="misleading-viz.png" width="90%">
-            <description>Examples of misleading visualizations: a bar chart with a truncated y-axis making small differences look large, a pie chart with distorted 3D perspective, and a cherry-picked time series showing only a favorable portion of data.</description>
-          </image>
-        </figure>
-        
         <p>
           To create ethical visualizations:
         </p>
@@ -786,89 +778,56 @@
         </example>
         
         <exercise xml:id="exercise-misleading-viz">
-          <title>Identifying Misleading Visualizations</title>
-          <introduction>
-            <p>For each visualization description, identify the primary way it might mislead viewers.</p>
-          </introduction>
-          <exercise>
-            <statement>
-              <p>A bar chart comparing company profits starts the y-axis at $50 million instead of zero, making a $5 million difference between competitors look very large.</p>
-            </statement>
-            <choices>
-              <choice correct="yes">
-                <statement>
-                  <p>Truncated axis</p>
-                </statement>
-                <feedback>
-                  <p>Correct! Starting the y-axis above zero on a bar chart violates the principle that the length of bars should be proportional to the values they represent. This exaggerates the differences between values.</p>
-                </feedback>
-              </choice>
-              <choice>
-                <statement>
-                  <p>Cherry-picking data</p>
-                </statement>
-                <feedback>
-                  <p>There's no indication that data points were selectively included or excluded; rather, the issue is with how the included data is presented.</p>
-                </feedback>
-              </choice>
-              <choice>
-                <statement>
-                  <p>3D effects</p>
-                </statement>
-                <feedback>
-                  <p>The description doesn't mention any 3D effects being used in the visualization.</p>
-                </feedback>
-              </choice>
-              <choice>
-                <statement>
-                  <p>Inappropriate chart type</p>
-                </statement>
-                <feedback>
-                  <p>A bar chart is an appropriate type for comparing values across categories; the issue is with the scaling, not the chart type itself.</p>
-                </feedback>
-              </choice>
-            </choices>
-          </exercise>
-          <exercise>
-            <statement>
-              <p>A line chart shows a company's stock performance over only the three months when it performed best, without indicating that this is a selected portion of a longer time series.</p>
-            </statement>
-            <choices>
-              <choice>
-                <statement>
-                  <p>Problematic color scale</p>
-                </statement>
-                <feedback>
-                  <p>The description doesn't mention any issues with color usage in the visualization.</p>
-                </feedback>
-              </choice>
-              <choice correct="yes">
-                <statement>
-                  <p>Cherry-picking data</p>
-                </statement>
-                <feedback>
-                  <p>Correct! By selectively showing only the three best-performing months without proper context, the visualization presents an incomplete and potentially misleading picture of the company's overall performance.</p>
-                </feedback>
-              </choice>
-              <choice>
-                <statement>
-                  <p>Manipulated aspect ratio</p>
-                </statement>
-                <feedback>
-                  <p>While aspect ratio manipulation could make the trend look steeper, the primary issue described is the selective inclusion of only favorable data points.</p>
-                </feedback>
-              </choice>
-              <choice>
-                <statement>
-                  <p>Missing uncertainty information</p>
-                </statement>
-                <feedback>
-                  <p>While context is missing, the primary issue is the selective inclusion of only favorable data points rather than the omission of uncertainty information.</p>
-                </feedback>
-              </choice>
-            </choices>
-          </exercise>
-        </exercise>
+        <title>Identifying Misleading Visualizations</title>
+        <introduction>
+          <p>For each visualization description, identify the primary way it might mislead viewers.</p>
+        </introduction>
+        <webwork>
+          <setup>
+            <pg-code>
+              $truncated_axis = RadioButtons(
+                ["Truncated axis",
+                "Cherry-picking data",
+                "3D effects",
+                "Inappropriate chart type"],
+                0,  # index of correct answer (0-based)
+                labels => ["a", "b", "c", "d"]
+              );
+              
+              $cherry_picking = RadioButtons(
+                ["Problematic color scale",
+                "Cherry-picking data",
+                "Manipulated aspect ratio",
+                "Missing uncertainty information"],
+                1,  # index of correct answer (0-based)
+                labels => ["a", "b", "c", "d"]
+              );
+            </pg-code>
+          </setup>
+          
+          <statement>
+            <p>Scenario 1: A bar chart comparing company profits starts the y-axis at $50 million instead of zero, making a $5 million difference between competitors look very large.</p>
+            <p>What is the primary way this visualization might mislead viewers?</p>
+            <p><var name="$truncated_axis" form="buttons"/></p>
+            
+            <p>Scenario 2: A line chart shows a company's stock performance over only the three months when it performed best, without indicating that this is a selected portion of a longer time series.</p>
+            <p>What is the primary way this visualization might mislead viewers?</p>
+            <p><var name="$cherry_picking" form="buttons"/></p>
+          </statement>
+          
+          <solution>
+            <p><b>Scenario 1:</b> The primary issue is <b>truncated axis</b>.</p>
+            <p>Starting the y-axis above zero on a bar chart violates the principle that the length of bars should be proportional to the values they represent. This exaggerates the differences between values.</p>
+            
+            <p><b>Scenario 2:</b> The primary issue is <b>cherry-picking data</b>.</p>
+            <p>By selectively showing only the three best-performing months without proper context, the visualization presents an incomplete and potentially misleading picture of the company's overall performance.</p>
+          </solution>
+          
+          <hint>
+            <p>Think about both what is shown in the visualization and how it is presented. Some visualization problems relate to selective inclusion of data, while others relate to visual perception and how data is represented.</p>
+          </hint>
+        </webwork>
+      </exercise>
         
         <activity xml:id="activity-ethical-viz">
           <title>Creating Ethical Alternatives</title>
@@ -967,7 +926,9 @@
               </p>
             </li>
           </dl>
-          
+          <p>
+            The visual below from <url href="https://datascience.stackexchange.com/questions/23061/what-are-the-differences-between-multivariate-data-visualizations-and-multidimen" visual="https://datascience.stackexchange.com/questions/23061/what-are-the-differences-between-multivariate-data-visualizations-and-multidimen">datascience.stackexchange.com</url>employs several advanced visualization techniques to display four dimensions of data simultaneously. The x-axis plots GDP Per Capita while the y-axis shows Average Years Spent in Education, creating a spatial distribution of countries or regions. The color spectrum from red (low, 4.900) to green (high, 7.600) encodes Satisfaction levels, allowing viewers to quickly identify that higher GDP areas generally report higher satisfaction. Meanwhile, the size of each circle represents Feel Safe Scores, with larger bubbles indicating greater perceived safety (up to 89.60). This multidimensional approach creates visual patterns that reveal complex relationships between wealth, education, satisfaction, and safety that might be missed in simpler visualizations. The design leverages pre-attentive visual processing through position, color, and size to communicate relationships efficiently without overwhelming the viewer.
+          </p>
           <figure xml:id="fig-multi-variable">
             <caption>Multi-Variable Visualization Techniques</caption>
             <image source="multi-variable-viz.png" width="90%">
@@ -1128,245 +1089,6 @@
           </activity>
         </subsection>
         
-        <subsection xml:id="subsec-dashboards">
-          <title>Building Effective Dashboards</title>
-          
-          <p>
-            Dashboards combine multiple visualizations into a cohesive whole, allowing viewers to see different aspects of the data and gain a more comprehensive understanding. Well-designed dashboards can powerfully communicate complex findings.
-          </p>
-          
-          <definition xml:id="def-dashboard">
-            <statement>
-              <p>
-                A <term>dashboard</term> is a collection of multiple visual displays organized on a single screen to monitor conditions, track performance, or communicate insights. Dashboards typically include charts, graphs, maps, and other visual elements that together tell a coherent data story.
-              </p>
-            </statement>
-          </definition>
-          
-          <p>
-            Principles for effective dashboard design:
-          </p>
-          
-          <dl>
-            <li>
-              <title>Purpose-Driven Design</title>
-              <p>
-                Design around specific questions or decisions the dashboard should inform, not just to display available data.
-              </p>
-            </li>
-            <li>
-              <title>Logical Organization</title>
-              <p>
-                Arrange visualizations in a meaningful sequence or grouping that guides the viewer through the data story.
-              </p>
-            </li>
-            <li>
-              <title>Visual Hierarchy</title>
-              <p>
-                Make the most important information most prominent, with secondary information less visually dominant.
-              </p>
-            </li>
-            <li>
-              <title>Consistency</title>
-              <p>
-                Use consistent colors, scales, and design elements across visualizations to create unity.
-              </p>
-            </li>
-            <li>
-              <title>Complementary Views</title>
-              <p>
-                Include visualizations that show different aspects of the data or answer different but related questions.
-              </p>
-            </li>
-            <li>
-              <title>Appropriate Context</title>
-              <p>
-                Provide necessary reference points, comparison values, or explanatory text to help interpret the visualizations.
-              </p>
-            </li>
-            <li>
-              <title>Interactivity</title>
-              <p>
-                When possible, include interactive elements that allow viewers to explore details, filter data, or change perspective.
-              </p>
-            </li>
-          </dl>
-          
-          <figure xml:id="fig-dashboard-example">
-            <caption>Example Dashboard Layout</caption>
-            <image source="dashboard-example.png" width="90%">
-              <description>A sample dashboard layout showing multiple related visualizations arranged in a logical flow with a clear visual hierarchy and consistent design elements.</description>
-            </image>
-          </figure>
-          
-          <example xml:id="example-dashboard-health">
-            <title>Community Health Dashboard</title>
-            <statement>
-              <p>
-                For our Community Health project, an effective dashboard might include:
-              </p>
-              <ul>
-                <li>
-                  <p><term>Central visualization</term>: A map showing neighborhoods colored by an environmental health risk index</p>
-                </li>
-                <li>
-                  <p><term>Supporting charts</term>:</p>
-                  <ul>
-                    <li><p>A scatter plot showing the relationship between air quality and asthma rates</p></li>
-                    <li><p>Bar charts comparing key health metrics across regions</p></li>
-                    <li><p>A small multiples display showing health trends over time</p></li>
-                  </ul>
-                </li>
-                <li>
-                  <p><term>Interactive elements</term>:</p>
-                  <ul>
-                    <li><p>The ability to select neighborhoods on the map and see corresponding data points highlighted in other charts</p></li>
-                    <li><p>Filters to focus on specific regions or income brackets</p></li>
-                    <li><p>Options to toggle between different health metrics</p></li>
-                  </ul>
-                </li>
-                <li>
-                  <p><term>Context</term>: Brief text explaining key findings, methodology, and important caveats</p>
-                </li>
-              </ul>
-            </statement>
-          </example>
-          
-          <p>
-            CODAP allows you to create simple dashboards by:
-          </p>
-          
-          <ul>
-            <li>
-              <p>Creating multiple visualizations using different tools (graphs, maps, tables)</p>
-            </li>
-            <li>
-              <p>Arranging these visualizations on the workspace by dragging and resizing</p>
-            </li>
-            <li>
-              <p>Creating links between visualizations so selections in one affect others</p>
-            </li>
-            <li>
-              <p>Adding text objects to provide context, explanations, or titles</p>
-            </li>
-            <li>
-              <p>Saving the entire configuration as a single CODAP document</p>
-            </li>
-          </ul>
-          
-          <exercise xml:id="matching-dashboard-elements">
-            <title>Dashboard Elements and Purposes</title>
-            <statement>
-              <p>Match each dashboard element with its primary purpose.</p>
-            </statement>
-            <matches>
-              <match>
-                <premise>Overview visualization (e.g., map or summary chart)</premise>
-                <response>Providing a big-picture view and orientation to the data</response>
-              </match>
-              <match>
-                <premise>Linked selection across visualizations</premise>
-                <response>Helping viewers identify the same entities across different views of the data</response>
-              </match>
-              <match>
-                <premise>Consistent color scheme across charts</premise>
-                <response>Creating visual unity and reducing cognitive load for interpretation</response>
-              </match>
-              <match>
-                <premise>Text annotations and highlights</premise>
-                <response>Directing attention to key insights and providing necessary context</response>
-              </match>
-              <match>
-                <premise>Interactive filters</premise>
-                <response>Allowing viewers to focus on specific subsets of data relevant to their questions</response>
-              </match>
-            </matches>
-          </exercise>
-          
-          <activity xml:id="activity-dashboard">
-            <title>Creating a Dashboard in CODAP</title>
-            <introduction>
-              <p>
-                In this activity, you'll create a comprehensive dashboard for your project dataset.
-              </p>
-            </introduction>
-            <task>
-              <statement>
-                <p>
-                  Plan your dashboard by:
-                </p>
-                <ul>
-                  <li>
-                    <p>Identifying 3-5 key questions your dashboard should answer</p>
-                  </li>
-                  <li>
-                    <p>Sketching a layout with placeholder visualizations</p>
-                  </li>
-                  <li>
-                    <p>Deciding on a logical flow or organization for your visualizations</p>
-                  </li>
-                </ul>
-              </statement>
-            </task>
-            <task>
-              <statement>
-                <p>
-                  Create the individual visualizations needed for your dashboard, including:
-                </p>
-                <ul>
-                  <li>
-                    <p>An overview visualization that provides a big-picture view of your data</p>
-                  </li>
-                  <li>
-                    <p>Supporting visualizations that show different aspects or details</p>
-                  </li>
-                  <li>
-                    <p>Any necessary reference information or context</p>
-                  </li>
-                </ul>
-              </statement>
-            </task>
-            <task>
-              <statement>
-                <p>
-                  Arrange your visualizations in CODAP to create your dashboard:
-                </p>
-                <ul>
-                  <li>
-                    <p>Position elements according to your planned layout</p>
-                  </li>
-                  <li>
-                    <p>Resize visualizations as needed for visual hierarchy</p>
-                  </li>
-                  <li>
-                    <p>Add text objects for titles, explanations, and context</p>
-                  </li>
-                  <li>
-                    <p>Ensure that visualizations are linked so selections in one affect others</p>
-                  </li>
-                </ul>
-              </statement>
-            </task>
-            <task>
-              <statement>
-                <p>
-                  Test your dashboard with a classmate. Ask them to:
-                </p>
-                <ul>
-                  <li>
-                    <p>Navigate through your dashboard without instruction</p>
-                  </li>
-                  <li>
-                    <p>Identify the main insights or findings</p>
-                  </li>
-                  <li>
-                    <p>Provide feedback on clarity, organization, and effectiveness</p>
-                  </li>
-                </ul>
-              </statement>
-            </task>
-          </activity>
-        </subsection>
         
         <subsection xml:id="subsec-statistical-relationships">
           <title>Statistical Thinking: Correlation and Relationships</title>
@@ -1439,7 +1161,7 @@
           </dl>
           
           <figure xml:id="fig-correlation-types">
-            <caption>Types of Statistical Relationships</caption>
+            <caption>Types of Statistical Relationships from <url href="https://www.onlinemathlearning.com/scatter-plots.html#google_vignette" visual="https://www.onlinemathlearning.com/scatter-plots.html#google_vignette">Online Math Learning</url></caption>
             <image source="correlation-types.png" width="90%">
               <description>A grid of scatter plots showing different types of relationships: strong positive linear, weak positive linear, strong negative linear, no relationship, and various non-linear relationships.</description>
             </image>
@@ -1669,7 +1391,7 @@
           </dl>
           
           <figure xml:id="fig-story-structure">
-            <caption>Data Story Structure</caption>
+            <caption>Data Story Structure (according to <url href="https://www.netsuite.com/portal/resource/articles/data-warehouse/data-storytelling-tips.shtml" visual="https://www.netsuite.com/portal/resource/articles/data-warehouse/data-storytelling-tips.shtml">Oracle</url></caption>
             <image source="data-story-structure.png" width="80%">
               <description>A diagram showing the flow of a data story from context/question through data presentation to insights and actions, with annotations for key elements at each stage.</description>
             </image>
@@ -1944,13 +1666,6 @@
               <p>End with clear implications or recommendations if appropriate</p>
             </li>
           </ul>
-          
-          <figure xml:id="fig-presentation-example">
-            <caption>Example Presentation Slide Layout</caption>
-            <image source="presentation-slide.png" width="80%">
-              <description>Example slide layout showing a clear title, concise text for context, a large visualization as the focal point, and a key insight or takeaway highlighted at the bottom.</description>
-            </image>
-          </figure>
           
           <exercise xml:id="parsons-presentation" adaptive="yes">
             <title>Organizing a Data Presentation</title>
