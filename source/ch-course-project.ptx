@@ -40,7 +40,7 @@
         </ul>
         
         <p>
-          This project accounts for 60% of your overall course grade, with the remaining 40% coming from weekly assignments and participation. The project is designed to be completed incrementally throughout the semester, with specific milestones aligned to each unit of course content.
+          This project accounts for a large portion of your total grade in this class, but don't be overwhelmed! The project is designed to be completed incrementally throughout the semester, with specific milestones aligned to each unit of course content.
         </p>
         
         <subsection xml:id="subsec-learning-objectives">
@@ -138,13 +138,20 @@
           </ul>
           
           <exercise xml:id="exercise-dataset-evaluation">
-            <title>Dataset Evaluation Checklist</title>
+          <title>Dataset Evaluation Checklist</title>
+          <webwork>
+            <setup>
+              <pg-code>
+                # No computation needed for this checklist display
+                $checklist_text = "This is a reference checklist for dataset evaluation.";
+              </pg-code>
+            </setup>
+            
             <statement>
               <p>
                 Use this checklist to evaluate potential datasets for your project. A suitable dataset should meet most of these criteria:
               </p>
-            </statement>
-            <answer>
+              
               <ul>
                 <li>
                   <p>Contains at least 100 records (rows)</p>
@@ -177,8 +184,19 @@
                   <p>Is publicly available or properly licensed for educational use</p>
                 </li>
               </ul>
-            </answer>
-          </exercise>
+              
+              <p>
+                Review the dataset you're considering and evaluate how many of these criteria it meets. A good dataset for your project should satisfy at least 7-8 of these items.
+              </p>
+            </statement>
+            
+            <solution>
+              <p>
+                This checklist serves as a reference for dataset evaluation. There is no single correct answer, as the suitability of a dataset depends on your specific project needs. However, datasets meeting more criteria will generally provide better opportunities for meaningful analysis.
+              </p>
+            </solution>
+          </webwork>
+        </exercise>
         </subsection>
       </section>
 
@@ -190,14 +208,14 @@
         </p>
         
         <figure xml:id="fig-project-workflow">
-          <caption>Data Science Project Workflow</caption>
-          <image source="project-workflow.png" width="100%">
+          <caption>Recall the Data Science Investigation Process Framework developed by NCSU</caption>
+          <image source="ds-investigation-process.png" width="100%">
             <description>A circular diagram showing the data science workflow: Ask Questions → Consider Data → Analyze Data → Interpret Results → Communicate Findings, with arrows showing the iterative nature of the process.</description>
           </image>
         </figure>
         
         <subsection xml:id="subsec-phase1">
-          <title>Phase 1: Dataset Selection and Exploration (Unit 1)</title>
+          <title>Phase 1: Dataset Selection + Exploration (Unit 1)</title>
           
           <p>
             During this initial phase, you will:
@@ -222,7 +240,7 @@
           </ul>
           
           <p>
-            <term>Deliverable</term>: Dataset Selection Report (5% of project grade)
+            <term>Deliverable</term>: Dataset Selection Report
           </p>
           
           <p>
@@ -280,7 +298,7 @@
           </ul>
           
           <p>
-            <term>Deliverable</term>: Investigation Plan (10% of project grade)
+            <term>Deliverable</term>: Investigation Plan
           </p>
           
           <p>
@@ -338,7 +356,7 @@
           </ul>
           
           <p>
-            <term>Deliverable</term>: Data Processing Documentation (15% of project grade)
+            <term>Deliverable</term>: Data Processing Documentation
           </p>
           
           <p>
@@ -393,22 +411,12 @@
           </ul>
           
           <p>
-            <term>Deliverables</term>: 
+            <term>Deliverable</term>: Final Presentation
           </p>
           
           <ul>
             <li>
-              <p>Visualization Dashboard (15% of project grade)</p>
-              <ul>
-                <li><p>CODAP dashboard with multiple linked visualizations</p></li>
-                <li><p>Clear layout and organization</p></li>
-                <li><p>Appropriate visualization types for your data and questions</p></li>
-                <li><p>Interactive elements that enhance exploration</p></li>
-                <li><p>Text explanations and context within the dashboard</p></li>
-              </ul>
-            </li>
-            <li>
-              <p>Final Presentation (15% of project grade)</p>
+              <p>Final Presentation</p>
               <ul>
                 <li><p>5-7 minute presentation of your project</p></li>
                 <li><p>Clear communication of context, methods, and findings</p></li>
@@ -421,7 +429,7 @@
         </subsection>
         
         <figure xml:id="fig-project-timeline">
-          <caption>Project Timeline Aligned with Course Units</caption>
+          <caption>Project Timeline</caption>
           <image source="project-timeline.png" width="100%">
             <description>A timeline showing the four project phases aligned with the four course units, with key deliverables marked at the end of each phase.</description>
           </image>
@@ -435,259 +443,232 @@
           Your project will be assessed based on how well you demonstrate data science skills and concepts across all phases of the work. The grading emphasizes both technical proficiency and communication effectiveness.
         </p>
         
-        <subsection xml:id="subsec-grading-breakdown">
-          <title>Grading Breakdown</title>
-          
-          <p>
-            The project accounts for 60% of your overall course grade, distributed across deliverables as follows:
-          </p>
-          
-          <table>
-            <title>Project Component Weights</title>
-            <tabular>
-              <row header="yes">
-                <cell>Deliverable</cell>
-                <cell>Percentage of Project Grade</cell>
-                <cell>Percentage of Overall Course Grade</cell>
-              </row>
-              <row>
-                <cell>Dataset Selection Report</cell>
-                <cell>5%</cell>
-                <cell>3%</cell>
-              </row>
-              <row>
-                <cell>Investigation Plan</cell>
-                <cell>10%</cell>
-                <cell>6%</cell>
-              </row>
-              <row>
-                <cell>Data Processing Documentation</cell>
-                <cell>15%</cell>
-                <cell>9%</cell>
-              </row>
-              <row>
-                <cell>Visualization Dashboard</cell>
-                <cell>15%</cell>
-                <cell>9%</cell>
-              </row>
-              <row>
-                <cell>Final Presentation</cell>
-                <cell>15%</cell>
-                <cell>9%</cell>
-              </row>
-              <row>
-                <cell><term>Total</term></cell>
-                <cell>60%</cell>
-                <cell>36%</cell>
-              </row>
-            </tabular>
-          </table>
-          
-          <p>
-            The remaining 40% of your course grade comes from weekly assignments (30%) and participation (10%).
-          </p>
-        </subsection>
-        
         <subsection xml:id="subsec-evaluation-rubrics">
-          <title>Evaluation Rubrics</title>
+  <title>Evaluation Rubrics</title>
+  
+  <p>
+    Each project component will be evaluated using the following rubrics:
+  </p>
+  
+        <subsubsection xml:id="subsubsec-dataset-selection-rubric">
+          <title>Dataset Selection Report</title>
           
-          <p>
-            Each project component will be evaluated using the following rubrics:
-          </p>
+          <p><alert>For an A grade:</alert></p>
+          <ul>
+            <li>
+              <p><em>Dataset Suitability:</em> Dataset perfectly meets all selection criteria; rich with potential for analysis</p>
+            </li>
+            <li>
+              <p><em>Documentation:</em> Comprehensive documentation of source, contents, and context</p>
+            </li>
+            <li>
+              <p><em>Initial Exploration:</em> Thorough initial exploration with insightful observations</p>
+            </li>
+            <li>
+              <p><em>Ethical Considerations:</em> Thoughtful discussion of relevant ethical considerations</p>
+            </li>
+          </ul>
           
-          <table xml:id="table-dataset-rubric">
-            <title>Dataset Selection Report Rubric</title>
-            <tabular>
-              <row header="yes">
-                <cell>Criterion</cell>
-                <cell>Excellent (A)</cell>
-                <cell>Satisfactory (B-C)</cell>
-                <cell>Needs Improvement (D-F)</cell>
-              </row>
-              <row>
-                <cell>Dataset Suitability</cell>
-                <cell>Dataset perfectly meets all selection criteria; rich with potential for analysis</cell>
-                <cell>Dataset meets most criteria; adequate for project purposes</cell>
-                <cell>Dataset fails to meet multiple criteria; limited potential for analysis</cell>
-              </row>
-              <row>
-                <cell>Documentation</cell>
-                <cell>Comprehensive documentation of source, contents, and context</cell>
-                <cell>Adequate documentation but missing some details</cell>
-                <cell>Minimal documentation; unclear source or context</cell>
-              </row>
-              <row>
-                <cell>Initial Exploration</cell>
-                <cell>Thorough initial exploration with insightful observations</cell>
-                <cell>Basic exploration with some relevant observations</cell>
-                <cell>Superficial exploration with few or no observations</cell>
-              </row>
-              <row>
-                <cell>Ethical Considerations</cell>
-                <cell>Thoughtful discussion of relevant ethical considerations</cell>
-                <cell>Basic mention of ethical considerations</cell>
-                <cell>No consideration of ethical dimensions</cell>
-              </row>
-            </tabular>
-          </table>
+          <p><alert>For a B-C grade:</alert></p>
+          <ul>
+            <li>
+              <p><em>Dataset Suitability:</em> Dataset meets most criteria; adequate for project purposes</p>
+            </li>
+            <li>
+              <p><em>Documentation:</em> Adequate documentation but missing some details</p>
+            </li>
+            <li>
+              <p><em>Initial Exploration:</em> Basic exploration with some relevant observations</p>
+            </li>
+            <li>
+              <p><em>Ethical Considerations:</em> Basic mention of ethical considerations</p>
+            </li>
+          </ul>
           
-          <table xml:id="table-investigation-rubric">
-            <title>Investigation Plan Rubric</title>
-            <tabular>
-              <row header="yes">
-                <cell>Criterion</cell>
-                <cell>Excellent (A)</cell>
-                <cell>Satisfactory (B-C)</cell>
-                <cell>Needs Improvement (D-F)</cell>
-              </row>
-              <row>
-                <cell>Statistical Questions</cell>
-                <cell>Clear, specific, meaningful questions that anticipate variability and are answerable with data</cell>
-                <cell>Mostly clear questions, but may lack specificity or clear connection to data</cell>
-                <cell>Vague, overly broad, or unanswerable questions</cell>
-              </row>
-              <row>
-                <cell>Data Assessment</cell>
-                <cell>Comprehensive assessment of data quality, completeness, and limitations</cell>
-                <cell>Basic assessment of data with some gaps</cell>
-                <cell>Minimal or unrealistic assessment of data</cell>
-              </row>
-              <row>
-                <cell>Analysis Approach</cell>
-                <cell>Well-reasoned approaches for each question, with clear justification</cell>
-                <cell>Reasonable approaches but limited justification</cell>
-                <cell>Inappropriate or vague analysis approaches</cell>
-              </row>
-              <row>
-                <cell>Plan Completeness</cell>
-                <cell>Thorough plan addressing all aspects of the investigation</cell>
-                <cell>Adequate plan but missing some elements</cell>
-                <cell>Incomplete or insufficient planning</cell>
-              </row>
-            </tabular>
-          </table>
+          <p><alert>For a D-F grade:</alert></p>
+          <ul>
+            <li>
+              <p><em>Dataset Suitability:</em> Dataset fails to meet multiple criteria; limited potential for analysis</p>
+            </li>
+            <li>
+              <p><em>Documentation:</em> Minimal documentation; unclear source or context</p>
+            </li>
+            <li>
+              <p><em>Initial Exploration:</em> Superficial exploration with few or no observations</p>
+            </li>
+            <li>
+              <p><em>Ethical Considerations:</em> No consideration of ethical dimensions</p>
+            </li>
+          </ul>
+        </subsubsection>
+        
+        <subsubsection xml:id="subsubsec-investigation-plan-rubric">
+          <title>Investigation Plan</title>
           
-          <table xml:id="table-processing-rubric">
-            <title>Data Processing Documentation Rubric</title>
-            <tabular>
-              <row header="yes">
-                <cell>Criterion</cell>
-                <cell>Excellent (A)</cell>
-                <cell>Satisfactory (B-C)</cell>
-                <cell>Needs Improvement (D-F)</cell>
-              </row>
-              <row>
-                <cell>Data Cleaning</cell>
-                <cell>Appropriate handling of missing values, outliers, and other quality issues with clear rationale</cell>
-                <cell>Basic cleaning with some rationale, but may miss some issues</cell>
-                <cell>Inadequate cleaning or inappropriate handling of data issues</cell>
-              </row>
-              <row>
-                <cell>Data Transformation</cell>
-                <cell>Creative and appropriate derived variables, filtering, and other transformations</cell>
-                <cell>Basic transformations that support analysis</cell>
-                <cell>Few or inappropriate transformations</cell>
-              </row>
-              <row>
-                <cell>Documentation</cell>
-                <cell>Clear, comprehensive documentation of all data moves and decisions</cell>
-                <cell>Adequate documentation but missing some details</cell>
-                <cell>Poor or insufficient documentation</cell>
-              </row>
-              <row>
-                <cell>Preliminary Analysis</cell>
-                <cell>Insightful summary statistics and group comparisons</cell>
-                <cell>Basic summary statistics with limited interpretation</cell>
-                <cell>Minimal or incorrect statistical analysis</cell>
-              </row>
-            </tabular>
-          </table>
+          <p><alert>For an A grade:</alert></p>
+          <ul>
+            <li>
+              <p><em>Statistical Questions:</em> Clear, specific, meaningful questions that anticipate variability and are answerable with data</p>
+            </li>
+            <li>
+              <p><em>Data Assessment:</em> Comprehensive assessment of data quality, completeness, and limitations</p>
+            </li>
+            <li>
+              <p><em>Analysis Approach:</em> Well-reasoned approaches for each question, with clear justification</p>
+            </li>
+            <li>
+              <p><em>Plan Completeness:</em> Thorough plan addressing all aspects of the investigation</p>
+            </li>
+          </ul>
           
-          <table xml:id="table-dashboard-rubric">
-            <title>Visualization Dashboard Rubric</title>
-            <tabular>
-              <row header="yes">
-                <cell>Criterion</cell>
-                <cell>Excellent (A)</cell>
-                <cell>Satisfactory (B-C)</cell>
-                <cell>Needs Improvement (D-F)</cell>
-              </row>
-              <row>
-                <cell>Visualization Selection</cell>
-                <cell>Optimal chart types for each question and data type</cell>
-                <cell>Appropriate chart types with minor issues</cell>
-                <cell>Inappropriate or misleading chart types</cell>
-              </row>
-              <row>
-                <cell>Visual Design</cell>
-                <cell>Clear, accessible, and aesthetically pleasing design that enhances understanding</cell>
-                <cell>Functionally clear design with some issues</cell>
-                <cell>Cluttered, confusing, or poorly designed visualizations</cell>
-              </row>
-              <row>
-                <cell>Dashboard Organization</cell>
-                <cell>Logical flow with clear visual hierarchy and purposeful arrangement</cell>
-                <cell>Reasonable organization but lacking some coherence</cell>
-                <cell>Disorganized or illogical arrangement</cell>
-              </row>
-              <row>
-                <cell>Interactivity</cell>
-                <cell>Thoughtful interactive features that enhance exploration</cell>
-                <cell>Basic interactive functionality</cell>
-                <cell>Limited or no effective interactivity</cell>
-              </row>
-              <row>
-                <cell>Context and Labeling</cell>
-                <cell>Comprehensive titles, labels, and explanatory text</cell>
-                <cell>Adequate labeling with some context</cell>
-                <cell>Missing or confusing labels and context</cell>
-              </row>
-            </tabular>
-          </table>
+          <p><alert>For a B-C grade:</alert></p>
+          <ul>
+            <li>
+              <p><em>Statistical Questions:</em> Mostly clear questions, but may lack specificity or clear connection to data</p>
+            </li>
+            <li>
+              <p><em>Data Assessment:</em> Basic assessment of data with some gaps</p>
+            </li>
+            <li>
+              <p><em>Analysis Approach:</em> Reasonable approaches but limited justification</p>
+            </li>
+            <li>
+              <p><em>Plan Completeness:</em> Adequate plan but missing some elements</p>
+            </li>
+          </ul>
           
-          <table xml:id="table-presentation-rubric">
-            <title>Final Presentation Rubric</title>
-            <tabular>
-              <row header="yes">
-                <cell>Criterion</cell>
-                <cell>Excellent (A)</cell>
-                <cell>Satisfactory (B-C)</cell>
-                <cell>Needs Improvement (D-F)</cell>
-              </row>
-              <row>
-                <cell>Content</cell>
-                <cell>Comprehensive coverage of context, methods, findings, and implications</cell>
-                <cell>Adequate coverage of key elements but lacking some depth</cell>
-                <cell>Incomplete or superficial treatment of the project</cell>
-              </row>
-              <row>
-                <cell>Data Story</cell>
-                <cell>Compelling narrative that effectively communicates insights</cell>
-                <cell>Clear narrative but lacking some engagement or coherence</cell>
-                <cell>Disjointed or unclear narrative</cell>
-              </row>
-              <row>
-                <cell>Visual Support</cell>
-                <cell>Excellent use of visualizations to support and enhance presentation</cell>
-                <cell>Adequate visual support with minor issues</cell>
-                <cell>Poor or distracting visual elements</cell>
-              </row>
-              <row>
-                <cell>Delivery</cell>
-                <cell>Clear, engaging delivery with strong command of material</cell>
-                <cell>Competent delivery with some room for improvement</cell>
-                <cell>Unclear, disorganized, or difficult to follow</cell>
-              </row>
-              <row>
-                <cell>Q&amp;A Response</cell>
-                <cell>Thoughtful, knowledgeable responses to questions</cell>
-                <cell>Adequate responses to most questions</cell>
-                <cell>Unable to address questions effectively</cell>
-              </row>
-            </tabular>
-          </table>
-        </subsection>
+          <p><alert>For a D-F grade:</alert></p>
+          <ul>
+            <li>
+              <p><em>Statistical Questions:</em> Vague, overly broad, or unanswerable questions</p>
+            </li>
+            <li>
+              <p><em>Data Assessment:</em> Minimal or unrealistic assessment of data</p>
+            </li>
+            <li>
+              <p><em>Analysis Approach:</em> Inappropriate or vague analysis approaches</p>
+            </li>
+            <li>
+              <p><em>Plan Completeness:</em> Incomplete or insufficient planning</p>
+            </li>
+          </ul>
+        </subsubsection>
+        
+        <subsubsection xml:id="subsubsec-data-processing-rubric">
+          <title>Data Processing Documentation</title>
+          
+          <p><alert>For an A grade:</alert></p>
+          <ul>
+            <li>
+              <p><em>Data Cleaning:</em> Appropriate handling of missing values, outliers, and other quality issues with clear rationale</p>
+            </li>
+            <li>
+              <p><em>Data Transformation:</em> Creative and appropriate derived variables, filtering, and other transformations</p>
+            </li>
+            <li>
+              <p><em>Documentation:</em> Clear, comprehensive documentation of all data moves and decisions</p>
+            </li>
+            <li>
+              <p><em>Preliminary Analysis:</em> Insightful summary statistics and group comparisons</p>
+            </li>
+          </ul>
+          
+          <p><alert>For a B-C grade:</alert></p>
+          <ul>
+            <li>
+              <p><em>Data Cleaning:</em> Basic cleaning with some rationale, but may miss some issues</p>
+            </li>
+            <li>
+              <p><em>Data Transformation:</em> Basic transformations that support analysis</p>
+            </li>
+            <li>
+              <p><em>Documentation:</em> Adequate documentation but missing some details</p>
+            </li>
+            <li>
+              <p><em>Preliminary Analysis:</em> Basic summary statistics with limited interpretation</p>
+            </li>
+          </ul>
+          
+          <p><alert>For a D-F grade:</alert></p>
+          <ul>
+            <li>
+              <p><em>Data Cleaning:</em> Inadequate cleaning or inappropriate handling of data issues</p>
+            </li>
+            <li>
+              <p><em>Data Transformation:</em> Few or inappropriate transformations</p>
+            </li>
+            <li>
+              <p><em>Documentation:</em> Poor or insufficient documentation</p>
+            </li>
+            <li>
+              <p><em>Preliminary Analysis:</em> Minimal or incorrect statistical analysis</p>
+            </li>
+          </ul>
+        </subsubsection>
+        
+        <subsubsection xml:id="subsubsec-final-presentation-rubric">
+          <title>Final Presentation</title>
+          
+          <p><alert>For an A grade:</alert></p>
+          <ul>
+            <li>
+              <p><em>Content:</em> Comprehensive coverage of context, methods, findings, and implications</p>
+            </li>
+            <li>
+              <p><em>Data Story:</em> Compelling narrative that effectively communicates insights</p>
+            </li>
+            <li>
+              <p><em>Visual Support:</em> Excellent use of visualizations to support and enhance presentation</p>
+            </li>
+            <li>
+              <p><em>Delivery:</em> Clear, engaging delivery with strong command of material</p>
+            </li>
+            <li>
+              <p><em>Q&amp;A Response:</em> Thoughtful, knowledgeable responses to questions</p>
+            </li>
+          </ul>
+          
+          <p><alert>For a B-C grade:</alert></p>
+          <ul>
+            <li>
+              <p><em>Content:</em> Adequate coverage of key elements but lacking some depth</p>
+            </li>
+            <li>
+              <p><em>Data Story:</em> Clear narrative but lacking some engagement or coherence</p>
+            </li>
+            <li>
+              <p><em>Visual Support:</em> Adequate visual support with minor issues</p>
+            </li>
+            <li>
+              <p><em>Delivery:</em> Competent delivery with some room for improvement</p>
+            </li>
+            <li>
+              <p><em>Q&amp;A Response:</em> Adequate responses to most questions</p>
+            </li>
+          </ul>
+          
+          <p><alert>For a D-F grade:</alert></p>
+          <ul>
+            <li>
+              <p><em>Content:</em> Incomplete or superficial treatment of the project</p>
+            </li>
+            <li>
+              <p><em>Data Story:</em> Disjointed or unclear narrative</p>
+            </li>
+            <li>
+              <p><em>Visual Support:</em> Poor or distracting visual elements</p>
+            </li>
+            <li>
+              <p><em>Delivery:</em> Unclear, disorganized, or difficult to follow</p>
+            </li>
+            <li>
+              <p><em>Q&amp;A Response:</em> Unable to address questions effectively</p>
+            </li>
+          </ul>
+        </subsubsection>
+      </subsection>
       </section>
+
 
       <section xml:id="sec-project-tips">
         <title>Tips for Success</title>
