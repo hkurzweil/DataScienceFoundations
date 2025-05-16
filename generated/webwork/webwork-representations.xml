@@ -1,0 +1,343 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-representations>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-1" ww-id="webwork-1">
+    <static seed="1">
+      <statement><p>Question 1: Initial question: Are students getting enough sleep?</p>
+<p>Select the most improved version of this question:</p>
+<p><var form="buttons" name="AnSwEr0001">
+<li>
+<p><alert>a</alert>. Should students get more sleep?</p>
+</li>
+<li>
+<p><alert>b</alert>. What is the distribution of nightly sleep duration among high school students, and how does it compare to recommended amounts for adolescents?</p>
+</li>
+<li>
+<p><alert>c</alert>. Why don't students get enough sleep?</p>
+</li>
+<li>
+<p><alert>d</alert>. Who sleeps the most in the sophomore class?</p>
+</li>
+</var></p>
+<p>Question 2: Initial question: Does income affect health?</p>
+<p>Select the most improved version of this question:</p>
+<p><var form="buttons" name="AnSwEr0002">
+<li>
+<p><alert>a</alert>. Is it fair that rich people are healthier?</p>
+</li>
+<li>
+<p><alert>b</alert>. What is John's income and health status?</p>
+</li>
+<li>
+<p><alert>c</alert>. How do rates of chronic diseases vary across different income brackets in the United States, and has this relationship changed over the past decade?</p>
+</li>
+<li>
+<p><alert>d</alert>. Why do poor people have worse health outcomes?</p>
+</li>
+</var></p>
+</statement>
+      <hint><p>Think about what makes a good statistical question: it should be specific, measurable, and free from assumptions or value judgments.</p>
+</hint>
+      <answer>
+        <p>
+          <m>\text{b}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\text{c}</m>
+        </p>
+      </answer>
+      <solution><p>Question 1: The best improved version is: <lq/>What is the distribution of nightly sleep duration among high school students, and how does it compare to recommended amounts for adolescents?<rq/></p>
+<p>This question is specific about what is being measured (sleep duration), the population (high school students), and includes a comparison to a standard.</p>
+<p>Question 2: The best improved version is: <lq/>How do rates of chronic diseases vary across different income brackets in the United States, and has this relationship changed over the past decade?<rq/></p>
+<p>This question is specific about the variables (chronic disease rates, income brackets), the population (United States), and adds a time dimension for additional insight.</p>
+</solution>
+    </static>
+    <server-data problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIlBHTUwucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwicGFyc2VyUmFkaW9CdXR0b25zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskc2xlZXAgPSBSYWRpb0J1dHRvbnMoClsiU2hvdWxkIHN0dWRlbnRzIGdldCBtb3JlIHNsZWVwPyIsCiJXaGF0IGlzIHRoZSBkaXN0cmlidXRpb24gb2YgbmlnaHRseSBzbGVlcCBkdXJhdGlvbiBhbW9uZyBoaWdoIHNjaG9vbCBzdHVkZW50cywgYW5kIGhvdyBkb2VzIGl0IGNvbXBhcmUgdG8gcmVjb21tZW5kZWQgYW1vdW50cyBmb3IgYWRvbGVzY2VudHM/IiwKIldoeSBkb24ndCBzdHVkZW50cyBnZXQgZW5vdWdoIHNsZWVwPyIsCiJXaG8gc2xlZXBzIHRoZSBtb3N0IGluIHRoZSBzb3Bob21vcmUgY2xhc3M/Il0sCjEsICAjIGluZGV4IG9mIGNvcnJlY3QgYW5zd2VyICgwLWJhc2VkKQpsYWJlbHMgPT4gWyJhIiwgImIiLCAiYyIsICJkIl0KKTsKCiRoZWFsdGggPSBSYWRpb0J1dHRvbnMoClsiSXMgaXQgZmFpciB0aGF0IHJpY2ggcGVvcGxlIGFyZSBoZWFsdGhpZXI/IiwKIldoYXQgaXMgSm9obidzIGluY29tZSBhbmQgaGVhbHRoIHN0YXR1cz8iLAoiSG93IGRvIHJhdGVzIG9mIGNocm9uaWMgZGlzZWFzZXMgdmFyeSBhY3Jvc3MgZGlmZmVyZW50IGluY29tZSBicmFja2V0cyBpbiB0aGUgVW5pdGVkIFN0YXRlcywgYW5kIGhhcyB0aGlzIHJlbGF0aW9uc2hpcCBjaGFuZ2VkIG92ZXIgdGhlIHBhc3QgZGVjYWRlPyIsCiJXaHkgZG8gcG9vciBwZW9wbGUgaGF2ZSB3b3JzZSBoZWFsdGggb3V0Y29tZXM/Il0sCjIsICAjIGluZGV4IG9mIGNvcnJlY3QgYW5zd2VyICgwLWJhc2VkKQpsYWJlbHMgPT4gWyJhIiwgImIiLCAiYyIsICJkIl0KKTsKCkJFR0lOX1BHTUwKUXVlc3Rpb24gMTogSW5pdGlhbCBxdWVzdGlvbjogQXJlIHN0dWRlbnRzIGdldHRpbmcgZW5vdWdoIHNsZWVwPwoKU2VsZWN0IHRoZSBtb3N0IGltcHJvdmVkIHZlcnNpb24gb2YgdGhpcyBxdWVzdGlvbjoKCltfXXskc2xlZXB9ezV9CgpRdWVzdGlvbiAyOiBJbml0aWFsIHF1ZXN0aW9uOiBEb2VzIGluY29tZSBhZmZlY3QgaGVhbHRoPwoKU2VsZWN0IHRoZSBtb3N0IGltcHJvdmVkIHZlcnNpb24gb2YgdGhpcyBxdWVzdGlvbjoKCltfXXskaGVhbHRofXs1fQoKCkVORF9QR01MCgpCRUdJTl9QR01MX0hJTlQKVGhpbmsgYWJvdXQgd2hhdCBtYWtlcyBhIGdvb2Qgc3RhdGlzdGljYWwgcXVlc3Rpb246IGl0IHNob3VsZCBiZSBzcGVjaWZpYywgbWVhc3VyYWJsZSwgYW5kIGZyZWUgZnJvbSBhc3N1bXB0aW9ucyBvciB2YWx1ZSBqdWRnbWVudHMuCgoKRU5EX1BHTUxfSElOVAoKQkVHSU5fUEdNTF9TT0xVVElPTgpRdWVzdGlvbiAxOiBUaGUgYmVzdCBpbXByb3ZlZCB2ZXJzaW9uIGlzOiAiV2hhdCBpcyB0aGUgZGlzdHJpYnV0aW9uIG9mIG5pZ2h0bHkgc2xlZXAgZHVyYXRpb24gYW1vbmcgaGlnaCBzY2hvb2wgc3R1ZGVudHMsIGFuZCBob3cgZG9lcyBpdCBjb21wYXJlIHRvIHJlY29tbWVuZGVkIGFtb3VudHMgZm9yIGFkb2xlc2NlbnRzPyIKClRoaXMgcXVlc3Rpb24gaXMgc3BlY2lmaWMgYWJvdXQgd2hhdCBpcyBiZWluZyBtZWFzdXJlZCAoc2xlZXAgZHVyYXRpb24pLCB0aGUgcG9wdWxhdGlvbiAoaGlnaCBzY2hvb2wgc3R1ZGVudHMpLCBhbmQgaW5jbHVkZXMgYSBjb21wYXJpc29uIHRvIGEgc3RhbmRhcmQuCgpRdWVzdGlvbiAyOiBUaGUgYmVzdCBpbXByb3ZlZCB2ZXJzaW9uIGlzOiAiSG93IGRvIHJhdGVzIG9mIGNocm9uaWMgZGlzZWFzZXMgdmFyeSBhY3Jvc3MgZGlmZmVyZW50IGluY29tZSBicmFja2V0cyBpbiB0aGUgVW5pdGVkIFN0YXRlcywgYW5kIGhhcyB0aGlzIHJlbGF0aW9uc2hpcCBjaGFuZ2VkIG92ZXIgdGhlIHBhc3QgZGVjYWRlPyIKClRoaXMgcXVlc3Rpb24gaXMgc3BlY2lmaWMgYWJvdXQgdGhlIHZhcmlhYmxlcyAoY2hyb25pYyBkaXNlYXNlIHJhdGVzLCBpbmNvbWUgYnJhY2tldHMpLCB0aGUgcG9wdWxhdGlvbiAoVW5pdGVkIFN0YXRlcyksIGFuZCBhZGRzIGEgdGltZSBkaW1lbnNpb24gZm9yIGFkZGl0aW9uYWwgaW5zaWdodC4KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" password="anonymous" language="en-US"/>
+    <pg><![CDATA[
+#############################################
+###       Generated from PreTeXt source      
+###       on 2025-05-16T16:34:19Z       
+###   A recent stable commit (2022-07-01):   
+### 6c761d3dba23af92cba35001c852aac04ae99a5f 
+###                                          
+###         https://pretextbook.org          
+###                                          
+#############################################
+## DBsubject()
+## DBchapter()
+## DBsection()
+## Level()
+## KEYWORDS()
+## TitleText1()
+## EditionText1()
+## AuthorText1()
+## Section1(not reported)
+## Problem1(39)
+## Author()
+## Institution()
+## Language(en-US)
+
+DOCUMENT();
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "PGML.pl",
+  "AnswerFormatHelp.pl",
+  "parserRadioButtons.pl",
+  "PGcourse.pl",
+);
+COMMENT('Authored in PreTeXt');
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+
+############################################################
+# PG Setup Code
+############################################################
+Context('Numeric');
+$sleep = RadioButtons(
+["Should students get more sleep?",
+"What is the distribution of nightly sleep duration among high school students, and how does it compare to recommended amounts for adolescents?",
+"Why don't students get enough sleep?",
+"Who sleeps the most in the sophomore class?"],
+1,  # index of correct answer (0-based)
+labels => ["a", "b", "c", "d"]
+);
+
+$health = RadioButtons(
+["Is it fair that rich people are healthier?",
+"What is John's income and health status?",
+"How do rates of chronic diseases vary across different income brackets in the United States, and has this relationship changed over the past decade?",
+"Why do poor people have worse health outcomes?"],
+2,  # index of correct answer (0-based)
+labels => ["a", "b", "c", "d"]
+);
+
+############################################################
+# Body
+############################################################
+
+BEGIN_PGML
+Question 1: Initial question: Are students getting enough sleep?
+
+Select the most improved version of this question:
+
+[_]{$sleep}{5}
+
+Question 2: Initial question: Does income affect health?
+
+Select the most improved version of this question:
+
+[_]{$health}{5}
+
+END_PGML
+
+############################################################
+# Hint
+############################################################
+#Set value of $showHint in PGcourse.pl for course-wide attempt threshhold for revealing hints
+
+BEGIN_PGML_HINT
+Think about what makes a good statistical question: it should be specific, measurable, and free from assumptions or value judgments.
+
+END_PGML_HINT
+
+############################################################
+# Solution
+############################################################
+
+BEGIN_PGML_SOLUTION
+Question 1: The best improved version is: "What is the distribution of nightly sleep duration among high school students, and how does it compare to recommended amounts for adolescents?"
+
+This question is specific about what is being measured (sleep duration), the population (high school students), and includes a comparison to a standard.
+
+Question 2: The best improved version is: "How do rates of chronic diseases vary across different income brackets in the United States, and has this relationship changed over the past decade?"
+
+This question is specific about the variables (chronic disease rates, income brackets), the population (United States), and adds a time dimension for additional insight.
+
+END_PGML_SOLUTION
+
+############################################################
+# End Problem
+############################################################
+
+ENDDOCUMENT();
+]]></pg>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-2" ww-id="webwork-2">
+    <static seed="2">
+      <statement><p>Scenario 1: A city collects feedback about public services through an online survey that requires a smartphone and internet access.</p>
+<p>What is the primary ethical concern in this scenario?</p>
+<p><var form="buttons" name="AnSwEr0001">
+<li>
+<p><alert>a</alert>. Selection bias</p>
+</li>
+<li>
+<p><alert>b</alert>. Privacy violation</p>
+</li>
+<li>
+<p><alert>c</alert>. Inappropriate categorization</p>
+</li>
+<li>
+<p><alert>d</alert>. Excessive data collection</p>
+</li>
+</var></p>
+<p>Scenario 2: A medical research study examines health outcomes using patient data from university hospitals in affluent neighborhoods.</p>
+<p>What is the primary ethical concern in this scenario?</p>
+<p><var form="buttons" name="AnSwEr0002">
+<li>
+<p><alert>a</alert>. Inappropriate categorization</p>
+</li>
+<li>
+<p><alert>b</alert>. Sampling fairness</p>
+</li>
+<li>
+<p><alert>c</alert>. Data security</p>
+</li>
+<li>
+<p><alert>d</alert>. Transparency</p>
+</li>
+</var></p>
+</statement>
+      <hint><p>Consider who might be included or excluded from each data collection approach, and how that might affect the conclusions drawn from the data.</p>
+</hint>
+      <answer>
+        <p>
+          <m>\text{a}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\text{b}</m>
+        </p>
+      </answer>
+      <solution><p>Scenario 1: The primary ethical concern is Selection bias.</p>
+<p>This method systematically excludes residents without smartphones or internet access, creating selection bias that likely underrepresents lower-income or elderly populations.</p>
+<p>Scenario 2: The primary ethical concern is Sampling fairness.</p>
+<p>The sample is biased toward patients who have access to university hospitals in affluent areas, potentially missing health patterns in underserved communities.</p>
+</solution>
+    </static>
+    <server-data problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIlBHTUwucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwicGFyc2VyUmFkaW9CdXR0b25zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskb25saW5lX3N1cnZleSA9IFJhZGlvQnV0dG9ucygKICBbIlNlbGVjdGlvbiBiaWFzIiwKICAiUHJpdmFjeSB2aW9sYXRpb24iLAogICJJbmFwcHJvcHJpYXRlIGNhdGVnb3JpemF0aW9uIiwKICAiRXhjZXNzaXZlIGRhdGEgY29sbGVjdGlvbiJdLAogIDAsICAjIGluZGV4IG9mIGNvcnJlY3QgYW5zd2VyICgwLWJhc2VkKQogIGxhYmVscyA9PiBbImEiLCAiYiIsICJjIiwgImQiXQopOwoKJG1lZGljYWxfcmVzZWFyY2ggPSBSYWRpb0J1dHRvbnMoCiAgWyJJbmFwcHJvcHJpYXRlIGNhdGVnb3JpemF0aW9uIiwKICAiU2FtcGxpbmcgZmFpcm5lc3MiLAogICJEYXRhIHNlY3VyaXR5IiwKICAiVHJhbnNwYXJlbmN5Il0sCiAgMSwgICMgaW5kZXggb2YgY29ycmVjdCBhbnN3ZXIgKDAtYmFzZWQpCiAgbGFiZWxzID0+IFsiYSIsICJiIiwgImMiLCAiZCJdCik7CgpCRUdJTl9QR01MClNjZW5hcmlvIDE6IEEgY2l0eSBjb2xsZWN0cyBmZWVkYmFjayBhYm91dCBwdWJsaWMgc2VydmljZXMgdGhyb3VnaCBhbiBvbmxpbmUgc3VydmV5IHRoYXQgcmVxdWlyZXMgYSBzbWFydHBob25lIGFuZCBpbnRlcm5ldCBhY2Nlc3MuCgpXaGF0IGlzIHRoZSBwcmltYXJ5IGV0aGljYWwgY29uY2VybiBpbiB0aGlzIHNjZW5hcmlvPwoKW19deyRvbmxpbmVfc3VydmV5fXs1fQoKU2NlbmFyaW8gMjogQSBtZWRpY2FsIHJlc2VhcmNoIHN0dWR5IGV4YW1pbmVzIGhlYWx0aCBvdXRjb21lcyB1c2luZyBwYXRpZW50IGRhdGEgZnJvbSB1bml2ZXJzaXR5IGhvc3BpdGFscyBpbiBhZmZsdWVudCBuZWlnaGJvcmhvb2RzLgoKV2hhdCBpcyB0aGUgcHJpbWFyeSBldGhpY2FsIGNvbmNlcm4gaW4gdGhpcyBzY2VuYXJpbz8KCltfXXskbWVkaWNhbF9yZXNlYXJjaH17NX0KCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9ISU5UCkNvbnNpZGVyIHdobyBtaWdodCBiZSBpbmNsdWRlZCBvciBleGNsdWRlZCBmcm9tIGVhY2ggZGF0YSBjb2xsZWN0aW9uIGFwcHJvYWNoLCBhbmQgaG93IHRoYXQgbWlnaHQgYWZmZWN0IHRoZSBjb25jbHVzaW9ucyBkcmF3biBmcm9tIHRoZSBkYXRhLgoKCkVORF9QR01MX0hJTlQKCkJFR0lOX1BHTUxfU09MVVRJT04KU2NlbmFyaW8gMTogVGhlIHByaW1hcnkgZXRoaWNhbCBjb25jZXJuIGlzIFNlbGVjdGlvbiBiaWFzLgoKVGhpcyBtZXRob2Qgc3lzdGVtYXRpY2FsbHkgZXhjbHVkZXMgcmVzaWRlbnRzIHdpdGhvdXQgc21hcnRwaG9uZXMgb3IgaW50ZXJuZXQgYWNjZXNzLCBjcmVhdGluZyBzZWxlY3Rpb24gYmlhcyB0aGF0IGxpa2VseSB1bmRlcnJlcHJlc2VudHMgbG93ZXItaW5jb21lIG9yIGVsZGVybHkgcG9wdWxhdGlvbnMuCgpTY2VuYXJpbyAyOiBUaGUgcHJpbWFyeSBldGhpY2FsIGNvbmNlcm4gaXMgU2FtcGxpbmcgZmFpcm5lc3MuCgpUaGUgc2FtcGxlIGlzIGJpYXNlZCB0b3dhcmQgcGF0aWVudHMgd2hvIGhhdmUgYWNjZXNzIHRvIHVuaXZlcnNpdHkgaG9zcGl0YWxzIGluIGFmZmx1ZW50IGFyZWFzLCBwb3RlbnRpYWxseSBtaXNzaW5nIGhlYWx0aCBwYXR0ZXJucyBpbiB1bmRlcnNlcnZlZCBjb21tdW5pdGllcy4KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" password="anonymous" language="en-US"/>
+    <pg><![CDATA[
+#############################################
+###       Generated from PreTeXt source      
+###       on 2025-05-16T16:34:19Z       
+###   A recent stable commit (2022-07-01):   
+### 6c761d3dba23af92cba35001c852aac04ae99a5f 
+###                                          
+###         https://pretextbook.org          
+###                                          
+#############################################
+## DBsubject()
+## DBchapter()
+## DBsection()
+## Level()
+## KEYWORDS()
+## TitleText1()
+## EditionText1()
+## AuthorText1()
+## Section1(not reported)
+## Problem1(49)
+## Author()
+## Institution()
+## Language(en-US)
+
+DOCUMENT();
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "PGML.pl",
+  "AnswerFormatHelp.pl",
+  "parserRadioButtons.pl",
+  "PGcourse.pl",
+);
+COMMENT('Authored in PreTeXt');
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+
+############################################################
+# PG Setup Code
+############################################################
+Context('Numeric');
+$online_survey = RadioButtons(
+  ["Selection bias",
+  "Privacy violation",
+  "Inappropriate categorization",
+  "Excessive data collection"],
+  0,  # index of correct answer (0-based)
+  labels => ["a", "b", "c", "d"]
+);
+
+$medical_research = RadioButtons(
+  ["Inappropriate categorization",
+  "Sampling fairness",
+  "Data security",
+  "Transparency"],
+  1,  # index of correct answer (0-based)
+  labels => ["a", "b", "c", "d"]
+);
+
+############################################################
+# Body
+############################################################
+
+BEGIN_PGML
+Scenario 1: A city collects feedback about public services through an online survey that requires a smartphone and internet access.
+
+What is the primary ethical concern in this scenario?
+
+[_]{$online_survey}{5}
+
+Scenario 2: A medical research study examines health outcomes using patient data from university hospitals in affluent neighborhoods.
+
+What is the primary ethical concern in this scenario?
+
+[_]{$medical_research}{5}
+
+END_PGML
+
+############################################################
+# Hint
+############################################################
+#Set value of $showHint in PGcourse.pl for course-wide attempt threshhold for revealing hints
+
+BEGIN_PGML_HINT
+Consider who might be included or excluded from each data collection approach, and how that might affect the conclusions drawn from the data.
+
+END_PGML_HINT
+
+############################################################
+# Solution
+############################################################
+
+BEGIN_PGML_SOLUTION
+Scenario 1: The primary ethical concern is Selection bias.
+
+This method systematically excludes residents without smartphones or internet access, creating selection bias that likely underrepresents lower-income or elderly populations.
+
+Scenario 2: The primary ethical concern is Sampling fairness.
+
+The sample is biased toward patients who have access to university hospitals in affluent areas, potentially missing health patterns in underserved communities.
+
+END_PGML_SOLUTION
+
+############################################################
+# End Problem
+############################################################
+
+ENDDOCUMENT();
+]]></pg>
+  </webwork-reps>
+</webwork-representations>

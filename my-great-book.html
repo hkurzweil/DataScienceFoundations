@@ -47,7 +47,24 @@ window.MathJax = {
   },
   "options": {
     "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math"
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
   },
   "chtml": {
     "scale": 0.98,
@@ -111,7 +128,7 @@ eBookConfig.enable_chatcodes =  false;
 <!--*** Runestone Services ***-->
 <script src="_static/prefix-runtime.052b07dd5d5bd82e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/pretext/js/pretext-webwork/2.17/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body id="changeme" class="pretext book ignore-math">
@@ -184,11 +201,87 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-unit1-summary.html" class="internal"><span class="title">Unit 1 Summary</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-unit2.html" class="internal"><span class="codenumber">2</span> <span class="title">Unit 2: The Data Investigation Process</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-investigation-framework.html" class="internal"><span class="title">The Data Investigation Framework</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-investigation-framework.html#subsec-framework-overview" class="internal"><span class="title">Overview of the Framework</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-investigation-framework.html#subsec-framework-in-practice" class="internal"><span class="title">The Framework in Practice</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-statistical-questions.html" class="internal"><span class="title">Formulating Statistical Questions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-questions.html#subsec-what-are-stat-questions" class="internal"><span class="title">What Makes a Question Statistical?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-questions.html#subsec-crafting-questions" class="internal"><span class="title">Crafting Effective Statistical Questions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-planning-investigation.html" class="internal"><span class="title">Planning an Investigation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-planning-investigation.html#subsec-planning-elements" class="internal"><span class="title">Elements of an Investigation Plan</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-planning-investigation.html#subsec-sample-plan" class="internal"><span class="title">Sample Investigation Plan</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-statistical-thinking.html" class="internal"><span class="title">Statistical Thinking: Understanding Variability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-thinking.html#subsec-variability-concepts" class="internal"><span class="title">Key Concepts in Variability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-thinking.html#subsec-variability-in-analysis" class="internal"><span class="title">Accounting for Variability in Data Analysis</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ethics-spotlight-sampling.html" class="internal"><span class="title">Ethics Spotlight: Representation in Data</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-unit2-summary.html" class="internal"><span class="title">Unit 2 Summary</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-unit3.html" class="internal"><span class="codenumber">3</span> <span class="title">Unit 3: Essential Data Moves</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-cleaning.html" class="internal"><span class="title">Data Cleaning and Organization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-importance-cleaning" class="internal"><span class="title">Why Data Cleaning Matters</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-missing-values" class="internal"><span class="title">Handling Missing Values</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-outliers" class="internal"><span class="title">Dealing with Outliers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-restructuring" class="internal"><span class="title">Renaming and Restructuring Data</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-filtering-subsetting.html" class="internal"><span class="title">Filtering and Subsetting</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-filtering-subsetting.html#subsec-why-filter" class="internal"><span class="title">The Purpose of Filtering</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-filtering-subsetting.html#subsec-filtering-methods" class="internal"><span class="title">Filtering Methods in CODAP</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-filtering-subsetting.html#subsec-meaningful-subsets" class="internal"><span class="title">Creating Meaningful Subsets</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ethics-spotlight-selection.html" class="internal"><span class="title">Ethics Spotlight: Selection Bias</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-summarizing-calculating.html" class="internal"><span class="title">Summarizing, Calculating, and Grouping</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-summarizing-calculating.html#subsec-summary-statistics" class="internal"><span class="title">Essential Summary Statistics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-summarizing-calculating.html#subsec-derived-variables" class="internal"><span class="title">Creating Derived Variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-summarizing-calculating.html#subsec-grouping-aggregation" class="internal"><span class="title">Grouping and Aggregation Techniques</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-statistical-thinking-comparing.html" class="internal"><span class="title">Statistical Thinking: Comparing Groups</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-thinking-comparing.html#subsec-variation-within-between" class="internal"><span class="title">Variation Within and Between Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-thinking-comparing.html#subsec-meaningful-comparisons" class="internal"><span class="title">Making Meaningful Comparisons</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-unit3-summary.html" class="internal"><span class="title">Unit 3 Summary</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="book" id="my-great-book"><nav class="summary-links"><ul>
 <li><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></li>
 <li><a href="ch-unit1.html" class="internal"><span class="codenumber">1</span> <span class="title">Unit 1: Foundations of Data Science</span></a></li>
+<li><a href="ch-unit2.html" class="internal"><span class="codenumber">2</span> <span class="title">Unit 2: The Data Investigation Process</span></a></li>
+<li><a href="ch-unit3.html" class="internal"><span class="codenumber">3</span> <span class="title">Unit 3: Essential Data Moves</span></a></li>
 <li><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></li>
 </ul></nav></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">

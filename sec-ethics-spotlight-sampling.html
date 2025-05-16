@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Front Matter</title>
+<title>Ethics Spotlight: Representation in Data</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -153,7 +153,7 @@ eBookConfig.enable_chatcodes =  false;
 <textarea class="embed-code-textbox" id="embed-code-textbox" readonly aria-label="textbox"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button class="copy-embed-button button" id="copy-embed-button" title="Copy embed code"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
 </div>
 </div>
-<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="my-great-book.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="my-great-book.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span>
+<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-statistical-thinking.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-unit2.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-unit2-summary.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
@@ -163,7 +163,7 @@ eBookConfig.enable_chatcodes =  false;
 \)</span></div>
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-frontmatter active"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-unit1.html" class="internal"><span class="codenumber">1</span> <span class="title">Unit 1: Foundations of Data Science</span></a></div>
 <ul class="structural toc-item-list">
@@ -201,9 +201,9 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-unit1-summary.html" class="internal"><span class="title">Unit 1 Summary</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-unit2.html" class="internal"><span class="codenumber">2</span> <span class="title">Unit 2: The Data Investigation Process</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-investigation-framework.html" class="internal"><span class="title">The Data Investigation Framework</span></a></div>
 <ul class="structural toc-item-list">
@@ -232,7 +232,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-thinking.html#subsec-variability-in-analysis" class="internal"><span class="title">Accounting for Variability in Data Analysis</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ethics-spotlight-sampling.html" class="internal"><span class="title">Ethics Spotlight: Representation in Data</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-ethics-spotlight-sampling.html" class="internal"><span class="title">Ethics Spotlight: Representation in Data</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-unit2-summary.html" class="internal"><span class="title">Unit 2 Summary</span></a></div></li>
 </ul>
 </li>
@@ -277,21 +277,75 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="frontmatter" id="frontmatter"><h2 class="heading">
-<span class="title">Introduction to Data Science:</span> <span class="subtitle">A Low-Code Project-Based Approach</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-ethics-spotlight-sampling"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Ethics Spotlight: Representation in Data</span>
 </h2>
-<div class="author">
-<div class="author-name">Hannah Kurzweil</div>
-<div class="author-info">Data Science 4 Everyone</div>
+<div class="para" id="sec-ethics-spotlight-sampling-2">As we plan our data investigations, it’s crucial to consider who is represented in our data and who might be missing or underrepresented.</div>
+<div class="para" id="sec-ethics-spotlight-sampling-3">Key ethical considerations regarding representation include:</div>
+<ul class="disc" id="sec-ethics-spotlight-sampling-4">
+<li id="sec-ethics-spotlight-sampling-4-1"><div class="para" id="sec-ethics-spotlight-sampling-4-1-1">
+<dfn class="terminology">Selection bias</dfn>: Does our data systematically exclude certain groups?</div></li>
+<li id="sec-ethics-spotlight-sampling-4-2"><div class="para" id="sec-ethics-spotlight-sampling-4-2-1">
+<dfn class="terminology">Sampling fairness</dfn>: Does our sample adequately represent diverse populations?</div></li>
+<li id="sec-ethics-spotlight-sampling-4-3"><div class="para" id="sec-ethics-spotlight-sampling-4-3-1">
+<dfn class="terminology">Historical exclusion</dfn>: Are we working with data that reflects historical patterns of exclusion?</div></li>
+<li id="sec-ethics-spotlight-sampling-4-4"><div class="para" id="sec-ethics-spotlight-sampling-4-4-1">
+<dfn class="terminology">Appropriate categorization</dfn>: Do our categories respect how people identify themselves?</div></li>
+<li id="sec-ethics-spotlight-sampling-4-5"><div class="para" id="sec-ethics-spotlight-sampling-4-5-1">
+<dfn class="terminology">Contextual interpretation</dfn>: Are we considering social and historical context when interpreting group differences?</div></li>
+</ul>
+<details id="example-ethics-representation" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">48</span><span class="period">.</span><span class="space"> </span><span class="title">Representation in Community Health Data.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="example-ethics-representation-2-1">In our Community Health dataset, we might need to consider:</div> <ul class="disc" id="example-ethics-representation-2-2">
+<li id="example-ethics-representation-2-2-1"><div class="para" id="example-ethics-representation-2-2-1-1">Whether health surveys reached residents who don’t speak English</div></li>
+<li id="example-ethics-representation-2-2-2"><div class="para" id="example-ethics-representation-2-2-2-1">If environmental monitoring stations are distributed equitably across neighborhoods</div></li>
+<li id="example-ethics-representation-2-2-3"><div class="para" id="example-ethics-representation-2-2-3-1">Whether certain communities have historically been excluded from public health research</div></li>
+<li id="example-ethics-representation-2-2-4"><div class="para" id="example-ethics-representation-2-2-4-1">If the neighborhood boundaries used in our analysis reflect meaningful community divisions</div></li>
+<li id="example-ethics-representation-2-2-5"><div class="para" id="example-ethics-representation-2-2-5-1">How to interpret health disparities without reinforcing harmful stereotypes</div></li>
+</ul></article></details><details id="exercise-ethics-scenarios" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">49</span><span class="period">.</span><span class="space"> </span><span class="title">Data Representation Scenarios.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="introduction" id="exercise-ethics-scenarios-2"><div class="para" id="exercise-ethics-scenarios-2-1">For each scenario, identify the primary ethical concern related to representation in data.</div></div>
+<div id="webwork-2" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="2" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIlBHTUwucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwicGFyc2VyUmFkaW9CdXR0b25zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskb25saW5lX3N1cnZleSA9IFJhZGlvQnV0dG9ucygKICBbIlNlbGVjdGlvbiBiaWFzIiwKICAiUHJpdmFjeSB2aW9sYXRpb24iLAogICJJbmFwcHJvcHJpYXRlIGNhdGVnb3JpemF0aW9uIiwKICAiRXhjZXNzaXZlIGRhdGEgY29sbGVjdGlvbiJdLAogIDAsICAjIGluZGV4IG9mIGNvcnJlY3QgYW5zd2VyICgwLWJhc2VkKQogIGxhYmVscyA9PiBbImEiLCAiYiIsICJjIiwgImQiXQopOwoKJG1lZGljYWxfcmVzZWFyY2ggPSBSYWRpb0J1dHRvbnMoCiAgWyJJbmFwcHJvcHJpYXRlIGNhdGVnb3JpemF0aW9uIiwKICAiU2FtcGxpbmcgZmFpcm5lc3MiLAogICJEYXRhIHNlY3VyaXR5IiwKICAiVHJhbnNwYXJlbmN5Il0sCiAgMSwgICMgaW5kZXggb2YgY29ycmVjdCBhbnN3ZXIgKDAtYmFzZWQpCiAgbGFiZWxzID0+IFsiYSIsICJiIiwgImMiLCAiZCJdCik7CgpCRUdJTl9QR01MClNjZW5hcmlvIDE6IEEgY2l0eSBjb2xsZWN0cyBmZWVkYmFjayBhYm91dCBwdWJsaWMgc2VydmljZXMgdGhyb3VnaCBhbiBvbmxpbmUgc3VydmV5IHRoYXQgcmVxdWlyZXMgYSBzbWFydHBob25lIGFuZCBpbnRlcm5ldCBhY2Nlc3MuCgpXaGF0IGlzIHRoZSBwcmltYXJ5IGV0aGljYWwgY29uY2VybiBpbiB0aGlzIHNjZW5hcmlvPwoKW19deyRvbmxpbmVfc3VydmV5fXs1fQoKU2NlbmFyaW8gMjogQSBtZWRpY2FsIHJlc2VhcmNoIHN0dWR5IGV4YW1pbmVzIGhlYWx0aCBvdXRjb21lcyB1c2luZyBwYXRpZW50IGRhdGEgZnJvbSB1bml2ZXJzaXR5IGhvc3BpdGFscyBpbiBhZmZsdWVudCBuZWlnaGJvcmhvb2RzLgoKV2hhdCBpcyB0aGUgcHJpbWFyeSBldGhpY2FsIGNvbmNlcm4gaW4gdGhpcyBzY2VuYXJpbz8KCltfXXskbWVkaWNhbF9yZXNlYXJjaH17NX0KCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9ISU5UCkNvbnNpZGVyIHdobyBtaWdodCBiZSBpbmNsdWRlZCBvciBleGNsdWRlZCBmcm9tIGVhY2ggZGF0YSBjb2xsZWN0aW9uIGFwcHJvYWNoLCBhbmQgaG93IHRoYXQgbWlnaHQgYWZmZWN0IHRoZSBjb25jbHVzaW9ucyBkcmF3biBmcm9tIHRoZSBkYXRhLgoKCkVORF9QR01MX0hJTlQKCkJFR0lOX1BHTUxfU09MVVRJT04KU2NlbmFyaW8gMTogVGhlIHByaW1hcnkgZXRoaWNhbCBjb25jZXJuIGlzIFNlbGVjdGlvbiBiaWFzLgoKVGhpcyBtZXRob2Qgc3lzdGVtYXRpY2FsbHkgZXhjbHVkZXMgcmVzaWRlbnRzIHdpdGhvdXQgc21hcnRwaG9uZXMgb3IgaW50ZXJuZXQgYWNjZXNzLCBjcmVhdGluZyBzZWxlY3Rpb24gYmlhcyB0aGF0IGxpa2VseSB1bmRlcnJlcHJlc2VudHMgbG93ZXItaW5jb21lIG9yIGVsZGVybHkgcG9wdWxhdGlvbnMuCgpTY2VuYXJpbyAyOiBUaGUgcHJpbWFyeSBldGhpY2FsIGNvbmNlcm4gaXMgU2FtcGxpbmcgZmFpcm5lc3MuCgpUaGUgc2FtcGxlIGlzIGJpYXNlZCB0b3dhcmQgcGF0aWVudHMgd2hvIGhhdmUgYWNjZXNzIHRvIHVuaXZlcnNpdHkgaG9zcGl0YWxzIGluIGFmZmx1ZW50IGFyZWFzLCBwb3RlbnRpYWxseSBtaXNzaW5nIGhlYWx0aCBwYXR0ZXJucyBpbiB1bmRlcnNlcnZlZCBjb21tdW5pdGllcy4KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-2')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-2-1-1-1">Scenario 1: A city collects feedback about public services through an online survey that requires a smartphone and internet access.</div> <div class="para" id="extracted-webwork-2-1-1-2">What is the primary ethical concern in this scenario?</div> <div class="para logical" id="extracted-webwork-2-1-1-3"><ul class="circle" id="extracted-webwork-2-1-1-3-1">
+<li id="extracted-webwork-2-1-1-3-1-1"><div class="para" id="extracted-webwork-2-1-1-3-1-1-1">
+<em class="alert">a</em>. Selection bias</div></li>
+<li id="extracted-webwork-2-1-1-3-1-2"><div class="para" id="extracted-webwork-2-1-1-3-1-2-1">
+<em class="alert">b</em>. Privacy violation</div></li>
+<li id="extracted-webwork-2-1-1-3-1-3"><div class="para" id="extracted-webwork-2-1-1-3-1-3-1">
+<em class="alert">c</em>. Inappropriate categorization</div></li>
+<li id="extracted-webwork-2-1-1-3-1-4"><div class="para" id="extracted-webwork-2-1-1-3-1-4-1">
+<em class="alert">d</em>. Excessive data collection</div></li>
+</ul></div> <div class="para" id="extracted-webwork-2-1-1-4">Scenario 2: A medical research study examines health outcomes using patient data from university hospitals in affluent neighborhoods.</div> <div class="para" id="extracted-webwork-2-1-1-5">What is the primary ethical concern in this scenario?</div> <div class="para logical" id="extracted-webwork-2-1-1-6"><ul class="circle" id="extracted-webwork-2-1-1-6-1">
+<li id="extracted-webwork-2-1-1-6-1-1"><div class="para" id="extracted-webwork-2-1-1-6-1-1-1">
+<em class="alert">a</em>. Inappropriate categorization</div></li>
+<li id="extracted-webwork-2-1-1-6-1-2"><div class="para" id="extracted-webwork-2-1-1-6-1-2-1">
+<em class="alert">b</em>. Sampling fairness</div></li>
+<li id="extracted-webwork-2-1-1-6-1-3"><div class="para" id="extracted-webwork-2-1-1-6-1-3-1">
+<em class="alert">c</em>. Data security</div></li>
+<li id="extracted-webwork-2-1-1-6-1-4"><div class="para" id="extracted-webwork-2-1-1-6-1-4-1">
+<em class="alert">d</em>. Transparency</div></li>
+</ul></div>
+<div class="solutions">
+<details id="extracted-webwork-2-1-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="extracted-webwork-2-1-2-1">Consider who might be included or excluded from each data collection approach, and how that might affect the conclusions drawn from the data.</div></div></details><details id="extracted-webwork-2-1-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="extracted-webwork-2-1-3-1"><span class="process-math">\(\text{a}\)</span></div></div></details><details id="extracted-webwork-2-1-4" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="extracted-webwork-2-1-4-1"><span class="process-math">\(\text{b}\)</span></div></div></details><details id="extracted-webwork-2-1-5" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="extracted-webwork-2-1-5-1">Scenario 1: The primary ethical concern is Selection bias.</div>
+<div class="para" id="extracted-webwork-2-1-5-2">This method systematically excludes residents without smartphones or internet access, creating selection bias that likely underrepresents lower-income or elderly populations.</div>
+<div class="para" id="extracted-webwork-2-1-5-3">Scenario 2: The primary ethical concern is Sampling fairness.</div>
+<div class="para" id="extracted-webwork-2-1-5-4">The sample is biased toward patients who have access to university hospitals in affluent areas, potentially missing health patterns in underserved communities.</div>
+</div></details>
 </div>
-<div class="date">May 16, 2025</div>
-<section class="introduction" id="frontmatter-3"><div class="para" id="frontmatter-3-1">Data shapes our world through countless decisions every day. From personalized music recommendations to content algorithms, and even critical determinations like educational assistance eligibility—data science powers it all. Behind these systems are algorithms—structured sets of rules that computers follow to transform raw information into actionable insights.</div>
-<div class="para" id="frontmatter-3-2">The field of data science harnesses these algorithmic tools to extract meaning from vast datasets, offering powerful capabilities while requiring careful consideration. When data-driven systems determine academic outcomes or financial opportunities, we must question how these mechanisms work and who designs them. Transparency matters.</div>
-<div class="para" id="frontmatter-3-3">In this introduction to data science course, you’ll explore the fundamental concepts behind data collection, analysis, and interpretation. You’ll discover how personal data fuels decision-making processes and the real-world impacts these decisions have on individuals and communities. By understanding both the technical aspects and ethical dimensions of data science, you’ll be equipped to harness its potential responsibly while recognizing its limitations.</div>
-<div class="para" id="frontmatter-3-4">This book introduces foundational concepts in data science through a project-based approach using CODAP, a free web-based data analysis platform that will help you unlock insights into complex datasets from the world around you.</div>
-<div class="para" id="frontmatter-3-5">This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit CreativeCommons.org</div></section><nav class="summary-links"><ul></ul></nav></section></div>
+</div>
+</div></article></details><article class="activity project-like" id="activity-ethics-representation"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">14</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluating Representation in Your Dataset.</span>
+</h3>
+<div class="introduction" id="activity-ethics-representation-2"><div class="para" id="activity-ethics-representation-2-1">In this activity, you’ll critically examine representation issues in your chosen dataset.</div></div>
+<article class="task exercise-like" id="activity-ethics-representation-3"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="activity-ethics-representation-3-1-1">Identify at least three ways in which your dataset might not fully represent the population you’re interested in studying.</div></article><article class="task exercise-like" id="activity-ethics-representation-4"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="activity-ethics-representation-4-1-1">Consider how these representation issues might affect the conclusions you can draw from your analysis.</div></article><article class="task exercise-like" id="activity-ethics-representation-5"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="activity-ethics-representation-5-1-1">Propose at least two strategies for acknowledging or addressing these representation issues in your investigation.</div></article></article></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="my-great-book.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
+<a class="previous-button button" href="sec-statistical-thinking.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-unit2-summary.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

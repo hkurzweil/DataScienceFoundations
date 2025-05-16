@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Data Cleaning and Organization</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Introduction to Data Science">
+<meta property="book:author" content="Hannah Kurzweil">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.6.5';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.052b07dd5d5bd82e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
+<script src="_static/pretext/js/pretext-webwork/2.17/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Introduction to Data Science:</span> <span class="subtitle">A Low-Code Project-Based Approach</span></a></h1>
+<p class="byline">Hannah Kurzweil</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="embed-button" class="embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><div class="embed-popup hidden" id="embed-popup">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<div class="embed-code-container">
+<textarea class="embed-code-textbox" id="embed-code-textbox" readonly aria-label="textbox"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button class="copy-embed-button button" id="copy-embed-button" title="Copy embed code"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div>
+</div>
+<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-unit3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-unit3.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-filtering-subsetting.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-unit1.html" class="internal"><span class="codenumber">1</span> <span class="title">Unit 1: Foundations of Data Science</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-what-is-data-science.html" class="internal"><span class="title">What is Data Science?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-what-is-data-science.html#subsec-defining-data-science" class="internal"><span class="title">Defining Data Science</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-what-is-data-science.html#subsec-why-data-literacy" class="internal"><span class="title">Why Data Literacy Matters</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-what-is-data-science.html#subsec-applications" class="internal"><span class="title">Applications of Data Science</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-intro-to-codap.html" class="internal"><span class="title">Introduction to CODAP</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-to-codap.html#subsec-codap-interface" class="internal"><span class="title">The CODAP Interface</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-to-codap.html#subsec-first-codap-exploration" class="internal"><span class="title">Your First CODAP Exploration</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-project-launch.html" class="internal"><span class="title">Project Launch: Community Health and Environment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-launch.html#subsec-sample-project" class="internal"><span class="title">The Sample Project</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-launch.html#subsec-student-projects" class="internal"><span class="title">Selecting Your Own Dataset</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-types.html" class="internal"><span class="title">Understanding Data Types</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-types.html#subsec-qualitative-quantitative" class="internal"><span class="title">Qualitative vs. Quantitative Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-types.html#subsec-measurement-scales" class="internal"><span class="title">Measurement Scales</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-types.html#subsec-other-classifications" class="internal"><span class="title">Other Data Classifications</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ethics-spotlight-data-collection.html" class="internal"><span class="title">Ethics Spotlight: Ethical Data Collection</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-unit1-summary.html" class="internal"><span class="title">Unit 1 Summary</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-unit2.html" class="internal"><span class="codenumber">2</span> <span class="title">Unit 2: The Data Investigation Process</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-investigation-framework.html" class="internal"><span class="title">The Data Investigation Framework</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-investigation-framework.html#subsec-framework-overview" class="internal"><span class="title">Overview of the Framework</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-investigation-framework.html#subsec-framework-in-practice" class="internal"><span class="title">The Framework in Practice</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-statistical-questions.html" class="internal"><span class="title">Formulating Statistical Questions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-questions.html#subsec-what-are-stat-questions" class="internal"><span class="title">What Makes a Question Statistical?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-questions.html#subsec-crafting-questions" class="internal"><span class="title">Crafting Effective Statistical Questions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-planning-investigation.html" class="internal"><span class="title">Planning an Investigation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-planning-investigation.html#subsec-planning-elements" class="internal"><span class="title">Elements of an Investigation Plan</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-planning-investigation.html#subsec-sample-plan" class="internal"><span class="title">Sample Investigation Plan</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-statistical-thinking.html" class="internal"><span class="title">Statistical Thinking: Understanding Variability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-thinking.html#subsec-variability-concepts" class="internal"><span class="title">Key Concepts in Variability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-thinking.html#subsec-variability-in-analysis" class="internal"><span class="title">Accounting for Variability in Data Analysis</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ethics-spotlight-sampling.html" class="internal"><span class="title">Ethics Spotlight: Representation in Data</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-unit2-summary.html" class="internal"><span class="title">Unit 2 Summary</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-unit3.html" class="internal"><span class="codenumber">3</span> <span class="title">Unit 3: Essential Data Moves</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-data-cleaning.html" class="internal"><span class="title">Data Cleaning and Organization</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-importance-cleaning" class="internal"><span class="title">Why Data Cleaning Matters</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-missing-values" class="internal"><span class="title">Handling Missing Values</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-outliers" class="internal"><span class="title">Dealing with Outliers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-restructuring" class="internal"><span class="title">Renaming and Restructuring Data</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-filtering-subsetting.html" class="internal"><span class="title">Filtering and Subsetting</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-filtering-subsetting.html#subsec-why-filter" class="internal"><span class="title">The Purpose of Filtering</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-filtering-subsetting.html#subsec-filtering-methods" class="internal"><span class="title">Filtering Methods in CODAP</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-filtering-subsetting.html#subsec-meaningful-subsets" class="internal"><span class="title">Creating Meaningful Subsets</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ethics-spotlight-selection.html" class="internal"><span class="title">Ethics Spotlight: Selection Bias</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-summarizing-calculating.html" class="internal"><span class="title">Summarizing, Calculating, and Grouping</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-summarizing-calculating.html#subsec-summary-statistics" class="internal"><span class="title">Essential Summary Statistics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-summarizing-calculating.html#subsec-derived-variables" class="internal"><span class="title">Creating Derived Variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-summarizing-calculating.html#subsec-grouping-aggregation" class="internal"><span class="title">Grouping and Aggregation Techniques</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-statistical-thinking-comparing.html" class="internal"><span class="title">Statistical Thinking: Comparing Groups</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-thinking-comparing.html#subsec-variation-within-between" class="internal"><span class="title">Variation Within and Between Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-thinking-comparing.html#subsec-meaningful-comparisons" class="internal"><span class="title">Making Meaningful Comparisons</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-unit3-summary.html" class="internal"><span class="title">Unit 3 Summary</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-data-cleaning"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Data Cleaning and Organization</span>
+</h2>
+<section class="subsection" id="subsec-importance-cleaning"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Why Data Cleaning Matters</span>
+</h3>
+<div class="para" id="subsec-importance-cleaning-2">Data cleaning is often the most time-consuming part of data science work—and for good reason. The quality of your cleaning directly affects the validity of your results.</div>
+<blockquote class="blockquote" id="subsec-importance-cleaning-3"><div class="para" id="subsec-importance-cleaning-3-1">"Garbage in, garbage out" is a fundamental principle in data science. No amount of sophisticated analysis can compensate for poor-quality data.</div></blockquote>
+<div class="para" id="subsec-importance-cleaning-4">Common data quality issues include:</div>
+<ul class="disc" id="subsec-importance-cleaning-5">
+<li id="subsec-importance-cleaning-5-1"><div class="para" id="subsec-importance-cleaning-5-1-1">
+<dfn class="terminology">Missing values</dfn>: Data points that weren’t recorded or were lost</div></li>
+<li id="subsec-importance-cleaning-5-2"><div class="para" id="subsec-importance-cleaning-5-2-1">
+<dfn class="terminology">Inconsistent formats</dfn>: The same information recorded in different ways (e.g., "NY" vs. "New York")</div></li>
+<li id="subsec-importance-cleaning-5-3"><div class="para" id="subsec-importance-cleaning-5-3-1">
+<dfn class="terminology">Duplicate records</dfn>: The same observation recorded multiple times</div></li>
+<li id="subsec-importance-cleaning-5-4"><div class="para" id="subsec-importance-cleaning-5-4-1">
+<dfn class="terminology">Outliers</dfn>: Extreme values that may represent errors or unusual cases</div></li>
+<li id="subsec-importance-cleaning-5-5"><div class="para" id="subsec-importance-cleaning-5-5-1">
+<dfn class="terminology">Structural issues</dfn>: Data not organized according to tidy data principles</div></li>
+<li id="subsec-importance-cleaning-5-6"><div class="para" id="subsec-importance-cleaning-5-6-1">
+<dfn class="terminology">Coding errors</dfn>: Incorrect values due to human or system errors</div></li>
+</ul>
+<details id="mc-data-quality-issues" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">52</span><span class="period">.</span><span class="space"> </span><span class="title">Identifying Data Quality Issues.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone multiplechoice_section"><ul data-component="multiplechoice" id="rs-mc-data-quality-issues" data-multipleanswers="false">
+<div class="para" id="mc-data-quality-issues-2-1">Which of the following would NOT typically be considered a data quality issue requiring cleaning?</div>
+<li data-component="answer" id="rs-mc-data-quality-issues_opt_a"><div class="para" id="mc-data-quality-issues-3-1-1-1">A temperature column contains some values recorded in Celsius and others in Fahrenheit.</div></li>
+<li data-component="feedback" id="rs-mc-data-quality-issues_opt_a"><div class="para" id="mc-data-quality-issues-3-1-2-1">This is a data quality issue. Inconsistent units need to be standardized before analysis.</div></li>
+<li data-component="answer" id="rs-mc-data-quality-issues_opt_b"><div class="para" id="mc-data-quality-issues-3-2-1-1">Several cells in a spreadsheet contain "#N/A" or "NULL" values.</div></li>
+<li data-component="feedback" id="rs-mc-data-quality-issues_opt_b"><div class="para" id="mc-data-quality-issues-3-2-2-1">Missing values represented as "#N/A" or "NULL" are data quality issues that need to be addressed.</div></li>
+<li data-component="answer" id="rs-mc-data-quality-issues_opt_c" data-correct=""><div class="para" id="mc-data-quality-issues-3-3-1-1">A dataset shows that air pollution levels are higher in urban areas compared to rural areas.</div></li>
+<li data-component="feedback" id="rs-mc-data-quality-issues_opt_c"><div class="para" id="mc-data-quality-issues-3-3-2-1">Correct! This is an actual finding from the data rather than a quality issue. It represents a pattern or relationship that might emerge after proper cleaning and analysis.</div></li>
+<li data-component="answer" id="rs-mc-data-quality-issues_opt_d"><div class="para" id="mc-data-quality-issues-3-4-1-1">Dates are stored in different formats such as "01/05/2023", "Jan 5, 2023", and "2023-01-05".</div></li>
+<li data-component="feedback" id="rs-mc-data-quality-issues_opt_d"><div class="para" id="mc-data-quality-issues-3-4-2-1">Inconsistent date formats are a data quality issue that needs to be standardized.</div></li>
+</ul></div></div></article></details><div class="para" id="subsec-importance-cleaning-7">Data cleaning is both a science and an art. While there are standard approaches for handling common issues, every dataset presents unique challenges that require careful judgment.</div></section><section class="subsection" id="subsec-missing-values"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Handling Missing Values</span>
+</h3>
+<div class="para" id="subsec-missing-values-2">Missing values are perhaps the most common data quality issue. Before deciding how to handle them, it’s important to understand why the data might be missing:</div>
+<dl class="description-list">
+<dt id="subsec-missing-values-3-1">Missing Completely at Random (MCAR)</dt>
+<dd><div class="para" id="subsec-missing-values-3-1-2">The missing values occur purely by chance, with no relationship to any variables in the dataset.</div></dd>
+<dt id="subsec-missing-values-3-2">Missing at Random (MAR)</dt>
+<dd><div class="para" id="subsec-missing-values-3-2-2">The probability of missing values depends on observed data but not on the missing values themselves.</div></dd>
+<dt id="subsec-missing-values-3-3">Missing Not at Random (MNAR)</dt>
+<dd><div class="para" id="subsec-missing-values-3-3-2">The missing values are related to the values themselves (e.g., people with high incomes might be less likely to report their income).</div></dd>
+</dl>
+<div class="para" id="subsec-missing-values-4">There are several common approaches to handling missing values:</div>
+<dl class="description-list">
+<dt id="subsec-missing-values-5-1">Complete Case Analysis (Listwise Deletion)</dt>
+<dd><div class="para" id="subsec-missing-values-5-1-2">Remove all rows with any missing values. Simple but can substantially reduce your dataset and introduce bias.</div></dd>
+<dt id="subsec-missing-values-5-2">Single Imputation</dt>
+<dd><div class="para" id="subsec-missing-values-5-2-2">Replace missing values with a calculated value like the mean, median, or mode. Straightforward but doesn’t account for uncertainty.</div></dd>
+<dt id="subsec-missing-values-5-3">Multiple Imputation</dt>
+<dd><div class="para" id="subsec-missing-values-5-3-2">Generate multiple plausible values for each missing value, reflecting uncertainty. More complex but statistically sounder.</div></dd>
+<dt id="subsec-missing-values-5-4">Indicator Variables</dt>
+<dd><div class="para" id="subsec-missing-values-5-4-2">Create a new variable that flags where values were missing, then use imputation. Preserves information about missingness patterns.</div></dd>
+</dl>
+<figure class="figure figure-like" id="fig-missing-values"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/missing-values-patterns.png" class="contained" alt="A visualization showing different patterns of missing values in a dataset: scattered randomly, entire columns missing, or specific combinations of variables missing together."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">53<span class="period">.</span></span><span class="space"> </span>Patterns of Missing Values</figcaption></figure><div class="para" id="subsec-missing-values-7">The appropriate approach depends on:</div>
+<ul class="disc" id="subsec-missing-values-8">
+<li id="subsec-missing-values-8-1"><div class="para" id="subsec-missing-values-8-1-1">The pattern and mechanism of missingness</div></li>
+<li id="subsec-missing-values-8-2"><div class="para" id="subsec-missing-values-8-2-1">The proportion of missing values</div></li>
+<li id="subsec-missing-values-8-3"><div class="para" id="subsec-missing-values-8-3-1">The importance of the variable to your analysis</div></li>
+<li id="subsec-missing-values-8-4"><div class="para" id="subsec-missing-values-8-4-1">The size of your dataset</div></li>
+</ul>
+<details id="example-missing-health" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">54</span><span class="period">.</span><span class="space"> </span><span class="title">Missing Values in Community Health Data.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="example-missing-health-2-1">In our Community Health dataset, we might encounter these missing value situations:</div> <ul class="disc" id="example-missing-health-2-2">
+<li id="example-missing-health-2-2-1"><div class="para" id="example-missing-health-2-2-1-1">A few neighborhoods have missing air quality index values because monitoring stations were temporarily offline (likely MCAR).</div></li>
+<li id="example-missing-health-2-2-2"><div class="para" id="example-missing-health-2-2-2-1">Asthma rates are more likely to be missing in lower-income neighborhoods due to less comprehensive health reporting systems (MAR).</div></li>
+<li id="example-missing-health-2-2-3"><div class="para" id="example-missing-health-2-2-3-1">Obesity rates might be missing in neighborhoods where they are particularly high due to stigma-related underreporting (MNAR).</div></li>
+</ul> <div class="para" id="example-missing-health-2-3">Different approaches might be appropriate for each situation:</div> <ul class="disc" id="example-missing-health-2-4">
+<li id="example-missing-health-2-4-1"><div class="para" id="example-missing-health-2-4-1-1">For the missing air quality values, we might interpolate values from nearby stations.</div></li>
+<li id="example-missing-health-2-4-2"><div class="para" id="example-missing-health-2-4-2-1">For missing asthma rates, we might use multiple imputation based on other health and socioeconomic variables.</div></li>
+<li id="example-missing-health-2-4-3"><div class="para" id="example-missing-health-2-4-3-1">For the obesity data, we should acknowledge the potential bias and perhaps use an indicator variable approach to flag where data was missing.</div></li>
+</ul></article></details><details id="parsons-missing-values" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">55</span><span class="period">.</span><span class="space"> </span><span class="title">Steps for Handling Missing Values.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone parsons_section" style="max-width: none;"><div data-component="parsons" class="parsons" id="rs-parsons-missing-values">
+<div class="parsons_question parsons-text"><div class="para" id="parsons-missing-values-2-1">Arrange the following steps in a logical order for handling missing values in a dataset.</div></div>
+<pre class="parsonsblocks" data-question_label="" style="visibility: hidden;" data-language="natural" data-adaptive="true" data-noindent="true"><div class="para" id="parsons-missing-values-3-1-1">Identify variables with missing values and calculate the proportion of missingness.</div>
+---
+<div class="para" id="parsons-missing-values-3-2-2-1">Examine patterns of missingness to understand potential mechanisms (MCAR, MAR, MNAR).</div>
+---
+<div class="para" id="parsons-missing-values-3-2-1-1">Immediately delete all rows with any missing values.</div> #paired
+---
+<div class="para" id="parsons-missing-values-3-2-3-1">Replace all missing values with zero.</div> #paired
+---
+<div class="para" id="parsons-missing-values-3-3-1">Consider the impact of missingness on your specific research questions.</div>
+---
+<div class="para" id="parsons-missing-values-3-4-1">Select appropriate techniques for handling missing values based on the pattern, mechanism, and research goals.</div>
+---
+<div class="para" id="parsons-missing-values-3-5-1">Implement the chosen techniques and document your approach.</div>
+---
+<div class="para" id="parsons-missing-values-3-6-1">Ignore missing values since they don’t affect analysis results.</div> #distractor</pre>
+</div></div></div>
+<div class="solutions"><details id="parsons-missing-values-4" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="parsons-missing-values-4-1">Before deciding how to handle missing values, you need to understand the extent and pattern of missingness in your data.</div></div></details></div></article></details><article class="activity project-like" id="activity-missing-values"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">15</span><span class="period">.</span><span class="space"> </span><span class="title">Missing Values in CODAP.</span>
+</h4>
+<div class="introduction" id="activity-missing-values-2"><div class="para" id="activity-missing-values-2-1">In this activity, you’ll practice working with missing values in CODAP.</div></div>
+<article class="task exercise-like" id="activity-missing-values-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="activity-missing-values-3-1-1">Open the Community Health dataset in CODAP (or your own project dataset).</div></article><article class="task exercise-like" id="activity-missing-values-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="activity-missing-values-4-1-1">Identify variables with missing values. CODAP typically shows these as empty cells. Count how many missing values exist for each variable.</div></article><article class="task exercise-like" id="activity-missing-values-5"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="activity-missing-values-5-1-1">Create a calculated attribute using the formula <code class="code-inline tex2jax_ignore">if(isNaN(originalAttribute), replacementValue, originalAttribute)</code> to replace missing values in a numerical column with the mean or median of that column.</div></article><article class="task exercise-like" id="activity-missing-values-6"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="activity-missing-values-6-1-1">Create visualizations comparing the distribution of a variable before and after imputing missing values. How does the imputation affect the distribution?</div></article></article></section><section class="subsection" id="subsec-outliers"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Dealing with Outliers</span>
+</h3>
+<div class="para" id="subsec-outliers-2">Outliers are extreme values that differ significantly from other observations in the dataset. Not all outliers are errors—some represent genuine extreme cases that are important to understand.</div>
+<article class="definition definition-like" id="def-outlier"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">56</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-outlier-1-1">An <dfn class="terminology">outlier</dfn> is an observation that falls far outside the typical range of values in a dataset, often defined statistically as values more than 1.5 interquartile ranges below the first quartile or above the third quartile.</div></article><div class="para" id="subsec-outliers-4">When encountering outliers, consider these questions:</div>
+<ul class="disc" id="subsec-outliers-5">
+<li id="subsec-outliers-5-1"><div class="para" id="subsec-outliers-5-1-1">Is the outlier a genuine observation or a data entry error?</div></li>
+<li id="subsec-outliers-5-2"><div class="para" id="subsec-outliers-5-2-1">If it’s genuine, does it represent an important case that should be included in analysis?</div></li>
+<li id="subsec-outliers-5-3"><div class="para" id="subsec-outliers-5-3-1">How much influence does the outlier have on your statistics and visualizations?</div></li>
+<li id="subsec-outliers-5-4"><div class="para" id="subsec-outliers-5-4-1">What is the most appropriate way to handle this outlier given your research questions?</div></li>
+</ul>
+<div class="para" id="subsec-outliers-6">Common approaches to handling outliers include:</div>
+<dl class="description-list">
+<dt id="subsec-outliers-7-1">Retain</dt>
+<dd><div class="para" id="subsec-outliers-7-1-2">Keep outliers in the dataset, especially if they represent valid and important observations.</div></dd>
+<dt id="subsec-outliers-7-2">Remove</dt>
+<dd><div class="para" id="subsec-outliers-7-2-2">Delete outliers if they are clearly errors or if they unduly influence your analysis.</div></dd>
+<dt id="subsec-outliers-7-3">Transform</dt>
+<dd><div class="para" id="subsec-outliers-7-3-2">Apply mathematical transformations (like logarithmic) to reduce the influence of extreme values.</div></dd>
+<dt id="subsec-outliers-7-4">Cap</dt>
+<dd><div class="para" id="subsec-outliers-7-4-2">Set a maximum threshold and replace values exceeding it (winsorizing).</div></dd>
+<dt id="subsec-outliers-7-5">Analyze Separately</dt>
+<dd><div class="para" id="subsec-outliers-7-5-2">Conduct analyses both with and without outliers to understand their influence.</div></dd>
+</dl>
+<details id="example-outliers-health" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">57</span><span class="period">.</span><span class="space"> </span><span class="title">Outliers in Community Health Data.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="example-outliers-health-2-1">In our Community Health dataset, we might encounter several types of outliers:</div> <ul class="disc" id="example-outliers-health-2-2">
+<li id="example-outliers-health-2-2-1"><div class="para" id="example-outliers-health-2-2-1-1">A neighborhood shows an air quality index ten times higher than any other neighborhood, which investigation reveals was due to a data entry error (decimal point misplaced). This should be corrected.</div></li>
+<li id="example-outliers-health-2-2-2"><div class="para" id="example-outliers-health-2-2-2-1">One neighborhood has an unusually high asthma rate that is verified as accurate and corresponds to its proximity to a major industrial facility. This outlier should be retained as it represents an important case.</div></li>
+<li id="example-outliers-health-2-2-3"><div class="para" id="example-outliers-health-2-2-3-1">Income distribution across neighborhoods is highly skewed, with a few very wealthy areas. A log transformation might be appropriate for some analyses to better visualize relationships.</div></li>
+</ul></article></details><figure class="figure figure-like" id="fig-outlier-detection"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/outlier-detection.png" class="contained" alt="A box plot showing the distribution of values with outliers marked as individual points beyond the whiskers."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">58<span class="period">.</span></span><span class="space"> </span>Detecting Outliers with Box Plots</figcaption></figure><details id="mc-outlier-handling" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">59</span><span class="period">.</span><span class="space"> </span><span class="title">Outlier Handling Approaches.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone multiplechoice_section"><ul data-component="multiplechoice" id="rs-mc-outlier-handling" data-multipleanswers="false">
+<div class="para" id="mc-outlier-handling-2-1">Which approach to handling outliers would be MOST appropriate in this situation: You’re analyzing neighborhood crime rates, and one neighborhood has a rate five times higher than the next highest. Upon investigation, you confirm this is accurate data for a neighborhood with unique circumstances.</div>
+<li data-component="answer" id="rs-mc-outlier-handling_opt_a"><div class="para" id="mc-outlier-handling-3-1-1-1">Remove the neighborhood from your dataset to prevent it from skewing your statistical results.</div></li>
+<li data-component="feedback" id="rs-mc-outlier-handling_opt_a"><div class="para" id="mc-outlier-handling-3-1-2-1">This would not be appropriate since the outlier represents a genuine and potentially important case. Removing it would eliminate valuable information about an actual neighborhood.</div></li>
+<li data-component="answer" id="rs-mc-outlier-handling_opt_b"><div class="para" id="mc-outlier-handling-3-2-1-1">Replace the crime rate value with the mean of all other neighborhoods.</div></li>
+<li data-component="feedback" id="rs-mc-outlier-handling_opt_b"><div class="para" id="mc-outlier-handling-3-2-2-1">Replacing a confirmed accurate value with the mean would discard valid information and misrepresent the actual situation in that neighborhood.</div></li>
+<li data-component="answer" id="rs-mc-outlier-handling_opt_c" data-correct=""><div class="para" id="mc-outlier-handling-3-3-1-1">Retain the outlier but conduct analyses both with and without it to understand its influence on your results.</div></li>
+<li data-component="feedback" id="rs-mc-outlier-handling_opt_c"><div class="para" id="mc-outlier-handling-3-3-2-1">Correct! This approach preserves the valid data point while allowing you to assess its impact on your overall results. This provides a more complete understanding of neighborhood crime patterns.</div></li>
+<li data-component="answer" id="rs-mc-outlier-handling_opt_d"><div class="para" id="mc-outlier-handling-3-4-1-1">Cap the value at three times the next highest rate to reduce its influence.</div></li>
+<li data-component="feedback" id="rs-mc-outlier-handling_opt_d"><div class="para" id="mc-outlier-handling-3-4-2-1">Capping a confirmed accurate value would artificially alter real data. Since the extreme value is valid, artificially reducing it would misrepresent the actual situation.</div></li>
+</ul></div></div></article></details><article class="activity project-like" id="activity-outlier-detection"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">16</span><span class="period">.</span><span class="space"> </span><span class="title">Outlier Detection in CODAP.</span>
+</h4>
+<div class="introduction" id="activity-outlier-detection-2"><div class="para" id="activity-outlier-detection-2-1">In this activity, you’ll practice identifying and examining outliers in CODAP.</div></div>
+<article class="task exercise-like" id="activity-outlier-detection-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="activity-outlier-detection-3-1-1">Open your dataset in CODAP and create box plots for at least three numerical variables.</div></article><article class="task exercise-like" id="activity-outlier-detection-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="activity-outlier-detection-4-1-1">Identify potential outliers in each variable (points outside the whiskers of the box plot).</div></article><article class="task exercise-like" id="activity-outlier-detection-5"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="activity-outlier-detection-5-1-1">For each identified outlier, examine the complete record (row) to see if you can determine why it might be unusual. Is it likely an error or a genuine extreme case?</div></article><article class="task exercise-like" id="activity-outlier-detection-6"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="activity-outlier-detection-6-1-1">Create scatter plots showing relationships between variables, and identify any points that appear to be outliers in these relationships (even if they’re not outliers in individual variables).</div></article></article></section><section class="subsection" id="subsec-restructuring"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Renaming and Restructuring Data</span>
+</h3>
+<div class="para" id="subsec-restructuring-2">Beyond fixing errors, data cleaning often involves restructuring the dataset to make it more suitable for analysis. This might include:</div>
+<ul class="disc" id="subsec-restructuring-3">
+<li id="subsec-restructuring-3-1"><div class="para" id="subsec-restructuring-3-1-1">
+<dfn class="terminology">Renaming variables</dfn> for clarity and consistency</div></li>
+<li id="subsec-restructuring-3-2"><div class="para" id="subsec-restructuring-3-2-1">
+<dfn class="terminology">Recoding values</dfn> to standardize categories (e.g., "M" and "Male" to a single code)</div></li>
+<li id="subsec-restructuring-3-3"><div class="para" id="subsec-restructuring-3-3-1">
+<dfn class="terminology">Creating new variables</dfn> based on existing ones</div></li>
+<li id="subsec-restructuring-3-4"><div class="para" id="subsec-restructuring-3-4-1">
+<dfn class="terminology">Reshaping data</dfn> between wide and long formats</div></li>
+<li id="subsec-restructuring-3-5"><div class="para" id="subsec-restructuring-3-5-1">
+<dfn class="terminology">Merging datasets</dfn> to combine information from different sources</div></li>
+</ul>
+<div class="para" id="subsec-restructuring-4">A particularly important restructuring is ensuring your data follows the principles of tidy data:</div>
+<ul class="disc" id="subsec-restructuring-5">
+<li id="subsec-restructuring-5-1"><div class="para" id="subsec-restructuring-5-1-1">Each variable forms a column</div></li>
+<li id="subsec-restructuring-5-2"><div class="para" id="subsec-restructuring-5-2-1">Each observation forms a row</div></li>
+<li id="subsec-restructuring-5-3"><div class="para" id="subsec-restructuring-5-3-1">Each type of observational unit forms a table</div></li>
+</ul>
+<details id="example-restructuring-health" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">60</span><span class="period">.</span><span class="space"> </span><span class="title">Restructuring Community Health Data.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="example-restructuring-health-2-1">For our Community Health dataset, we might need to:</div> <ul class="disc" id="example-restructuring-health-2-2">
+<li id="example-restructuring-health-2-2-1"><div class="para" id="example-restructuring-health-2-2-1-1">Rename variables from cryptic codes like "AQI_AVG" to clearer names like "Average_Air_Quality_Index"</div></li>
+<li id="example-restructuring-health-2-2-2"><div class="para" id="example-restructuring-health-2-2-2-1">Standardize inconsistent neighborhood classifications (e.g., "Downtown", "Central Business District", "CBD" all referring to the same area)</div></li>
+<li id="example-restructuring-health-2-2-3"><div class="para" id="example-restructuring-health-2-2-3-1">Create a new variable categorizing air quality as "Good", "Moderate", or "Poor" based on numerical AQI values</div></li>
+<li id="example-restructuring-health-2-2-4"><div class="para" id="example-restructuring-health-2-2-4-1">Convert data from a wide format (different health metrics in separate columns) to a long format (a single "Health_Metric" column with a "Value" column) for certain analyses</div></li>
+</ul></article></details><details id="matching-restructuring" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">61</span><span class="period">.</span><span class="space"> </span><span class="title">Data Restructuring Operations.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="rs-matching-restructuring">
+<span data-subcomponent="question"><div class="para" id="matching-restructuring-2-1">Match each data restructuring operation with its most appropriate use case.</div></span><li data-subcomponent="draggable" id="rs-matching-restructuring_drag1" data-category="1">Converting from wide to long format</li>
+<li data-subcomponent="dropzone" for="rs-matching-restructuring_drag1" data-category="1">Preparing data where one observation is measured across multiple time points for time-series visualization</li>
+<li data-subcomponent="draggable" id="rs-matching-restructuring_drag2" data-category="2">Recoding categorical values</li>
+<li data-subcomponent="dropzone" for="rs-matching-restructuring_drag2" data-category="2">Standardizing inconsistent entries like "F", "female", and "fem" to a single value</li>
+<li data-subcomponent="draggable" id="rs-matching-restructuring_drag3" data-category="3">Creating calculated variables</li>
+<li data-subcomponent="dropzone" for="rs-matching-restructuring_drag3" data-category="3">Deriving Body Mass Index (BMI) from height and weight measurements</li>
+<li data-subcomponent="draggable" id="rs-matching-restructuring_drag4" data-category="4">Merging datasets</li>
+<li data-subcomponent="dropzone" for="rs-matching-restructuring_drag4" data-category="4">Combining neighborhood health data with separate census demographic data using a common ID</li>
+<li data-subcomponent="draggable" id="rs-matching-restructuring_drag5" data-category="5">Renaming variables</li>
+<li data-subcomponent="dropzone" for="rs-matching-restructuring_drag5" data-category="5">Changing cryptic column names like "var001" to descriptive names like "annual_income"</li>
+</ul></div></div></article></details><article class="activity project-like" id="activity-data-restructuring"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">17</span><span class="period">.</span><span class="space"> </span><span class="title">Restructuring Data in CODAP.</span>
+</h4>
+<div class="introduction" id="activity-data-restructuring-2"><div class="para" id="activity-data-restructuring-2-1">In this activity, you’ll practice renaming and restructuring data in CODAP.</div></div>
+<article class="task exercise-like" id="activity-data-restructuring-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="activity-data-restructuring-3-1-1">In your dataset, identify at least three variables that could benefit from clearer, more descriptive names. Rename these attributes in CODAP by right-clicking on the column header.</div></article><article class="task exercise-like" id="activity-data-restructuring-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="activity-data-restructuring-4-1-1">Find a numerical variable that would be useful to categorize. Use CODAP’s calculator to create a new attribute that categorizes values (e.g., creating "Income_Level" with values like "Low", "Medium", and "High" based on numeric income).</div></article><article class="task exercise-like" id="activity-data-restructuring-5"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="activity-data-restructuring-5-1-1">Create at least one calculated attribute that performs a mathematical operation on existing variables (e.g., a ratio, percentage, or unit conversion).</div></article></article></section></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-unit3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-filtering-subsetting.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

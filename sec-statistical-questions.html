@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Front Matter</title>
+<title>Formulating Statistical Questions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -153,7 +153,7 @@ eBookConfig.enable_chatcodes =  false;
 <textarea class="embed-code-textbox" id="embed-code-textbox" readonly aria-label="textbox"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button class="copy-embed-button button" id="copy-embed-button" title="Copy embed code"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
 </div>
 </div>
-<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="my-great-book.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="my-great-book.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span>
+<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-investigation-framework.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-unit2.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-planning-investigation.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
@@ -163,7 +163,7 @@ eBookConfig.enable_chatcodes =  false;
 \)</span></div>
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-frontmatter active"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-unit1.html" class="internal"><span class="codenumber">1</span> <span class="title">Unit 1: Foundations of Data Science</span></a></div>
 <ul class="structural toc-item-list">
@@ -201,9 +201,9 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-unit1-summary.html" class="internal"><span class="title">Unit 1 Summary</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-unit2.html" class="internal"><span class="codenumber">2</span> <span class="title">Unit 2: The Data Investigation Process</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-investigation-framework.html" class="internal"><span class="title">The Data Investigation Framework</span></a></div>
 <ul class="structural toc-item-list">
@@ -211,9 +211,9 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-investigation-framework.html#subsec-framework-in-practice" class="internal"><span class="title">The Framework in Practice</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec-statistical-questions.html" class="internal"><span class="title">Formulating Statistical Questions</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-questions.html#subsec-what-are-stat-questions" class="internal"><span class="title">What Makes a Question Statistical?</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-questions.html#subsec-crafting-questions" class="internal"><span class="title">Crafting Effective Statistical Questions</span></a></div></li>
 </ul>
@@ -277,21 +277,120 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="frontmatter" id="frontmatter"><h2 class="heading">
-<span class="title">Introduction to Data Science:</span> <span class="subtitle">A Low-Code Project-Based Approach</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-statistical-questions"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Formulating Statistical Questions</span>
 </h2>
-<div class="author">
-<div class="author-name">Hannah Kurzweil</div>
-<div class="author-info">Data Science 4 Everyone</div>
+<section class="subsection" id="subsec-what-are-stat-questions"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">What Makes a Question Statistical?</span>
+</h3>
+<div class="para" id="subsec-what-are-stat-questions-2">Not all questions are statistical questions. A statistical question is one that can be answered by collecting data and where we expect variability in that data.</div>
+<article class="definition definition-like" id="def-statistical-question"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">35</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-statistical-question-1-1">A <dfn class="terminology">statistical question</dfn> is a question that anticipates variability in the data related to it and can be answered by analyzing data. It usually addresses patterns, trends, or relationships in a group or population rather than specific individuals.</div></article><details id="example-stat-vs-nonstat" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">36</span><span class="period">.</span><span class="space"> </span><span class="title">Statistical vs. Non-Statistical Questions.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="example-stat-vs-nonstat-2-1">Non-statistical questions typically have a single, deterministic answer:</div> <ul class="disc" id="example-stat-vs-nonstat-2-2">
+<li id="example-stat-vs-nonstat-2-2-1"><div class="para" id="example-stat-vs-nonstat-2-2-1-1">How tall is Jamal? (Asks about a specific individual)</div></li>
+<li id="example-stat-vs-nonstat-2-2-2"><div class="para" id="example-stat-vs-nonstat-2-2-2-1">What is the capital of France? (Has a definitive answer)</div></li>
+<li id="example-stat-vs-nonstat-2-2-3"><div class="para" id="example-stat-vs-nonstat-2-2-3-1">Did it rain yesterday? (Yes/no factual question)</div></li>
+</ul> <div class="para" id="example-stat-vs-nonstat-2-3">Statistical questions anticipate variability and focus on distributions:</div> <ul class="disc" id="example-stat-vs-nonstat-2-4">
+<li id="example-stat-vs-nonstat-2-4-1"><div class="para" id="example-stat-vs-nonstat-2-4-1-1">How tall are 7th-grade students at Lincoln Middle School? (Expects variation in heights)</div></li>
+<li id="example-stat-vs-nonstat-2-4-2"><div class="para" id="example-stat-vs-nonstat-2-4-2-1">What is the relationship between a country’s GDP and its literacy rate? (Examines patterns across countries)</div></li>
+<li id="example-stat-vs-nonstat-2-4-3"><div class="para" id="example-stat-vs-nonstat-2-4-3-1">How does rainfall vary by month in Seattle? (Looks at distribution over time)</div></li>
+</ul></article></details><details id="mc-identify-stat-questions" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">37</span><span class="period">.</span><span class="space"> </span><span class="title">Identifying Statistical Questions.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone multiplechoice_section"><ul data-component="multiplechoice" id="rs-mc-identify-stat-questions" data-multipleanswers="false">
+<div class="para" id="mc-identify-stat-questions-2-1">Which of the following is a statistical question?</div>
+<li data-component="answer" id="rs-mc-identify-stat-questions_opt_a"><div class="para" id="mc-identify-stat-questions-3-1-1-1">What is the temperature right now?</div></li>
+<li data-component="feedback" id="rs-mc-identify-stat-questions_opt_a"><div class="para" id="mc-identify-stat-questions-3-1-2-1">This is not a statistical question because it asks for a single measurement at a specific point in time, not a distribution or pattern.</div></li>
+<li data-component="answer" id="rs-mc-identify-stat-questions_opt_b"><div class="para" id="mc-identify-stat-questions-3-2-1-1">How many siblings does Maria have?</div></li>
+<li data-component="feedback" id="rs-mc-identify-stat-questions_opt_b"><div class="para" id="mc-identify-stat-questions-3-2-2-1">This is not a statistical question because it asks about a specific individual and has a single answer.</div></li>
+<li data-component="answer" id="rs-mc-identify-stat-questions_opt_c" data-correct=""><div class="para" id="mc-identify-stat-questions-3-3-1-1">How does commute time vary among employees at a company?</div></li>
+<li data-component="feedback" id="rs-mc-identify-stat-questions_opt_c"><div class="para" id="mc-identify-stat-questions-3-3-2-1">Correct! This is a statistical question because it anticipates variability (different commute times) and requires analyzing data from a group.</div></li>
+<li data-component="answer" id="rs-mc-identify-stat-questions_opt_d"><div class="para" id="mc-identify-stat-questions-3-4-1-1">Is 15 minutes a long time to wait for a bus?</div></li>
+<li data-component="feedback" id="rs-mc-identify-stat-questions_opt_d"><div class="para" id="mc-identify-stat-questions-3-4-2-1">This is not a statistical question because it asks for a subjective judgment rather than something that can be answered directly with data.</div></li>
+</ul></div></div></article></details><div class="para" id="subsec-what-are-stat-questions-6">Good statistical questions are the foundation of effective data investigations. They guide the entire process, from data collection to analysis and interpretation.</div></section><section class="subsection" id="subsec-crafting-questions"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Crafting Effective Statistical Questions</span>
+</h3>
+<div class="para" id="subsec-crafting-questions-2">Effective statistical questions have several key characteristics:</div>
+<ul class="disc" id="subsec-crafting-questions-3">
+<li id="subsec-crafting-questions-3-1"><div class="para" id="subsec-crafting-questions-3-1-1">
+<dfn class="terminology">Clear and specific</dfn>: Precisely defines what you want to know and what population you’re studying</div></li>
+<li id="subsec-crafting-questions-3-2"><div class="para" id="subsec-crafting-questions-3-2-1">
+<dfn class="terminology">Answerable with data</dfn>: Can be investigated through data collection and analysis</div></li>
+<li id="subsec-crafting-questions-3-3"><div class="para" id="subsec-crafting-questions-3-3-1">
+<dfn class="terminology">Anticipates variability</dfn>: Expects a distribution of values rather than a single answer</div></li>
+<li id="subsec-crafting-questions-3-4"><div class="para" id="subsec-crafting-questions-3-4-1">
+<dfn class="terminology">Meaningful</dfn>: Addresses something worth investigating and has potential implications</div></li>
+<li id="subsec-crafting-questions-3-5"><div class="para" id="subsec-crafting-questions-3-5-1">
+<dfn class="terminology">Neutral</dfn>: Doesn’t presuppose a particular answer or bias the investigation</div></li>
+</ul>
+<details id="example-refining-questions" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">38</span><span class="period">.</span><span class="space"> </span><span class="title">Refining Statistical Questions.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="example-refining-questions-2-1">Consider how we might refine these initial questions to make them more effective:</div> <ul class="disc" id="example-refining-questions-2-2">
+<li id="example-refining-questions-2-2-1">
+<div class="para" id="example-refining-questions-2-2-1-1">
+<dfn class="terminology">Initial</dfn>: Is air pollution bad for health?</div>
+<div class="para" id="example-refining-questions-2-2-1-2">
+<dfn class="terminology">Refined</dfn>: What is the relationship between average annual air quality index (AQI) and asthma hospitalization rates across neighborhoods in our city over the past five years?</div>
+</li>
+<li id="example-refining-questions-2-2-2">
+<div class="para" id="example-refining-questions-2-2-2-1">
+<dfn class="terminology">Initial</dfn>: Do parks make neighborhoods healthier?</div>
+<div class="para" id="example-refining-questions-2-2-2-2">
+<dfn class="terminology">Refined</dfn>: How does the percentage of green space in a neighborhood correlate with residents’ self-reported physical activity levels, controlling for median income?</div>
+</li>
+<li id="example-refining-questions-2-2-3">
+<div class="para" id="example-refining-questions-2-2-3-1">
+<dfn class="terminology">Initial</dfn>: Which neighborhood has the worst environmental health?</div>
+<div class="para" id="example-refining-questions-2-2-3-2">
+<dfn class="terminology">Refined</dfn>: How do neighborhoods compare across multiple environmental health indicators (air quality, water quality, access to green space, and proximity to pollution sources), and what patterns emerge when considering demographic factors?</div>
+</li>
+</ul></article></details><div class="para" id="subsec-crafting-questions-5">Notice how the refined questions are more specific about what is being measured, the population being studied, and the relationships being investigated. They also avoid loaded terms like "bad" or "worst" that might bias the investigation.</div>
+<article class="activity project-like" id="activity-refine-questions"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">11</span><span class="period">.</span><span class="space"> </span><span class="title">Refining Your Questions.</span>
+</h4>
+<div class="introduction" id="activity-refine-questions-2"><div class="para" id="activity-refine-questions-2-1">In this activity, you’ll work on developing effective statistical questions for your project.</div></div>
+<article class="task exercise-like" id="activity-refine-questions-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="activity-refine-questions-3-1-1">Review the statistical questions you brainstormed in the previous activity. Select one that you think has the most potential.</div></article><article class="task exercise-like" id="activity-refine-questions-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="activity-refine-questions-4-1-1">Refine your selected question using the characteristics of effective statistical questions. Make it clearer, more specific, and more answerable with data.</div></article><article class="task exercise-like" id="activity-refine-questions-5"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="activity-refine-questions-5-1-1">Share your refined question with a classmate and provide feedback on each other’s questions.</div></article></article><details id="exercise-improve-questions" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">39</span><span class="period">.</span><span class="space"> </span><span class="title">Improving Statistical Questions.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="introduction" id="exercise-improve-questions-2"><div class="para" id="exercise-improve-questions-2-1">For each initial question below, select the most improved version that follows the principles of effective statistical questions.</div></div>
+<div id="webwork-1" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="1" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIlBHTUwucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwicGFyc2VyUmFkaW9CdXR0b25zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskc2xlZXAgPSBSYWRpb0J1dHRvbnMoClsiU2hvdWxkIHN0dWRlbnRzIGdldCBtb3JlIHNsZWVwPyIsCiJXaGF0IGlzIHRoZSBkaXN0cmlidXRpb24gb2YgbmlnaHRseSBzbGVlcCBkdXJhdGlvbiBhbW9uZyBoaWdoIHNjaG9vbCBzdHVkZW50cywgYW5kIGhvdyBkb2VzIGl0IGNvbXBhcmUgdG8gcmVjb21tZW5kZWQgYW1vdW50cyBmb3IgYWRvbGVzY2VudHM/IiwKIldoeSBkb24ndCBzdHVkZW50cyBnZXQgZW5vdWdoIHNsZWVwPyIsCiJXaG8gc2xlZXBzIHRoZSBtb3N0IGluIHRoZSBzb3Bob21vcmUgY2xhc3M/Il0sCjEsICAjIGluZGV4IG9mIGNvcnJlY3QgYW5zd2VyICgwLWJhc2VkKQpsYWJlbHMgPT4gWyJhIiwgImIiLCAiYyIsICJkIl0KKTsKCiRoZWFsdGggPSBSYWRpb0J1dHRvbnMoClsiSXMgaXQgZmFpciB0aGF0IHJpY2ggcGVvcGxlIGFyZSBoZWFsdGhpZXI/IiwKIldoYXQgaXMgSm9obidzIGluY29tZSBhbmQgaGVhbHRoIHN0YXR1cz8iLAoiSG93IGRvIHJhdGVzIG9mIGNocm9uaWMgZGlzZWFzZXMgdmFyeSBhY3Jvc3MgZGlmZmVyZW50IGluY29tZSBicmFja2V0cyBpbiB0aGUgVW5pdGVkIFN0YXRlcywgYW5kIGhhcyB0aGlzIHJlbGF0aW9uc2hpcCBjaGFuZ2VkIG92ZXIgdGhlIHBhc3QgZGVjYWRlPyIsCiJXaHkgZG8gcG9vciBwZW9wbGUgaGF2ZSB3b3JzZSBoZWFsdGggb3V0Y29tZXM/Il0sCjIsICAjIGluZGV4IG9mIGNvcnJlY3QgYW5zd2VyICgwLWJhc2VkKQpsYWJlbHMgPT4gWyJhIiwgImIiLCAiYyIsICJkIl0KKTsKCkJFR0lOX1BHTUwKUXVlc3Rpb24gMTogSW5pdGlhbCBxdWVzdGlvbjogQXJlIHN0dWRlbnRzIGdldHRpbmcgZW5vdWdoIHNsZWVwPwoKU2VsZWN0IHRoZSBtb3N0IGltcHJvdmVkIHZlcnNpb24gb2YgdGhpcyBxdWVzdGlvbjoKCltfXXskc2xlZXB9ezV9CgpRdWVzdGlvbiAyOiBJbml0aWFsIHF1ZXN0aW9uOiBEb2VzIGluY29tZSBhZmZlY3QgaGVhbHRoPwoKU2VsZWN0IHRoZSBtb3N0IGltcHJvdmVkIHZlcnNpb24gb2YgdGhpcyBxdWVzdGlvbjoKCltfXXskaGVhbHRofXs1fQoKCkVORF9QR01MCgpCRUdJTl9QR01MX0hJTlQKVGhpbmsgYWJvdXQgd2hhdCBtYWtlcyBhIGdvb2Qgc3RhdGlzdGljYWwgcXVlc3Rpb246IGl0IHNob3VsZCBiZSBzcGVjaWZpYywgbWVhc3VyYWJsZSwgYW5kIGZyZWUgZnJvbSBhc3N1bXB0aW9ucyBvciB2YWx1ZSBqdWRnbWVudHMuCgoKRU5EX1BHTUxfSElOVAoKQkVHSU5fUEdNTF9TT0xVVElPTgpRdWVzdGlvbiAxOiBUaGUgYmVzdCBpbXByb3ZlZCB2ZXJzaW9uIGlzOiAiV2hhdCBpcyB0aGUgZGlzdHJpYnV0aW9uIG9mIG5pZ2h0bHkgc2xlZXAgZHVyYXRpb24gYW1vbmcgaGlnaCBzY2hvb2wgc3R1ZGVudHMsIGFuZCBob3cgZG9lcyBpdCBjb21wYXJlIHRvIHJlY29tbWVuZGVkIGFtb3VudHMgZm9yIGFkb2xlc2NlbnRzPyIKClRoaXMgcXVlc3Rpb24gaXMgc3BlY2lmaWMgYWJvdXQgd2hhdCBpcyBiZWluZyBtZWFzdXJlZCAoc2xlZXAgZHVyYXRpb24pLCB0aGUgcG9wdWxhdGlvbiAoaGlnaCBzY2hvb2wgc3R1ZGVudHMpLCBhbmQgaW5jbHVkZXMgYSBjb21wYXJpc29uIHRvIGEgc3RhbmRhcmQuCgpRdWVzdGlvbiAyOiBUaGUgYmVzdCBpbXByb3ZlZCB2ZXJzaW9uIGlzOiAiSG93IGRvIHJhdGVzIG9mIGNocm9uaWMgZGlzZWFzZXMgdmFyeSBhY3Jvc3MgZGlmZmVyZW50IGluY29tZSBicmFja2V0cyBpbiB0aGUgVW5pdGVkIFN0YXRlcywgYW5kIGhhcyB0aGlzIHJlbGF0aW9uc2hpcCBjaGFuZ2VkIG92ZXIgdGhlIHBhc3QgZGVjYWRlPyIKClRoaXMgcXVlc3Rpb24gaXMgc3BlY2lmaWMgYWJvdXQgdGhlIHZhcmlhYmxlcyAoY2hyb25pYyBkaXNlYXNlIHJhdGVzLCBpbmNvbWUgYnJhY2tldHMpLCB0aGUgcG9wdWxhdGlvbiAoVW5pdGVkIFN0YXRlcyksIGFuZCBhZGRzIGEgdGltZSBkaW1lbnNpb24gZm9yIGFkZGl0aW9uYWwgaW5zaWdodC4KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-1-1-1-1">Question 1: Initial question: Are students getting enough sleep?</div> <div class="para" id="extracted-webwork-1-1-1-2">Select the most improved version of this question:</div> <div class="para logical" id="extracted-webwork-1-1-1-3"><ul class="circle" id="extracted-webwork-1-1-1-3-1">
+<li id="extracted-webwork-1-1-1-3-1-1"><div class="para" id="extracted-webwork-1-1-1-3-1-1-1">
+<em class="alert">a</em>. Should students get more sleep?</div></li>
+<li id="extracted-webwork-1-1-1-3-1-2"><div class="para" id="extracted-webwork-1-1-1-3-1-2-1">
+<em class="alert">b</em>. What is the distribution of nightly sleep duration among high school students, and how does it compare to recommended amounts for adolescents?</div></li>
+<li id="extracted-webwork-1-1-1-3-1-3"><div class="para" id="extracted-webwork-1-1-1-3-1-3-1">
+<em class="alert">c</em>. Why don’t students get enough sleep?</div></li>
+<li id="extracted-webwork-1-1-1-3-1-4"><div class="para" id="extracted-webwork-1-1-1-3-1-4-1">
+<em class="alert">d</em>. Who sleeps the most in the sophomore class?</div></li>
+</ul></div> <div class="para" id="extracted-webwork-1-1-1-4">Question 2: Initial question: Does income affect health?</div> <div class="para" id="extracted-webwork-1-1-1-5">Select the most improved version of this question:</div> <div class="para logical" id="extracted-webwork-1-1-1-6"><ul class="circle" id="extracted-webwork-1-1-1-6-1">
+<li id="extracted-webwork-1-1-1-6-1-1"><div class="para" id="extracted-webwork-1-1-1-6-1-1-1">
+<em class="alert">a</em>. Is it fair that rich people are healthier?</div></li>
+<li id="extracted-webwork-1-1-1-6-1-2"><div class="para" id="extracted-webwork-1-1-1-6-1-2-1">
+<em class="alert">b</em>. What is John’s income and health status?</div></li>
+<li id="extracted-webwork-1-1-1-6-1-3"><div class="para" id="extracted-webwork-1-1-1-6-1-3-1">
+<em class="alert">c</em>. How do rates of chronic diseases vary across different income brackets in the United States, and has this relationship changed over the past decade?</div></li>
+<li id="extracted-webwork-1-1-1-6-1-4"><div class="para" id="extracted-webwork-1-1-1-6-1-4-1">
+<em class="alert">d</em>. Why do poor people have worse health outcomes?</div></li>
+</ul></div>
+<div class="solutions">
+<details id="extracted-webwork-1-1-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="extracted-webwork-1-1-2-1">Think about what makes a good statistical question: it should be specific, measurable, and free from assumptions or value judgments.</div></div></details><details id="extracted-webwork-1-1-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="extracted-webwork-1-1-3-1"><span class="process-math">\(\text{b}\)</span></div></div></details><details id="extracted-webwork-1-1-4" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="extracted-webwork-1-1-4-1"><span class="process-math">\(\text{c}\)</span></div></div></details><details id="extracted-webwork-1-1-5" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="extracted-webwork-1-1-5-1">Question 1: The best improved version is: “What is the distribution of nightly sleep duration among high school students, and how does it compare to recommended amounts for adolescents?”</div>
+<div class="para" id="extracted-webwork-1-1-5-2">This question is specific about what is being measured (sleep duration), the population (high school students), and includes a comparison to a standard.</div>
+<div class="para" id="extracted-webwork-1-1-5-3">Question 2: The best improved version is: “How do rates of chronic diseases vary across different income brackets in the United States, and has this relationship changed over the past decade?”</div>
+<div class="para" id="extracted-webwork-1-1-5-4">This question is specific about the variables (chronic disease rates, income brackets), the population (United States), and adds a time dimension for additional insight.</div>
+</div></details>
 </div>
-<div class="date">May 16, 2025</div>
-<section class="introduction" id="frontmatter-3"><div class="para" id="frontmatter-3-1">Data shapes our world through countless decisions every day. From personalized music recommendations to content algorithms, and even critical determinations like educational assistance eligibility—data science powers it all. Behind these systems are algorithms—structured sets of rules that computers follow to transform raw information into actionable insights.</div>
-<div class="para" id="frontmatter-3-2">The field of data science harnesses these algorithmic tools to extract meaning from vast datasets, offering powerful capabilities while requiring careful consideration. When data-driven systems determine academic outcomes or financial opportunities, we must question how these mechanisms work and who designs them. Transparency matters.</div>
-<div class="para" id="frontmatter-3-3">In this introduction to data science course, you’ll explore the fundamental concepts behind data collection, analysis, and interpretation. You’ll discover how personal data fuels decision-making processes and the real-world impacts these decisions have on individuals and communities. By understanding both the technical aspects and ethical dimensions of data science, you’ll be equipped to harness its potential responsibly while recognizing its limitations.</div>
-<div class="para" id="frontmatter-3-4">This book introduces foundational concepts in data science through a project-based approach using CODAP, a free web-based data analysis platform that will help you unlock insights into complex datasets from the world around you.</div>
-<div class="para" id="frontmatter-3-5">This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit CreativeCommons.org</div></section><nav class="summary-links"><ul></ul></nav></section></div>
+</div>
+</div></article></details></section></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="my-great-book.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
+<a class="previous-button button" href="sec-investigation-framework.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-planning-investigation.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
