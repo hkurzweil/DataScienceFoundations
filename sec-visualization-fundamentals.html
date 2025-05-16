@@ -292,7 +292,6 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="sec-advanced-visualization.html" class="internal"><span class="title">Advanced Visualization and Analysis</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualization.html#subsec-multi-variable" class="internal"><span class="title">Visualizing Multi-Variable Relationships</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualization.html#subsec-dashboards" class="internal"><span class="title">Building Effective Dashboards</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualization.html#subsec-statistical-relationships" class="internal"><span class="title">Statistical Thinking: Correlation and Relationships</span></a></div></li>
 </ul>
 </li>
@@ -320,7 +319,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-project-workflow.html" class="internal"><span class="title">Project Workflow and Timeline</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase1" class="internal"><span class="title">Phase 1: Dataset Selection and Exploration (Unit 1)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase1" class="internal"><span class="title">Phase 1: Dataset Selection + Exploration (Unit 1)</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase2" class="internal"><span class="title">Phase 2: Investigation Planning (Unit 2)</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase3" class="internal"><span class="title">Phase 3: Data Analysis and Processing (Unit 3)</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase4" class="internal"><span class="title">Phase 4: Visualization and Communication (Unit 4)</span></a></div></li>
@@ -328,10 +327,15 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-project-assessment.html" class="internal"><span class="title">Assessment and Grading</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-project-assessment.html#subsec-evaluation-rubrics" class="internal"><span class="title">Evaluation Rubrics</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsec-grading-breakdown" class="internal"><span class="title">Grading Breakdown</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsec-evaluation-rubrics" class="internal"><span class="title">Evaluation Rubrics</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsubsec-dataset-selection-rubric" class="internal"><span class="title">Dataset Selection Report</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsubsec-investigation-plan-rubric" class="internal"><span class="title">Investigation Plan</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsubsec-data-processing-rubric" class="internal"><span class="title">Data Processing Documentation</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsubsec-final-presentation-rubric" class="internal"><span class="title">Final Presentation</span></a></div></li>
 </ul>
+</li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-project-tips.html" class="internal"><span class="title">Tips for Success</span></a></div>
@@ -399,11 +403,11 @@ eBookConfig.enable_chatcodes =  false;
 <dt id="subsec-why-visualize-3-4">Engagement</dt>
 <dd><div class="para" id="subsec-why-visualize-3-4-2">Visual elements capture attention and make data more engaging and memorable than text or numbers alone.</div></dd>
 </dl>
-<div class="para" id="subsec-why-visualize-4">The power of visualization is illustrated by Anscombe’s Quartet, a set of four datasets with nearly identical statistical properties but dramatically different visual patterns:</div>
+<div class="para" id="subsec-why-visualize-4">The power of visualization is illustrated by <a class="external" href="https://en.wikipedia.org/wiki/Anscombe%27s_quartet" target="_blank">Anscombe’s Quartet</a><details class="ptx-footnote" aria-live="polite" id="subsec-why-visualize-4-2"><summary class="ptx-footnote__number" title="Footnote 15"><sup> 15 </sup></summary><div class="ptx-footnote__contents" id="subsec-why-visualize-4-2"><code class="code-inline tex2jax_ignore">https://en.wikipedia.org/wiki/Anscombe%27s_quartet</code></div></details>, a set of four datasets with nearly identical statistical properties but dramatically different visual patterns:</div>
 <figure class="figure figure-like" id="fig-anscombe"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/anscombe-quartet.png" class="contained" alt="Four scatter plots showing datasets with identical summary statistics but very different patterns: a linear relationship, a curved relationship, a linear relationship with an outlier, and a vertical line with an outlier."></div>
-<a class="external" href="https://en.wikipedia.org/wiki/Anscombe%27s_quartet" target="_blank">Wikipedia</a><details class="ptx-footnote" aria-live="polite" id="fig-anscombe-3-2"><summary class="ptx-footnote__number" title="Footnote 14"><sup> 14 </sup></summary><div class="ptx-footnote__contents" id="fig-anscombe-3-2"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Anscombe%27s_quartet</code></div></details><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">88<span class="period">.</span></span><span class="space"> </span>Anscombe’s Quartet</figcaption></figure><div class="para" id="subsec-why-visualize-6">Each of the four datasets in Anscombe’s Quartet has the same mean, variance, correlation, and linear regression line. If we relied only on these summary statistics, we’d miss the crucial differences between these datasets. Visualization reveals what statistics alone can hide.</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">85<span class="period">.</span></span><span class="space"> </span>Anscombe’s Quartet</figcaption></figure><div class="para" id="subsec-why-visualize-6">Each of the four datasets in Anscombe’s Quartet has the same mean, variance, correlation, and linear regression line. If we relied only on these summary statistics, we’d miss the crucial differences between these datasets. Visualization reveals what statistics alone can hide.</div>
 <details id="mc-viz-purpose" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">89</span><span class="period">.</span><span class="space"> </span><span class="title">Visualization Purpose.</span>
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">86</span><span class="period">.</span><span class="space"> </span><span class="title">Visualization Purpose.</span>
 </h4></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone multiplechoice_section"><ul data-component="multiplechoice" id="rs-mc-viz-purpose" data-multipleanswers="false">
 <div class="para" id="mc-viz-purpose-2-1">Which of the following is NOT a primary purpose of data visualization?</div>
 <li data-component="answer" id="rs-mc-viz-purpose_opt_a"><div class="para" id="mc-viz-purpose-3-1-1-1">To discover patterns and relationships in data</div></li>
@@ -490,7 +494,7 @@ eBookConfig.enable_chatcodes =  false;
 </div></dd>
 </dl>
 <figure class="figure figure-like" id="fig-chart-types"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/chart-types.png" class="contained" alt="Examples of various chart types including bar chart, line chart, scatter plot, pie chart, histogram, box plot, heat map, and map."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">90<span class="period">.</span></span><span class="space"> </span>Common Chart Types</figcaption></figure><div class="para" id="subsec-chart-selection-6">When choosing a visualization type, consider:</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">87<span class="period">.</span></span><span class="space"> </span>Common Chart Types from <a class="external" href="https://medium.com/@ThisIsShubhangi/data-visualization-choosing-the-right-chart-matters-d4f6b75f8ae0" target="_blank">Medium.com</a><details class="ptx-footnote" aria-live="polite" id="fig-chart-types-1-2"><summary class="ptx-footnote__number" title="Footnote 16"><sup> 16 </sup></summary><div class="ptx-footnote__contents" id="fig-chart-types-1-2"><code class="code-inline tex2jax_ignore">https://medium.com/@ThisIsShubhangi/data-visualization-choosing-the-right-chart-matters-d4f6b75f8ae0</code></div></details>.</figcaption></figure><div class="para" id="subsec-chart-selection-6">When choosing a visualization type, consider:</div>
 <ul class="disc" id="subsec-chart-selection-7">
 <li id="subsec-chart-selection-7-1"><div class="para" id="subsec-chart-selection-7-1-1">What question are you trying to answer?</div></li>
 <li id="subsec-chart-selection-7-2"><div class="para" id="subsec-chart-selection-7-2-1">What types of variables are you working with (categorical, numerical, time-based)?</div></li>
@@ -498,7 +502,7 @@ eBookConfig.enable_chatcodes =  false;
 <li id="subsec-chart-selection-7-4"><div class="para" id="subsec-chart-selection-7-4-1">Who is your audience and what is their level of data literacy?</div></li>
 </ul>
 <details id="matching-chart-selection" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">91</span><span class="period">.</span><span class="space"> </span><span class="title">Matching Chart Types to Questions.</span>
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">88</span><span class="period">.</span><span class="space"> </span><span class="title">Matching Chart Types to Questions.</span>
 </h4></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="rs-matching-chart-selection">
 <span data-subcomponent="question"><div class="para" id="matching-chart-selection-2-1">Match each data visualization question with the most appropriate chart type.</div></span><li data-subcomponent="draggable" id="rs-matching-chart-selection_drag1" data-category="1">How has unemployment rate changed over the past 10 years?</li>
 <li data-subcomponent="dropzone" for="rs-matching-chart-selection_drag1" data-category="1">Line chart</li>
@@ -554,9 +558,10 @@ eBookConfig.enable_chatcodes =  false;
 <li id="subsec-visualization-principles-5-6"><div class="para" id="subsec-visualization-principles-5-6-1">
 <dfn class="terminology">Consistency</dfn>: Use consistent formats, scales, and styles across related visualizations</div></li>
 </ul>
+<div class="para" id="subsec-visualization-principles-6">The Economist wrote a great article called, <a class="external" href="https://medium.economist.com/mistakes-weve-drawn-a-few-8cdd8a42d368" target="_blank">Mistakes, We’ve Drawn a Few</a><details class="ptx-footnote" aria-live="polite" id="subsec-visualization-principles-6-2"><summary class="ptx-footnote__number" title="Footnote 17"><sup> 17 </sup></summary><div class="ptx-footnote__contents" id="subsec-visualization-principles-6-2"><code class="code-inline tex2jax_ignore">https://medium.economist.com/mistakes-weve-drawn-a-few-8cdd8a42d368</code></div></details> that I would highly recommend reading to see several ways visuals are created that are misleading and better practices to follow when creating visuals from your data. Below you can see one of the graphs from that article, where the bad graph attempts to create a perfect correlation between dog weights and neck size by creating the y-axes disproportionally.</div>
 <figure class="figure figure-like" id="fig-good-bad-viz"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/good-bad-viz.png" class="contained" alt="Two versions of the same chart: one with clear labeling, appropriate scale, and thoughtful design; the other with misleading scale, excessive decoration, and unclear labeling."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">92<span class="period">.</span></span><span class="space"> </span>Good vs. Problematic Visualization</figcaption></figure><details id="example-viz-health" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">93</span><span class="period">.</span><span class="space"> </span><span class="title">Visualizing Community Health Data.</span>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">89<span class="period">.</span></span><span class="space"> </span>Good vs. Problematic Visualization</figcaption></figure><details id="example-viz-health" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">90</span><span class="period">.</span><span class="space"> </span><span class="title">Visualizing Community Health Data.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="example-viz-health-2-1">For our Community Health dataset, effective visualizations might include:</div> <ul class="disc" id="example-viz-health-2-2">
 <li id="example-viz-health-2-2-1"><div class="para" id="example-viz-health-2-2-1-1">A scatter plot showing the relationship between air quality index and asthma rates across neighborhoods, with points colored by income level to reveal potential socioeconomic patterns</div></li>
 <li id="example-viz-health-2-2-2"><div class="para" id="example-viz-health-2-2-2-1">A grouped bar chart comparing multiple health metrics (asthma, obesity, heart disease) across different regions of the city, allowing for direct comparison of health outcomes</div></li>
@@ -564,7 +569,7 @@ eBookConfig.enable_chatcodes =  false;
 <li id="example-viz-health-2-2-4"><div class="para" id="example-viz-health-2-2-4-1">Box plots comparing the distribution of health outcomes across neighborhoods with different levels of green space access, showing both central tendency and variation</div></li>
 <li id="example-viz-health-2-2-5"><div class="para" id="example-viz-health-2-2-5-1">A connected scatter plot showing how the relationship between environmental factors and health outcomes has changed over time</div></li>
 </ul></article></details><details id="parsons-viz-design" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">94</span><span class="period">.</span><span class="space"> </span><span class="title">Steps for Creating Effective Visualizations.</span>
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">91</span><span class="period">.</span><span class="space"> </span><span class="title">Steps for Creating Effective Visualizations.</span>
 </h4></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone parsons_section" style="max-width: none;"><div data-component="parsons" class="parsons" id="rs-parsons-viz-design">
 <div class="parsons_question parsons-text"><div class="para" id="parsons-viz-design-2-1">Arrange the following steps in a logical order for creating an effective data visualization.</div></div>
 <pre class="parsonsblocks" data-question_label="" style="visibility: hidden;" data-language="natural" data-adaptive="true" data-noindent="true"><div class="para" id="parsons-viz-design-3-1-1">Clarify the specific question or insight you want the visualization to address.</div>
@@ -619,7 +624,7 @@ eBookConfig.enable_chatcodes =  false;
 <dfn class="terminology">Map tool</dfn>: Display geographic data on interactive maps</div></li>
 </ul>
 <figure class="figure figure-like" id="fig-codap-viz-tools"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/codap-viz-tools.png" class="contained" alt="Screenshot showing CODAP’s interface for creating and customizing visualizations, with labeled tools for graphs, plot types, axis options, and other features."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">95<span class="period">.</span></span><span class="space"> </span>CODAP Visualization Tools</figcaption></figure><div class="para" id="subsec-codap-viz-6">Steps for creating effective visualizations in CODAP:</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">92<span class="period">.</span></span><span class="space"> </span>CODAP Visualization Tools</figcaption></figure><div class="para" id="subsec-codap-viz-6">Steps for creating effective visualizations in CODAP:</div>
 <ol class="decimal" id="subsec-codap-viz-7">
 <li id="subsec-codap-viz-7-1"><div class="para" id="subsec-codap-viz-7-1-1">Open the Graph or Map tool from the main toolbar</div></li>
 <li id="subsec-codap-viz-7-2"><div class="para" id="subsec-codap-viz-7-2-1">Drag attributes from your dataset to the axes or legend area</div></li>
@@ -648,7 +653,7 @@ eBookConfig.enable_chatcodes =  false;
 <li id="activity-codap-viz-4-1-2-4"><div class="para" id="activity-codap-viz-4-1-2-4-1">Write a brief interpretation of what the visualization reveals</div></li>
 </ul></article><article class="task exercise-like" id="activity-codap-viz-5"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="activity-codap-viz-5-1-1">Arrange your visualizations to create a simple dashboard with at least three different charts that together tell a story about your data.</div></article></article><details id="mc-codap-features" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">96</span><span class="period">.</span><span class="space"> </span><span class="title">CODAP Visualization Features.</span>
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">93</span><span class="period">.</span><span class="space"> </span><span class="title">CODAP Visualization Features.</span>
 </h4></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone multiplechoice_section"><ul data-component="multiplechoice" id="rs-mc-codap-features" data-multipleanswers="false">
 <div class="para" id="mc-codap-features-2-1">Which CODAP feature would be MOST appropriate for examining how a relationship between two numerical variables differs across categories?</div>
 <li data-component="answer" id="rs-mc-codap-features_opt_a"><div class="para" id="mc-codap-features-3-1-1-1">Changing from a dot plot to a histogram</div></li>

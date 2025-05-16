@@ -292,7 +292,6 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="sec-advanced-visualization.html" class="internal"><span class="title">Advanced Visualization and Analysis</span></a></div>
 <ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualization.html#subsec-multi-variable" class="internal"><span class="title">Visualizing Multi-Variable Relationships</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualization.html#subsec-dashboards" class="internal"><span class="title">Building Effective Dashboards</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualization.html#subsec-statistical-relationships" class="internal"><span class="title">Statistical Thinking: Correlation and Relationships</span></a></div></li>
 </ul>
 </li>
@@ -320,7 +319,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-project-workflow.html" class="internal"><span class="title">Project Workflow and Timeline</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase1" class="internal"><span class="title">Phase 1: Dataset Selection and Exploration (Unit 1)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase1" class="internal"><span class="title">Phase 1: Dataset Selection + Exploration (Unit 1)</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase2" class="internal"><span class="title">Phase 2: Investigation Planning (Unit 2)</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase3" class="internal"><span class="title">Phase 3: Data Analysis and Processing (Unit 3)</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase4" class="internal"><span class="title">Phase 4: Visualization and Communication (Unit 4)</span></a></div></li>
@@ -328,10 +327,15 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-project-assessment.html" class="internal"><span class="title">Assessment and Grading</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-project-assessment.html#subsec-evaluation-rubrics" class="internal"><span class="title">Evaluation Rubrics</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsec-grading-breakdown" class="internal"><span class="title">Grading Breakdown</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsec-evaluation-rubrics" class="internal"><span class="title">Evaluation Rubrics</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsubsec-dataset-selection-rubric" class="internal"><span class="title">Dataset Selection Report</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsubsec-investigation-plan-rubric" class="internal"><span class="title">Investigation Plan</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsubsec-data-processing-rubric" class="internal"><span class="title">Data Processing Documentation</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsubsec-final-presentation-rubric" class="internal"><span class="title">Final Presentation</span></a></div></li>
 </ul>
+</li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-project-tips.html" class="internal"><span class="title">Tips for Success</span></a></div>
@@ -418,25 +422,26 @@ eBookConfig.enable_chatcodes =  false;
 <dfn class="terminology">Details on demand</dfn>: Showing additional information when hovering over or selecting elements</div></li>
 </ul></div></dd>
 </dl>
+<div class="para" id="subsec-multi-variable-5">The visual below from <a class="external" href="https://datascience.stackexchange.com/questions/23061/what-are-the-differences-between-multivariate-data-visualizations-and-multidimen" target="_blank">datascience.stackexchange.com</a><details class="ptx-footnote" aria-live="polite" id="subsec-multi-variable-5-2"><summary class="ptx-footnote__number" title="Footnote 18"><sup> 18 </sup></summary><div class="ptx-footnote__contents" id="subsec-multi-variable-5-2"><code class="code-inline tex2jax_ignore">https://datascience.stackexchange.com/questions/23061/what-are-the-differences-between-multivariate-data-visualizations-and-multidimen</code></div></details>employs several advanced visualization techniques to display four dimensions of data simultaneously. The x-axis plots GDP Per Capita while the y-axis shows Average Years Spent in Education, creating a spatial distribution of countries or regions. The color spectrum from red (low, 4.900) to green (high, 7.600) encodes Satisfaction levels, allowing viewers to quickly identify that higher GDP areas generally report higher satisfaction. Meanwhile, the size of each circle represents Feel Safe Scores, with larger bubbles indicating greater perceived safety (up to 89.60). This multidimensional approach creates visual patterns that reveal complex relationships between wealth, education, satisfaction, and safety that might be missed in simpler visualizations. The design leverages pre-attentive visual processing through position, color, and size to communicate relationships efficiently without overwhelming the viewer.</div>
 <figure class="figure figure-like" id="fig-multi-variable"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/multi-variable-viz.png" class="contained" alt="Examples of multi-variable visualizations: a scatter plot with color and size encoding, small multiples showing the same relationship across different categories, and a visualization with interactive elements."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">100<span class="period">.</span></span><span class="space"> </span>Multi-Variable Visualization Techniques</figcaption></figure><details id="example-multi-var-health" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">101</span><span class="period">.</span><span class="space"> </span><span class="title">Multi-Variable Community Health Visualizations.</span>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">96<span class="period">.</span></span><span class="space"> </span>Multi-Variable Visualization Techniques</figcaption></figure><details id="example-multi-var-health" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">97</span><span class="period">.</span><span class="space"> </span><span class="title">Multi-Variable Community Health Visualizations.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="example-multi-var-health-2-1">For our Community Health dataset, advanced multi-variable visualizations might include:</div> <ul class="disc" id="example-multi-var-health-2-2">
 <li id="example-multi-var-health-2-2-1"><div class="para" id="example-multi-var-health-2-2-1-1">A scatter plot showing the relationship between green space access and asthma rates, with points colored by income level and sized by population density</div></li>
 <li id="example-multi-var-health-2-2-2"><div class="para" id="example-multi-var-health-2-2-2-1">Small multiples displaying the air quality-health relationship separately for each region of the city</div></li>
 <li id="example-multi-var-health-2-2-3"><div class="para" id="example-multi-var-health-2-2-3-1">A layered line chart showing trends in multiple health metrics over time, highlighting their relative changes</div></li>
 <li id="example-multi-var-health-2-2-4"><div class="para" id="example-multi-var-health-2-2-4-1">An interactive dashboard with linked visualizations where selecting high-pollution areas highlights corresponding neighborhoods in health outcome charts</div></li>
 <li id="example-multi-var-health-2-2-5"><div class="para" id="example-multi-var-health-2-2-5-1">A composite environmental quality score visualized as color on a map, with the ability to filter by different health outcome ranges</div></li>
-</ul></article></details><div class="para" id="subsec-multi-variable-7">When creating multi-variable visualizations, be careful to:</div>
-<ul class="disc" id="subsec-multi-variable-8">
-<li id="subsec-multi-variable-8-1"><div class="para" id="subsec-multi-variable-8-1-1">Avoid overwhelming viewers with too much information at once</div></li>
-<li id="subsec-multi-variable-8-2"><div class="para" id="subsec-multi-variable-8-2-1">Ensure that each additional variable adds meaningful insight</div></li>
-<li id="subsec-multi-variable-8-3"><div class="para" id="subsec-multi-variable-8-3-1">Use visual encodings that are easy to distinguish and interpret</div></li>
-<li id="subsec-multi-variable-8-4"><div class="para" id="subsec-multi-variable-8-4-1">Provide clear legends and explanations for all encodings</div></li>
-<li id="subsec-multi-variable-8-5"><div class="para" id="subsec-multi-variable-8-5-1">Consider accessibility (e.g., colorblind-friendly palettes)</div></li>
+</ul></article></details><div class="para" id="subsec-multi-variable-8">When creating multi-variable visualizations, be careful to:</div>
+<ul class="disc" id="subsec-multi-variable-9">
+<li id="subsec-multi-variable-9-1"><div class="para" id="subsec-multi-variable-9-1-1">Avoid overwhelming viewers with too much information at once</div></li>
+<li id="subsec-multi-variable-9-2"><div class="para" id="subsec-multi-variable-9-2-1">Ensure that each additional variable adds meaningful insight</div></li>
+<li id="subsec-multi-variable-9-3"><div class="para" id="subsec-multi-variable-9-3-1">Use visual encodings that are easy to distinguish and interpret</div></li>
+<li id="subsec-multi-variable-9-4"><div class="para" id="subsec-multi-variable-9-4-1">Provide clear legends and explanations for all encodings</div></li>
+<li id="subsec-multi-variable-9-5"><div class="para" id="subsec-multi-variable-9-5-1">Consider accessibility (e.g., colorblind-friendly palettes)</div></li>
 </ul>
 <details id="mc-multi-var-techniques" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">102</span><span class="period">.</span><span class="space"> </span><span class="title">Multi-Variable Visualization Techniques.</span>
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">98</span><span class="period">.</span><span class="space"> </span><span class="title">Multi-Variable Visualization Techniques.</span>
 </h4></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone multiplechoice_section"><ul data-component="multiplechoice" id="rs-mc-multi-var-techniques" data-multipleanswers="false">
 <div class="para" id="mc-multi-var-techniques-2-1">Which technique would be MOST appropriate for examining how the relationship between income and health outcomes varies across different regions of a city?</div>
 <li data-component="answer" id="rs-mc-multi-var-techniques_opt_a"><div class="para" id="mc-multi-var-techniques-3-1-1-1">A pie chart showing the proportion of total health issues by region</div></li>
@@ -466,108 +471,12 @@ eBookConfig.enable_chatcodes =  false;
 <li id="activity-multi-var-5-1-2-1"><div class="para" id="activity-multi-var-5-1-2-1-1">Creating multiple linked visualizations of your data</div></li>
 <li id="activity-multi-var-5-1-2-2"><div class="para" id="activity-multi-var-5-1-2-2-1">Testing how selections in one visualization highlight corresponding points in others</div></li>
 <li id="activity-multi-var-5-1-2-3"><div class="para" id="activity-multi-var-5-1-2-3-1">Using this interactivity to identify patterns or relationships that weren’t apparent in single visualizations</div></li>
-</ul></article></article></section><section class="subsection" id="subsec-dashboards"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Building Effective Dashboards</span>
-</h3>
-<div class="para" id="subsec-dashboards-2">Dashboards combine multiple visualizations into a cohesive whole, allowing viewers to see different aspects of the data and gain a more comprehensive understanding. Well-designed dashboards can powerfully communicate complex findings.</div>
-<article class="definition definition-like" id="def-dashboard"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">103</span><span class="period">.</span>
-</h4>
-<div class="para" id="def-dashboard-1-1">A <dfn class="terminology">dashboard</dfn> is a collection of multiple visual displays organized on a single screen to monitor conditions, track performance, or communicate insights. Dashboards typically include charts, graphs, maps, and other visual elements that together tell a coherent data story.</div></article><div class="para" id="subsec-dashboards-4">Principles for effective dashboard design:</div>
-<dl class="description-list">
-<dt id="subsec-dashboards-5-1">Purpose-Driven Design</dt>
-<dd><div class="para" id="subsec-dashboards-5-1-2">Design around specific questions or decisions the dashboard should inform, not just to display available data.</div></dd>
-<dt id="subsec-dashboards-5-2">Logical Organization</dt>
-<dd><div class="para" id="subsec-dashboards-5-2-2">Arrange visualizations in a meaningful sequence or grouping that guides the viewer through the data story.</div></dd>
-<dt id="subsec-dashboards-5-3">Visual Hierarchy</dt>
-<dd><div class="para" id="subsec-dashboards-5-3-2">Make the most important information most prominent, with secondary information less visually dominant.</div></dd>
-<dt id="subsec-dashboards-5-4">Consistency</dt>
-<dd><div class="para" id="subsec-dashboards-5-4-2">Use consistent colors, scales, and design elements across visualizations to create unity.</div></dd>
-<dt id="subsec-dashboards-5-5">Complementary Views</dt>
-<dd><div class="para" id="subsec-dashboards-5-5-2">Include visualizations that show different aspects of the data or answer different but related questions.</div></dd>
-<dt id="subsec-dashboards-5-6">Appropriate Context</dt>
-<dd><div class="para" id="subsec-dashboards-5-6-2">Provide necessary reference points, comparison values, or explanatory text to help interpret the visualizations.</div></dd>
-<dt id="subsec-dashboards-5-7">Interactivity</dt>
-<dd><div class="para" id="subsec-dashboards-5-7-2">When possible, include interactive elements that allow viewers to explore details, filter data, or change perspective.</div></dd>
-</dl>
-<figure class="figure figure-like" id="fig-dashboard-example"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/dashboard-example.png" class="contained" alt="A sample dashboard layout showing multiple related visualizations arranged in a logical flow with a clear visual hierarchy and consistent design elements."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">104<span class="period">.</span></span><span class="space"> </span>Example Dashboard Layout</figcaption></figure><details id="example-dashboard-health" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">105</span><span class="period">.</span><span class="space"> </span><span class="title">Community Health Dashboard.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="example-dashboard-health-2-1">For our Community Health project, an effective dashboard might include:</div> <ul class="disc" id="example-dashboard-health-2-2">
-<li id="example-dashboard-health-2-2-1"><div class="para" id="example-dashboard-health-2-2-1-1">
-<dfn class="terminology">Central visualization</dfn>: A map showing neighborhoods colored by an environmental health risk index</div></li>
-<li id="example-dashboard-health-2-2-2">
-<div class="para" id="example-dashboard-health-2-2-2-1">
-<dfn class="terminology">Supporting charts</dfn>:</div>
-<ul class="circle" id="example-dashboard-health-2-2-2-2">
-<li id="example-dashboard-health-2-2-2-2-1"><div class="para" id="example-dashboard-health-2-2-2-2-1-1">A scatter plot showing the relationship between air quality and asthma rates</div></li>
-<li id="example-dashboard-health-2-2-2-2-2"><div class="para" id="example-dashboard-health-2-2-2-2-2-1">Bar charts comparing key health metrics across regions</div></li>
-<li id="example-dashboard-health-2-2-2-2-3"><div class="para" id="example-dashboard-health-2-2-2-2-3-1">A small multiples display showing health trends over time</div></li>
-</ul>
-</li>
-<li id="example-dashboard-health-2-2-3">
-<div class="para" id="example-dashboard-health-2-2-3-1">
-<dfn class="terminology">Interactive elements</dfn>:</div>
-<ul class="circle" id="example-dashboard-health-2-2-3-2">
-<li id="example-dashboard-health-2-2-3-2-1"><div class="para" id="example-dashboard-health-2-2-3-2-1-1">The ability to select neighborhoods on the map and see corresponding data points highlighted in other charts</div></li>
-<li id="example-dashboard-health-2-2-3-2-2"><div class="para" id="example-dashboard-health-2-2-3-2-2-1">Filters to focus on specific regions or income brackets</div></li>
-<li id="example-dashboard-health-2-2-3-2-3"><div class="para" id="example-dashboard-health-2-2-3-2-3-1">Options to toggle between different health metrics</div></li>
-</ul>
-</li>
-<li id="example-dashboard-health-2-2-4"><div class="para" id="example-dashboard-health-2-2-4-1">
-<dfn class="terminology">Context</dfn>: Brief text explaining key findings, methodology, and important caveats</div></li>
-</ul></article></details><div class="para" id="subsec-dashboards-8">CODAP allows you to create simple dashboards by:</div>
-<ul class="disc" id="subsec-dashboards-9">
-<li id="subsec-dashboards-9-1"><div class="para" id="subsec-dashboards-9-1-1">Creating multiple visualizations using different tools (graphs, maps, tables)</div></li>
-<li id="subsec-dashboards-9-2"><div class="para" id="subsec-dashboards-9-2-1">Arranging these visualizations on the workspace by dragging and resizing</div></li>
-<li id="subsec-dashboards-9-3"><div class="para" id="subsec-dashboards-9-3-1">Creating links between visualizations so selections in one affect others</div></li>
-<li id="subsec-dashboards-9-4"><div class="para" id="subsec-dashboards-9-4-1">Adding text objects to provide context, explanations, or titles</div></li>
-<li id="subsec-dashboards-9-5"><div class="para" id="subsec-dashboards-9-5-1">Saving the entire configuration as a single CODAP document</div></li>
-</ul>
-<details id="matching-dashboard-elements" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">106</span><span class="period">.</span><span class="space"> </span><span class="title">Dashboard Elements and Purposes.</span>
-</h4></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="rs-matching-dashboard-elements">
-<span data-subcomponent="question"><div class="para" id="matching-dashboard-elements-2-1">Match each dashboard element with its primary purpose.</div></span><li data-subcomponent="draggable" id="rs-matching-dashboard-elements_drag1" data-category="1">Overview visualization (e.g., map or summary chart)</li>
-<li data-subcomponent="dropzone" for="rs-matching-dashboard-elements_drag1" data-category="1">Providing a big-picture view and orientation to the data</li>
-<li data-subcomponent="draggable" id="rs-matching-dashboard-elements_drag2" data-category="2">Linked selection across visualizations</li>
-<li data-subcomponent="dropzone" for="rs-matching-dashboard-elements_drag2" data-category="2">Helping viewers identify the same entities across different views of the data</li>
-<li data-subcomponent="draggable" id="rs-matching-dashboard-elements_drag3" data-category="3">Consistent color scheme across charts</li>
-<li data-subcomponent="dropzone" for="rs-matching-dashboard-elements_drag3" data-category="3">Creating visual unity and reducing cognitive load for interpretation</li>
-<li data-subcomponent="draggable" id="rs-matching-dashboard-elements_drag4" data-category="4">Text annotations and highlights</li>
-<li data-subcomponent="dropzone" for="rs-matching-dashboard-elements_drag4" data-category="4">Directing attention to key insights and providing necessary context</li>
-<li data-subcomponent="draggable" id="rs-matching-dashboard-elements_drag5" data-category="5">Interactive filters</li>
-<li data-subcomponent="dropzone" for="rs-matching-dashboard-elements_drag5" data-category="5">Allowing viewers to focus on specific subsets of data relevant to their questions</li>
-</ul></div></div></article></details><article class="activity project-like" id="activity-dashboard"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">30</span><span class="period">.</span><span class="space"> </span><span class="title">Creating a Dashboard in CODAP.</span>
-</h4>
-<div class="introduction" id="activity-dashboard-2"><div class="para" id="activity-dashboard-2-1">In this activity, you’ll create a comprehensive dashboard for your project dataset.</div></div>
-<article class="task exercise-like" id="activity-dashboard-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="activity-dashboard-3-1-1">Plan your dashboard by:</div> <ul class="disc" id="activity-dashboard-3-1-2">
-<li id="activity-dashboard-3-1-2-1"><div class="para" id="activity-dashboard-3-1-2-1-1">Identifying 3-5 key questions your dashboard should answer</div></li>
-<li id="activity-dashboard-3-1-2-2"><div class="para" id="activity-dashboard-3-1-2-2-1">Sketching a layout with placeholder visualizations</div></li>
-<li id="activity-dashboard-3-1-2-3"><div class="para" id="activity-dashboard-3-1-2-3-1">Deciding on a logical flow or organization for your visualizations</div></li>
-</ul></article><article class="task exercise-like" id="activity-dashboard-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="activity-dashboard-4-1-1">Create the individual visualizations needed for your dashboard, including:</div> <ul class="disc" id="activity-dashboard-4-1-2">
-<li id="activity-dashboard-4-1-2-1"><div class="para" id="activity-dashboard-4-1-2-1-1">An overview visualization that provides a big-picture view of your data</div></li>
-<li id="activity-dashboard-4-1-2-2"><div class="para" id="activity-dashboard-4-1-2-2-1">Supporting visualizations that show different aspects or details</div></li>
-<li id="activity-dashboard-4-1-2-3"><div class="para" id="activity-dashboard-4-1-2-3-1">Any necessary reference information or context</div></li>
-</ul></article><article class="task exercise-like" id="activity-dashboard-5"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para" id="activity-dashboard-5-1-1">Arrange your visualizations in CODAP to create your dashboard:</div> <ul class="disc" id="activity-dashboard-5-1-2">
-<li id="activity-dashboard-5-1-2-1"><div class="para" id="activity-dashboard-5-1-2-1-1">Position elements according to your planned layout</div></li>
-<li id="activity-dashboard-5-1-2-2"><div class="para" id="activity-dashboard-5-1-2-2-1">Resize visualizations as needed for visual hierarchy</div></li>
-<li id="activity-dashboard-5-1-2-3"><div class="para" id="activity-dashboard-5-1-2-3-1">Add text objects for titles, explanations, and context</div></li>
-<li id="activity-dashboard-5-1-2-4"><div class="para" id="activity-dashboard-5-1-2-4-1">Ensure that visualizations are linked so selections in one affect others</div></li>
-</ul></article><article class="task exercise-like" id="activity-dashboard-6"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<div class="para" id="activity-dashboard-6-1-1">Test your dashboard with a classmate. Ask them to:</div> <ul class="disc" id="activity-dashboard-6-1-2">
-<li id="activity-dashboard-6-1-2-1"><div class="para" id="activity-dashboard-6-1-2-1-1">Navigate through your dashboard without instruction</div></li>
-<li id="activity-dashboard-6-1-2-2"><div class="para" id="activity-dashboard-6-1-2-2-1">Identify the main insights or findings</div></li>
-<li id="activity-dashboard-6-1-2-3"><div class="para" id="activity-dashboard-6-1-2-3-1">Provide feedback on clarity, organization, and effectiveness</div></li>
 </ul></article></article></section><section class="subsection" id="subsec-statistical-relationships"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Statistical Thinking: Correlation and Relationships</span>
 </h3>
 <div class="para" id="subsec-statistical-relationships-2">As we create more complex visualizations, it’s important to develop statistical thinking about the relationships we observe. Understanding correlation and other statistical relationships helps us interpret our visualizations more accurately.</div>
 <article class="definition definition-like" id="def-correlation"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">107</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">99</span><span class="period">.</span>
 </h4>
 <div class="para" id="def-correlation-1-1">
 <dfn class="terminology">Correlation</dfn> is a statistical measure that expresses the extent to which two variables are linearly related. The correlation coefficient (r) ranges from -1 to +1, with values closer to +/-1 indicating stronger relationships and 0 indicating no linear relationship.</div></article><div class="para" id="subsec-statistical-relationships-4">Key concepts in understanding relationships:</div>
@@ -607,8 +516,8 @@ eBookConfig.enable_chatcodes =  false;
 <dd><div class="para" id="subsec-statistical-relationships-5-6-2">A phenomenon where a trend appears in several different groups of data but disappears or reverses when these groups are combined.</div></dd>
 </dl>
 <figure class="figure figure-like" id="fig-correlation-types"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/correlation-types.png" class="contained" alt="A grid of scatter plots showing different types of relationships: strong positive linear, weak positive linear, strong negative linear, no relationship, and various non-linear relationships."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">108<span class="period">.</span></span><span class="space"> </span>Types of Statistical Relationships</figcaption></figure><details id="example-correlation-health" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">109</span><span class="period">.</span><span class="space"> </span><span class="title">Relationships in Community Health Data.</span>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">100<span class="period">.</span></span><span class="space"> </span>Types of Statistical Relationships from <a class="external" href="https://www.onlinemathlearning.com/scatter-plots.html#google_vignette" target="_blank">Online Math Learning</a><details class="ptx-footnote" aria-live="polite" id="fig-correlation-types-1-2"><summary class="ptx-footnote__number" title="Footnote 19"><sup> 19 </sup></summary><div class="ptx-footnote__contents" id="fig-correlation-types-1-2"><code class="code-inline tex2jax_ignore">https://www.onlinemathlearning.com/scatter-plots.html#google_vignette</code></div></details></figcaption></figure><details id="example-correlation-health" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">101</span><span class="period">.</span><span class="space"> </span><span class="title">Relationships in Community Health Data.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="example-correlation-health-2-1">In our Community Health dataset, we might observe various relationships:</div> <ul class="disc" id="example-correlation-health-2-2">
 <li id="example-correlation-health-2-2-1"><div class="para" id="example-correlation-health-2-2-1-1">A negative correlation between green space access and asthma rates, suggesting that neighborhoods with more green space tend to have lower asthma prevalence</div></li>
 <li id="example-correlation-health-2-2-2"><div class="para" id="example-correlation-health-2-2-2-1">A non-linear relationship between air pollution and distance from major highways, with pollution decreasing rapidly at first but then leveling off</div></li>
@@ -625,7 +534,7 @@ eBookConfig.enable_chatcodes =  false;
 <li id="subsec-statistical-relationships-9-6"><div class="para" id="subsec-statistical-relationships-9-6-1">Look for contextual factors that might explain observed relationships</div></li>
 </ul>
 <details id="mc-correlation-interpretation" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">110</span><span class="period">.</span><span class="space"> </span><span class="title">Interpreting Correlations.</span>
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">102</span><span class="period">.</span><span class="space"> </span><span class="title">Interpreting Correlations.</span>
 </h4></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone multiplechoice_section"><ul data-component="multiplechoice" id="rs-mc-correlation-interpretation" data-multipleanswers="false">
 <div class="para" id="mc-correlation-interpretation-2-1">A data scientist finds a strong positive correlation (r = 0.85) between ice cream sales and drowning incidents in a coastal city. Which of the following is the MOST appropriate interpretation?</div>
 <li data-component="answer" id="rs-mc-correlation-interpretation_opt_a"><div class="para" id="mc-correlation-interpretation-3-1-1-1">Eating ice cream causes people to drown.</div></li>
@@ -637,7 +546,7 @@ eBookConfig.enable_chatcodes =  false;
 <li data-component="answer" id="rs-mc-correlation-interpretation_opt_d"><div class="para" id="mc-correlation-interpretation-3-4-1-1">Drowning incidents cause increased ice cream sales.</div></li>
 <li data-component="feedback" id="rs-mc-correlation-interpretation_opt_d"><div class="para" id="mc-correlation-interpretation-3-4-2-1">This incorrectly assumes causation in the reverse direction, which is even less plausible than ice cream causing drowning.</div></li>
 </ul></div></div></article></details><article class="activity project-like" id="activity-relationships"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">31</span><span class="period">.</span><span class="space"> </span><span class="title">Exploring Relationships in Your Dataset.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">30</span><span class="period">.</span><span class="space"> </span><span class="title">Exploring Relationships in Your Dataset.</span>
 </h4>
 <div class="introduction" id="activity-relationships-2"><div class="para" id="activity-relationships-2-1">In this activity, you’ll explore and analyze relationships between variables in your dataset.</div></div>
 <article class="task exercise-like" id="activity-relationships-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>

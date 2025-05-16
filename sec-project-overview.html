@@ -292,7 +292,6 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="sec-advanced-visualization.html" class="internal"><span class="title">Advanced Visualization and Analysis</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualization.html#subsec-multi-variable" class="internal"><span class="title">Visualizing Multi-Variable Relationships</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualization.html#subsec-dashboards" class="internal"><span class="title">Building Effective Dashboards</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualization.html#subsec-statistical-relationships" class="internal"><span class="title">Statistical Thinking: Correlation and Relationships</span></a></div></li>
 </ul>
 </li>
@@ -320,7 +319,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-project-workflow.html" class="internal"><span class="title">Project Workflow and Timeline</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase1" class="internal"><span class="title">Phase 1: Dataset Selection and Exploration (Unit 1)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase1" class="internal"><span class="title">Phase 1: Dataset Selection + Exploration (Unit 1)</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase2" class="internal"><span class="title">Phase 2: Investigation Planning (Unit 2)</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase3" class="internal"><span class="title">Phase 3: Data Analysis and Processing (Unit 3)</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase4" class="internal"><span class="title">Phase 4: Visualization and Communication (Unit 4)</span></a></div></li>
@@ -328,10 +327,15 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-project-assessment.html" class="internal"><span class="title">Assessment and Grading</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-project-assessment.html#subsec-evaluation-rubrics" class="internal"><span class="title">Evaluation Rubrics</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsec-grading-breakdown" class="internal"><span class="title">Grading Breakdown</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsec-evaluation-rubrics" class="internal"><span class="title">Evaluation Rubrics</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsubsec-dataset-selection-rubric" class="internal"><span class="title">Dataset Selection Report</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsubsec-investigation-plan-rubric" class="internal"><span class="title">Investigation Plan</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsubsec-data-processing-rubric" class="internal"><span class="title">Data Processing Documentation</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsubsec-final-presentation-rubric" class="internal"><span class="title">Final Presentation</span></a></div></li>
 </ul>
+</li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-project-tips.html" class="internal"><span class="title">Tips for Success</span></a></div>
@@ -394,7 +398,7 @@ eBookConfig.enable_chatcodes =  false;
 <li id="sec-project-overview-3-5"><div class="para" id="sec-project-overview-3-5-1">Build an interactive dashboard in CODAP</div></li>
 <li id="sec-project-overview-3-6"><div class="para" id="sec-project-overview-3-6-1">Present your findings in a clear, compelling manner</div></li>
 </ul>
-<div class="para" id="sec-project-overview-4">This project accounts for 60% of your overall course grade, with the remaining 40% coming from weekly assignments and participation. The project is designed to be completed incrementally throughout the semester, with specific milestones aligned to each unit of course content.</div>
+<div class="para" id="sec-project-overview-4">This project accounts for a large portion of your total grade in this class, but don’t be overwhelmed! The project is designed to be completed incrementally throughout the semester, with specific milestones aligned to each unit of course content.</div>
 <section class="subsection" id="subsec-learning-objectives"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Learning Objectives</span>
 </h3>
@@ -425,39 +429,44 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para" id="subsec-dataset-selection-4">Recommended data repositories include:</div>
 <ul class="disc" id="subsec-dataset-selection-5">
 <li id="subsec-dataset-selection-5-1"><div class="para" id="subsec-dataset-selection-5-1-1">
-<a class="external" href="https://www.kaggle.com/datasets" target="_blank">Kaggle Datasets</a><details class="ptx-footnote" aria-live="polite" id="subsec-dataset-selection-5-1-1-2"><summary class="ptx-footnote__number" title="Footnote 15"><sup> 15 </sup></summary><div class="ptx-footnote__contents" id="subsec-dataset-selection-5-1-1-2"><code class="code-inline tex2jax_ignore">kaggle.com/datasets</code></div></details>
+<a class="external" href="https://www.kaggle.com/datasets" target="_blank">Kaggle Datasets</a><details class="ptx-footnote" aria-live="polite" id="subsec-dataset-selection-5-1-1-2"><summary class="ptx-footnote__number" title="Footnote 21"><sup> 21 </sup></summary><div class="ptx-footnote__contents" id="subsec-dataset-selection-5-1-1-2"><code class="code-inline tex2jax_ignore">kaggle.com/datasets</code></div></details>
 </div></li>
 <li id="subsec-dataset-selection-5-2"><div class="para" id="subsec-dataset-selection-5-2-1">
-<a class="external" href="https://data.gov" target="_blank">Data.gov</a><details class="ptx-footnote" aria-live="polite" id="subsec-dataset-selection-5-2-1-2"><summary class="ptx-footnote__number" title="Footnote 16"><sup> 16 </sup></summary><div class="ptx-footnote__contents" id="subsec-dataset-selection-5-2-1-2"><code class="code-inline tex2jax_ignore">data.gov</code></div></details>
+<a class="external" href="https://data.gov" target="_blank">Data.gov</a><details class="ptx-footnote" aria-live="polite" id="subsec-dataset-selection-5-2-1-2"><summary class="ptx-footnote__number" title="Footnote 22"><sup> 22 </sup></summary><div class="ptx-footnote__contents" id="subsec-dataset-selection-5-2-1-2"><code class="code-inline tex2jax_ignore">data.gov</code></div></details>
 </div></li>
 <li id="subsec-dataset-selection-5-3"><div class="para" id="subsec-dataset-selection-5-3-1">
-<a class="external" href="https://www.gapminder.org/data" target="_blank">Gapminder</a><details class="ptx-footnote" aria-live="polite" id="subsec-dataset-selection-5-3-1-2"><summary class="ptx-footnote__number" title="Footnote 17"><sup> 17 </sup></summary><div class="ptx-footnote__contents" id="subsec-dataset-selection-5-3-1-2"><code class="code-inline tex2jax_ignore">gapminder.org/data</code></div></details>
+<a class="external" href="https://www.gapminder.org/data" target="_blank">Gapminder</a><details class="ptx-footnote" aria-live="polite" id="subsec-dataset-selection-5-3-1-2"><summary class="ptx-footnote__number" title="Footnote 23"><sup> 23 </sup></summary><div class="ptx-footnote__contents" id="subsec-dataset-selection-5-3-1-2"><code class="code-inline tex2jax_ignore">gapminder.org/data</code></div></details>
 </div></li>
 <li id="subsec-dataset-selection-5-4"><div class="para" id="subsec-dataset-selection-5-4-1">
-<a class="external" href="https://www.data.world" target="_blank">Data.world</a><details class="ptx-footnote" aria-live="polite" id="subsec-dataset-selection-5-4-1-2"><summary class="ptx-footnote__number" title="Footnote 18"><sup> 18 </sup></summary><div class="ptx-footnote__contents" id="subsec-dataset-selection-5-4-1-2"><code class="code-inline tex2jax_ignore">data.world</code></div></details>
+<a class="external" href="https://www.data.world" target="_blank">Data.world</a><details class="ptx-footnote" aria-live="polite" id="subsec-dataset-selection-5-4-1-2"><summary class="ptx-footnote__number" title="Footnote 24"><sup> 24 </sup></summary><div class="ptx-footnote__contents" id="subsec-dataset-selection-5-4-1-2"><code class="code-inline tex2jax_ignore">data.world</code></div></details>
 </div></li>
 <li id="subsec-dataset-selection-5-5"><div class="para" id="subsec-dataset-selection-5-5-1">
-<a class="external" href="https://www.cdc.gov/datastatistics" target="_blank">CDC Data &amp; Statistics</a><details class="ptx-footnote" aria-live="polite" id="subsec-dataset-selection-5-5-1-2"><summary class="ptx-footnote__number" title="Footnote 19"><sup> 19 </sup></summary><div class="ptx-footnote__contents" id="subsec-dataset-selection-5-5-1-2"><code class="code-inline tex2jax_ignore">cdc.gov/datastatistics</code></div></details>
+<a class="external" href="https://www.cdc.gov/datastatistics" target="_blank">CDC Data &amp; Statistics</a><details class="ptx-footnote" aria-live="polite" id="subsec-dataset-selection-5-5-1-2"><summary class="ptx-footnote__number" title="Footnote 25"><sup> 25 </sup></summary><div class="ptx-footnote__contents" id="subsec-dataset-selection-5-5-1-2"><code class="code-inline tex2jax_ignore">cdc.gov/datastatistics</code></div></details>
 </div></li>
 <li id="subsec-dataset-selection-5-6"><div class="para" id="subsec-dataset-selection-5-6-1">
-<a class="external" href="https://data.worldbank.org" target="_blank">World Bank Open Data</a><details class="ptx-footnote" aria-live="polite" id="subsec-dataset-selection-5-6-1-2"><summary class="ptx-footnote__number" title="Footnote 20"><sup> 20 </sup></summary><div class="ptx-footnote__contents" id="subsec-dataset-selection-5-6-1-2"><code class="code-inline tex2jax_ignore">data.worldbank.org</code></div></details>
+<a class="external" href="https://data.worldbank.org" target="_blank">World Bank Open Data</a><details class="ptx-footnote" aria-live="polite" id="subsec-dataset-selection-5-6-1-2"><summary class="ptx-footnote__number" title="Footnote 26"><sup> 26 </sup></summary><div class="ptx-footnote__contents" id="subsec-dataset-selection-5-6-1-2"><code class="code-inline tex2jax_ignore">data.worldbank.org</code></div></details>
 </div></li>
 </ul>
 <details id="exercise-dataset-evaluation" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">121</span><span class="period">.</span><span class="space"> </span><span class="title">Dataset Evaluation Checklist.</span>
-</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="exercise-dataset-evaluation-2-1">Use this checklist to evaluate potential datasets for your project. A suitable dataset should meet most of these criteria:</div>
-<div class="solutions"><details id="exercise-dataset-evaluation-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><ul class="disc" id="exercise-dataset-evaluation-3-1">
-<li id="exercise-dataset-evaluation-3-1-1"><div class="para" id="exercise-dataset-evaluation-3-1-1-1">Contains at least 100 records (rows)</div></li>
-<li id="exercise-dataset-evaluation-3-1-2"><div class="para" id="exercise-dataset-evaluation-3-1-2-1">Includes at least 8 variables (columns)</div></li>
-<li id="exercise-dataset-evaluation-3-1-3"><div class="para" id="exercise-dataset-evaluation-3-1-3-1">Has a mix of categorical and numerical variables</div></li>
-<li id="exercise-dataset-evaluation-3-1-4"><div class="para" id="exercise-dataset-evaluation-3-1-4-1">Is on a topic that genuinely interests you</div></li>
-<li id="exercise-dataset-evaluation-3-1-5"><div class="para" id="exercise-dataset-evaluation-3-1-5-1">Has documentation about data collection methods and meanings of variables</div></li>
-<li id="exercise-dataset-evaluation-3-1-6"><div class="para" id="exercise-dataset-evaluation-3-1-6-1">Is reasonably clean but offers some opportunities for data cleaning practice</div></li>
-<li id="exercise-dataset-evaluation-3-1-7"><div class="para" id="exercise-dataset-evaluation-3-1-7-1">Can be easily imported into CODAP</div></li>
-<li id="exercise-dataset-evaluation-3-1-8"><div class="para" id="exercise-dataset-evaluation-3-1-8-1">Supports at least three meaningful statistical questions</div></li>
-<li id="exercise-dataset-evaluation-3-1-9"><div class="para" id="exercise-dataset-evaluation-3-1-9-1">Contains variables that might have interesting relationships</div></li>
-<li id="exercise-dataset-evaluation-3-1-10"><div class="para" id="exercise-dataset-evaluation-3-1-10-1">Is publicly available or properly licensed for educational use</div></li>
-</ul></div></details></div></article></details></section></section></div>
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">112</span><span class="period">.</span><span class="space"> </span><span class="title">Dataset Evaluation Checklist.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div id="webwork-6" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="6" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIlBHTUwucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsjIE5vIGNvbXB1dGF0aW9uIG5lZWRlZCBmb3IgdGhpcyBjaGVja2xpc3QgZGlzcGxheQokY2hlY2tsaXN0X3RleHQgPSAiVGhpcyBpcyBhIHJlZmVyZW5jZSBjaGVja2xpc3QgZm9yIGRhdGFzZXQgZXZhbHVhdGlvbi4iOwoKQkVHSU5fUEdNTApVc2UgdGhpcyBjaGVja2xpc3QgdG8gZXZhbHVhdGUgcG90ZW50aWFsIGRhdGFzZXRzIGZvciB5b3VyIHByb2plY3QuIEEgc3VpdGFibGUgZGF0YXNldCBzaG91bGQgbWVldCBtb3N0IG9mIHRoZXNlIGNyaXRlcmlhOgoKCiogQ29udGFpbnMgYXQgbGVhc3QgMTAwIHJlY29yZHMgKHJvd3MpCgoKKiBJbmNsdWRlcyBhdCBsZWFzdCA4IHZhcmlhYmxlcyAoY29sdW1ucykKCgoqIEhhcyBhIG1peCBvZiBjYXRlZ29yaWNhbCBhbmQgbnVtZXJpY2FsIHZhcmlhYmxlcwoKCiogSXMgb24gYSB0b3BpYyB0aGF0IGdlbnVpbmVseSBpbnRlcmVzdHMgeW91CgoKKiBIYXMgZG9jdW1lbnRhdGlvbiBhYm91dCBkYXRhIGNvbGxlY3Rpb24gbWV0aG9kcyBhbmQgbWVhbmluZ3Mgb2YgdmFyaWFibGVzCgoKKiBJcyByZWFzb25hYmx5IGNsZWFuIGJ1dCBvZmZlcnMgc29tZSBvcHBvcnR1bml0aWVzIGZvciBkYXRhIGNsZWFuaW5nIHByYWN0aWNlCgoKKiBDYW4gYmUgZWFzaWx5IGltcG9ydGVkIGludG8gQ09EQVAKCgoqIFN1cHBvcnRzIGF0IGxlYXN0IHRocmVlIG1lYW5pbmdmdWwgc3RhdGlzdGljYWwgcXVlc3Rpb25zCgoKKiBDb250YWlucyB2YXJpYWJsZXMgdGhhdCBtaWdodCBoYXZlIGludGVyZXN0aW5nIHJlbGF0aW9uc2hpcHMKCgoqIElzIHB1YmxpY2x5IGF2YWlsYWJsZSBvciBwcm9wZXJseSBsaWNlbnNlZCBmb3IgZWR1Y2F0aW9uYWwgdXNlCgpSZXZpZXcgdGhlIGRhdGFzZXQgeW91J3JlIGNvbnNpZGVyaW5nIGFuZCBldmFsdWF0ZSBob3cgbWFueSBvZiB0aGVzZSBjcml0ZXJpYSBpdCBtZWV0cy4gQSBnb29kIGRhdGFzZXQgZm9yIHlvdXIgcHJvamVjdCBzaG91bGQgc2F0aXNmeSBhdCBsZWFzdCA3LTggb2YgdGhlc2UgaXRlbXMuCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KVGhpcyBjaGVja2xpc3Qgc2VydmVzIGFzIGEgcmVmZXJlbmNlIGZvciBkYXRhc2V0IGV2YWx1YXRpb24uIFRoZXJlIGlzIG5vIHNpbmdsZSBjb3JyZWN0IGFuc3dlciwgYXMgdGhlIHN1aXRhYmlsaXR5IG9mIGEgZGF0YXNldCBkZXBlbmRzIG9uIHlvdXIgc3BlY2lmaWMgcHJvamVjdCBuZWVkcy4gSG93ZXZlciwgZGF0YXNldHMgbWVldGluZyBtb3JlIGNyaXRlcmlhIHdpbGwgZ2VuZXJhbGx5IHByb3ZpZGUgYmV0dGVyIG9wcG9ydHVuaXRpZXMgZm9yIG1lYW5pbmdmdWwgYW5hbHlzaXMuCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-6')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-6-1-1-1">Use this checklist to evaluate potential datasets for your project. A suitable dataset should meet most of these criteria:</div> <div class="para logical" id="extracted-webwork-6-1-1-2"><ul class="disc" id="extracted-webwork-6-1-1-2-1">
+<li id="extracted-webwork-6-1-1-2-1-1"><div class="para" id="extracted-webwork-6-1-1-2-1-1-1">Contains at least 100 records (rows)</div></li>
+<li id="extracted-webwork-6-1-1-2-1-2"><div class="para" id="extracted-webwork-6-1-1-2-1-2-1">Includes at least 8 variables (columns)</div></li>
+<li id="extracted-webwork-6-1-1-2-1-3"><div class="para" id="extracted-webwork-6-1-1-2-1-3-1">Has a mix of categorical and numerical variables</div></li>
+<li id="extracted-webwork-6-1-1-2-1-4"><div class="para" id="extracted-webwork-6-1-1-2-1-4-1">Is on a topic that genuinely interests you</div></li>
+<li id="extracted-webwork-6-1-1-2-1-5"><div class="para" id="extracted-webwork-6-1-1-2-1-5-1">Has documentation about data collection methods and meanings of variables</div></li>
+<li id="extracted-webwork-6-1-1-2-1-6"><div class="para" id="extracted-webwork-6-1-1-2-1-6-1">Is reasonably clean but offers some opportunities for data cleaning practice</div></li>
+<li id="extracted-webwork-6-1-1-2-1-7"><div class="para" id="extracted-webwork-6-1-1-2-1-7-1">Can be easily imported into CODAP</div></li>
+<li id="extracted-webwork-6-1-1-2-1-8"><div class="para" id="extracted-webwork-6-1-1-2-1-8-1">Supports at least three meaningful statistical questions</div></li>
+<li id="extracted-webwork-6-1-1-2-1-9"><div class="para" id="extracted-webwork-6-1-1-2-1-9-1">Contains variables that might have interesting relationships</div></li>
+<li id="extracted-webwork-6-1-1-2-1-10"><div class="para" id="extracted-webwork-6-1-1-2-1-10-1">Is publicly available or properly licensed for educational use</div></li>
+</ul></div> <div class="para" id="extracted-webwork-6-1-1-3">Review the dataset you’re considering and evaluate how many of these criteria it meets. A good dataset for your project should satisfy at least 7-8 of these items.</div>
+<div class="solutions"><details id="extracted-webwork-6-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="extracted-webwork-6-1-2-1">This checklist serves as a reference for dataset evaluation. There is no single correct answer, as the suitability of a dataset depends on your specific project needs. However, datasets meeting more criteria will generally provide better opportunities for meaningful analysis.</div></div></details></div>
+</div>
+</div></article></details></section></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="ch-project-guide.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-project-workflow.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

@@ -57,7 +57,7 @@
     <pg><![CDATA[
 #############################################
 ###       Generated from PreTeXt source      
-###       on 2025-05-16T16:34:19Z       
+###       on 2025-05-16T21:36:36Z       
 ###   A recent stable commit (2022-07-01):   
 ### 6c761d3dba23af92cba35001c852aac04ae99a5f 
 ###                                          
@@ -227,7 +227,7 @@ ENDDOCUMENT();
     <pg><![CDATA[
 #############################################
 ###       Generated from PreTeXt source      
-###       on 2025-05-16T16:34:19Z       
+###       on 2025-05-16T21:36:36Z       
 ###   A recent stable commit (2022-07-01):   
 ### 6c761d3dba23af92cba35001c852aac04ae99a5f 
 ###                                          
@@ -330,6 +330,671 @@ This method systematically excludes residents without smartphones or internet ac
 Scenario 2: The primary ethical concern is Sampling fairness.
 
 The sample is biased toward patients who have access to university hospitals in affluent areas, potentially missing health patterns in underserved communities.
+
+END_PGML_SOLUTION
+
+############################################################
+# End Problem
+############################################################
+
+ENDDOCUMENT();
+]]></pg>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-3" ww-id="webwork-3">
+    <static seed="3">
+      <statement><p>Question 1: Show only neighborhoods with both above-average income and above-average green space.</p>
+<p>Select the correct CODAP filter formula:</p>
+<p><var form="buttons" name="AnSwEr0001">
+<li>
+<p><alert>a</alert>. Income &gt; AverageIncome OR GreenSpace &gt; AverageGreenSpace</p>
+</li>
+<li>
+<p><alert>b</alert>. Income &gt; AverageIncome AND GreenSpace &gt; AverageGreenSpace</p>
+</li>
+<li>
+<p><alert>c</alert>. Income = AverageIncome AND GreenSpace = AverageGreenSpace</p>
+</li>
+<li>
+<p><alert>d</alert>. Income &gt; AverageIncome</p>
+</li>
+</var></p>
+<p>Question 2: Show neighborhoods that are either in the North region or have low pollution levels.</p>
+<p>Select the correct CODAP filter formula:</p>
+<p><var form="buttons" name="AnSwEr0002">
+<li>
+<p><alert>a</alert>. Region = 'North' AND PollutionLevel = 'Low'</p>
+</li>
+<li>
+<p><alert>b</alert>. NOT(Region = 'North') OR NOT(PollutionLevel = 'Low')</p>
+</li>
+<li>
+<p><alert>c</alert>. Region = 'North' OR PollutionLevel = 'Low'</p>
+</li>
+<li>
+<p><alert>d</alert>. Region != 'North' AND PollutionLevel != 'Low'</p>
+</li>
+</var></p>
+</statement>
+      <hint><p>Remember the difference between AND and OR operators:</p>
+<p><ul label="disc">
+<li>
+<p>AND requires both conditions to be true</p>
+</li>
+<li>
+<p>OR requires at least one condition to be true</p>
+</li>
+</ul></p>
+<p>Also pay attention to comparison operators (=, &gt;, !=) and make sure they match what the question is asking for.</p>
+</hint>
+      <answer>
+        <p>
+          <m>\text{b}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\text{c}</m>
+        </p>
+      </answer>
+      <solution><p>Question 1: The correct formula is <c>Income &gt; AverageIncome AND GreenSpace &gt; AverageGreenSpace</c></p>
+<p>This formula uses AND to require that both conditions (above-average income and above-average green space) must be true for a neighborhood to be included in the filter.</p>
+<p>Question 2: The correct formula is <c>Region = 'North' OR PollutionLevel = 'Low'</c></p>
+<p>This formula uses OR to include neighborhoods that meet either condition: being in the North region OR having low pollution levels.</p>
+</solution>
+    </static>
+    <server-data problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIlBHTUwucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwicGFyc2VyUmFkaW9CdXR0b25zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskbmVpZ2hib3Job29kcyA9IFJhZGlvQnV0dG9ucygKICBbCiAgICAiSW5jb21lID4gQXZlcmFnZUluY29tZSBPUiBHcmVlblNwYWNlID4gQXZlcmFnZUdyZWVuU3BhY2UiLAogICAgIkluY29tZSA+IEF2ZXJhZ2VJbmNvbWUgQU5EIEdyZWVuU3BhY2UgPiBBdmVyYWdlR3JlZW5TcGFjZSIsCiAgICAiSW5jb21lID0gQXZlcmFnZUluY29tZSBBTkQgR3JlZW5TcGFjZSA9IEF2ZXJhZ2VHcmVlblNwYWNlIiwKICAgICJJbmNvbWUgPiBBdmVyYWdlSW5jb21lIgogIF0sCiAgMSwKICBsYWJlbHMgPT4gWyJhIiwgImIiLCAiYyIsICJkIl0KKTsKCiRyZWdpb25zID0gUmFkaW9CdXR0b25zKAogIFsKICAgICJSZWdpb24gPSAnTm9ydGgnIEFORCBQb2xsdXRpb25MZXZlbCA9ICdMb3cnIiwKICAgICJOT1QoUmVnaW9uID0gJ05vcnRoJykgT1IgTk9UKFBvbGx1dGlvbkxldmVsID0gJ0xvdycpIiwKICAgICJSZWdpb24gPSAnTm9ydGgnIE9SIFBvbGx1dGlvbkxldmVsID0gJ0xvdyciLAogICAgIlJlZ2lvbiAhPSAnTm9ydGgnIEFORCBQb2xsdXRpb25MZXZlbCAhPSAnTG93JyIKICBdLAogIDIsCiAgbGFiZWxzID0+IFsiYSIsICJiIiwgImMiLCAiZCJdCik7CgpCRUdJTl9QR01MClF1ZXN0aW9uIDE6IFNob3cgb25seSBuZWlnaGJvcmhvb2RzIHdpdGggYm90aCBhYm92ZS1hdmVyYWdlIGluY29tZSBhbmQgYWJvdmUtYXZlcmFnZSBncmVlbiBzcGFjZS4KClNlbGVjdCB0aGUgY29ycmVjdCBDT0RBUCBmaWx0ZXIgZm9ybXVsYToKCltfXXskbmVpZ2hib3Job29kc317NX0KClF1ZXN0aW9uIDI6IFNob3cgbmVpZ2hib3Job29kcyB0aGF0IGFyZSBlaXRoZXIgaW4gdGhlIE5vcnRoIHJlZ2lvbiBvciBoYXZlIGxvdyBwb2xsdXRpb24gbGV2ZWxzLgoKU2VsZWN0IHRoZSBjb3JyZWN0IENPREFQIGZpbHRlciBmb3JtdWxhOgoKW19deyRyZWdpb25zfXs1fQoKCkVORF9QR01MCgpCRUdJTl9QR01MX0hJTlQKUmVtZW1iZXIgdGhlIGRpZmZlcmVuY2UgYmV0d2VlbiBBTkQgYW5kIE9SIG9wZXJhdG9yczoKCgoqIEFORCByZXF1aXJlcyBib3RoIGNvbmRpdGlvbnMgdG8gYmUgdHJ1ZQoqIE9SIHJlcXVpcmVzIGF0IGxlYXN0IG9uZSBjb25kaXRpb24gdG8gYmUgdHJ1ZSAgIAoKQWxzbyBwYXkgYXR0ZW50aW9uIHRvIGNvbXBhcmlzb24gb3BlcmF0b3JzICg9LCA+LCAhPSkgYW5kIG1ha2Ugc3VyZSB0aGV5IG1hdGNoIHdoYXQgdGhlIHF1ZXN0aW9uIGlzIGFza2luZyBmb3IuCgoKRU5EX1BHTUxfSElOVAoKQkVHSU5fUEdNTF9TT0xVVElPTgpRdWVzdGlvbiAxOiBUaGUgY29ycmVjdCBmb3JtdWxhIGlzIFt8SW5jb21lID4gQXZlcmFnZUluY29tZSBBTkQgR3JlZW5TcGFjZSA+IEF2ZXJhZ2VHcmVlblNwYWNlfF0qCgpUaGlzIGZvcm11bGEgdXNlcyBBTkQgdG8gcmVxdWlyZSB0aGF0IGJvdGggY29uZGl0aW9ucyAoYWJvdmUtYXZlcmFnZSBpbmNvbWUgYW5kIGFib3ZlLWF2ZXJhZ2UgZ3JlZW4gc3BhY2UpIG11c3QgYmUgdHJ1ZSBmb3IgYSBuZWlnaGJvcmhvb2QgdG8gYmUgaW5jbHVkZWQgaW4gdGhlIGZpbHRlci4KClF1ZXN0aW9uIDI6IFRoZSBjb3JyZWN0IGZvcm11bGEgaXMgW3xSZWdpb24gPSAnTm9ydGgnIE9SIFBvbGx1dGlvbkxldmVsID0gJ0xvdyd8XSoKClRoaXMgZm9ybXVsYSB1c2VzIE9SIHRvIGluY2x1ZGUgbmVpZ2hib3Job29kcyB0aGF0IG1lZXQgZWl0aGVyIGNvbmRpdGlvbjogYmVpbmcgaW4gdGhlIE5vcnRoIHJlZ2lvbiBPUiBoYXZpbmcgbG93IHBvbGx1dGlvbiBsZXZlbHMuCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" password="anonymous" language="en-US"/>
+    <pg><![CDATA[
+#############################################
+###       Generated from PreTeXt source      
+###       on 2025-05-16T21:36:36Z       
+###   A recent stable commit (2022-07-01):   
+### 6c761d3dba23af92cba35001c852aac04ae99a5f 
+###                                          
+###         https://pretextbook.org          
+###                                          
+#############################################
+## DBsubject()
+## DBchapter()
+## DBsection()
+## Level()
+## KEYWORDS()
+## TitleText1()
+## EditionText1()
+## AuthorText1()
+## Section1(not reported)
+## Problem1(64)
+## Author()
+## Institution()
+## Language(en-US)
+
+DOCUMENT();
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "PGML.pl",
+  "AnswerFormatHelp.pl",
+  "parserRadioButtons.pl",
+  "PGcourse.pl",
+);
+COMMENT('Authored in PreTeXt');
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+
+############################################################
+# PG Setup Code
+############################################################
+Context('Numeric');
+$neighborhoods = RadioButtons(
+  [
+    "Income > AverageIncome OR GreenSpace > AverageGreenSpace",
+    "Income > AverageIncome AND GreenSpace > AverageGreenSpace",
+    "Income = AverageIncome AND GreenSpace = AverageGreenSpace",
+    "Income > AverageIncome"
+  ],
+  1,
+  labels => ["a", "b", "c", "d"]
+);
+
+$regions = RadioButtons(
+  [
+    "Region = 'North' AND PollutionLevel = 'Low'",
+    "NOT(Region = 'North') OR NOT(PollutionLevel = 'Low')",
+    "Region = 'North' OR PollutionLevel = 'Low'",
+    "Region != 'North' AND PollutionLevel != 'Low'"
+  ],
+  2,
+  labels => ["a", "b", "c", "d"]
+);
+
+############################################################
+# Body
+############################################################
+
+BEGIN_PGML
+Question 1: Show only neighborhoods with both above-average income and above-average green space.
+
+Select the correct CODAP filter formula:
+
+[_]{$neighborhoods}{5}
+
+Question 2: Show neighborhoods that are either in the North region or have low pollution levels.
+
+Select the correct CODAP filter formula:
+
+[_]{$regions}{5}
+
+END_PGML
+
+############################################################
+# Hint
+############################################################
+#Set value of $showHint in PGcourse.pl for course-wide attempt threshhold for revealing hints
+
+BEGIN_PGML_HINT
+Remember the difference between AND and OR operators:
+
+* AND requires both conditions to be true
+* OR requires at least one condition to be true   
+
+Also pay attention to comparison operators (=, >, !=) and make sure they match what the question is asking for.
+
+END_PGML_HINT
+
+############################################################
+# Solution
+############################################################
+
+BEGIN_PGML_SOLUTION
+Question 1: The correct formula is [|Income > AverageIncome AND GreenSpace > AverageGreenSpace|]*
+
+This formula uses AND to require that both conditions (above-average income and above-average green space) must be true for a neighborhood to be included in the filter.
+
+Question 2: The correct formula is [|Region = 'North' OR PollutionLevel = 'Low'|]*
+
+This formula uses OR to include neighborhoods that meet either condition: being in the North region OR having low pollution levels.
+
+END_PGML_SOLUTION
+
+############################################################
+# End Problem
+############################################################
+
+ENDDOCUMENT();
+]]></pg>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-4" ww-id="webwork-4">
+    <static seed="4">
+      <statement><p>Scenario 1: A researcher compares the performance of students who chose to participate in an optional after-school program with those who did not.</p>
+<p>What is the primary issue in this scenario?</p>
+<p><var form="buttons" name="AnSwEr0001">
+<li>
+<p><alert>a</alert>. Inadequate sample size</p>
+</li>
+<li>
+<p><alert>b</alert>. Self-selection bias</p>
+</li>
+<li>
+<p><alert>c</alert>. Comparing unlike time periods</p>
+</li>
+<li>
+<p><alert>d</alert>. Using inappropriate statistical tests</p>
+</li>
+</var></p>
+<p>Scenario 2: An analyst reports that neighborhoods with more parks have lower crime rates, suggesting that parks reduce crime.</p>
+<p>What is the primary issue in this scenario?</p>
+<p><var form="buttons" name="AnSwEr0002">
+<li>
+<p><alert>a</alert>. Insufficient visualization of the data</p>
+</li>
+<li>
+<p><alert>b</alert>. High within-group variation</p>
+</li>
+<li>
+<p><alert>c</alert>. Confusing correlation with causation</p>
+</li>
+<li>
+<p><alert>d</alert>. Outlier influence</p>
+</li>
+</var></p>
+</statement>
+      <hint><p>Think about what assumptions or inferences are being made in each scenario, and whether they are supported by the data collection method or analysis.</p>
+</hint>
+      <answer>
+        <p>
+          <m>\text{b}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\text{c}</m>
+        </p>
+      </answer>
+      <solution><p>Scenario 1: The primary issue is self-selection bias.</p>
+<p>Students who choose to participate in optional programs may already be more motivated or higher-performing than those who don<rsq/>t. This self-selection bias means the groups differ in ways beyond just program participation.</p>
+<p>Scenario 2: The primary issue is confusing correlation with causation.</p>
+<p>The analyst observes a correlation (neighborhoods with more parks have lower crime) but suggests causation (parks reduce crime). Other factors like neighborhood wealth, housing density, or policing could explain both the presence of parks and lower crime rates.</p>
+</solution>
+    </static>
+    <server-data problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIlBHTUwucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwicGFyc2VyUmFkaW9CdXR0b25zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskc2VsZWN0aW9uX2JpYXMgPSBSYWRpb0J1dHRvbnMoCiAgWyJJbmFkZXF1YXRlIHNhbXBsZSBzaXplIiwKICAiU2VsZi1zZWxlY3Rpb24gYmlhcyIsCiAgIkNvbXBhcmluZyB1bmxpa2UgdGltZSBwZXJpb2RzIiwKICAiVXNpbmcgaW5hcHByb3ByaWF0ZSBzdGF0aXN0aWNhbCB0ZXN0cyJdLAogIDEsICAjIGluZGV4IG9mIGNvcnJlY3QgYW5zd2VyICgwLWJhc2VkKQogIGxhYmVscyA9PiBbImEiLCAiYiIsICJjIiwgImQiXQopOwoKJGNvcnJlbGF0aW9uX2NhdXNhdGlvbiA9IFJhZGlvQnV0dG9ucygKICBbIkluc3VmZmljaWVudCB2aXN1YWxpemF0aW9uIG9mIHRoZSBkYXRhIiwKICAiSGlnaCB3aXRoaW4tZ3JvdXAgdmFyaWF0aW9uIiwKICAiQ29uZnVzaW5nIGNvcnJlbGF0aW9uIHdpdGggY2F1c2F0aW9uIiwKICAiT3V0bGllciBpbmZsdWVuY2UiXSwKICAyLCAgIyBpbmRleCBvZiBjb3JyZWN0IGFuc3dlciAoMC1iYXNlZCkKICBsYWJlbHMgPT4gWyJhIiwgImIiLCAiYyIsICJkIl0KKTsKCkJFR0lOX1BHTUwKU2NlbmFyaW8gMTogQSByZXNlYXJjaGVyIGNvbXBhcmVzIHRoZSBwZXJmb3JtYW5jZSBvZiBzdHVkZW50cyB3aG8gY2hvc2UgdG8gcGFydGljaXBhdGUgaW4gYW4gb3B0aW9uYWwgYWZ0ZXItc2Nob29sIHByb2dyYW0gd2l0aCB0aG9zZSB3aG8gZGlkIG5vdC4KCldoYXQgaXMgdGhlIHByaW1hcnkgaXNzdWUgaW4gdGhpcyBzY2VuYXJpbz8KCltfXXskc2VsZWN0aW9uX2JpYXN9ezV9CgpTY2VuYXJpbyAyOiBBbiBhbmFseXN0IHJlcG9ydHMgdGhhdCBuZWlnaGJvcmhvb2RzIHdpdGggbW9yZSBwYXJrcyBoYXZlIGxvd2VyIGNyaW1lIHJhdGVzLCBzdWdnZXN0aW5nIHRoYXQgcGFya3MgcmVkdWNlIGNyaW1lLgoKV2hhdCBpcyB0aGUgcHJpbWFyeSBpc3N1ZSBpbiB0aGlzIHNjZW5hcmlvPwoKW19deyRjb3JyZWxhdGlvbl9jYXVzYXRpb259ezV9CgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfSElOVApUaGluayBhYm91dCB3aGF0IGFzc3VtcHRpb25zIG9yIGluZmVyZW5jZXMgYXJlIGJlaW5nIG1hZGUgaW4gZWFjaCBzY2VuYXJpbywgYW5kIHdoZXRoZXIgdGhleSBhcmUgc3VwcG9ydGVkIGJ5IHRoZSBkYXRhIGNvbGxlY3Rpb24gbWV0aG9kIG9yIGFuYWx5c2lzLgoKCkVORF9QR01MX0hJTlQKCkJFR0lOX1BHTUxfU09MVVRJT04KU2NlbmFyaW8gMTogVGhlIHByaW1hcnkgaXNzdWUgaXMgc2VsZi1zZWxlY3Rpb24gYmlhcy4KClN0dWRlbnRzIHdobyBjaG9vc2UgdG8gcGFydGljaXBhdGUgaW4gb3B0aW9uYWwgcHJvZ3JhbXMgbWF5IGFscmVhZHkgYmUgbW9yZSBtb3RpdmF0ZWQgb3IgaGlnaGVyLXBlcmZvcm1pbmcgdGhhbiB0aG9zZSB3aG8gZG9uJ3QuIFRoaXMgc2VsZi1zZWxlY3Rpb24gYmlhcyBtZWFucyB0aGUgZ3JvdXBzIGRpZmZlciBpbiB3YXlzIGJleW9uZCBqdXN0IHByb2dyYW0gcGFydGljaXBhdGlvbi4KClNjZW5hcmlvIDI6IFRoZSBwcmltYXJ5IGlzc3VlIGlzIGNvbmZ1c2luZyBjb3JyZWxhdGlvbiB3aXRoIGNhdXNhdGlvbi4KClRoZSBhbmFseXN0IG9ic2VydmVzIGEgY29ycmVsYXRpb24gKG5laWdoYm9yaG9vZHMgd2l0aCBtb3JlIHBhcmtzIGhhdmUgbG93ZXIgY3JpbWUpIGJ1dCBzdWdnZXN0cyBjYXVzYXRpb24gKHBhcmtzIHJlZHVjZSBjcmltZSkuIE90aGVyIGZhY3RvcnMgbGlrZSBuZWlnaGJvcmhvb2Qgd2VhbHRoLCBob3VzaW5nIGRlbnNpdHksIG9yIHBvbGljaW5nIGNvdWxkIGV4cGxhaW4gYm90aCB0aGUgcHJlc2VuY2Ugb2YgcGFya3MgYW5kIGxvd2VyIGNyaW1lIHJhdGVzLgoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" password="anonymous" language="en-US"/>
+    <pg><![CDATA[
+#############################################
+###       Generated from PreTeXt source      
+###       on 2025-05-16T21:36:36Z       
+###   A recent stable commit (2022-07-01):   
+### 6c761d3dba23af92cba35001c852aac04ae99a5f 
+###                                          
+###         https://pretextbook.org          
+###                                          
+#############################################
+## DBsubject()
+## DBchapter()
+## DBsection()
+## Level()
+## KEYWORDS()
+## TitleText1()
+## EditionText1()
+## AuthorText1()
+## Section1(not reported)
+## Problem1(82)
+## Author()
+## Institution()
+## Language(en-US)
+
+DOCUMENT();
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "PGML.pl",
+  "AnswerFormatHelp.pl",
+  "parserRadioButtons.pl",
+  "PGcourse.pl",
+);
+COMMENT('Authored in PreTeXt');
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+
+############################################################
+# PG Setup Code
+############################################################
+Context('Numeric');
+$selection_bias = RadioButtons(
+  ["Inadequate sample size",
+  "Self-selection bias",
+  "Comparing unlike time periods",
+  "Using inappropriate statistical tests"],
+  1,  # index of correct answer (0-based)
+  labels => ["a", "b", "c", "d"]
+);
+
+$correlation_causation = RadioButtons(
+  ["Insufficient visualization of the data",
+  "High within-group variation",
+  "Confusing correlation with causation",
+  "Outlier influence"],
+  2,  # index of correct answer (0-based)
+  labels => ["a", "b", "c", "d"]
+);
+
+############################################################
+# Body
+############################################################
+
+BEGIN_PGML
+Scenario 1: A researcher compares the performance of students who chose to participate in an optional after-school program with those who did not.
+
+What is the primary issue in this scenario?
+
+[_]{$selection_bias}{5}
+
+Scenario 2: An analyst reports that neighborhoods with more parks have lower crime rates, suggesting that parks reduce crime.
+
+What is the primary issue in this scenario?
+
+[_]{$correlation_causation}{5}
+
+END_PGML
+
+############################################################
+# Hint
+############################################################
+#Set value of $showHint in PGcourse.pl for course-wide attempt threshhold for revealing hints
+
+BEGIN_PGML_HINT
+Think about what assumptions or inferences are being made in each scenario, and whether they are supported by the data collection method or analysis.
+
+END_PGML_HINT
+
+############################################################
+# Solution
+############################################################
+
+BEGIN_PGML_SOLUTION
+Scenario 1: The primary issue is self-selection bias.
+
+Students who choose to participate in optional programs may already be more motivated or higher-performing than those who don't. This self-selection bias means the groups differ in ways beyond just program participation.
+
+Scenario 2: The primary issue is confusing correlation with causation.
+
+The analyst observes a correlation (neighborhoods with more parks have lower crime) but suggests causation (parks reduce crime). Other factors like neighborhood wealth, housing density, or policing could explain both the presence of parks and lower crime rates.
+
+END_PGML_SOLUTION
+
+############################################################
+# End Problem
+############################################################
+
+ENDDOCUMENT();
+]]></pg>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-5" ww-id="webwork-5">
+    <static seed="5">
+      <statement><p>Scenario 1: A bar chart comparing company profits starts the y-axis at $50 million instead of zero, making a $5 million difference between competitors look very large.</p>
+<p>What is the primary way this visualization might mislead viewers?</p>
+<p><var form="buttons" name="AnSwEr0001">
+<li>
+<p><alert>a</alert>. Truncated axis</p>
+</li>
+<li>
+<p><alert>b</alert>. Cherry-picking data</p>
+</li>
+<li>
+<p><alert>c</alert>. 3D effects</p>
+</li>
+<li>
+<p><alert>d</alert>. Inappropriate chart type</p>
+</li>
+</var></p>
+<p>Scenario 2: A line chart shows a company<rsq/>s stock performance over only the three months when it performed best, without indicating that this is a selected portion of a longer time series.</p>
+<p>What is the primary way this visualization might mislead viewers?</p>
+<p><var form="buttons" name="AnSwEr0002">
+<li>
+<p><alert>a</alert>. Problematic color scale</p>
+</li>
+<li>
+<p><alert>b</alert>. Cherry-picking data</p>
+</li>
+<li>
+<p><alert>c</alert>. Manipulated aspect ratio</p>
+</li>
+<li>
+<p><alert>d</alert>. Missing uncertainty information</p>
+</li>
+</var></p>
+</statement>
+      <hint><p>Think about both what is shown in the visualization and how it is presented. Some visualization problems relate to selective inclusion of data, while others relate to visual perception and how data is represented.</p>
+</hint>
+      <answer>
+        <p>
+          <m>\text{a}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\text{b}</m>
+        </p>
+      </answer>
+      <solution><p>Scenario 1: The primary issue is truncated axis.</p>
+<p>Starting the y-axis above zero on a bar chart violates the principle that the length of bars should be proportional to the values they represent. This exaggerates the differences between values.</p>
+<p>Scenario 2: The primary issue is cherry-picking data.</p>
+<p>By selectively showing only the three best-performing months without proper context, the visualization presents an incomplete and potentially misleading picture of the company<rsq/>s overall performance.</p>
+</solution>
+    </static>
+    <server-data problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIlBHTUwucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwicGFyc2VyUmFkaW9CdXR0b25zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskdHJ1bmNhdGVkX2F4aXMgPSBSYWRpb0J1dHRvbnMoCiAgWyJUcnVuY2F0ZWQgYXhpcyIsCiAgIkNoZXJyeS1waWNraW5nIGRhdGEiLAogICIzRCBlZmZlY3RzIiwKICAiSW5hcHByb3ByaWF0ZSBjaGFydCB0eXBlIl0sCiAgMCwgICMgaW5kZXggb2YgY29ycmVjdCBhbnN3ZXIgKDAtYmFzZWQpCiAgbGFiZWxzID0+IFsiYSIsICJiIiwgImMiLCAiZCJdCik7CgokY2hlcnJ5X3BpY2tpbmcgPSBSYWRpb0J1dHRvbnMoCiAgWyJQcm9ibGVtYXRpYyBjb2xvciBzY2FsZSIsCiAgIkNoZXJyeS1waWNraW5nIGRhdGEiLAogICJNYW5pcHVsYXRlZCBhc3BlY3QgcmF0aW8iLAogICJNaXNzaW5nIHVuY2VydGFpbnR5IGluZm9ybWF0aW9uIl0sCiAgMSwgICMgaW5kZXggb2YgY29ycmVjdCBhbnN3ZXIgKDAtYmFzZWQpCiAgbGFiZWxzID0+IFsiYSIsICJiIiwgImMiLCAiZCJdCik7CgpCRUdJTl9QR01MClNjZW5hcmlvIDE6IEEgYmFyIGNoYXJ0IGNvbXBhcmluZyBjb21wYW55IHByb2ZpdHMgc3RhcnRzIHRoZSB5LWF4aXMgYXQgJDUwIG1pbGxpb24gaW5zdGVhZCBvZiB6ZXJvLCBtYWtpbmcgYSAkNSBtaWxsaW9uIGRpZmZlcmVuY2UgYmV0d2VlbiBjb21wZXRpdG9ycyBsb29rIHZlcnkgbGFyZ2UuCgpXaGF0IGlzIHRoZSBwcmltYXJ5IHdheSB0aGlzIHZpc3VhbGl6YXRpb24gbWlnaHQgbWlzbGVhZCB2aWV3ZXJzPwoKW19deyR0cnVuY2F0ZWRfYXhpc317NX0KClNjZW5hcmlvIDI6IEEgbGluZSBjaGFydCBzaG93cyBhIGNvbXBhbnkncyBzdG9jayBwZXJmb3JtYW5jZSBvdmVyIG9ubHkgdGhlIHRocmVlIG1vbnRocyB3aGVuIGl0IHBlcmZvcm1lZCBiZXN0LCB3aXRob3V0IGluZGljYXRpbmcgdGhhdCB0aGlzIGlzIGEgc2VsZWN0ZWQgcG9ydGlvbiBvZiBhIGxvbmdlciB0aW1lIHNlcmllcy4KCldoYXQgaXMgdGhlIHByaW1hcnkgd2F5IHRoaXMgdmlzdWFsaXphdGlvbiBtaWdodCBtaXNsZWFkIHZpZXdlcnM/CgpbX117JGNoZXJyeV9waWNraW5nfXs1fQoKCkVORF9QR01MCgpCRUdJTl9QR01MX0hJTlQKVGhpbmsgYWJvdXQgYm90aCB3aGF0IGlzIHNob3duIGluIHRoZSB2aXN1YWxpemF0aW9uIGFuZCBob3cgaXQgaXMgcHJlc2VudGVkLiBTb21lIHZpc3VhbGl6YXRpb24gcHJvYmxlbXMgcmVsYXRlIHRvIHNlbGVjdGl2ZSBpbmNsdXNpb24gb2YgZGF0YSwgd2hpbGUgb3RoZXJzIHJlbGF0ZSB0byB2aXN1YWwgcGVyY2VwdGlvbiBhbmQgaG93IGRhdGEgaXMgcmVwcmVzZW50ZWQuCgoKRU5EX1BHTUxfSElOVAoKQkVHSU5fUEdNTF9TT0xVVElPTgpTY2VuYXJpbyAxOiBUaGUgcHJpbWFyeSBpc3N1ZSBpcyB0cnVuY2F0ZWQgYXhpcy4KClN0YXJ0aW5nIHRoZSB5LWF4aXMgYWJvdmUgemVybyBvbiBhIGJhciBjaGFydCB2aW9sYXRlcyB0aGUgcHJpbmNpcGxlIHRoYXQgdGhlIGxlbmd0aCBvZiBiYXJzIHNob3VsZCBiZSBwcm9wb3J0aW9uYWwgdG8gdGhlIHZhbHVlcyB0aGV5IHJlcHJlc2VudC4gVGhpcyBleGFnZ2VyYXRlcyB0aGUgZGlmZmVyZW5jZXMgYmV0d2VlbiB2YWx1ZXMuCgpTY2VuYXJpbyAyOiBUaGUgcHJpbWFyeSBpc3N1ZSBpcyBjaGVycnktcGlja2luZyBkYXRhLgoKQnkgc2VsZWN0aXZlbHkgc2hvd2luZyBvbmx5IHRoZSB0aHJlZSBiZXN0LXBlcmZvcm1pbmcgbW9udGhzIHdpdGhvdXQgcHJvcGVyIGNvbnRleHQsIHRoZSB2aXN1YWxpemF0aW9uIHByZXNlbnRzIGFuIGluY29tcGxldGUgYW5kIHBvdGVudGlhbGx5IG1pc2xlYWRpbmcgcGljdHVyZSBvZiB0aGUgY29tcGFueSdzIG92ZXJhbGwgcGVyZm9ybWFuY2UuCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" password="anonymous" language="en-US"/>
+    <pg><![CDATA[
+#############################################
+###       Generated from PreTeXt source      
+###       on 2025-05-16T21:36:36Z       
+###   A recent stable commit (2022-07-01):   
+### 6c761d3dba23af92cba35001c852aac04ae99a5f 
+###                                          
+###         https://pretextbook.org          
+###                                          
+#############################################
+## DBsubject()
+## DBchapter()
+## DBsection()
+## Level()
+## KEYWORDS()
+## TitleText1()
+## EditionText1()
+## AuthorText1()
+## Section1(not reported)
+## Problem1(95)
+## Author()
+## Institution()
+## Language(en-US)
+
+DOCUMENT();
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "PGML.pl",
+  "AnswerFormatHelp.pl",
+  "parserRadioButtons.pl",
+  "PGcourse.pl",
+);
+COMMENT('Authored in PreTeXt');
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+
+############################################################
+# PG Setup Code
+############################################################
+Context('Numeric');
+$truncated_axis = RadioButtons(
+  ["Truncated axis",
+  "Cherry-picking data",
+  "3D effects",
+  "Inappropriate chart type"],
+  0,  # index of correct answer (0-based)
+  labels => ["a", "b", "c", "d"]
+);
+
+$cherry_picking = RadioButtons(
+  ["Problematic color scale",
+  "Cherry-picking data",
+  "Manipulated aspect ratio",
+  "Missing uncertainty information"],
+  1,  # index of correct answer (0-based)
+  labels => ["a", "b", "c", "d"]
+);
+
+############################################################
+# Body
+############################################################
+
+BEGIN_PGML
+Scenario 1: A bar chart comparing company profits starts the y-axis at $50 million instead of zero, making a $5 million difference between competitors look very large.
+
+What is the primary way this visualization might mislead viewers?
+
+[_]{$truncated_axis}{5}
+
+Scenario 2: A line chart shows a company's stock performance over only the three months when it performed best, without indicating that this is a selected portion of a longer time series.
+
+What is the primary way this visualization might mislead viewers?
+
+[_]{$cherry_picking}{5}
+
+END_PGML
+
+############################################################
+# Hint
+############################################################
+#Set value of $showHint in PGcourse.pl for course-wide attempt threshhold for revealing hints
+
+BEGIN_PGML_HINT
+Think about both what is shown in the visualization and how it is presented. Some visualization problems relate to selective inclusion of data, while others relate to visual perception and how data is represented.
+
+END_PGML_HINT
+
+############################################################
+# Solution
+############################################################
+
+BEGIN_PGML_SOLUTION
+Scenario 1: The primary issue is truncated axis.
+
+Starting the y-axis above zero on a bar chart violates the principle that the length of bars should be proportional to the values they represent. This exaggerates the differences between values.
+
+Scenario 2: The primary issue is cherry-picking data.
+
+By selectively showing only the three best-performing months without proper context, the visualization presents an incomplete and potentially misleading picture of the company's overall performance.
+
+END_PGML_SOLUTION
+
+############################################################
+# End Problem
+############################################################
+
+ENDDOCUMENT();
+]]></pg>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-6" ww-id="webwork-6">
+    <static seed="6">
+      <statement><p>Use this checklist to evaluate potential datasets for your project. A suitable dataset should meet most of these criteria:</p>
+<p><ul label="disc">
+<li>
+<p>Contains at least 100 records (rows)</p>
+</li>
+<li>
+<p>Includes at least 8 variables (columns)</p>
+</li>
+<li>
+<p>Has a mix of categorical and numerical variables</p>
+</li>
+<li>
+<p>Is on a topic that genuinely interests you</p>
+</li>
+<li>
+<p>Has documentation about data collection methods and meanings of variables</p>
+</li>
+<li>
+<p>Is reasonably clean but offers some opportunities for data cleaning practice</p>
+</li>
+<li>
+<p>Can be easily imported into CODAP</p>
+</li>
+<li>
+<p>Supports at least three meaningful statistical questions</p>
+</li>
+<li>
+<p>Contains variables that might have interesting relationships</p>
+</li>
+<li>
+<p>Is publicly available or properly licensed for educational use</p>
+</li>
+</ul></p>
+<p>Review the dataset you<rsq/>re considering and evaluate how many of these criteria it meets. A good dataset for your project should satisfy at least 7-8 of these items.</p>
+</statement>
+      <solution><p>This checklist serves as a reference for dataset evaluation. There is no single correct answer, as the suitability of a dataset depends on your specific project needs. However, datasets meeting more criteria will generally provide better opportunities for meaningful analysis.</p>
+</solution>
+    </static>
+    <server-data problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIlBHTUwucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsjIE5vIGNvbXB1dGF0aW9uIG5lZWRlZCBmb3IgdGhpcyBjaGVja2xpc3QgZGlzcGxheQokY2hlY2tsaXN0X3RleHQgPSAiVGhpcyBpcyBhIHJlZmVyZW5jZSBjaGVja2xpc3QgZm9yIGRhdGFzZXQgZXZhbHVhdGlvbi4iOwoKQkVHSU5fUEdNTApVc2UgdGhpcyBjaGVja2xpc3QgdG8gZXZhbHVhdGUgcG90ZW50aWFsIGRhdGFzZXRzIGZvciB5b3VyIHByb2plY3QuIEEgc3VpdGFibGUgZGF0YXNldCBzaG91bGQgbWVldCBtb3N0IG9mIHRoZXNlIGNyaXRlcmlhOgoKCiogQ29udGFpbnMgYXQgbGVhc3QgMTAwIHJlY29yZHMgKHJvd3MpCgoKKiBJbmNsdWRlcyBhdCBsZWFzdCA4IHZhcmlhYmxlcyAoY29sdW1ucykKCgoqIEhhcyBhIG1peCBvZiBjYXRlZ29yaWNhbCBhbmQgbnVtZXJpY2FsIHZhcmlhYmxlcwoKCiogSXMgb24gYSB0b3BpYyB0aGF0IGdlbnVpbmVseSBpbnRlcmVzdHMgeW91CgoKKiBIYXMgZG9jdW1lbnRhdGlvbiBhYm91dCBkYXRhIGNvbGxlY3Rpb24gbWV0aG9kcyBhbmQgbWVhbmluZ3Mgb2YgdmFyaWFibGVzCgoKKiBJcyByZWFzb25hYmx5IGNsZWFuIGJ1dCBvZmZlcnMgc29tZSBvcHBvcnR1bml0aWVzIGZvciBkYXRhIGNsZWFuaW5nIHByYWN0aWNlCgoKKiBDYW4gYmUgZWFzaWx5IGltcG9ydGVkIGludG8gQ09EQVAKCgoqIFN1cHBvcnRzIGF0IGxlYXN0IHRocmVlIG1lYW5pbmdmdWwgc3RhdGlzdGljYWwgcXVlc3Rpb25zCgoKKiBDb250YWlucyB2YXJpYWJsZXMgdGhhdCBtaWdodCBoYXZlIGludGVyZXN0aW5nIHJlbGF0aW9uc2hpcHMKCgoqIElzIHB1YmxpY2x5IGF2YWlsYWJsZSBvciBwcm9wZXJseSBsaWNlbnNlZCBmb3IgZWR1Y2F0aW9uYWwgdXNlCgpSZXZpZXcgdGhlIGRhdGFzZXQgeW91J3JlIGNvbnNpZGVyaW5nIGFuZCBldmFsdWF0ZSBob3cgbWFueSBvZiB0aGVzZSBjcml0ZXJpYSBpdCBtZWV0cy4gQSBnb29kIGRhdGFzZXQgZm9yIHlvdXIgcHJvamVjdCBzaG91bGQgc2F0aXNmeSBhdCBsZWFzdCA3LTggb2YgdGhlc2UgaXRlbXMuCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KVGhpcyBjaGVja2xpc3Qgc2VydmVzIGFzIGEgcmVmZXJlbmNlIGZvciBkYXRhc2V0IGV2YWx1YXRpb24uIFRoZXJlIGlzIG5vIHNpbmdsZSBjb3JyZWN0IGFuc3dlciwgYXMgdGhlIHN1aXRhYmlsaXR5IG9mIGEgZGF0YXNldCBkZXBlbmRzIG9uIHlvdXIgc3BlY2lmaWMgcHJvamVjdCBuZWVkcy4gSG93ZXZlciwgZGF0YXNldHMgbWVldGluZyBtb3JlIGNyaXRlcmlhIHdpbGwgZ2VuZXJhbGx5IHByb3ZpZGUgYmV0dGVyIG9wcG9ydHVuaXRpZXMgZm9yIG1lYW5pbmdmdWwgYW5hbHlzaXMuCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" password="anonymous" language="en-US"/>
+    <pg><![CDATA[
+#############################################
+###       Generated from PreTeXt source      
+###       on 2025-05-16T21:36:36Z       
+###   A recent stable commit (2022-07-01):   
+### 6c761d3dba23af92cba35001c852aac04ae99a5f 
+###                                          
+###         https://pretextbook.org          
+###                                          
+#############################################
+## DBsubject()
+## DBchapter()
+## DBsection()
+## Level()
+## KEYWORDS()
+## TitleText1()
+## EditionText1()
+## AuthorText1()
+## Section1(not reported)
+## Problem1(112)
+## Author()
+## Institution()
+## Language(en-US)
+
+DOCUMENT();
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "PGML.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl",
+);
+COMMENT('Authored in PreTeXt');
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+
+############################################################
+# PG Setup Code
+############################################################
+Context('Numeric');
+# No computation needed for this checklist display
+$checklist_text = "This is a reference checklist for dataset evaluation.";
+
+############################################################
+# Body
+############################################################
+
+BEGIN_PGML
+Use this checklist to evaluate potential datasets for your project. A suitable dataset should meet most of these criteria:
+
+* Contains at least 100 records (rows)
+
+* Includes at least 8 variables (columns)
+
+* Has a mix of categorical and numerical variables
+
+* Is on a topic that genuinely interests you
+
+* Has documentation about data collection methods and meanings of variables
+
+* Is reasonably clean but offers some opportunities for data cleaning practice
+
+* Can be easily imported into CODAP
+
+* Supports at least three meaningful statistical questions
+
+* Contains variables that might have interesting relationships
+
+* Is publicly available or properly licensed for educational use
+
+Review the dataset you're considering and evaluate how many of these criteria it meets. A good dataset for your project should satisfy at least 7-8 of these items.
+
+END_PGML
+
+############################################################
+# Solution
+############################################################
+
+BEGIN_PGML_SOLUTION
+This checklist serves as a reference for dataset evaluation. There is no single correct answer, as the suitability of a dataset depends on your specific project needs. However, datasets meeting more criteria will generally provide better opportunities for meaningful analysis.
 
 END_PGML_SOLUTION
 

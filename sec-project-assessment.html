@@ -292,7 +292,6 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="sec-advanced-visualization.html" class="internal"><span class="title">Advanced Visualization and Analysis</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualization.html#subsec-multi-variable" class="internal"><span class="title">Visualizing Multi-Variable Relationships</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualization.html#subsec-dashboards" class="internal"><span class="title">Building Effective Dashboards</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualization.html#subsec-statistical-relationships" class="internal"><span class="title">Statistical Thinking: Correlation and Relationships</span></a></div></li>
 </ul>
 </li>
@@ -320,7 +319,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-project-workflow.html" class="internal"><span class="title">Project Workflow and Timeline</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase1" class="internal"><span class="title">Phase 1: Dataset Selection and Exploration (Unit 1)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase1" class="internal"><span class="title">Phase 1: Dataset Selection + Exploration (Unit 1)</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase2" class="internal"><span class="title">Phase 2: Investigation Planning (Unit 2)</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase3" class="internal"><span class="title">Phase 3: Data Analysis and Processing (Unit 3)</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase4" class="internal"><span class="title">Phase 4: Visualization and Communication (Unit 4)</span></a></div></li>
@@ -328,10 +327,15 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec-project-assessment.html" class="internal"><span class="title">Assessment and Grading</span></a></div>
-<ul class="structural toc-item-list active">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsec-grading-breakdown" class="internal"><span class="title">Grading Breakdown</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsec-evaluation-rubrics" class="internal"><span class="title">Evaluation Rubrics</span></a></div></li>
+<ul class="structural toc-item-list active"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-project-assessment.html#subsec-evaluation-rubrics" class="internal"><span class="title">Evaluation Rubrics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsubsec-dataset-selection-rubric" class="internal"><span class="title">Dataset Selection Report</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsubsec-investigation-plan-rubric" class="internal"><span class="title">Investigation Plan</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsubsec-data-processing-rubric" class="internal"><span class="title">Data Processing Documentation</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsubsec-final-presentation-rubric" class="internal"><span class="title">Final Presentation</span></a></div></li>
 </ul>
+</li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-project-tips.html" class="internal"><span class="title">Tips for Success</span></a></div>
@@ -386,218 +390,157 @@ eBookConfig.enable_chatcodes =  false;
 <span class="type">Section</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Assessment and Grading</span>
 </h2>
 <div class="para" id="sec-project-assessment-2">Your project will be assessed based on how well you demonstrate data science skills and concepts across all phases of the work. The grading emphasizes both technical proficiency and communication effectiveness.</div>
-<section class="subsection" id="subsec-grading-breakdown"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Grading Breakdown</span>
-</h3>
-<div class="para" id="subsec-grading-breakdown-2">The project accounts for 60% of your overall course grade, distributed across deliverables as follows:</div>
-<figure class="table table-like" id="subsec-grading-breakdown-3"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">124<span class="period">.</span></span><span class="space"> </span>Project Component Weights</figcaption><div class="tabular-box natural-width"><table class="tabular">
-<tr class="header-horizontal">
-<th scope="col" class="l m b0 r0 l0 t0 lines">Deliverable</th>
-<th scope="col" class="l m b0 r0 l0 t0 lines">Percentage of Project Grade</th>
-<th scope="col" class="l m b0 r0 l0 t0 lines">Percentage of Overall Course Grade</th>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Dataset Selection Report</td>
-<td class="l m b0 r0 l0 t0 lines">5%</td>
-<td class="l m b0 r0 l0 t0 lines">3%</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Investigation Plan</td>
-<td class="l m b0 r0 l0 t0 lines">10%</td>
-<td class="l m b0 r0 l0 t0 lines">6%</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Data Processing Documentation</td>
-<td class="l m b0 r0 l0 t0 lines">15%</td>
-<td class="l m b0 r0 l0 t0 lines">9%</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Visualization Dashboard</td>
-<td class="l m b0 r0 l0 t0 lines">15%</td>
-<td class="l m b0 r0 l0 t0 lines">9%</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Final Presentation</td>
-<td class="l m b0 r0 l0 t0 lines">15%</td>
-<td class="l m b0 r0 l0 t0 lines">9%</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines"><dfn class="terminology">Total</dfn></td>
-<td class="l m b0 r0 l0 t0 lines">60%</td>
-<td class="l m b0 r0 l0 t0 lines">36%</td>
-</tr>
-</table></div></figure><div class="para" id="subsec-grading-breakdown-4">The remaining 40% of your course grade comes from weekly assignments (30%) and participation (10%).</div></section><section class="subsection" id="subsec-evaluation-rubrics"><h3 class="heading hide-type">
+<section class="subsection" id="subsec-evaluation-rubrics"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Evaluation Rubrics</span>
 </h3>
 <div class="para" id="subsec-evaluation-rubrics-2">Each project component will be evaluated using the following rubrics:</div>
-<figure class="table table-like" id="table-dataset-rubric"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">125<span class="period">.</span></span><span class="space"> </span>Dataset Selection Report Rubric</figcaption><div class="tabular-box natural-width"><table class="tabular">
-<tr class="header-horizontal">
-<th scope="col" class="l m b0 r0 l0 t0 lines">Criterion</th>
-<th scope="col" class="l m b0 r0 l0 t0 lines">Excellent (A)</th>
-<th scope="col" class="l m b0 r0 l0 t0 lines">Satisfactory (B-C)</th>
-<th scope="col" class="l m b0 r0 l0 t0 lines">Needs Improvement (D-F)</th>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Dataset Suitability</td>
-<td class="l m b0 r0 l0 t0 lines">Dataset perfectly meets all selection criteria; rich with potential for analysis</td>
-<td class="l m b0 r0 l0 t0 lines">Dataset meets most criteria; adequate for project purposes</td>
-<td class="l m b0 r0 l0 t0 lines">Dataset fails to meet multiple criteria; limited potential for analysis</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Documentation</td>
-<td class="l m b0 r0 l0 t0 lines">Comprehensive documentation of source, contents, and context</td>
-<td class="l m b0 r0 l0 t0 lines">Adequate documentation but missing some details</td>
-<td class="l m b0 r0 l0 t0 lines">Minimal documentation; unclear source or context</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Initial Exploration</td>
-<td class="l m b0 r0 l0 t0 lines">Thorough initial exploration with insightful observations</td>
-<td class="l m b0 r0 l0 t0 lines">Basic exploration with some relevant observations</td>
-<td class="l m b0 r0 l0 t0 lines">Superficial exploration with few or no observations</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Ethical Considerations</td>
-<td class="l m b0 r0 l0 t0 lines">Thoughtful discussion of relevant ethical considerations</td>
-<td class="l m b0 r0 l0 t0 lines">Basic mention of ethical considerations</td>
-<td class="l m b0 r0 l0 t0 lines">No consideration of ethical dimensions</td>
-</tr>
-</table></div></figure><figure class="table table-like" id="table-investigation-rubric"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">126<span class="period">.</span></span><span class="space"> </span>Investigation Plan Rubric</figcaption><div class="tabular-box natural-width"><table class="tabular">
-<tr class="header-horizontal">
-<th scope="col" class="l m b0 r0 l0 t0 lines">Criterion</th>
-<th scope="col" class="l m b0 r0 l0 t0 lines">Excellent (A)</th>
-<th scope="col" class="l m b0 r0 l0 t0 lines">Satisfactory (B-C)</th>
-<th scope="col" class="l m b0 r0 l0 t0 lines">Needs Improvement (D-F)</th>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Statistical Questions</td>
-<td class="l m b0 r0 l0 t0 lines">Clear, specific, meaningful questions that anticipate variability and are answerable with data</td>
-<td class="l m b0 r0 l0 t0 lines">Mostly clear questions, but may lack specificity or clear connection to data</td>
-<td class="l m b0 r0 l0 t0 lines">Vague, overly broad, or unanswerable questions</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Data Assessment</td>
-<td class="l m b0 r0 l0 t0 lines">Comprehensive assessment of data quality, completeness, and limitations</td>
-<td class="l m b0 r0 l0 t0 lines">Basic assessment of data with some gaps</td>
-<td class="l m b0 r0 l0 t0 lines">Minimal or unrealistic assessment of data</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Analysis Approach</td>
-<td class="l m b0 r0 l0 t0 lines">Well-reasoned approaches for each question, with clear justification</td>
-<td class="l m b0 r0 l0 t0 lines">Reasonable approaches but limited justification</td>
-<td class="l m b0 r0 l0 t0 lines">Inappropriate or vague analysis approaches</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Plan Completeness</td>
-<td class="l m b0 r0 l0 t0 lines">Thorough plan addressing all aspects of the investigation</td>
-<td class="l m b0 r0 l0 t0 lines">Adequate plan but missing some elements</td>
-<td class="l m b0 r0 l0 t0 lines">Incomplete or insufficient planning</td>
-</tr>
-</table></div></figure><figure class="table table-like" id="table-processing-rubric"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">127<span class="period">.</span></span><span class="space"> </span>Data Processing Documentation Rubric</figcaption><div class="tabular-box natural-width"><table class="tabular">
-<tr class="header-horizontal">
-<th scope="col" class="l m b0 r0 l0 t0 lines">Criterion</th>
-<th scope="col" class="l m b0 r0 l0 t0 lines">Excellent (A)</th>
-<th scope="col" class="l m b0 r0 l0 t0 lines">Satisfactory (B-C)</th>
-<th scope="col" class="l m b0 r0 l0 t0 lines">Needs Improvement (D-F)</th>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Data Cleaning</td>
-<td class="l m b0 r0 l0 t0 lines">Appropriate handling of missing values, outliers, and other quality issues with clear rationale</td>
-<td class="l m b0 r0 l0 t0 lines">Basic cleaning with some rationale, but may miss some issues</td>
-<td class="l m b0 r0 l0 t0 lines">Inadequate cleaning or inappropriate handling of data issues</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Data Transformation</td>
-<td class="l m b0 r0 l0 t0 lines">Creative and appropriate derived variables, filtering, and other transformations</td>
-<td class="l m b0 r0 l0 t0 lines">Basic transformations that support analysis</td>
-<td class="l m b0 r0 l0 t0 lines">Few or inappropriate transformations</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Documentation</td>
-<td class="l m b0 r0 l0 t0 lines">Clear, comprehensive documentation of all data moves and decisions</td>
-<td class="l m b0 r0 l0 t0 lines">Adequate documentation but missing some details</td>
-<td class="l m b0 r0 l0 t0 lines">Poor or insufficient documentation</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Preliminary Analysis</td>
-<td class="l m b0 r0 l0 t0 lines">Insightful summary statistics and group comparisons</td>
-<td class="l m b0 r0 l0 t0 lines">Basic summary statistics with limited interpretation</td>
-<td class="l m b0 r0 l0 t0 lines">Minimal or incorrect statistical analysis</td>
-</tr>
-</table></div></figure><figure class="table table-like" id="table-dashboard-rubric"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">128<span class="period">.</span></span><span class="space"> </span>Visualization Dashboard Rubric</figcaption><div class="tabular-box natural-width"><table class="tabular">
-<tr class="header-horizontal">
-<th scope="col" class="l m b0 r0 l0 t0 lines">Criterion</th>
-<th scope="col" class="l m b0 r0 l0 t0 lines">Excellent (A)</th>
-<th scope="col" class="l m b0 r0 l0 t0 lines">Satisfactory (B-C)</th>
-<th scope="col" class="l m b0 r0 l0 t0 lines">Needs Improvement (D-F)</th>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Visualization Selection</td>
-<td class="l m b0 r0 l0 t0 lines">Optimal chart types for each question and data type</td>
-<td class="l m b0 r0 l0 t0 lines">Appropriate chart types with minor issues</td>
-<td class="l m b0 r0 l0 t0 lines">Inappropriate or misleading chart types</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Visual Design</td>
-<td class="l m b0 r0 l0 t0 lines">Clear, accessible, and aesthetically pleasing design that enhances understanding</td>
-<td class="l m b0 r0 l0 t0 lines">Functionally clear design with some issues</td>
-<td class="l m b0 r0 l0 t0 lines">Cluttered, confusing, or poorly designed visualizations</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Dashboard Organization</td>
-<td class="l m b0 r0 l0 t0 lines">Logical flow with clear visual hierarchy and purposeful arrangement</td>
-<td class="l m b0 r0 l0 t0 lines">Reasonable organization but lacking some coherence</td>
-<td class="l m b0 r0 l0 t0 lines">Disorganized or illogical arrangement</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Interactivity</td>
-<td class="l m b0 r0 l0 t0 lines">Thoughtful interactive features that enhance exploration</td>
-<td class="l m b0 r0 l0 t0 lines">Basic interactive functionality</td>
-<td class="l m b0 r0 l0 t0 lines">Limited or no effective interactivity</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Context and Labeling</td>
-<td class="l m b0 r0 l0 t0 lines">Comprehensive titles, labels, and explanatory text</td>
-<td class="l m b0 r0 l0 t0 lines">Adequate labeling with some context</td>
-<td class="l m b0 r0 l0 t0 lines">Missing or confusing labels and context</td>
-</tr>
-</table></div></figure><figure class="table table-like" id="table-presentation-rubric"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">129<span class="period">.</span></span><span class="space"> </span>Final Presentation Rubric</figcaption><div class="tabular-box natural-width"><table class="tabular">
-<tr class="header-horizontal">
-<th scope="col" class="l m b0 r0 l0 t0 lines">Criterion</th>
-<th scope="col" class="l m b0 r0 l0 t0 lines">Excellent (A)</th>
-<th scope="col" class="l m b0 r0 l0 t0 lines">Satisfactory (B-C)</th>
-<th scope="col" class="l m b0 r0 l0 t0 lines">Needs Improvement (D-F)</th>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Content</td>
-<td class="l m b0 r0 l0 t0 lines">Comprehensive coverage of context, methods, findings, and implications</td>
-<td class="l m b0 r0 l0 t0 lines">Adequate coverage of key elements but lacking some depth</td>
-<td class="l m b0 r0 l0 t0 lines">Incomplete or superficial treatment of the project</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Data Story</td>
-<td class="l m b0 r0 l0 t0 lines">Compelling narrative that effectively communicates insights</td>
-<td class="l m b0 r0 l0 t0 lines">Clear narrative but lacking some engagement or coherence</td>
-<td class="l m b0 r0 l0 t0 lines">Disjointed or unclear narrative</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Visual Support</td>
-<td class="l m b0 r0 l0 t0 lines">Excellent use of visualizations to support and enhance presentation</td>
-<td class="l m b0 r0 l0 t0 lines">Adequate visual support with minor issues</td>
-<td class="l m b0 r0 l0 t0 lines">Poor or distracting visual elements</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Delivery</td>
-<td class="l m b0 r0 l0 t0 lines">Clear, engaging delivery with strong command of material</td>
-<td class="l m b0 r0 l0 t0 lines">Competent delivery with some room for improvement</td>
-<td class="l m b0 r0 l0 t0 lines">Unclear, disorganized, or difficult to follow</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Q&amp;A Response</td>
-<td class="l m b0 r0 l0 t0 lines">Thoughtful, knowledgeable responses to questions</td>
-<td class="l m b0 r0 l0 t0 lines">Adequate responses to most questions</td>
-<td class="l m b0 r0 l0 t0 lines">Unable to address questions effectively</td>
-</tr>
-</table></div></figure></section></section></div>
+<section class="subsubsection" id="subsubsec-dataset-selection-rubric"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Dataset Selection Report</span>
+</h4>
+<div class="para" id="subsubsec-dataset-selection-rubric-2"><em class="alert">For an A grade:</em></div>
+<ul class="disc" id="subsubsec-dataset-selection-rubric-3">
+<li id="subsubsec-dataset-selection-rubric-3-1"><div class="para" id="subsubsec-dataset-selection-rubric-3-1-1">
+<em class="emphasis">Dataset Suitability:</em> Dataset perfectly meets all selection criteria; rich with potential for analysis</div></li>
+<li id="subsubsec-dataset-selection-rubric-3-2"><div class="para" id="subsubsec-dataset-selection-rubric-3-2-1">
+<em class="emphasis">Documentation:</em> Comprehensive documentation of source, contents, and context</div></li>
+<li id="subsubsec-dataset-selection-rubric-3-3"><div class="para" id="subsubsec-dataset-selection-rubric-3-3-1">
+<em class="emphasis">Initial Exploration:</em> Thorough initial exploration with insightful observations</div></li>
+<li id="subsubsec-dataset-selection-rubric-3-4"><div class="para" id="subsubsec-dataset-selection-rubric-3-4-1">
+<em class="emphasis">Ethical Considerations:</em> Thoughtful discussion of relevant ethical considerations</div></li>
+</ul>
+<div class="para" id="subsubsec-dataset-selection-rubric-4"><em class="alert">For a B-C grade:</em></div>
+<ul class="disc" id="subsubsec-dataset-selection-rubric-5">
+<li id="subsubsec-dataset-selection-rubric-5-1"><div class="para" id="subsubsec-dataset-selection-rubric-5-1-1">
+<em class="emphasis">Dataset Suitability:</em> Dataset meets most criteria; adequate for project purposes</div></li>
+<li id="subsubsec-dataset-selection-rubric-5-2"><div class="para" id="subsubsec-dataset-selection-rubric-5-2-1">
+<em class="emphasis">Documentation:</em> Adequate documentation but missing some details</div></li>
+<li id="subsubsec-dataset-selection-rubric-5-3"><div class="para" id="subsubsec-dataset-selection-rubric-5-3-1">
+<em class="emphasis">Initial Exploration:</em> Basic exploration with some relevant observations</div></li>
+<li id="subsubsec-dataset-selection-rubric-5-4"><div class="para" id="subsubsec-dataset-selection-rubric-5-4-1">
+<em class="emphasis">Ethical Considerations:</em> Basic mention of ethical considerations</div></li>
+</ul>
+<div class="para" id="subsubsec-dataset-selection-rubric-6"><em class="alert">For a D-F grade:</em></div>
+<ul class="disc" id="subsubsec-dataset-selection-rubric-7">
+<li id="subsubsec-dataset-selection-rubric-7-1"><div class="para" id="subsubsec-dataset-selection-rubric-7-1-1">
+<em class="emphasis">Dataset Suitability:</em> Dataset fails to meet multiple criteria; limited potential for analysis</div></li>
+<li id="subsubsec-dataset-selection-rubric-7-2"><div class="para" id="subsubsec-dataset-selection-rubric-7-2-1">
+<em class="emphasis">Documentation:</em> Minimal documentation; unclear source or context</div></li>
+<li id="subsubsec-dataset-selection-rubric-7-3"><div class="para" id="subsubsec-dataset-selection-rubric-7-3-1">
+<em class="emphasis">Initial Exploration:</em> Superficial exploration with few or no observations</div></li>
+<li id="subsubsec-dataset-selection-rubric-7-4"><div class="para" id="subsubsec-dataset-selection-rubric-7-4-1">
+<em class="emphasis">Ethical Considerations:</em> No consideration of ethical dimensions</div></li>
+</ul></section><section class="subsubsection" id="subsubsec-investigation-plan-rubric"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Investigation Plan</span>
+</h4>
+<div class="para" id="subsubsec-investigation-plan-rubric-2"><em class="alert">For an A grade:</em></div>
+<ul class="disc" id="subsubsec-investigation-plan-rubric-3">
+<li id="subsubsec-investigation-plan-rubric-3-1"><div class="para" id="subsubsec-investigation-plan-rubric-3-1-1">
+<em class="emphasis">Statistical Questions:</em> Clear, specific, meaningful questions that anticipate variability and are answerable with data</div></li>
+<li id="subsubsec-investigation-plan-rubric-3-2"><div class="para" id="subsubsec-investigation-plan-rubric-3-2-1">
+<em class="emphasis">Data Assessment:</em> Comprehensive assessment of data quality, completeness, and limitations</div></li>
+<li id="subsubsec-investigation-plan-rubric-3-3"><div class="para" id="subsubsec-investigation-plan-rubric-3-3-1">
+<em class="emphasis">Analysis Approach:</em> Well-reasoned approaches for each question, with clear justification</div></li>
+<li id="subsubsec-investigation-plan-rubric-3-4"><div class="para" id="subsubsec-investigation-plan-rubric-3-4-1">
+<em class="emphasis">Plan Completeness:</em> Thorough plan addressing all aspects of the investigation</div></li>
+</ul>
+<div class="para" id="subsubsec-investigation-plan-rubric-4"><em class="alert">For a B-C grade:</em></div>
+<ul class="disc" id="subsubsec-investigation-plan-rubric-5">
+<li id="subsubsec-investigation-plan-rubric-5-1"><div class="para" id="subsubsec-investigation-plan-rubric-5-1-1">
+<em class="emphasis">Statistical Questions:</em> Mostly clear questions, but may lack specificity or clear connection to data</div></li>
+<li id="subsubsec-investigation-plan-rubric-5-2"><div class="para" id="subsubsec-investigation-plan-rubric-5-2-1">
+<em class="emphasis">Data Assessment:</em> Basic assessment of data with some gaps</div></li>
+<li id="subsubsec-investigation-plan-rubric-5-3"><div class="para" id="subsubsec-investigation-plan-rubric-5-3-1">
+<em class="emphasis">Analysis Approach:</em> Reasonable approaches but limited justification</div></li>
+<li id="subsubsec-investigation-plan-rubric-5-4"><div class="para" id="subsubsec-investigation-plan-rubric-5-4-1">
+<em class="emphasis">Plan Completeness:</em> Adequate plan but missing some elements</div></li>
+</ul>
+<div class="para" id="subsubsec-investigation-plan-rubric-6"><em class="alert">For a D-F grade:</em></div>
+<ul class="disc" id="subsubsec-investigation-plan-rubric-7">
+<li id="subsubsec-investigation-plan-rubric-7-1"><div class="para" id="subsubsec-investigation-plan-rubric-7-1-1">
+<em class="emphasis">Statistical Questions:</em> Vague, overly broad, or unanswerable questions</div></li>
+<li id="subsubsec-investigation-plan-rubric-7-2"><div class="para" id="subsubsec-investigation-plan-rubric-7-2-1">
+<em class="emphasis">Data Assessment:</em> Minimal or unrealistic assessment of data</div></li>
+<li id="subsubsec-investigation-plan-rubric-7-3"><div class="para" id="subsubsec-investigation-plan-rubric-7-3-1">
+<em class="emphasis">Analysis Approach:</em> Inappropriate or vague analysis approaches</div></li>
+<li id="subsubsec-investigation-plan-rubric-7-4"><div class="para" id="subsubsec-investigation-plan-rubric-7-4-1">
+<em class="emphasis">Plan Completeness:</em> Incomplete or insufficient planning</div></li>
+</ul></section><section class="subsubsection" id="subsubsec-data-processing-rubric"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Data Processing Documentation</span>
+</h4>
+<div class="para" id="subsubsec-data-processing-rubric-2"><em class="alert">For an A grade:</em></div>
+<ul class="disc" id="subsubsec-data-processing-rubric-3">
+<li id="subsubsec-data-processing-rubric-3-1"><div class="para" id="subsubsec-data-processing-rubric-3-1-1">
+<em class="emphasis">Data Cleaning:</em> Appropriate handling of missing values, outliers, and other quality issues with clear rationale</div></li>
+<li id="subsubsec-data-processing-rubric-3-2"><div class="para" id="subsubsec-data-processing-rubric-3-2-1">
+<em class="emphasis">Data Transformation:</em> Creative and appropriate derived variables, filtering, and other transformations</div></li>
+<li id="subsubsec-data-processing-rubric-3-3"><div class="para" id="subsubsec-data-processing-rubric-3-3-1">
+<em class="emphasis">Documentation:</em> Clear, comprehensive documentation of all data moves and decisions</div></li>
+<li id="subsubsec-data-processing-rubric-3-4"><div class="para" id="subsubsec-data-processing-rubric-3-4-1">
+<em class="emphasis">Preliminary Analysis:</em> Insightful summary statistics and group comparisons</div></li>
+</ul>
+<div class="para" id="subsubsec-data-processing-rubric-4"><em class="alert">For a B-C grade:</em></div>
+<ul class="disc" id="subsubsec-data-processing-rubric-5">
+<li id="subsubsec-data-processing-rubric-5-1"><div class="para" id="subsubsec-data-processing-rubric-5-1-1">
+<em class="emphasis">Data Cleaning:</em> Basic cleaning with some rationale, but may miss some issues</div></li>
+<li id="subsubsec-data-processing-rubric-5-2"><div class="para" id="subsubsec-data-processing-rubric-5-2-1">
+<em class="emphasis">Data Transformation:</em> Basic transformations that support analysis</div></li>
+<li id="subsubsec-data-processing-rubric-5-3"><div class="para" id="subsubsec-data-processing-rubric-5-3-1">
+<em class="emphasis">Documentation:</em> Adequate documentation but missing some details</div></li>
+<li id="subsubsec-data-processing-rubric-5-4"><div class="para" id="subsubsec-data-processing-rubric-5-4-1">
+<em class="emphasis">Preliminary Analysis:</em> Basic summary statistics with limited interpretation</div></li>
+</ul>
+<div class="para" id="subsubsec-data-processing-rubric-6"><em class="alert">For a D-F grade:</em></div>
+<ul class="disc" id="subsubsec-data-processing-rubric-7">
+<li id="subsubsec-data-processing-rubric-7-1"><div class="para" id="subsubsec-data-processing-rubric-7-1-1">
+<em class="emphasis">Data Cleaning:</em> Inadequate cleaning or inappropriate handling of data issues</div></li>
+<li id="subsubsec-data-processing-rubric-7-2"><div class="para" id="subsubsec-data-processing-rubric-7-2-1">
+<em class="emphasis">Data Transformation:</em> Few or inappropriate transformations</div></li>
+<li id="subsubsec-data-processing-rubric-7-3"><div class="para" id="subsubsec-data-processing-rubric-7-3-1">
+<em class="emphasis">Documentation:</em> Poor or insufficient documentation</div></li>
+<li id="subsubsec-data-processing-rubric-7-4"><div class="para" id="subsubsec-data-processing-rubric-7-4-1">
+<em class="emphasis">Preliminary Analysis:</em> Minimal or incorrect statistical analysis</div></li>
+</ul></section><section class="subsubsection" id="subsubsec-final-presentation-rubric"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Final Presentation</span>
+</h4>
+<div class="para" id="subsubsec-final-presentation-rubric-2"><em class="alert">For an A grade:</em></div>
+<ul class="disc" id="subsubsec-final-presentation-rubric-3">
+<li id="subsubsec-final-presentation-rubric-3-1"><div class="para" id="subsubsec-final-presentation-rubric-3-1-1">
+<em class="emphasis">Content:</em> Comprehensive coverage of context, methods, findings, and implications</div></li>
+<li id="subsubsec-final-presentation-rubric-3-2"><div class="para" id="subsubsec-final-presentation-rubric-3-2-1">
+<em class="emphasis">Data Story:</em> Compelling narrative that effectively communicates insights</div></li>
+<li id="subsubsec-final-presentation-rubric-3-3"><div class="para" id="subsubsec-final-presentation-rubric-3-3-1">
+<em class="emphasis">Visual Support:</em> Excellent use of visualizations to support and enhance presentation</div></li>
+<li id="subsubsec-final-presentation-rubric-3-4"><div class="para" id="subsubsec-final-presentation-rubric-3-4-1">
+<em class="emphasis">Delivery:</em> Clear, engaging delivery with strong command of material</div></li>
+<li id="subsubsec-final-presentation-rubric-3-5"><div class="para" id="subsubsec-final-presentation-rubric-3-5-1">
+<em class="emphasis">Q&amp;A Response:</em> Thoughtful, knowledgeable responses to questions</div></li>
+</ul>
+<div class="para" id="subsubsec-final-presentation-rubric-4"><em class="alert">For a B-C grade:</em></div>
+<ul class="disc" id="subsubsec-final-presentation-rubric-5">
+<li id="subsubsec-final-presentation-rubric-5-1"><div class="para" id="subsubsec-final-presentation-rubric-5-1-1">
+<em class="emphasis">Content:</em> Adequate coverage of key elements but lacking some depth</div></li>
+<li id="subsubsec-final-presentation-rubric-5-2"><div class="para" id="subsubsec-final-presentation-rubric-5-2-1">
+<em class="emphasis">Data Story:</em> Clear narrative but lacking some engagement or coherence</div></li>
+<li id="subsubsec-final-presentation-rubric-5-3"><div class="para" id="subsubsec-final-presentation-rubric-5-3-1">
+<em class="emphasis">Visual Support:</em> Adequate visual support with minor issues</div></li>
+<li id="subsubsec-final-presentation-rubric-5-4"><div class="para" id="subsubsec-final-presentation-rubric-5-4-1">
+<em class="emphasis">Delivery:</em> Competent delivery with some room for improvement</div></li>
+<li id="subsubsec-final-presentation-rubric-5-5"><div class="para" id="subsubsec-final-presentation-rubric-5-5-1">
+<em class="emphasis">Q&amp;A Response:</em> Adequate responses to most questions</div></li>
+</ul>
+<div class="para" id="subsubsec-final-presentation-rubric-6"><em class="alert">For a D-F grade:</em></div>
+<ul class="disc" id="subsubsec-final-presentation-rubric-7">
+<li id="subsubsec-final-presentation-rubric-7-1"><div class="para" id="subsubsec-final-presentation-rubric-7-1-1">
+<em class="emphasis">Content:</em> Incomplete or superficial treatment of the project</div></li>
+<li id="subsubsec-final-presentation-rubric-7-2"><div class="para" id="subsubsec-final-presentation-rubric-7-2-1">
+<em class="emphasis">Data Story:</em> Disjointed or unclear narrative</div></li>
+<li id="subsubsec-final-presentation-rubric-7-3"><div class="para" id="subsubsec-final-presentation-rubric-7-3-1">
+<em class="emphasis">Visual Support:</em> Poor or distracting visual elements</div></li>
+<li id="subsubsec-final-presentation-rubric-7-4"><div class="para" id="subsubsec-final-presentation-rubric-7-4-1">
+<em class="emphasis">Delivery:</em> Unclear, disorganized, or difficult to follow</div></li>
+<li id="subsubsec-final-presentation-rubric-7-5"><div class="para" id="subsubsec-final-presentation-rubric-7-5-1">
+<em class="emphasis">Q&amp;A Response:</em> Unable to address questions effectively</div></li>
+</ul></section></section></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-project-workflow.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-project-tips.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

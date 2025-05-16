@@ -292,7 +292,6 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="sec-advanced-visualization.html" class="internal"><span class="title">Advanced Visualization and Analysis</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualization.html#subsec-multi-variable" class="internal"><span class="title">Visualizing Multi-Variable Relationships</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualization.html#subsec-dashboards" class="internal"><span class="title">Building Effective Dashboards</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualization.html#subsec-statistical-relationships" class="internal"><span class="title">Statistical Thinking: Correlation and Relationships</span></a></div></li>
 </ul>
 </li>
@@ -320,7 +319,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-project-workflow.html" class="internal"><span class="title">Project Workflow and Timeline</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase1" class="internal"><span class="title">Phase 1: Dataset Selection and Exploration (Unit 1)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase1" class="internal"><span class="title">Phase 1: Dataset Selection + Exploration (Unit 1)</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase2" class="internal"><span class="title">Phase 2: Investigation Planning (Unit 2)</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase3" class="internal"><span class="title">Phase 3: Data Analysis and Processing (Unit 3)</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-workflow.html#subsec-phase4" class="internal"><span class="title">Phase 4: Visualization and Communication (Unit 4)</span></a></div></li>
@@ -328,10 +327,15 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-project-assessment.html" class="internal"><span class="title">Assessment and Grading</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-project-assessment.html#subsec-evaluation-rubrics" class="internal"><span class="title">Evaluation Rubrics</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsec-grading-breakdown" class="internal"><span class="title">Grading Breakdown</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsec-evaluation-rubrics" class="internal"><span class="title">Evaluation Rubrics</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsubsec-dataset-selection-rubric" class="internal"><span class="title">Dataset Selection Report</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsubsec-investigation-plan-rubric" class="internal"><span class="title">Investigation Plan</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsubsec-data-processing-rubric" class="internal"><span class="title">Data Processing Documentation</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-project-assessment.html#subsubsec-final-presentation-rubric" class="internal"><span class="title">Final Presentation</span></a></div></li>
 </ul>
+</li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-project-tips.html" class="internal"><span class="title">Tips for Success</span></a></div>
@@ -406,9 +410,7 @@ eBookConfig.enable_chatcodes =  false;
 <li id="subsec-hierarchical-data-7-2"><div class="para" id="subsec-hierarchical-data-7-2-1">Analyze aggregated data (e.g., average test scores per school)</div></li>
 <li id="subsec-hierarchical-data-7-3"><div class="para" id="subsec-hierarchical-data-7-3-1">Easily filter across related collections</div></li>
 <li id="subsec-hierarchical-data-7-4"><div class="para" id="subsec-hierarchical-data-7-4-1">Maintain relationships between different units of analysis</div></li>
-</ul>
-<figure class="figure figure-like" id="fig-hierarchical-data"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/hierarchical-data.png" class="contained" alt="Screenshot showing a hierarchical data structure in CODAP with parent and child collections."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">141<span class="period">.</span></span><span class="space"> </span>Hierarchical Data Structure in CODAP</figcaption></figure></section><section class="subsection" id="subsec-filtering-techniques"><h3 class="heading hide-type">
+</ul></section><section class="subsection" id="subsec-filtering-techniques"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Advanced Filtering Techniques</span>
 </h3>
 <div class="para" id="subsec-filtering-techniques-2">CODAP offers several ways to filter your data:</div>
@@ -509,15 +511,14 @@ eBookConfig.enable_chatcodes =  false;
 <li id="subsec-building-dashboards-5-5"><div class="para" id="subsec-building-dashboards-5-5-1">
 <dfn class="terminology">Multiple representations</dfn>: Show the same data in different ways (e.g., table, graph, map)</div></li>
 </ul>
-<figure class="figure figure-like" id="fig-codap-dashboard"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/codap-dashboard.png" class="contained" alt="Screenshot of a CODAP dashboard with multiple linked components including tables, graphs, and explanatory text."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">142<span class="period">.</span></span><span class="space"> </span>Example CODAP Dashboard</figcaption></figure><div class="para" id="subsec-building-dashboards-7"><dfn class="terminology">Dashboard design tips:</dfn></div>
-<ul class="disc" id="subsec-building-dashboards-8">
-<li id="subsec-building-dashboards-8-1"><div class="para" id="subsec-building-dashboards-8-1-1">Place the most important visualizations prominently</div></li>
-<li id="subsec-building-dashboards-8-2"><div class="para" id="subsec-building-dashboards-8-2-1">Organize components in a logical flow (e.g., overview to detail)</div></li>
-<li id="subsec-building-dashboards-8-3"><div class="para" id="subsec-building-dashboards-8-3-1">Use consistent colors and styles across components</div></li>
-<li id="subsec-building-dashboards-8-4"><div class="para" id="subsec-building-dashboards-8-4-1">Include brief text explanations to guide users</div></li>
-<li id="subsec-building-dashboards-8-5"><div class="para" id="subsec-building-dashboards-8-5-1">Test the dashboard by selecting different data points to ensure linking works correctly</div></li>
-<li id="subsec-building-dashboards-8-6"><div class="para" id="subsec-building-dashboards-8-6-1">Resize the browser window to check how your dashboard adapts to different screen sizes</div></li>
+<div class="para" id="subsec-building-dashboards-6"><dfn class="terminology">Dashboard design tips:</dfn></div>
+<ul class="disc" id="subsec-building-dashboards-7">
+<li id="subsec-building-dashboards-7-1"><div class="para" id="subsec-building-dashboards-7-1-1">Place the most important visualizations prominently</div></li>
+<li id="subsec-building-dashboards-7-2"><div class="para" id="subsec-building-dashboards-7-2-1">Organize components in a logical flow (e.g., overview to detail)</div></li>
+<li id="subsec-building-dashboards-7-3"><div class="para" id="subsec-building-dashboards-7-3-1">Use consistent colors and styles across components</div></li>
+<li id="subsec-building-dashboards-7-4"><div class="para" id="subsec-building-dashboards-7-4-1">Include brief text explanations to guide users</div></li>
+<li id="subsec-building-dashboards-7-5"><div class="para" id="subsec-building-dashboards-7-5-1">Test the dashboard by selecting different data points to ensure linking works correctly</div></li>
+<li id="subsec-building-dashboards-7-6"><div class="para" id="subsec-building-dashboards-7-6-1">Resize the browser window to check how your dashboard adapts to different screen sizes</div></li>
 </ul></section></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-core-features.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-tips-tricks.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
