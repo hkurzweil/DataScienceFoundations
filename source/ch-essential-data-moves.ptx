@@ -1,0 +1,2133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <chapter xml:id="ch-unit3">
+      <title>Unit 3: Essential Data Moves</title>
+      
+      <introduction>
+        <p>
+          Now that we have established a foundation in data science concepts and developed investigation plans, we're ready to start working with data more directly. In this unit, we'll explore essential "data moves"—the operations we perform to transform raw data into meaningful insights.
+        </p>
+        <p>
+          Data rarely comes in perfect form, ready for analysis. Instead, we typically need to clean it, organize it, filter it, summarize it, and create new calculations to answer our questions. These data moves are the building blocks of data science work, enabling us to reveal patterns and stories within our datasets.
+        </p>
+        <p>
+          Throughout this unit, we'll continue working with our Community Health and Environment dataset while you apply similar techniques to your own chosen datasets. By the end of this unit, you'll have a toolkit of essential data moves to prepare your data for deeper analysis and visualization.
+        </p>
+      </introduction>
+
+      <section xml:id="sec-data-cleaning">
+        <title>Data Cleaning and Organization</title>
+        
+        <subsection xml:id="subsec-importance-cleaning">
+          <title>Why Data Cleaning Matters</title>
+          
+          <p>
+            Data cleaning is often the most time-consuming part of data science work—and for good reason. The quality of your cleaning directly affects the validity of your results.
+          </p>
+          
+          <blockquote>
+            <p>"Garbage in, garbage out" is a fundamental principle in data science. No amount of sophisticated analysis can compensate for poor-quality data.</p>
+          </blockquote>
+          
+          <p>
+            Common data quality issues include:
+          </p>
+          
+          <ul>
+            <li>
+              <p><term>Missing values</term>: Data points that weren't recorded or were lost</p>
+            </li>
+            <li>
+              <p><term>Inconsistent formats</term>: The same information recorded in different ways (e.g., "NY" vs. "New York")</p>
+            </li>
+            <li>
+              <p><term>Duplicate records</term>: The same observation recorded multiple times</p>
+            </li>
+            <li>
+              <p><term>Outliers</term>: Extreme values that may represent errors or unusual cases</p>
+            </li>
+            <li>
+              <p><term>Structural issues</term>: Data not organized according to tidy data principles</p>
+            </li>
+            <li>
+              <p><term>Coding errors</term>: Incorrect values due to human or system errors</p>
+            </li>
+          </ul>
+          
+          <exercise xml:id="mc-data-quality-issues">
+            <title>Identifying Data Quality Issues</title>
+            <statement>
+              <p>Which of the following would NOT typically be considered a data quality issue requiring cleaning?</p>
+            </statement>
+            <choices>
+              <choice>
+                <statement>
+                  <p>A temperature column contains some values recorded in Celsius and others in Fahrenheit.</p>
+                </statement>
+                <feedback>
+                  <p>This is a data quality issue. Inconsistent units need to be standardized before analysis.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Several cells in a spreadsheet contain "#N/A" or "NULL" values.</p>
+                </statement>
+                <feedback>
+                  <p>Missing values represented as "#N/A" or "NULL" are data quality issues that need to be addressed.</p>
+                </feedback>
+              </choice>
+              <choice correct="yes">
+                <statement>
+                  <p>A dataset shows that air pollution levels are higher in urban areas compared to rural areas.</p>
+                </statement>
+                <feedback>
+                  <p>Correct! This is an actual finding from the data rather than a quality issue. It represents a pattern or relationship that might emerge after proper cleaning and analysis.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Dates are stored in different formats such as "01/05/2023", "Jan 5, 2023", and "2023-01-05".</p>
+                </statement>
+                <feedback>
+                  <p>Inconsistent date formats are a data quality issue that needs to be standardized.</p>
+                </feedback>
+              </choice>
+            </choices>
+          </exercise>
+          
+          <p>
+            Data cleaning is both a science and an art. While there are standard approaches for handling common issues, every dataset presents unique challenges that require careful judgment.
+          </p>
+        </subsection>
+        
+        <subsection xml:id="subsec-missing-values">
+          <title>Handling Missing Values</title>
+          
+          <p>
+            Missing values are perhaps the most common data quality issue. Before deciding how to handle them, it's important to understand why the data might be missing:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Missing Completely at Random (MCAR)</title>
+              <p>
+                The missing values occur purely by chance, with no relationship to any variables in the dataset.
+              </p>
+            </li>
+            <li>
+              <title>Missing at Random (MAR)</title>
+              <p>
+                The probability of missing values depends on observed data but not on the missing values themselves.
+              </p>
+            </li>
+            <li>
+              <title>Missing Not at Random (MNAR)</title>
+              <p>
+                The missing values are related to the values themselves (e.g., people with high incomes might be less likely to report their income).
+              </p>
+            </li>
+          </dl>
+          
+          <p>
+            There are several common approaches to handling missing values:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Complete Case Analysis (Listwise Deletion)</title>
+              <p>
+                Remove all rows with any missing values. Simple but can substantially reduce your dataset and introduce bias.
+              </p>
+            </li>
+            <li>
+              <title>Single Imputation</title>
+              <p>
+                Replace missing values with a calculated value like the mean, median, or mode. Straightforward but doesn't account for uncertainty.
+              </p>
+            </li>
+            <li>
+              <title>Multiple Imputation</title>
+              <p>
+                Generate multiple plausible values for each missing value, reflecting uncertainty. More complex but statistically sounder.
+              </p>
+            </li>
+            <li>
+              <title>Indicator Variables</title>
+              <p>
+                Create a new variable that flags where values were missing, then use imputation. Preserves information about missingness patterns.
+              </p>
+            </li>
+          </dl>
+          
+          <figure xml:id="fig-missing-values">
+            <caption>Patterns of Missing Values</caption>
+            <image source="missing-values-patterns.png" width="80%">
+              <description>A visualization showing different patterns of missing values in a dataset: scattered randomly, entire columns missing, or specific combinations of variables missing together.</description>
+            </image>
+          </figure>
+          
+          <p>
+            The appropriate approach depends on:
+          </p>
+          <ul>
+            <li>
+              <p>The pattern and mechanism of missingness</p>
+            </li>
+            <li>
+              <p>The proportion of missing values</p>
+            </li>
+            <li>
+              <p>The importance of the variable to your analysis</p>
+            </li>
+            <li>
+              <p>The size of your dataset</p>
+            </li>
+          </ul>
+          
+          <example xml:id="example-missing-health">
+            <title>Missing Values in Community Health Data</title>
+            <statement>
+              <p>
+                In our Community Health dataset, we might encounter these missing value situations:
+              </p>
+              <ul>
+                <li>
+                  <p>A few neighborhoods have missing air quality index values because monitoring stations were temporarily offline (likely MCAR).</p>
+                </li>
+                <li>
+                  <p>Asthma rates are more likely to be missing in lower-income neighborhoods due to less comprehensive health reporting systems (MAR).</p>
+                </li>
+                <li>
+                  <p>Obesity rates might be missing in neighborhoods where they are particularly high due to stigma-related underreporting (MNAR).</p>
+                </li>
+              </ul>
+              <p>
+                Different approaches might be appropriate for each situation:
+              </p>
+              <ul>
+                <li>
+                  <p>For the missing air quality values, we might interpolate values from nearby stations.</p>
+                </li>
+                <li>
+                  <p>For missing asthma rates, we might use multiple imputation based on other health and socioeconomic variables.</p>
+                </li>
+                <li>
+                  <p>For the obesity data, we should acknowledge the potential bias and perhaps use an indicator variable approach to flag where data was missing.</p>
+                </li>
+              </ul>
+            </statement>
+          </example>
+          
+          <exercise xml:id="parsons-missing-values" adaptive="yes">
+            <title>Steps for Handling Missing Values</title>
+            <statement>
+              <p>Arrange the following steps in a logical order for handling missing values in a dataset.</p>
+            </statement>
+            <blocks>
+              <block order="1">
+                <p>Identify variables with missing values and calculate the proportion of missingness.</p>
+              </block>
+              <block order="2">
+                <choice>
+                  <p>Immediately delete all rows with any missing values.</p>
+                </choice>
+                <choice correct="yes">
+                  <p>Examine patterns of missingness to understand potential mechanisms (MCAR, MAR, MNAR).</p>
+                </choice>
+                <choice>
+                  <p>Replace all missing values with zero.</p>
+                </choice>
+              </block>
+              <block order="3">
+                <p>Consider the impact of missingness on your specific research questions.</p>
+              </block>
+              <block order="4">
+                <p>Select appropriate techniques for handling missing values based on the pattern, mechanism, and research goals.</p>
+              </block>
+              <block order="5">
+                <p>Implement the chosen techniques and document your approach.</p>
+              </block>
+              <block order="6" correct="no">
+                <p>Ignore missing values since they don't affect analysis results.</p>
+              </block>
+            </blocks>
+            <hint>
+              <p>Before deciding how to handle missing values, you need to understand the extent and pattern of missingness in your data.</p>
+            </hint>
+          </exercise>
+          
+          <activity xml:id="activity-missing-values">
+            <title>Missing Values in CODAP</title>
+            <introduction>
+              <p>
+                In this activity, you'll practice working with missing values in CODAP.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Open the Community Health dataset in CODAP (or your own project dataset).
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Identify variables with missing values. CODAP typically shows these as empty cells. Count how many missing values exist for each variable.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Create a calculated attribute using the formula <c>if(isNaN(originalAttribute), replacementValue, originalAttribute)</c> to replace missing values in a numerical column with the mean or median of that column.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Create visualizations comparing the distribution of a variable before and after imputing missing values. How does the imputation affect the distribution?
+                </p>
+              </statement>
+            </task>
+          </activity>
+        </subsection>
+        
+        <subsection xml:id="subsec-outliers">
+          <title>Dealing with Outliers</title>
+          
+          <p>
+            Outliers are extreme values that differ significantly from other observations in the dataset. Not all outliers are errors—some represent genuine extreme cases that are important to understand.
+          </p>
+          
+          <definition xml:id="def-outlier">
+            <statement>
+              <p>
+                An <term>outlier</term> is an observation that falls far outside the typical range of values in a dataset, often defined statistically as values more than 1.5 interquartile ranges below the first quartile or above the third quartile.
+              </p>
+            </statement>
+          </definition>
+          
+          <p>
+            When encountering outliers, consider these questions:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Is the outlier a genuine observation or a data entry error?</p>
+            </li>
+            <li>
+              <p>If it's genuine, does it represent an important case that should be included in analysis?</p>
+            </li>
+            <li>
+              <p>How much influence does the outlier have on your statistics and visualizations?</p>
+            </li>
+            <li>
+              <p>What is the most appropriate way to handle this outlier given your research questions?</p>
+            </li>
+          </ul>
+          
+          <p>
+            Common approaches to handling outliers include:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Retain</title>
+              <p>
+                Keep outliers in the dataset, especially if they represent valid and important observations.
+              </p>
+            </li>
+            <li>
+              <title>Remove</title>
+              <p>
+                Delete outliers if they are clearly errors or if they unduly influence your analysis.
+              </p>
+            </li>
+            <li>
+              <title>Transform</title>
+              <p>
+                Apply mathematical transformations (like logarithmic) to reduce the influence of extreme values.
+              </p>
+            </li>
+            <li>
+              <title>Cap</title>
+              <p>
+                Set a maximum threshold and replace values exceeding it (winsorizing).
+              </p>
+            </li>
+            <li>
+              <title>Analyze Separately</title>
+              <p>
+                Conduct analyses both with and without outliers to understand their influence.
+              </p>
+            </li>
+          </dl>
+          
+          <example xml:id="example-outliers-health">
+            <title>Outliers in Community Health Data</title>
+            <statement>
+              <p>
+                In our Community Health dataset, we might encounter several types of outliers:
+              </p>
+              <ul>
+                <li>
+                  <p>A neighborhood shows an air quality index ten times higher than any other neighborhood, which investigation reveals was due to a data entry error (decimal point misplaced). This should be corrected.</p>
+                </li>
+                <li>
+                  <p>One neighborhood has an unusually high asthma rate that is verified as accurate and corresponds to its proximity to a major industrial facility. This outlier should be retained as it represents an important case.</p>
+                </li>
+                <li>
+                  <p>Income distribution across neighborhoods is highly skewed, with a few very wealthy areas. A log transformation might be appropriate for some analyses to better visualize relationships.</p>
+                </li>
+              </ul>
+            </statement>
+          </example>
+          
+          <figure xml:id="fig-outlier-detection">
+            <caption>Detecting Outliers with Box Plots</caption>
+            <image source="outlier-detection.png" width="70%">
+              <description>A box plot showing the distribution of values with outliers marked as individual points beyond the whiskers.</description>
+            </image>
+          </figure>
+          
+          <exercise xml:id="mc-outlier-handling">
+            <title>Outlier Handling Approaches</title>
+            <statement>
+              <p>Which approach to handling outliers would be MOST appropriate in this situation: You're analyzing neighborhood crime rates, and one neighborhood has a rate five times higher than the next highest. Upon investigation, you confirm this is accurate data for a neighborhood with unique circumstances.</p>
+            </statement>
+            <choices>
+              <choice>
+                <statement>
+                  <p>Remove the neighborhood from your dataset to prevent it from skewing your statistical results.</p>
+                </statement>
+                <feedback>
+                  <p>This would not be appropriate since the outlier represents a genuine and potentially important case. Removing it would eliminate valuable information about an actual neighborhood.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Replace the crime rate value with the mean of all other neighborhoods.</p>
+                </statement>
+                <feedback>
+                  <p>Replacing a confirmed accurate value with the mean would discard valid information and misrepresent the actual situation in that neighborhood.</p>
+                </feedback>
+              </choice>
+              <choice correct="yes">
+                <statement>
+                  <p>Retain the outlier but conduct analyses both with and without it to understand its influence on your results.</p>
+                </statement>
+                <feedback>
+                  <p>Correct! This approach preserves the valid data point while allowing you to assess its impact on your overall results. This provides a more complete understanding of neighborhood crime patterns.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Cap the value at three times the next highest rate to reduce its influence.</p>
+                </statement>
+                <feedback>
+                  <p>Capping a confirmed accurate value would artificially alter real data. Since the extreme value is valid, artificially reducing it would misrepresent the actual situation.</p>
+                </feedback>
+              </choice>
+            </choices>
+          </exercise>
+          
+          <activity xml:id="activity-outlier-detection">
+            <title>Outlier Detection in CODAP</title>
+            <introduction>
+              <p>
+                In this activity, you'll practice identifying and examining outliers in CODAP.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Open your dataset in CODAP and create box plots for at least three numerical variables.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Identify potential outliers in each variable (points outside the whiskers of the box plot).
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  For each identified outlier, examine the complete record (row) to see if you can determine why it might be unusual. Is it likely an error or a genuine extreme case?
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Create scatter plots showing relationships between variables, and identify any points that appear to be outliers in these relationships (even if they're not outliers in individual variables).
+                </p>
+              </statement>
+            </task>
+          </activity>
+        </subsection>
+        
+        <subsection xml:id="subsec-restructuring">
+          <title>Renaming and Restructuring Data</title>
+          
+          <p>
+            Beyond fixing errors, data cleaning often involves restructuring the dataset to make it more suitable for analysis. This might include:
+          </p>
+          
+          <ul>
+            <li>
+              <p><term>Renaming variables</term> for clarity and consistency</p>
+            </li>
+            <li>
+              <p><term>Recoding values</term> to standardize categories (e.g., "M" and "Male" to a single code)</p>
+            </li>
+            <li>
+              <p><term>Creating new variables</term> based on existing ones</p>
+            </li>
+            <li>
+              <p><term>Reshaping data</term> between wide and long formats</p>
+            </li>
+            <li>
+              <p><term>Merging datasets</term> to combine information from different sources</p>
+            </li>
+          </ul>
+          
+          <p>
+            A particularly important restructuring is ensuring your data follows the principles of tidy data:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Each variable forms a column</p>
+            </li>
+            <li>
+              <p>Each observation forms a row</p>
+            </li>
+            <li>
+              <p>Each type of observational unit forms a table</p>
+            </li>
+          </ul>
+          
+          <example xml:id="example-restructuring-health">
+            <title>Restructuring Community Health Data</title>
+            <statement>
+              <p>
+                For our Community Health dataset, we might need to:
+              </p>
+              <ul>
+                <li>
+                  <p>Rename variables from cryptic codes like "AQI_AVG" to clearer names like "Average_Air_Quality_Index"</p>
+                </li>
+                <li>
+                  <p>Standardize inconsistent neighborhood classifications (e.g., "Downtown", "Central Business District", "CBD" all referring to the same area)</p>
+                </li>
+                <li>
+                  <p>Create a new variable categorizing air quality as "Good", "Moderate", or "Poor" based on numerical AQI values</p>
+                </li>
+                <li>
+                  <p>Convert data from a wide format (different health metrics in separate columns) to a long format (a single "Health_Metric" column with a "Value" column) for certain analyses</p>
+                </li>
+              </ul>
+            </statement>
+          </example>
+          
+          <exercise xml:id="matching-restructuring">
+            <title>Data Restructuring Operations</title>
+            <statement>
+              <p>Match each data restructuring operation with its most appropriate use case.</p>
+            </statement>
+            <matches>
+              <match>
+                <premise>Converting from wide to long format</premise>
+                <response>Preparing data where one observation is measured across multiple time points for time-series visualization</response>
+              </match>
+              <match>
+                <premise>Recoding categorical values</premise>
+                <response>Standardizing inconsistent entries like "F", "female", and "fem" to a single value</response>
+              </match>
+              <match>
+                <premise>Creating calculated variables</premise>
+                <response>Deriving Body Mass Index (BMI) from height and weight measurements</response>
+              </match>
+              <match>
+                <premise>Merging datasets</premise>
+                <response>Combining neighborhood health data with separate census demographic data using a common ID</response>
+              </match>
+              <match>
+                <premise>Renaming variables</premise>
+                <response>Changing cryptic column names like "var001" to descriptive names like "annual_income"</response>
+              </match>
+            </matches>
+          </exercise>
+          
+          <activity xml:id="activity-data-restructuring">
+            <title>Restructuring Data in CODAP</title>
+            <introduction>
+              <p>
+                In this activity, you'll practice renaming and restructuring data in CODAP.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  In your dataset, identify at least three variables that could benefit from clearer, more descriptive names. Rename these attributes in CODAP by right-clicking on the column header.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Find a numerical variable that would be useful to categorize. Use CODAP's calculator to create a new attribute that categorizes values (e.g., creating "Income_Level" with values like "Low", "Medium", and "High" based on numeric income).
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Create at least one calculated attribute that performs a mathematical operation on existing variables (e.g., a ratio, percentage, or unit conversion).
+                </p>
+              </statement>
+            </task>
+          </activity>
+        </subsection>
+      </section>
+
+      <section xml:id="sec-filtering-subsetting">
+        <title>Filtering and Subsetting</title>
+        
+        <subsection xml:id="subsec-why-filter">
+          <title>The Purpose of Filtering</title>
+          
+          <p>
+            Rarely do we analyze an entire dataset at once. More often, we focus on specific subsets of the data that are relevant to particular questions. Filtering and subsetting allow us to:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Focus on specific groups or conditions of interest</p>
+            </li>
+            <li>
+              <p>Compare different subsets to identify patterns and differences</p>
+            </li>
+            <li>
+              <p>Remove irrelevant data that might obscure important relationships</p>
+            </li>
+            <li>
+              <p>Create more manageable subsets for specialized analyses</p>
+            </li>
+            <li>
+              <p>Test relationships under different conditions</p>
+            </li>
+          </ul>
+          
+          <p>
+            Effective filtering requires clear criteria and an understanding of how the filtering might affect your analysis.
+          </p>
+          
+          <example xml:id="example-filtering-health">
+            <title>Filtering in Community Health Analysis</title>
+            <statement>
+              <p>
+                In our Community Health dataset, we might apply these filters:
+              </p>
+              <ul>
+                <li>
+                  <p>Focus only on neighborhoods with complete data across all health metrics</p>
+                </li>
+                <li>
+                  <p>Compare high-income versus low-income neighborhoods (using median household income)</p>
+                </li>
+                <li>
+                  <p>Examine only neighborhoods with poor air quality to understand health patterns in most affected areas</p>
+                </li>
+                <li>
+                  <p>Create separate analyses for different regions of the city (north, south, east, west)</p>
+                </li>
+                <li>
+                  <p>Filter out neighborhoods undergoing major redevelopment that might skew environmental measurements</p>
+                </li>
+              </ul>
+            </statement>
+          </example>
+          
+          <exercise xml:id="mc-filtering-purpose">
+            <title>Purposes of Filtering</title>
+            <statement>
+              <p>Which of the following is NOT a valid reason to filter or subset data?</p>
+            </statement>
+            <choices>
+              <choice>
+                <statement>
+                  <p>To compare outcomes between different demographic groups</p>
+                </statement>
+                <feedback>
+                  <p>This is a valid reason for filtering—creating subsets based on demographic variables can reveal important differences between groups.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>To focus analysis on the most recent time period in a longitudinal dataset</p>
+                </statement>
+                <feedback>
+                  <p>This is a valid reason for filtering—focusing on the most recent data can provide insights into current conditions.</p>
+                </feedback>
+              </choice>
+              <choice correct="yes">
+                <statement>
+                  <p>To remove data points that contradict your hypothesis</p>
+                </statement>
+                <feedback>
+                  <p>Correct! This is NOT a valid reason for filtering. Removing data merely because it contradicts your hypothesis introduces bias and violates principles of scientific integrity.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>To create a more manageable dataset for complex computational methods</p>
+                </statement>
+                <feedback>
+                  <p>This is a valid reason for filtering—some analyses may require smaller datasets due to computational constraints, as long as the subsetting is done in a principled way.</p>
+                </feedback>
+              </choice>
+            </choices>
+          </exercise>
+        </subsection>
+        
+        <subsection xml:id="subsec-filtering-methods">
+          <title>Filtering Methods in CODAP</title>
+          
+          <p>
+            CODAP provides several ways to filter data:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Selection from Visualizations</title>
+              <p>
+                Clicking on points in a graph or cells in a table selects those cases. You can then hide unselected cases or create a new collection with only selected cases.
+              </p>
+            </li>
+            <li>
+              <title>Filter Using Formulas</title>
+              <p>
+                Create a filter using a formula like <c>income &gt; 50000</c> to show only cases meeting that condition.
+              </p>
+            </li>
+            <li>
+              <title>Creating Subsets</title>
+              <p>
+                Create a new dataset containing only filtered data, preserving the original dataset.
+              </p>
+            </li>
+            <li>
+              <title>Hierarchical Organization</title>
+              <p>
+                Organize data into hierarchical collections, allowing analysis at different levels (e.g., cities → neighborhoods → households).
+              </p>
+            </li>
+          </dl>
+          
+          <figure xml:id="fig-codap-filtering">
+            <caption>Filtering Data in CODAP</caption>
+            <image source="codap-filtering.png" width="90%">
+              <description>Screenshot showing CODAP's filtering interface with formula input and filtered results.</description>
+            </image>
+          </figure>
+          
+          <p>
+            When filtering data, it's important to:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Document your filtering criteria clearly</p>
+            </li>
+            <li>
+              <p>Consider how the filter might affect the representativeness of your data</p>
+            </li>
+            <li>
+              <p>Be aware of how sample size reduction might impact statistical analyses</p>
+            </li>
+            <li>
+              <p>Check whether your filtered data still addresses your research questions</p>
+            </li>
+          </ul>
+          
+          <activity xml:id="activity-codap-filtering">
+            <title>Filtering Data in CODAP</title>
+            <introduction>
+              <p>
+                In this activity, you'll practice filtering data in CODAP using different methods.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Open your dataset in CODAP and create a scatter plot using two numerical variables.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Use selection to highlight a cluster of points, then create a new collection containing only these selected cases.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Create a filter using the formula editor to show only cases meeting specific criteria (e.g., values above a threshold or matching a category).
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Compare summary statistics of your original dataset and filtered subset. How do measures like mean, median, and standard deviation change when you apply your filter?
+                </p>
+              </statement>
+            </task>
+          </activity>
+          
+          <exercise xml:id="exercise-filtering-statements">
+            <title>Translating Filter Statements</title>
+            <introduction>
+              <p>For each of the following filtering objectives, select the CODAP filter formula that would accomplish it.</p>
+            </introduction>
+            <exercise>
+              <statement>
+                <p>Show only neighborhoods with both above-average income and above-average green space.</p>
+              </statement>
+              <choices>
+                <choice>
+                  <statement>
+                    <p><c>Income &gt; AverageIncome OR GreenSpace &gt; AverageGreenSpace</c></p>
+                  </statement>
+                  <feedback>
+                    <p>This formula uses OR, which would show neighborhoods with either above-average income OR above-average green space, not necessarily both.</p>
+                  </feedback>
+                </choice>
+                <choice correct="yes">
+                  <statement>
+                    <p><c>Income &gt; AverageIncome AND GreenSpace &gt; AverageGreenSpace</c></p>
+                  </statement>
+                  <feedback>
+                    <p>Correct! This formula uses AND to require that both conditions (above-average income and above-average green space) must be true for a neighborhood to be included in the filter.</p>
+                  </feedback>
+                </choice>
+                <choice>
+                  <statement>
+                    <p><c>Income = AverageIncome AND GreenSpace = AverageGreenSpace</c></p>
+                  </statement>
+                  <feedback>
+                    <p>This formula would only show neighborhoods with exactly average income and exactly average green space, not those above average.</p>
+                  </feedback>
+                </choice>
+                <choice>
+                  <statement>
+                    <p><c>Income &gt; AverageIncome</c></p>
+                  </statement>
+                  <feedback>
+                    <p>This formula only checks for above-average income and doesn't consider green space at all.</p>
+                  </feedback>
+                </choice>
+              </choices>
+            </exercise>
+            <exercise>
+              <statement>
+                <p>Show neighborhoods that are either in the North region or have low pollution levels.</p>
+              </statement>
+              <choices>
+                <choice>
+                  <statement>
+                    <p><c>Region = "North" AND PollutionLevel = "Low"</c></p>
+                  </statement>
+                  <feedback>
+                    <p>This formula uses AND, which would only show neighborhoods that are both in the North region AND have low pollution levels, not either condition.</p>
+                  </feedback>
+                </choice>
+                <choice>
+                  <statement>
+                    <p><c>NOT(Region = "North") OR NOT(PollutionLevel = "Low")</c></p>
+                  </statement>
+                  <feedback>
+                    <p>This formula would show neighborhoods that are either NOT in the North region OR do NOT have low pollution levels, which is almost the opposite of what we want.</p>
+                  </feedback>
+                </choice>
+                <choice correct="yes">
+                  <statement>
+                    <p><c>Region = "North" OR PollutionLevel = "Low"</c></p>
+                  </statement>
+                  <feedback>
+                    <p>Correct! This formula uses OR to include neighborhoods that meet either condition: being in the North region OR having low pollution levels.</p>
+                  </feedback>
+                </choice>
+                <choice>
+                  <statement>
+                    <p><c>Region != "North" AND PollutionLevel != "Low"</c></p>
+                  </statement>
+                  <feedback>
+                    <p>This formula would show only neighborhoods that are NOT in the North region AND do NOT have low pollution levels, which is the exact opposite of what we want.</p>
+                  </feedback>
+                </choice>
+              </choices>
+            </exercise>
+          </exercise>
+        </subsection>
+        
+        <subsection xml:id="subsec-meaningful-subsets">
+          <title>Creating Meaningful Subsets</title>
+          
+          <p>
+            Beyond simple filtering, creating meaningful subsets often involves more complex criteria and a deeper understanding of your data. Effective subsetting strategies include:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Comparative Subsets</title>
+              <p>
+                Create groups for comparison based on key variables (e.g., high vs. low exposure groups, different demographic categories).
+              </p>
+            </li>
+            <li>
+              <title>Threshold-Based Subsets</title>
+              <p>
+                Define groups based on meaningful thresholds like regulatory standards or clinical definitions.
+              </p>
+            </li>
+            <li>
+              <title>Time-Based Subsets</title>
+              <p>
+                Create groups based on time periods to study changes or compare before/after scenarios.
+              </p>
+            </li>
+            <li>
+              <title>Cluster-Based Subsets</title>
+              <p>
+                Use patterns in the data itself to identify natural groupings.
+              </p>
+            </li>
+            <li>
+              <title>Random Sampling</title>
+              <p>
+                Create representative subsets through random sampling, particularly for very large datasets.
+              </p>
+            </li>
+          </dl>
+          
+          <example xml:id="example-subsets-health">
+            <title>Meaningful Subsets in Community Health</title>
+            <statement>
+              <p>
+                For our Community Health dataset, meaningful subsets might include:
+              </p>
+              <ul>
+                <li>
+                  <p><term>Income quantiles</term>: Dividing neighborhoods into income quintiles (bottom 20%, 20-40%, etc.) to examine how health patterns vary across socioeconomic spectrum</p>
+                </li>
+                <li>
+                  <p><term>Environmental risk categories</term>: Grouping neighborhoods as "high-risk" or "low-risk" based on combined environmental factors</p>
+                </li>
+                <li>
+                  <p><term>Geographic regions</term>: Creating subsets based on meaningful geographic divisions like urban core, inner suburbs, outer suburbs</p>
+                </li>
+                <li>
+                  <p><term>Health outcome groups</term>: Identifying neighborhoods with multiple poor health outcomes versus those with generally good outcomes</p>
+                </li>
+                <li>
+                  <p><term>Green space access</term>: Comparing neighborhoods with high, medium, and low access to green spaces</p>
+                </li>
+              </ul>
+            </statement>
+          </example>
+          
+          <activity xml:id="activity-create-subsets">
+            <title>Creating Meaningful Subsets</title>
+            <introduction>
+              <p>
+                In this activity, you'll create and analyze meaningful subsets of your data.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Identify a key numerical variable in your dataset. Create a new categorical attribute that divides this variable into meaningful groups (e.g., low/medium/high, or quantiles).
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Create visualizations comparing these groups across other variables. Look for patterns or differences between the groups.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Devise at least two different ways to create subsets from your data that might reveal interesting patterns. Implement these in CODAP and explore the results.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Write a brief summary of what you learned by examining different subsets of your data. Were there patterns that only became apparent when looking at specific subsets?
+                </p>
+              </statement>
+            </task>
+          </activity>
+          
+          <exercise xml:id="mc-subset-creation">
+            <title>Subset Creation Approaches</title>
+            <statement>
+              <p>A researcher is studying the relationship between exercise habits and health outcomes. Which subsetting approach would be MOST useful for comparing the effects of different exercise levels?</p>
+            </statement>
+            <choices>
+              <choice>
+                <statement>
+                  <p>Random sampling to create smaller, more manageable datasets</p>
+                </statement>
+                <feedback>
+                  <p>While random sampling can be useful for creating manageable datasets from large ones, it doesn't specifically help with comparing different exercise levels.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Time-based subsetting to examine seasonal variations in exercise</p>
+                </statement>
+                <feedback>
+                  <p>While seasonal variations might be interesting, this approach doesn't directly address comparing different exercise levels and their health effects.</p>
+                </feedback>
+              </choice>
+              <choice correct="yes">
+                <statement>
+                  <p>Threshold-based groups dividing participants into categories based on weekly exercise minutes (e.g., sedentary, moderately active, highly active)</p>
+                </statement>
+                <feedback>
+                  <p>Correct! Creating categorical groups based on meaningful exercise thresholds provides a clear way to compare health outcomes across different exercise levels.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Geographic subsetting to compare exercise habits across different regions</p>
+                </statement>
+                <feedback>
+                  <p>While regional comparisons might reveal interesting patterns in exercise habits, this approach focuses on geographic differences rather than directly comparing exercise levels and their health effects.</p>
+                </feedback>
+              </choice>
+            </choices>
+          </exercise>
+        </subsection>
+      </section>
+
+      <section xml:id="sec-ethics-spotlight-selection">
+        <title>Ethics Spotlight: Selection Bias</title>
+        
+        <p>
+          When filtering and subsetting data, we must be careful not to introduce selection bias—a distortion in our results due to the way we select cases for analysis.
+        </p>
+        
+        <definition xml:id="def-selection-bias">
+          <statement>
+            <p>
+              <term>Selection bias</term> occurs when the data selected for analysis is not representative of the population about which conclusions are to be drawn, leading to systematic error in the findings.
+            </p>
+          </statement>
+        </definition>
+        
+        <p>
+          Common forms of selection bias include:
+        </p>
+        
+        <dl>
+          <li>
+            <title>Sampling Bias</title>
+            <p>
+              The sample selected for study doesn't represent the population of interest.
+            </p>
+          </li>
+          <li>
+            <title>Self-Selection Bias</title>
+            <p>
+              Participants choose whether to participate, potentially introducing systematic differences between participants and non-participants.
+            </p>
+          </li>
+          <li>
+            <title>Survival Bias</title>
+            <p>
+              Analysis focuses only on cases that "survived" some process, ignoring those that didn't.
+            </p>
+          </li>
+          <li>
+            <title>Exclusion Bias</title>
+            <p>
+              Systematic exclusion of certain groups or cases due to methodological choices.
+            </p>
+          </li>
+          <li>
+            <title>Confirmation Bias</title>
+            <p>
+              Tendency to filter data in ways that confirm preexisting beliefs or hypotheses.
+            </p>
+          </li>
+        </dl>
+        
+        <example xml:id="example-selection-bias-health">
+          <title>Selection Bias in Community Health Research</title>
+          <statement>
+            <p>
+              In our Community Health project, selection bias might occur if:
+            </p>
+            <ul>
+              <li>
+                <p>We exclude neighborhoods with missing data, which happen to be primarily lower-income areas</p>
+              </li>
+              <li>
+                <p>Health survey data includes only responses from residents who volunteered to participate</p>
+              </li>
+              <li>
+                <p>Air quality measurements are taken only during weekdays, missing weekend patterns</p>
+              </li>
+              <li>
+                <p>We focus our analysis only on neighborhoods with good outcomes to identify "best practices"</p>
+              </li>
+              <li>
+                <p>We filter data to include only cases that support our initial hypothesis about environmental factors</p>
+              </li>
+            </ul>
+            <p>
+              Each of these filtering or selection decisions could lead to conclusions that don't accurately represent the true relationships in the complete population.
+            </p>
+          </statement>
+        </example>
+        
+        <p>
+          To minimize selection bias when filtering data:
+        </p>
+        
+        <ul>
+          <li>
+            <p>Document all filtering criteria and justify them based on substantive rather than convenient reasons</p>
+          </li>
+          <li>
+            <p>Consider how excluded cases differ from included ones</p>
+          </li>
+          <li>
+            <p>Perform sensitivity analysis by comparing results with different filtering criteria</p>
+          </li>
+          <li>
+            <p>Be transparent about the limitations of your filtered dataset</p>
+          </li>
+          <li>
+            <p>Actively look for potential sources of bias in your selection process</p>
+          </li>
+        </ul>
+        
+        <exercise xml:id="mc-selection-bias">
+          <title>Identifying Selection Bias</title>
+          <statement>
+            <p>Which scenario represents the clearest example of selection bias?</p>
+          </statement>
+          <choices>
+            <choice>
+              <statement>
+                <p>A researcher randomly selects 100 participants from a complete list of 1,000 eligible individuals.</p>
+              </statement>
+              <feedback>
+                <p>This describes proper random sampling rather than selection bias, as every eligible individual had an equal chance of being selected.</p>
+              </feedback>
+            </choice>
+            <choice>
+              <statement>
+                <p>After collecting data, a researcher finds that one variable has a non-normal distribution.</p>
+              </statement>
+              <feedback>
+                <p>A non-normal distribution is not necessarily an indication of bias; many variables naturally have skewed or other non-normal distributions.</p>
+              </feedback>
+            </choice>
+            <choice>
+              <statement>
+                <p>A study finds weak but statistically significant correlations between variables.</p>
+              </statement>
+              <feedback>
+                <p>Finding weak correlations is not an indication of selection bias; it simply describes the strength of relationships in the data.</p>
+              </feedback>
+            </choice>
+            <choice correct="yes">
+              <statement>
+                <p>A survey about internet usage is conducted exclusively through online questionnaires.</p>
+              </statement>
+              <feedback>
+                <p>Correct! This is a clear example of selection bias. By conducting the survey only online, the study systematically excludes people with limited or no internet access, who likely have different internet usage patterns than those who regularly use the internet.</p>
+              </feedback>
+            </choice>
+          </choices>
+        </exercise>
+        
+        <activity xml:id="activity-selection-bias">
+          <title>Identifying Potential Selection Bias</title>
+          <introduction>
+            <p>
+              In this activity, you'll examine potential selection bias in your own data analysis.
+            </p>
+          </introduction>
+          <task>
+            <statement>
+              <p>
+                Review the filtering and subsetting operations you've performed on your dataset. For each filter, identify who or what is being excluded.
+              </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                Consider how these exclusions might affect your conclusions. Are you systematically excluding certain types of cases?
+              </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                Identify at least one potential source of selection bias in your data collection process (before you even received the dataset).
+              </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                Propose strategies for addressing or minimizing the selection bias you've identified.
+              </p>
+            </statement>
+          </task>
+        </activity>
+      </section>
+
+      <section xml:id="sec-summarizing-calculating">
+        <title>Summarizing, Calculating, and Grouping</title>
+        
+        <subsection xml:id="subsec-summary-statistics">
+          <title>Essential Summary Statistics</title>
+          
+          <p>
+            Summary statistics condense complex datasets into manageable metrics that capture key aspects of the data. Common summary statistics include:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Measures of Central Tendency</title>
+              <p>
+                <ul>
+                  <li><p><term>Mean</term>: The arithmetic average (sum divided by count)</p></li>
+                  <li><p><term>Median</term>: The middle value when data is ordered</p></li>
+                  <li><p><term>Mode</term>: The most frequently occurring value</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Measures of Spread</title>
+              <p>
+                <ul>
+                  <li><p><term>Range</term>: The difference between maximum and minimum values</p></li>
+                  <li><p><term>Variance</term>: The average squared deviation from the mean</p></li>
+                  <li><p><term>Standard Deviation</term>: The square root of variance</p></li>
+                  <li><p><term>Interquartile Range (IQR)</term>: The range of the middle 50% of values</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Measures of Position</title>
+              <p>
+                <ul>
+                  <li><p><term>Percentiles</term>: Values below which a given percentage of observations fall</p></li>
+                  <li><p><term>Quartiles</term>: Values that divide data into quarters</p></li>
+                  <li><p><term>Z-scores</term>: How many standard deviations a value is from the mean</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Measures of Relationship</title>
+              <p>
+                <ul>
+                  <li><p><term>Correlation</term>: The strength and direction of linear relationships</p></li>
+                  <li><p><term>Covariance</term>: How two variables vary together</p></li>
+                  <li><p><term>Contingency tables</term>: Counts of co-occurrences for categorical variables</p></li>
+                </ul>
+              </p>
+            </li>
+          </dl>
+          
+          <figure xml:id="fig-summary-stats-distributions">
+            <caption>Summary Statistics for Different Distributions</caption>
+            <image source="summary-stats-distributions.png" width="90%">
+              <description>Three different distributions showing how the same mean and standard deviation can represent very different data patterns.</description>
+            </image>
+          </figure>
+          
+          <p>
+            When choosing summary statistics, consider:
+          </p>
+          
+          <ul>
+            <li>
+              <p>The type and scale of your data (categorical, ordinal, interval, ratio)</p>
+            </li>
+            <li>
+              <p>The shape of your distribution (symmetrical, skewed, multimodal)</p>
+            </li>
+            <li>
+              <p>The presence of outliers or extreme values</p>
+            </li>
+            <li>
+              <p>The specific aspects of the data you want to highlight</p>
+            </li>
+          </ul>
+          
+          <exercise xml:id="mc-summary-stats">
+            <title>Choosing Appropriate Summary Statistics</title>
+            <statement>
+              <p>For a highly skewed distribution of housing prices in a city, which measure of central tendency would be MOST appropriate to report?</p>
+            </statement>
+            <choices>
+              <choice>
+                <statement>
+                  <p>Mean (average) price</p>
+                </statement>
+                <feedback>
+                  <p>The mean is highly influenced by extreme values and can be misleading for skewed distributions. In housing prices, a few very expensive properties can pull the mean upward, making it unrepresentative of typical prices.</p>
+                </feedback>
+              </choice>
+              <choice correct="yes">
+                <statement>
+                  <p>Median price</p>
+                </statement>
+                <feedback>
+                  <p>Correct! The median is the most appropriate measure for skewed distributions like housing prices because it's not influenced by extreme values. It represents the middle value, giving a better sense of the "typical" home price.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Modal price (most common price)</p>
+                </statement>
+                <feedback>
+                  <p>While the mode can be useful for categorical data, it's generally less informative for continuous variables like housing prices, which may not have many exact repeated values.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Midrange (average of minimum and maximum prices)</p>
+                </statement>
+                <feedback>
+                  <p>The midrange is highly influenced by outliers and would be particularly problematic for a skewed distribution of housing prices, where the maximum value could be dramatically higher than most values.</p>
+                </feedback>
+              </choice>
+            </choices>
+          </exercise>
+          
+          <activity xml:id="activity-summary-stats">
+            <title>Calculating Summary Statistics in CODAP</title>
+            <introduction>
+              <p>
+                In this activity, you'll calculate and interpret summary statistics for your dataset.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Select at least three numerical variables from your dataset. For each variable, use CODAP to calculate:
+                </p>
+                <ul>
+                  <li>
+                    <p>Mean, median, and mode</p>
+                  </li>
+                  <li>
+                    <p>Standard deviation and interquartile range</p>
+                  </li>
+                  <li>
+                    <p>Minimum, maximum, and range</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Create visualizations (histograms or box plots) for each variable and examine how the summary statistics relate to the distribution shape.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  For each variable, determine which measure of central tendency (mean, median, or mode) best represents the "typical" value and explain why.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Calculate correlation coefficients between pairs of numerical variables. Identify the strongest positive and negative correlations in your dataset.
+                </p>
+              </statement>
+            </task>
+          </activity>
+        </subsection>
+        
+        <subsection xml:id="subsec-derived-variables">
+          <title>Creating Derived Variables</title>
+          
+          <p>
+            Often, the variables we need for analysis aren't directly present in our original dataset. Creating derived variables allows us to transform existing data into more meaningful measures.
+          </p>
+          
+          <p>
+            Common types of derived variables include:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Mathematical Transformations</title>
+              <p>
+                <ul>
+                  <li><p>Logarithmic transformations to handle skewed data</p></li>
+                  <li><p>Standardization (z-scores) to compare different scales</p></li>
+                  <li><p>Unit conversions (e.g., meters to feet, Celsius to Fahrenheit)</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Combinations of Variables</title>
+              <p>
+                <ul>
+                  <li><p>Ratios and proportions (e.g., debt-to-income ratio)</p></li>
+                  <li><p>Indices combining multiple measures (e.g., air quality index)</p></li>
+                  <li><p>Weighted averages (e.g., GPA calculation)</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Categorical Derivations</title>
+              <p>
+                <ul>
+                  <li><p>Binning numerical variables into categories (e.g., age groups)</p></li>
+                  <li><p>Creating binary indicators (e.g., high-risk vs. low-risk)</p></li>
+                  <li><p>Recoding categorical variables (e.g., combining similar categories)</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Temporal Derivations</title>
+              <p>
+                <ul>
+                  <li><p>Calculating time differences (e.g., days between events)</p></li>
+                  <li><p>Creating growth rates (e.g., annual percentage change)</p></li>
+                  <li><p>Extracting components from dates (e.g., month, day of week)</p></li>
+                </ul>
+              </p>
+            </li>
+          </dl>
+          
+          <example xml:id="example-derived-health">
+            <title>Derived Variables in Community Health</title>
+            <statement>
+              <p>
+                For our Community Health dataset, useful derived variables might include:
+              </p>
+              <ul>
+                <li>
+                  <p><term>Environmental Quality Index</term>: A weighted average combining air quality, water quality, and green space measures</p>
+                </li>
+                <li>
+                  <p><term>Health Disparity Ratio</term>: The ratio of health outcomes in highest-income versus lowest-income neighborhoods</p>
+                </li>
+                <li>
+                  <p><term>Risk Categories</term>: Classifying neighborhoods as "high," "medium," or "low" risk based on multiple environmental factors</p>
+                </li>
+                <li>
+                  <p><term>Green Space per Capita</term>: Total green space area divided by population</p>
+                </li>
+                <li>
+                  <p><term>Walkability Score</term>: Combining measures of sidewalk coverage, street connectivity, and proximity to amenities</p>
+                </li>
+              </ul>
+            </statement>
+          </example>
+          
+          <p>
+            Creating effective derived variables requires:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Clear definition of what you're trying to measure</p>
+            </li>
+            <li>
+              <p>Thoughtful selection of component variables</p>
+            </li>
+            <li>
+              <p>Appropriate mathematical operations</p>
+            </li>
+            <li>
+              <p>Verification that the derived variable behaves as expected</p>
+            </li>
+            <li>
+              <p>Documentation of how the variable was created</p>
+            </li>
+          </ul>
+          
+          <exercise xml:id="matching-derived-variables">
+            <title>Matching Derived Variables</title>
+            <statement>
+              <p>Match each derived variable with the most appropriate formula or method for creating it.</p>
+            </statement>
+            <matches>
+              <match>
+                <premise>Body Mass Index (BMI)</premise>
+                <response>weight (kg) / [height (m)]²</response>
+              </match>
+              <match>
+                <premise>Age category</premise>
+                <response>if(age &lt; 18, "Child", if(age &lt; 65, "Adult", "Senior"))</response>
+              </match>
+              <match>
+                <premise>Percentage change</premise>
+                <response>((new_value - old_value) / old_value) * 100</response>
+              </match>
+              <match>
+                <premise>Standardized score</premise>
+                <response>(value - mean) / standard_deviation</response>
+              </match>
+              <match>
+                <premise>High-risk indicator</premise>
+                <response>if(risk_score &gt; threshold, 1, 0)</response>
+              </match>
+            </matches>
+          </exercise>
+          
+          <activity xml:id="activity-derived-variables">
+            <title>Creating Derived Variables in CODAP</title>
+            <introduction>
+              <p>
+                In this activity, you'll create and analyze derived variables in your dataset.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Create at least three derived variables in your dataset, including:
+                </p>
+                <ul>
+                  <li>
+                    <p>A mathematical transformation of an existing variable (e.g., log, square root, or standardization)</p>
+                  </li>
+                  <li>
+                    <p>A ratio or relationship between two variables</p>
+                  </li>
+                  <li>
+                    <p>A categorical variable derived from a numerical variable (e.g., binning into groups)</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Create visualizations showing the relationships between your original variables and the derived variables.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Explore how your derived variables relate to other variables in the dataset. Do they reveal patterns that weren't obvious with the original variables?
+                </p>
+              </statement>
+            </task>
+          </activity>
+        </subsection>
+        
+        <subsection xml:id="subsec-grouping-aggregation">
+          <title>Grouping and Aggregation Techniques</title>
+          
+          <p>
+            Grouping and aggregation allow us to summarize data at different levels and examine patterns across categories. These techniques help us answer questions about how metrics vary between groups.
+          </p>
+          
+          <p>
+            Common grouping and aggregation operations include:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Group By</title>
+              <p>
+                Dividing data into subsets based on categories (e.g., by region, income level, or time period).
+              </p>
+            </li>
+            <li>
+              <title>Aggregate Functions</title>
+              <p>
+                Calculating summary statistics for each group:
+                <ul>
+                  <li><p>Count: Number of observations</p></li>
+                  <li><p>Sum: Total of values</p></li>
+                  <li><p>Average: Mean value</p></li>
+                  <li><p>Min/Max: Smallest/largest values</p></li>
+                  <li><p>Standard Deviation: Measure of spread</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Pivot Tables</title>
+              <p>
+                Reorganizing data to show aggregated values across multiple dimensions.
+              </p>
+            </li>
+            <li>
+              <title>Hierarchical Grouping</title>
+              <p>
+                Nesting groups within groups (e.g., neighborhoods within districts within cities).
+              </p>
+            </li>
+          </dl>
+          
+          <figure xml:id="fig-grouping-aggregation">
+            <caption>Grouping and Aggregation in CODAP</caption>
+            <image source="grouping-aggregation.png" width="90%">
+              <description>Screenshot showing CODAP's interface for grouping data by categories and displaying aggregated metrics for each group.</description>
+            </image>
+          </figure>
+          
+          <example xml:id="example-grouping-health">
+            <title>Grouping in Community Health Analysis</title>
+            <statement>
+              <p>
+                In our Community Health dataset, we might use grouping and aggregation to:
+              </p>
+              <ul>
+                <li>
+                  <p>Calculate average asthma rates by income quartile to examine socioeconomic health disparities</p>
+                </li>
+                <li>
+                  <p>Compare environmental quality metrics across different regions of the city</p>
+                </li>
+                <li>
+                  <p>Examine how multiple health indicators vary across neighborhoods with different levels of green space access</p>
+                </li>
+                <li>
+                  <p>Create a pivot table showing average health metrics by both region and income level simultaneously</p>
+                </li>
+                <li>
+                  <p>Calculate the standard deviation of air quality within each region to understand environmental variability</p>
+                </li>
+              </ul>
+            </statement>
+          </example>
+          
+          <exercise xml:id="mc-grouping-purpose">
+            <title>Purpose of Grouping and Aggregation</title>
+            <statement>
+              <p>What is the PRIMARY purpose of grouping and aggregation in data analysis?</p>
+            </statement>
+            <choices>
+              <choice>
+                <statement>
+                  <p>To remove outliers from a dataset</p>
+                </statement>
+                <feedback>
+                  <p>While aggregation may reduce the impact of outliers in summary statistics, this is not the primary purpose of grouping and aggregation.</p>
+                </feedback>
+              </choice>
+              <choice correct="yes">
+                <statement>
+                  <p>To understand patterns and variations across categories or subsets</p>
+                </statement>
+                <feedback>
+                  <p>Correct! The primary purpose of grouping and aggregation is to reveal how metrics and patterns vary across different categories or subsets, allowing for meaningful comparisons.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>To reduce the size of large datasets</p>
+                </statement>
+                <feedback>
+                  <p>While aggregation does create a more compact summary, this is a side effect rather than the primary purpose of grouping and aggregation.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>To correct errors in the original data</p>
+                </statement>
+                <feedback>
+                  <p>Grouping and aggregation do not correct errors in the original data; in fact, they might obscure some errors by combining them with correct values.</p>
+                </feedback>
+              </choice>
+            </choices>
+          </exercise>
+          
+          <activity xml:id="activity-grouping">
+            <title>Grouping and Aggregation in CODAP</title>
+            <introduction>
+              <p>
+                In this activity, you'll practice grouping and aggregating data in CODAP.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Identify at least two categorical variables in your dataset that would be meaningful to group by.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  For each grouping variable, create a summary table in CODAP that shows aggregated measures (mean, count, etc.) of at least two numerical variables for each group.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Create visualizations comparing these groups. Use bar charts or box plots to show how the numerical variables differ across categories.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Try creating a two-way grouping by two different categorical variables. Examine how this more detailed breakdown reveals patterns that might not be apparent in single-variable groupings.
+                </p>
+              </statement>
+            </task>
+          </activity>
+        </subsection>
+      </section>
+
+      <section xml:id="sec-statistical-thinking-comparing">
+        <title>Statistical Thinking: Comparing Groups</title>
+        
+        <subsection xml:id="subsec-variation-within-between">
+          <title>Variation Within and Between Groups</title>
+          
+          <p>
+            When comparing groups, it's important to consider both the variation within each group and the variation between groups. This helps us determine whether observed differences are meaningful or might simply be due to random variation.
+          </p>
+          
+          <definition xml:id="def-within-group-variation">
+            <statement>
+              <p>
+                <term>Within-group variation</term> refers to how much values differ from each other within the same group or category.
+              </p>
+            </statement>
+          </definition>
+          
+          <definition xml:id="def-between-group-variation">
+            <statement>
+              <p>
+                <term>Between-group variation</term> refers to how much the typical values (e.g., means) differ across different groups or categories.
+              </p>
+            </statement>
+          </definition>
+          
+          <figure xml:id="fig-within-between-variation">
+            <caption>Within- and Between-Group Variation</caption>
+            <image source="within-between-variation.png" width="90%">
+              <description>Two scenarios: one showing large between-group differences with small within-group variation, and another showing small between-group differences with large within-group variation.</description>
+            </image>
+          </figure>
+          
+          <p>
+            The relationship between within-group and between-group variation affects our ability to draw meaningful conclusions:
+          </p>
+          
+          <ul>
+            <li>
+              <p>When between-group variation is large relative to within-group variation, group differences are more likely to be meaningful.</p>
+            </li>
+            <li>
+              <p>When within-group variation is large relative to between-group variation, apparent group differences might just reflect random variation.</p>
+            </li>
+          </ul>
+          
+          <example xml:id="example-variation-health">
+            <title>Variation in Community Health Data</title>
+            <statement>
+              <p>
+                When comparing asthma rates across income levels in our Community Health dataset:
+              </p>
+              <ul>
+                <li>
+                  <p><term>Within-group variation</term>: The range of asthma rates among neighborhoods within the same income category (e.g., high-income neighborhoods might have asthma rates ranging from 5% to 12%).</p>
+                </li>
+                <li>
+                  <p><term>Between-group variation</term>: The difference in average asthma rates between income categories (e.g., high-income neighborhoods averaging 8% versus low-income neighborhoods averaging 15%).</p>
+                </li>
+              </ul>
+              <p>
+                If within-group variation is small (neighborhoods within the same income category have similar asthma rates) and between-group variation is large (different income categories have noticeably different average asthma rates), we might reasonably conclude that income level is associated with asthma prevalence.
+              </p>
+            </statement>
+          </example>
+          
+          <exercise xml:id="mc-variation-comparison">
+            <title>Comparing Group Variations</title>
+            <statement>
+              <p>Based on the box plots below, which statement is most accurate?</p>
+              <p>(Imagine a figure showing box plots of test scores for three teaching methods: A, B, and C. Method A has scores ranging from 60-80 with median 70, Method B has scores ranging from 65-85 with median 75, and Method C has scores ranging from 40-95 with median 72.)</p>
+            </statement>
+            <choices>
+              <choice>
+                <statement>
+                  <p>Method C is clearly the most effective teaching approach.</p>
+                </statement>
+                <feedback>
+                  <p>This is not supported by the data. While Method C has some high scores, it also has the lowest scores and the widest range, indicating inconsistent results.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>There are no meaningful differences between the teaching methods.</p>
+                </statement>
+                <feedback>
+                  <p>This overlooks the notable differences in both median scores and score distributions among the methods.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Method B has the highest median score, but the differences between methods are modest.</p>
+                </statement>
+                <feedback>
+                  <p>This accurately notes Method B's higher median but doesn't address the important difference in variability.</p>
+                </feedback>
+              </choice>
+              <choice correct="yes">
+                <statement>
+                  <p>Method B shows a higher median with relatively low variability, while Method C shows inconsistent results with high variability.</p>
+                </statement>
+                <feedback>
+                  <p>Correct! This statement accurately describes both the differences in central tendency (median scores) and the critical difference in within-group variation, with Method C showing much higher variability in outcomes than Methods A and B.</p>
+                </feedback>
+              </choice>
+            </choices>
+          </exercise>
+        </subsection>
+        
+        <subsection xml:id="subsec-meaningful-comparisons">
+          <title>Making Meaningful Comparisons</title>
+          
+          <p>
+            To make meaningful comparisons between groups, consider these key principles:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Compare Like with Like</title>
+              <p>
+                Ensure that groups are comparable in terms of relevant characteristics other than the one you're studying.
+              </p>
+            </li>
+            <li>
+              <title>Consider Sample Size</title>
+              <p>
+                Larger groups generally provide more reliable estimates than smaller groups.
+              </p>
+            </li>
+            <li>
+              <title>Examine Both Summary Statistics and Distributions</title>
+              <p>
+                Don't rely solely on averages; consider the full distribution of values within each group.
+              </p>
+            </li>
+            <li>
+              <title>Visualize Comparisons</title>
+              <p>
+                Use appropriate visualizations (box plots, bar charts with error bars, etc.) to show both central tendency and variation.
+              </p>
+            </li>
+            <li>
+              <title>Test for Statistical Significance</title>
+              <p>
+                When appropriate, use statistical tests to assess whether differences are likely due to chance.
+              </p>
+            </li>
+            <li>
+              <title>Consider Practical Significance</title>
+              <p>
+                Even statistically significant differences might not be practically meaningful if they're very small.
+              </p>
+            </li>
+          </dl>
+          
+          <figure xml:id="fig-meaningful-comparison">
+            <caption>Visualizing Group Comparisons</caption>
+            <image source="group-comparison-viz.png" width="80%">
+              <description>Various visualization types for comparing groups: box plots, bar charts with error bars, and overlaid distributions.</description>
+            </image>
+          </figure>
+          
+          <example xml:id="example-comparison-health">
+            <title>Meaningful Comparisons in Community Health</title>
+            <statement>
+              <p>
+                To meaningfully compare asthma rates between high-income and low-income neighborhoods in our dataset, we might:
+              </p>
+              <ul>
+                <li>
+                  <p>Control for other factors by comparing neighborhoods with similar population density, age distribution, and geographic location</p>
+                </li>
+                <li>
+                  <p>Ensure we have enough neighborhoods in each income category for reliable comparison</p>
+                </li>
+                <li>
+                  <p>Examine not just average asthma rates but also the range and distribution within each income group</p>
+                </li>
+                <li>
+                  <p>Create box plots showing asthma rates by income category, clearly displaying both central tendency and variation</p>
+                </li>
+                <li>
+                  <p>Conduct a statistical test (e.g., t-test) to assess whether the difference in means is statistically significant</p>
+                </li>
+                <li>
+                  <p>Consider whether the observed difference in asthma rates (e.g., 7 percentage points) is large enough to be medically and socially significant</p>
+                </li>
+              </ul>
+            </statement>
+          </example>
+          
+          <activity xml:id="activity-group-comparison">
+            <title>Comparing Groups in Your Dataset</title>
+            <introduction>
+              <p>
+                In this activity, you'll practice making meaningful comparisons between groups in your dataset.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Identify a categorical variable in your dataset that creates meaningful groups for comparison. This could be a variable that was in the original dataset or a derived categorical variable you created.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Select at least two numerical variables to compare across these groups.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Create appropriate visualizations (box plots, bar charts with measures of variation, etc.) to compare the groups.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Write a brief analysis of the comparisons, addressing:
+                </p>
+                <ul>
+                  <li>
+                    <p>What differences do you observe between groups?</p>
+                  </li>
+                  <li>
+                    <p>How much variation exists within each group?</p>
+                  </li>
+                  <li>
+                    <p>Are the differences large enough to be meaningful in the context of your research questions?</p>
+                  </li>
+                  <li>
+                    <p>What factors might explain the differences you observed?</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+          </activity>
+          
+          <exercise xml:id="exercise-comparison-pitfalls">
+            <title>Group Comparison Pitfalls</title>
+            <introduction>
+              <p>For each scenario, identify the primary issue that could lead to misleading conclusions when comparing groups.</p>
+            </introduction>
+            <exercise>
+              <statement>
+                <p>A researcher compares the performance of students who chose to participate in an optional after-school program with those who did not.</p>
+              </statement>
+              <choices>
+                <choice>
+                  <statement>
+                    <p>Inadequate sample size</p>
+                  </statement>
+                  <feedback>
+                    <p>The scenario doesn't mention sample size, so this isn't the primary issue.</p>
+                  </feedback>
+                </choice>
+                <choice correct="yes">
+                  <statement>
+                    <p>Self-selection bias</p>
+                  </statement>
+                  <feedback>
+                    <p>Correct! Students who choose to participate in optional programs may already be more motivated or higher-performing than those who don't. This self-selection bias means the groups differ in ways beyond just program participation.</p>
+                  </feedback>
+                </choice>
+                <choice>
+                  <statement>
+                    <p>Comparing unlike time periods</p>
+                  </statement>
+                  <feedback>
+                    <p>The scenario doesn't involve time period comparisons, so this isn't the issue.</p>
+                  </feedback>
+                </choice>
+                <choice>
+                  <statement>
+                    <p>Using inappropriate statistical tests</p>
+                  </statement>
+                  <feedback>
+                    <p>The scenario doesn't mention what statistical tests were used, so this isn't identified as the primary issue.</p>
+                  </feedback>
+                </choice>
+              </choices>
+            </exercise>
+            <exercise>
+              <statement>
+                <p>An analyst reports that neighborhoods with more parks have lower crime rates, suggesting that parks reduce crime.</p>
+              </statement>
+              <choices>
+                <choice>
+                  <statement>
+                    <p>Insufficient visualization of the data</p>
+                  </statement>
+                  <feedback>
+                    <p>While visualization is important, the primary issue here is about the conclusion being drawn rather than how the data is presented.</p>
+                  </feedback>
+                </choice>
+                <choice>
+                  <statement>
+                    <p>High within-group variation</p>
+                  </statement>
+                  <feedback>
+                    <p>The scenario doesn't mention variation within groups, so this isn't identified as the primary issue.</p>
+                  </feedback>
+                </choice>
+                <choice correct="yes">
+                  <statement>
+                    <p>Confusing correlation with causation</p>
+                  </statement>
+                  <feedback>
+                    <p>Correct! The analyst observes a correlation (neighborhoods with more parks have lower crime) but suggests causation (parks reduce crime). Other factors like neighborhood wealth, housing density, or policing could explain both the presence of parks and lower crime rates.</p>
+                  </feedback>
+                </choice>
+                <choice>
+                  <statement>
+                    <p>Outlier influence</p>
+                  </statement>
+                  <feedback>
+                    <p>The scenario doesn't mention outliers, so this isn't identified as the primary issue.</p>
+                  </feedback>
+                </choice>
+              </choices>
+            </exercise>
+          </exercise>
+        </subsection>
+      </section>
+
+      <section xml:id="sec-unit3-summary">
+        <title>Unit 3 Summary</title>
+        
+        <p>
+          In this unit, we've explored essential data moves that transform raw data into meaningful insights:
+        </p>
+        
+        <ul>
+          <li>
+            <p><term>Data Cleaning and Organization</term>: We learned how to handle missing values, deal with outliers, and restructure data to prepare it for analysis.</p>
+          </li>
+          <li>
+            <p><term>Filtering and Subsetting</term>: We explored techniques for creating focused subsets of data to answer specific questions and make meaningful comparisons.</p>
+          </li>
+          <li>
+            <p><term>Summarizing and Calculating</term>: We examined summary statistics that capture key aspects of our data and learned to create derived variables that reveal new insights.</p>
+          </li>
+          <li>
+            <p><term>Grouping and Comparing</term>: We developed skills for aggregating data by categories and making meaningful comparisons between groups.</p>
+          </li>
+        </ul>
+        
+        <p>
+          We also explored important ethical considerations regarding selection bias and developed our statistical thinking about variation within and between groups.
+        </p>
+        
+        <p>
+          By the end of this unit, you should have applied these data moves to both our Community Health dataset and your own chosen dataset. These skills provide the foundation for the more advanced visualization and communication techniques we'll explore in the next unit.
+        </p>
+        
+        <exercise xml:id="exercise-unit3-reflection">
+          <title>Unit 3 Reflection</title>
+          <statement>
+            <p>
+              Take some time to reflect on what you've learned in this unit:
+            </p>
+            <ul>
+              <li>
+                <p>Which data move did you find most challenging to implement, and why?</p>
+              </li>
+              <li>
+                <p>What surprised you about your dataset when you applied these data moves?</p>
+              </li>
+              <li>
+                <p>How have these data moves helped you address your investigation questions?</p>
+              </li>
+              <li>
+                <p>What new questions have emerged as you've worked with your data?</p>
+              </li>
+            </ul>
+          </statement>
+        </exercise>
+        
+        <exercise xml:id="mc-unit3-review">
+          <title>Unit 3 Review</title>
+          <statement>
+            <p>Which sequence of data moves best represents a typical data analysis workflow?</p>
+          </statement>
+          <choices>
+            <choice>
+              <statement>
+                <p>Grouping → Cleaning → Filtering → Creating visualizations</p>
+              </statement>
+              <feedback>
+                <p>This sequence is problematic because grouping data before cleaning it could lead to incorrect aggregations based on errors or missing values.</p>
+              </feedback>
+            </choice>
+            <choice correct="yes">
+              <statement>
+                <p>Cleaning → Creating derived variables → Filtering → Grouping and comparing</p>
+              </statement>
+              <feedback>
+                <p>Correct! This sequence represents a logical workflow: first clean the data to address quality issues, then create any needed derived variables, then filter to focus on relevant subsets, and finally group and compare to identify patterns.</p>
+              </feedback>
+            </choice>
+            <choice>
+              <statement>
+                <p>Filtering → Cleaning → Summarizing → Creating derived variables</p>
+              </statement>
+              <feedback>
+                <p>Filtering before cleaning could result in removing data that might be valuable once cleaned, potentially introducing bias.</p>
+              </feedback>
+            </choice>
+            <choice>
+              <statement>
+                <p>Creating derived variables → Summarizing → Cleaning → Grouping</p>
+              </statement>
+              <feedback>
+                <p>Creating derived variables before cleaning could propagate errors into new variables, and summarizing before cleaning could lead to misleading statistics.</p>
+              </feedback>
+            </choice>
+          </choices>
+        </exercise>
+      </section>
+    </chapter>

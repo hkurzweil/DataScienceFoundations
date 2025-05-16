@@ -14,6 +14,7 @@
     <!-- Include chapters -->
     <xi:include href="./ch-foundations-of-data-science.ptx" />
     <xi:include href="./ch-data-investigation-process.ptx" />
+    <xi:include href="./ch-essential-data-moves.ptx" />
     
 
 
