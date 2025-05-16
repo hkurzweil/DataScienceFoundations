@@ -1,0 +1,1170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <chapter xml:id="ch-unit2">
+      <title>Unit 2: The Data Investigation Process</title>
+      
+      <introduction>
+        <p>
+          Having established a foundation in data science concepts and explored various types of data, we now turn our attention to the process of data investigation. In this unit, we'll learn a structured framework for approaching data problems, practice formulating meaningful statistical questions, and develop plans for investigating those questions.
+        </p>
+        <p>
+          Throughout this unit, we'll continue working with our Community Health and Environment dataset while you develop investigation plans for your own chosen datasets. By the end of this unit, you'll have a roadmap for the analyses you'll conduct in the coming weeks.
+        </p>
+      </introduction>
+
+      <section xml:id="sec-investigation-framework">
+        <title>The Data Investigation Framework</title>
+        
+        <subsection xml:id="subsec-framework-overview">
+          <title>Overview of the Framework</title>
+          
+          <p>
+            Hollylynne Lee and her colleagues at North Carolina State University have developed a comprehensive framework for data investigations in their paper<url href="https://iase-pub.org/ojs/SERJ/article/view/41/457" visual="https://iase-pub.org/ojs/SERJ/article/view/41/457">Investigating Data Like a Scientist: Key Practices and Processes</url> that helps structure the process of working with data. This framework, seen below, provides a roadmap that can guide us through the complexity of real-world data analysis.
+          </p>
+          
+          <figure xml:id="fig-lee-framework">
+            <caption>The Data Investigation Cycle (based on Lee et al.)</caption>
+            <image source="ds-investigation-process.png" width="85%">
+            <description>Team at NCSU's graphic for the data investigation process framework.</description>
+            </image>
+            <credit>
+              <url href="https://hirise.fi.ncsu.edu/projects-activities/data-investigations/">HIRISE Project, NC State University</url>
+            </credit>
+          </figure>
+          
+          <p>
+            The framework consists of four interconnected phases:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Ask Questions</title>
+              <p>
+                Formulate statistical questions that can be answered with data. These questions should anticipate variability and focus on distributions rather than individual cases.
+              </p>
+            </li>
+            <li>
+              <title>Consider Data</title>
+              <p>
+                Evaluate available data sources, collection methods, and variables. Consider what additional data might be needed and assess the quality and appropriateness of the data for answering your questions.
+              </p>
+            </li>
+            <li>
+              <title>Analyze Data</title>
+              <p>
+                Apply appropriate techniques to organize, summarize, and visualize the data. This includes cleaning the data, creating meaningful representations, and identifying patterns.
+              </p>
+            </li>
+            <li>
+              <title>Interpret Results</title>
+              <p>
+                Make claims based on the evidence from your analysis, acknowledge limitations, and consider implications. This often leads to new questions, continuing the cycle.
+              </p>
+            </li>
+          </dl>
+          
+          <p>
+            While the framework is presented as a cycle, real investigations rarely follows that circle perfectly. You might need to revisit earlier phases as you gain insights or encounter challenges. Iteration is essential in data analysis. 
+          </p>
+          
+          <exercise xml:id="mc-framework-phases">
+            <title>Data Investigation Phases</title>
+            <statement>
+              <p>During which phase of the data investigation framework would you typically clean the dataset by handling missing values?</p>
+            </statement>
+            <choices>
+              <choice>
+                <statement>
+                  <p>Ask Questions</p>
+                </statement>
+                <feedback>
+                  <p>The Ask Questions phase focuses on formulating statistical questions, not on cleaning data.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Consider Data</p>
+                </statement>
+                <feedback>
+                  <p>While you might identify data quality issues during the Consider Data phase, actual cleaning typically happens during analysis.</p>
+                </feedback>
+              </choice>
+              <choice correct="yes">
+                <statement>
+                  <p>Analyze Data</p>
+                </statement>
+                <feedback>
+                  <p>Correct! Data cleaning is part of the Analyze Data phase, where you prepare and transform the data for meaningful analysis.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Interpret Results</p>
+                </statement>
+                <feedback>
+                  <p>The Interpret Results phase focuses on drawing conclusions from the analysis, not on cleaning the data.</p>
+                </feedback>
+              </choice>
+            </choices>
+          </exercise>
+        </subsection>
+        
+        <subsection xml:id="subsec-framework-in-practice">
+          <title>The Framework in Practice</title>
+          
+          <p>
+            Let's see how this framework might apply to our Community Health and Environment project:
+          </p>
+          
+          <example xml:id="example-framework-health">
+            <title>Community Health Investigation</title>
+            <statement>
+              <p>
+                <term>Ask Questions</term>: How does air quality relate to asthma rates across different neighborhoods? Do these relationships differ based on income levels?
+              </p>
+              <p>
+                <term>Consider Data</term>: Our dataset includes air quality measurements, asthma prevalence rates, and median household income for various neighborhoods. We need to consider how air quality was measured, whether measurements were taken consistently, and if there are confounding variables we should account for.
+              </p>
+              <p>
+                <term>Analyze Data</term>: We might create scatterplots of air quality versus asthma rates, calculate correlation coefficients, and group neighborhoods by income levels to compare patterns. We'd also need to handle any missing values or outliers.
+              </p>
+              <p>
+                <term>Interpret Results</term>: Based on our analysis, we might find that neighborhoods with poorer air quality tend to have higher asthma rates, and this relationship could be stronger in lower-income areas. We'd need to acknowledge limitations (correlation doesn't imply causation) and consider implications for public health policy.
+              </p>
+            </statement>
+          </example>
+          
+          <p>
+            The framework helps ensure that we approach data investigations systematically, considering crucial aspects at each stage. It also highlights the iterative nature of data analysis—insights from later phases often prompt us to refine our questions or seek additional data.
+          </p>
+          
+          <activity xml:id="activity-apply-framework">
+            <title>Applying the Framework</title>
+            <introduction>
+              <p>
+                In this activity, you'll apply the data investigation framework to your chosen project dataset.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  For your chosen dataset, brainstorm at least three potential statistical questions you could investigate.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  For one of your questions, outline what you would do in each phase of the data investigation framework.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Identify at least one challenge you might face in each phase and how you might address it.
+                </p>
+              </statement>
+            </task>
+          </activity>
+          
+          <exercise xml:id="matching-framework-activities">
+            <title>Framework Activities</title>
+            <statement>
+              <p>Match each data science activity with the most appropriate phase of the data investigation framework.</p>
+            </statement>
+            <matches>
+              <match>
+                <premise>Creating a histogram of income distribution</premise>
+                <response>Analyze Data</response>
+              </match>
+              <match>
+                <premise>Determining whether survey respondents are representative of the population</premise>
+                <response>Consider Data</response>
+              </match>
+              <match>
+                <premise>Wondering if exercise habits differ by age group</premise>
+                <response>Ask Questions</response>
+              </match>
+              <match>
+                <premise>Concluding that the data doesn't support the original hypothesis</premise>
+                <response>Interpret Results</response>
+              </match>
+              <match>
+                <premise>Deciding to collect additional measurements</premise>
+                <response>Consider Data</response>
+              </match>
+              <match>
+                <premise>Calculating the correlation between temperature and energy use</premise>
+                <response>Analyze Data</response>
+              </match>
+            </matches>
+          </exercise>
+        </subsection>
+      </section>
+
+      <section xml:id="sec-statistical-questions">
+        <title>Formulating Statistical Questions</title>
+        
+        <subsection xml:id="subsec-what-are-stat-questions">
+          <title>What Makes a Question Statistical?</title>
+          
+          <p>
+            Not all questions are statistical questions. A statistical question is one that can be answered by collecting data and where we expect variability in that data.
+          </p>
+          
+          <definition xml:id="def-statistical-question">
+            <statement>
+              <p>
+                A <term>statistical question</term> is a question that anticipates variability in the data related to it and can be answered by analyzing data. It usually addresses patterns, trends, or relationships in a group or population rather than specific individuals.
+              </p>
+            </statement>
+          </definition>
+          
+          <example xml:id="example-stat-vs-nonstat">
+            <title>Statistical vs. Non-Statistical Questions</title>
+            <statement>
+              <p>
+                Non-statistical questions typically have a single, deterministic answer:
+              </p>
+              <ul>
+                <li>
+                  <p>How tall is Jamal? (Asks about a specific individual)</p>
+                </li>
+                <li>
+                  <p>What is the capital of France? (Has a definitive answer)</p>
+                </li>
+                <li>
+                  <p>Did it rain yesterday? (Yes/no factual question)</p>
+                </li>
+              </ul>
+              <p>
+                Statistical questions anticipate variability and focus on distributions:
+              </p>
+              <ul>
+                <li>
+                  <p>How tall are 7th-grade students at Lincoln Middle School? (Expects variation in heights)</p>
+                </li>
+                <li>
+                  <p>What is the relationship between a country's GDP and its literacy rate? (Examines patterns across countries)</p>
+                </li>
+                <li>
+                  <p>How does rainfall vary by month in Seattle? (Looks at distribution over time)</p>
+                </li>
+              </ul>
+            </statement>
+          </example>
+          
+          <exercise xml:id="mc-identify-stat-questions">
+            <title>Identifying Statistical Questions</title>
+            <statement>
+              <p>Which of the following is a statistical question?</p>
+            </statement>
+            <choices>
+              <choice>
+                <statement>
+                  <p>What is the temperature right now?</p>
+                </statement>
+                <feedback>
+                  <p>This is not a statistical question because it asks for a single measurement at a specific point in time, not a distribution or pattern.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>How many siblings does Maria have?</p>
+                </statement>
+                <feedback>
+                  <p>This is not a statistical question because it asks about a specific individual and has a single answer.</p>
+                </feedback>
+              </choice>
+              <choice correct="yes">
+                <statement>
+                  <p>How does commute time vary among employees at a company?</p>
+                </statement>
+                <feedback>
+                  <p>Correct! This is a statistical question because it anticipates variability (different commute times) and requires analyzing data from a group.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Is 15 minutes a long time to wait for a bus?</p>
+                </statement>
+                <feedback>
+                  <p>This is not a statistical question because it asks for a subjective judgment rather than something that can be answered directly with data.</p>
+                </feedback>
+              </choice>
+            </choices>
+          </exercise>
+          
+          <p>
+            Good statistical questions are the foundation of effective data investigations. They guide the entire process, from data collection to analysis and interpretation.
+          </p>
+        </subsection>
+        
+        <subsection xml:id="subsec-crafting-questions">
+          <title>Crafting Effective Statistical Questions</title>
+          
+          <p>
+            Effective statistical questions have several key characteristics:
+          </p>
+          
+          <ul>
+            <li>
+              <p><term>Clear and specific</term>: Precisely defines what you want to know and what population you're studying</p>
+            </li>
+            <li>
+              <p><term>Answerable with data</term>: Can be investigated through data collection and analysis</p>
+            </li>
+            <li>
+              <p><term>Anticipates variability</term>: Expects a distribution of values rather than a single answer</p>
+            </li>
+            <li>
+              <p><term>Meaningful</term>: Addresses something worth investigating and has potential implications</p>
+            </li>
+            <li>
+              <p><term>Neutral</term>: Doesn't presuppose a particular answer or bias the investigation</p>
+            </li>
+          </ul>
+          
+          <example xml:id="example-refining-questions">
+            <title>Refining Statistical Questions</title>
+            <statement>
+              <p>
+                Consider how we might refine these initial questions to make them more effective:
+              </p>
+              <ul>
+                <li>
+                  <p><term>Initial</term>: Is air pollution bad for health?</p>
+                  <p><term>Refined</term>: What is the relationship between average annual air quality index (AQI) and asthma hospitalization rates across neighborhoods in our city over the past five years?</p>
+                </li>
+                <li>
+                  <p><term>Initial</term>: Do parks make neighborhoods healthier?</p>
+                  <p><term>Refined</term>: How does the percentage of green space in a neighborhood correlate with residents' self-reported physical activity levels, controlling for median income?</p>
+                </li>
+                <li>
+                  <p><term>Initial</term>: Which neighborhood has the worst environmental health?</p>
+                  <p><term>Refined</term>: How do neighborhoods compare across multiple environmental health indicators (air quality, water quality, access to green space, and proximity to pollution sources), and what patterns emerge when considering demographic factors?</p>
+                </li>
+              </ul>
+            </statement>
+          </example>
+          
+          <p>
+            Notice how the refined questions are more specific about what is being measured, the population being studied, and the relationships being investigated. They also avoid loaded terms like "bad" or "worst" that might bias the investigation.
+          </p>
+          
+          <activity xml:id="activity-refine-questions">
+            <title>Refining Your Questions</title>
+            <introduction>
+              <p>
+                In this activity, you'll work on developing effective statistical questions for your project.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Review the statistical questions you brainstormed in the previous activity. Select one that you think has the most potential.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Refine your selected question using the characteristics of effective statistical questions. Make it clearer, more specific, and more answerable with data.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Share your refined question with a classmate and provide feedback on each other's questions.
+                </p>
+              </statement>
+            </task>
+          </activity>
+          
+          <exercise xml:id="exercise-improve-questions">
+            <title>Improving Statistical Questions</title>
+            <introduction>
+                <p>For each initial question below, select the most improved version that follows the principles of effective statistical questions.</p>
+            </introduction>
+            <webwork>
+                <setup>
+                <pg-code>
+                    $sleep = RadioButtons(
+                    ["Should students get more sleep?",
+                    "What is the distribution of nightly sleep duration among high school students, and how does it compare to recommended amounts for adolescents?",
+                    "Why don't students get enough sleep?",
+                    "Who sleeps the most in the sophomore class?"],
+                    1,  # index of correct answer (0-based)
+                    labels => ["a", "b", "c", "d"]
+                    );
+                    
+                    $health = RadioButtons(
+                    ["Is it fair that rich people are healthier?",
+                    "What is John's income and health status?",
+                    "How do rates of chronic diseases vary across different income brackets in the United States, and has this relationship changed over the past decade?",
+                    "Why do poor people have worse health outcomes?"],
+                    2,  # index of correct answer (0-based)
+                    labels => ["a", "b", "c", "d"]
+                    );
+                </pg-code>
+                </setup>
+                
+                <statement>
+                <p>Question 1: Initial question: Are students getting enough sleep?</p>
+                <p>Select the most improved version of this question:</p>
+                <p><var name="$sleep" form="buttons"/></p>
+                
+                <p>Question 2: Initial question: Does income affect health?</p>
+                <p>Select the most improved version of this question:</p>
+                <p><var name="$health" form="buttons"/></p>
+                </statement>
+                
+                <solution>
+                <p>Question 1: The best improved version is: "What is the distribution of nightly sleep duration among high school students, and how does it compare to recommended amounts for adolescents?"</p>
+                <p>This question is specific about what is being measured (sleep duration), the population (high school students), and includes a comparison to a standard.</p>
+                
+                <p>Question 2: The best improved version is: "How do rates of chronic diseases vary across different income brackets in the United States, and has this relationship changed over the past decade?"</p>
+                <p>This question is specific about the variables (chronic disease rates, income brackets), the population (United States), and adds a time dimension for additional insight.</p>
+                </solution>
+                
+                <hint>
+                <p>Think about what makes a good statistical question: it should be specific, measurable, and free from assumptions or value judgments.</p>
+                </hint>
+            </webwork>
+            </exercise>
+        </subsection>
+      </section>
+
+      <section xml:id="sec-planning-investigation">
+        <title>Planning an Investigation</title>
+        
+        <subsection xml:id="subsec-planning-elements">
+          <title>Elements of an Investigation Plan</title>
+          
+          <p>
+            A well-structured data investigation plan helps guide your analysis and ensures you consider all important aspects before diving into the data. Key elements of an investigation plan include:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Research Questions</title>
+              <p>
+                The statistical questions you aim to answer, clearly stated and refined.
+              </p>
+            </li>
+            <li>
+              <title>Data Requirements</title>
+              <p>
+                The specific variables, measurements, and data sources needed to answer your questions.
+              </p>
+            </li>
+            <li>
+              <title>Data Assessment</title>
+              <p>
+                Evaluation of the available data's quality, completeness, and appropriateness for your questions.
+              </p>
+            </li>
+            <li>
+              <title>Analysis Approach</title>
+              <p>
+                The methods and techniques you plan to use for data cleaning, exploration, visualization, and statistical analysis.
+              </p>
+            </li>
+            <li>
+              <title>Potential Challenges</title>
+              <p>
+                Anticipated difficulties and limitations, along with strategies to address them.
+              </p>
+            </li>
+            <li>
+              <title>Expected Outcomes</title>
+              <p>
+                What you hope to learn and how you might apply the findings.
+              </p>
+            </li>
+          </dl>
+          
+          <exercise xml:id="parsons-investigation-plan" adaptive="yes">
+            <title>Organizing an Investigation Plan</title>
+            <statement>
+              <p>Arrange the following steps in a logical order for planning a data investigation.</p>
+            </statement>
+            <blocks>
+              <block order="1">
+                <p>Formulate clear statistical questions based on your area of interest.</p>
+              </block>
+              <block order="2">
+                <choice>
+                  <p>Begin analyzing the data immediately to save time.</p>
+                </choice>
+                <choice correct="yes">
+                  <p>Identify what specific variables and data you need to answer your questions.</p>
+                </choice>
+                <choice>
+                  <p>Create visualizations before examining the data quality.</p>
+                </choice>
+              </block>
+              <block order="3">
+                <p>Assess whether the available data is suitable and of sufficient quality.</p>
+              </block>
+              <block order="4">
+                <p>Determine appropriate methods for cleaning, visualizing, and analyzing the data.</p>
+              </block>
+              <block order="5">
+                <p>Identify potential limitations and challenges in your investigation.</p>
+              </block>
+              <block order="6" correct="no">
+                <p>Skip directly to writing conclusions without analyzing the data.</p>
+              </block>
+            </blocks>
+            <hint>
+              <p>Think about what information you need to know before you can determine your analysis methods.</p>
+            </hint>
+          </exercise>
+          
+          <p>
+            A thoughtful investigation plan serves as a roadmap for your analysis, though you should be prepared to adapt it as you learn more about the data and discover unexpected patterns or challenges.
+          </p>
+        </subsection>
+        
+        <subsection xml:id="subsec-sample-plan">
+          <title>Sample Investigation Plan</title>
+          
+          <p>
+            Let's look at a sample investigation plan for our Community Health and Environment project:
+          </p>
+          
+          <example xml:id="example-health-plan">
+            <title>Community Health Investigation Plan</title>
+            <statement>
+              <p>
+                <term>Research Questions</term>:
+                <ol>
+                  <li>
+                    <p>What is the relationship between air quality index (AQI) and asthma rates across neighborhoods?</p>
+                  </li>
+                  <li>
+                    <p>How does access to green space correlate with obesity rates, controlling for neighborhood income?</p>
+                  </li>
+                  <li>
+                    <p>Are there clusters of neighborhoods with similar environmental health profiles, and how do these clusters relate to demographic factors?</p>
+                  </li>
+                </ol>
+              </p>
+              <p>
+                <term>Data Requirements</term>:
+                <ul>
+                  <li>
+                    <p>Neighborhood-level data on air quality measurements (annual average AQI)</p>
+                  </li>
+                  <li>
+                    <p>Asthma prevalence rates by neighborhood</p>
+                  </li>
+                  <li>
+                    <p>Green space access metrics (percentage of area, proximity to parks)</p>
+                  </li>
+                  <li>
+                    <p>Obesity rates by neighborhood</p>
+                  </li>
+                  <li>
+                    <p>Median household income by neighborhood</p>
+                  </li>
+                  <li>
+                    <p>Additional environmental health indicators (water quality, proximity to pollution sources)</p>
+                  </li>
+                  <li>
+                    <p>Demographic information (age distribution, racial/ethnic composition)</p>
+                  </li>
+                </ul>
+              </p>
+              <p>
+                <term>Data Assessment</term>:
+                <ul>
+                  <li>
+                    <p>Our dataset includes most required variables but lacks detailed green space metrics</p>
+                  </li>
+                  <li>
+                    <p>Some neighborhoods have missing data for certain health indicators</p>
+                  </li>
+                  <li>
+                    <p>Air quality measurements were taken at different times of year across neighborhoods</p>
+                  </li>
+                  <li>
+                    <p>Need to verify that health data is age-adjusted for fair comparison</p>
+                  </li>
+                </ul>
+              </p>
+              <p>
+                <term>Analysis Approach</term>:
+                <ol>
+                  <li>
+                    <p>Data cleaning: Handle missing values, check for outliers, standardize variables</p>
+                  </li>
+                  <li>
+                    <p>Exploratory analysis: Create scatter plots, histograms, and maps to visualize distributions and relationships</p>
+                  </li>
+                  <li>
+                    <p>Calculate correlation coefficients between environmental factors and health outcomes</p>
+                  </li>
+                  <li>
+                    <p>Perform regression analysis to examine relationships while controlling for income</p>
+                  </li>
+                  <li>
+                    <p>Use cluster analysis to identify neighborhoods with similar environmental health profiles</p>
+                  </li>
+                </ol>
+              </p>
+              <p>
+                <term>Potential Challenges</term>:
+                <ul>
+                  <li>
+                    <p>Missing data might bias results if not handled appropriately</p>
+                  </li>
+                  <li>
+                    <p>Correlation doesn't imply causation; many confounding variables might exist</p>
+                  </li>
+                  <li>
+                    <p>Neighborhood boundaries might not align perfectly with environmental exposure patterns</p>
+                  </li>
+                  <li>
+                    <p>Limited sample size (number of neighborhoods) might affect statistical power</p>
+                  </li>
+                </ul>
+              </p>
+              <p>
+                <term>Expected Outcomes</term>:
+                <ul>
+                  <li>
+                    <p>Identification of environmental factors most strongly associated with health outcomes</p>
+                  </li>
+                  <li>
+                    <p>Understanding of how socioeconomic factors interact with environmental exposures</p>
+                  </li>
+                  <li>
+                    <p>Visualization of environmental health disparities across the city</p>
+                  </li>
+                  <li>
+                    <p>Insights that could inform targeted public health interventions</p>
+                  </li>
+                </ul>
+              </p>
+            </statement>
+          </example>
+          
+          <p>
+            This plan provides a comprehensive framework for the investigation, identifying key questions, necessary data, analytical approaches, and potential limitations. It serves as a guide but remains flexible enough to adapt as the investigation proceeds.
+          </p>
+          
+          <activity xml:id="activity-develop-plan">
+            <title>Developing Your Investigation Plan</title>
+            <introduction>
+              <p>
+                In this activity, you'll develop an investigation plan for your own dataset.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Using the refined statistical questions from the previous activity, outline a complete investigation plan following the structure of the sample plan.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Assess your dataset critically. Does it contain all the variables you need? Are there quality issues you need to address?
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Specify at least three analysis techniques you plan to use and why they're appropriate for your research questions.
+                </p>
+              </statement>
+            </task>
+          </activity>
+          
+          <exercise xml:id="mc-data-requirements">
+            <title>Identifying Data Requirements</title>
+            <statement>
+              <p>To investigate the question "How does public transportation usage vary with income level across neighborhoods?", which of the following variables would be LEAST essential?</p>
+            </statement>
+            <choices>
+              <choice>
+                <statement>
+                  <p>Average number of public transportation trips per resident by neighborhood</p>
+                </statement>
+                <feedback>
+                  <p>This is a key measure of public transportation usage, which is central to the research question.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Median household income by neighborhood</p>
+                </statement>
+                <feedback>
+                  <p>Income level is explicitly mentioned in the research question, making this variable essential.</p>
+                </feedback>
+              </choice>
+              <choice correct="yes">
+                <statement>
+                  <p>Average home value by neighborhood</p>
+                </statement>
+                <feedback>
+                  <p>Correct! While home value might correlate with income, it's not directly mentioned in the research question and is less essential than variables that directly measure transportation usage and income.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Availability of public transportation (e.g., bus stops per square mile) by neighborhood</p>
+                </statement>
+                <feedback>
+                  <p>This is important to consider because availability can influence usage, making it a potential confounding variable that should be accounted for.</p>
+                </feedback>
+              </choice>
+            </choices>
+          </exercise>
+        </subsection>
+      </section>
+
+      <section xml:id="sec-statistical-thinking">
+        <title>Statistical Thinking: Understanding Variability</title>
+        
+        <subsection xml:id="subsec-variability-concepts">
+          <title>Key Concepts in Variability</title>
+          
+          <p>
+            Statistical thinking is a way of approaching problems that acknowledges and accounts for variability. Understanding variability is essential for interpreting data and making informed decisions.
+          </p>
+          
+          <definition xml:id="def-variability">
+            <statement>
+              <p>
+                <term>Variability</term> refers to the extent to which data points in a set differ from each other and from measures of central tendency. It is an inherent characteristic of data that arises from multiple sources.
+              </p>
+            </statement>
+          </definition>
+          
+          <p>
+            Several key concepts help us understand and quantify variability:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Measures of Center</title>
+              <p>
+                Statistics like mean, median, and mode that describe typical values in a distribution.
+              </p>
+            </li>
+            <li>
+              <title>Measures of Spread</title>
+              <p>
+                Statistics like range, interquartile range, variance, and standard deviation that quantify the amount of variability.
+              </p>
+            </li>
+            <li>
+              <title>Distribution Shape</title>
+              <p>
+                The pattern of variation in a dataset, which might be symmetric, skewed, uniform, bimodal, or follow a specific distribution like normal.
+              </p>
+            </li>
+            <li>
+              <title>Sources of Variability</title>
+              <p>
+                Factors that contribute to differences in observations, including natural variation, measurement error, and sampling methods.
+              </p>
+            </li>
+          </dl>
+          
+          <figure xml:id="fig-variability-visualized">
+            <caption>Visualizing Variability in Distributions</caption>
+            <image source="variability-distributions.png" width="90%">
+              <description>Three histograms showing distributions with different variability: low, medium, and high. All have the same mean but different spread.</description>
+            </image>
+          </figure>
+          
+          <exercise xml:id="mc-variability-concepts">
+            <title>Understanding Variability</title>
+            <statement>
+              <p>Which of the following statements about variability is TRUE?</p>
+            </statement>
+            <choices>
+              <choice>
+                <statement>
+                  <p>High variability in a dataset always indicates a problem with data collection.</p>
+                </statement>
+                <feedback>
+                  <p>This is not true. High variability might be a natural characteristic of the phenomenon being studied, not necessarily an indication of problems with data collection.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>The mean is always the best measure of central tendency regardless of variability.</p>
+                </statement>
+                <feedback>
+                  <p>This is not true. When data is highly skewed or contains outliers, the median may be a more appropriate measure of central tendency.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Two datasets with the same mean must have the same standard deviation.</p>
+                </statement>
+                <feedback>
+                  <p>This is not true. Datasets with the same mean can have vastly different spread or variability, resulting in different standard deviations.</p>
+                </feedback>
+              </choice>
+              <choice correct="yes">
+                <statement>
+                  <p>Understanding variability is essential for making appropriate inferences from data.</p>
+                </statement>
+                <feedback>
+                  <p>Correct! Acknowledging and accounting for variability is a fundamental aspect of statistical thinking and is crucial for proper data interpretation.</p>
+                </feedback>
+              </choice>
+            </choices>
+          </exercise>
+        </subsection>
+        
+        <subsection xml:id="subsec-variability-in-analysis">
+          <title>Accounting for Variability in Data Analysis</title>
+          
+          <p>
+            When conducting data investigations, we need to consider variability at every stage:
+          </p>
+          
+          <ul>
+            <li>
+              <p><term>When asking questions</term>: Formulate questions that acknowledge and explore variability</p>
+            </li>
+            <li>
+              <p><term>When considering data</term>: Evaluate how sampling methods might affect variability</p>
+            </li>
+            <li>
+              <p><term>When analyzing data</term>: Use appropriate visualizations and statistics to represent variability</p>
+            </li>
+            <li>
+              <p><term>When interpreting results</term>: Consider how variability affects the strength and reliability of conclusions</p>
+            </li>
+          </ul>
+          
+          <example xml:id="example-variability-health">
+            <title>Variability in Community Health Data</title>
+            <statement>
+              <p>
+                In our Community Health dataset, we might observe that:
+              </p>
+              <ul>
+                <li>
+                  <p>Asthma rates vary considerably across neighborhoods (spatial variability)</p>
+                </li>
+                <li>
+                  <p>Air quality measurements fluctuate seasonally (temporal variability)</p>
+                </li>
+                <li>
+                  <p>The relationship between green space and obesity is stronger in some demographic groups than others (variability in relationships)</p>
+                </li>
+                <li>
+                  <p>Some health metrics have greater measurement uncertainty than others (variability due to measurement)</p>
+                </li>
+              </ul>
+              <p>
+                Acknowledging these sources of variability helps us avoid oversimplified conclusions and recognize the complexity of environmental health relationships.
+              </p>
+            </statement>
+          </example>
+          
+          <activity xml:id="activity-explore-variability">
+            <title>Exploring Variability in Your Dataset</title>
+            <introduction>
+              <p>
+                In this activity, you'll explore sources of variability in your chosen dataset.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Identify at least three variables in your dataset and use CODAP to create visualizations showing their distributions.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  For each variable, describe the pattern of variability you observe. Is the distribution symmetric, skewed, uniform, bimodal, or something else?
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Consider what might cause the variability you're seeing. Is it natural variation in the phenomenon, differences between groups, measurement issues, or something else?
+                </p>
+              </statement>
+            </task>
+          </activity>
+          
+          <exercise xml:id="matching-variability-measures">
+            <title>Measures of Variability</title>
+            <statement>
+              <p>Match each statistical measure with the aspect of variability it best represents.</p>
+            </statement>
+            <matches>
+              <match>
+                <premise>Standard deviation</premise>
+                <response>Average distance of values from the mean</response>
+              </match>
+              <match>
+                <premise>Interquartile range (IQR)</premise>
+                <response>Spread of the middle 50% of the data</response>
+              </match>
+              <match>
+                <premise>Range</premise>
+                <response>Difference between the maximum and minimum values</response>
+              </match>
+              <match>
+                <premise>Variance</premise>
+                <response>Average of squared deviations from the mean</response>
+              </match>
+              <match>
+                <premise>Coefficient of variation</premise>
+                <response>Standard deviation relative to the mean</response>
+              </match>
+            </matches>
+          </exercise>
+        </subsection>
+      </section>
+
+      <section xml:id="sec-ethics-spotlight-sampling">
+        <title>Ethics Spotlight: Representation in Data</title>
+        
+        <p>
+          As we plan our data investigations, it's crucial to consider who is represented in our data and who might be missing or underrepresented.
+        </p>
+        
+        <p>
+          Key ethical considerations regarding representation include:
+        </p>
+        
+        <ul>
+          <li>
+            <p><term>Selection bias</term>: Does our data systematically exclude certain groups?</p>
+          </li>
+          <li>
+            <p><term>Sampling fairness</term>: Does our sample adequately represent diverse populations?</p>
+          </li>
+          <li>
+            <p><term>Historical exclusion</term>: Are we working with data that reflects historical patterns of exclusion?</p>
+          </li>
+          <li>
+            <p><term>Appropriate categorization</term>: Do our categories respect how people identify themselves?</p>
+          </li>
+          <li>
+            <p><term>Contextual interpretation</term>: Are we considering social and historical context when interpreting group differences?</p>
+          </li>
+        </ul>
+        
+        <example xml:id="example-ethics-representation">
+          <title>Representation in Community Health Data</title>
+          <statement>
+            <p>
+              In our Community Health dataset, we might need to consider:
+            </p>
+            <ul>
+              <li>
+                <p>Whether health surveys reached residents who don't speak English</p>
+              </li>
+              <li>
+                <p>If environmental monitoring stations are distributed equitably across neighborhoods</p>
+              </li>
+              <li>
+                <p>Whether certain communities have historically been excluded from public health research</p>
+              </li>
+              <li>
+                <p>If the neighborhood boundaries used in our analysis reflect meaningful community divisions</p>
+              </li>
+              <li>
+                <p>How to interpret health disparities without reinforcing harmful stereotypes</p>
+              </li>
+            </ul>
+          </statement>
+        </example>
+        
+        <exercise xml:id="exercise-ethics-scenarios">
+        <title>Data Representation Scenarios</title>
+        <introduction>
+          <p>For each scenario, identify the primary ethical concern related to representation in data.</p>
+        </introduction>
+        <webwork>
+          <setup>
+            <pg-code>
+              $online_survey = RadioButtons(
+                ["Selection bias",
+                "Privacy violation",
+                "Inappropriate categorization",
+                "Excessive data collection"],
+                0,  # index of correct answer (0-based)
+                labels => ["a", "b", "c", "d"]
+              );
+              
+              $medical_research = RadioButtons(
+                ["Inappropriate categorization",
+                "Sampling fairness",
+                "Data security",
+                "Transparency"],
+                1,  # index of correct answer (0-based)
+                labels => ["a", "b", "c", "d"]
+              );
+            </pg-code>
+          </setup>
+          
+          <statement>
+            <p>Scenario 1: A city collects feedback about public services through an online survey that requires a smartphone and internet access.</p>
+            <p>What is the primary ethical concern in this scenario?</p>
+            <p><var name="$online_survey" form="buttons"/></p>
+            
+            <p>Scenario 2: A medical research study examines health outcomes using patient data from university hospitals in affluent neighborhoods.</p>
+            <p>What is the primary ethical concern in this scenario?</p>
+            <p><var name="$medical_research" form="buttons"/></p>
+          </statement>
+          
+          <solution>
+            <p><b>Scenario 1:</b> The primary ethical concern is Selection bias.</p>
+            <p>This method systematically excludes residents without smartphones or internet access, creating selection bias that likely underrepresents lower-income or elderly populations.</p>
+            
+            <p><b>Scenario 2:</b> The primary ethical concern is Sampling fairness.</p>
+            <p>The sample is biased toward patients who have access to university hospitals in affluent areas, potentially missing health patterns in underserved communities.</p>
+          </solution>
+          
+          <hint>
+            <p>Consider who might be included or excluded from each data collection approach, and how that might affect the conclusions drawn from the data.</p>
+          </hint>
+        </webwork>
+      </exercise>
+        
+        <activity xml:id="activity-ethics-representation">
+          <title>Evaluating Representation in Your Dataset</title>
+          <introduction>
+            <p>
+              In this activity, you'll critically examine representation issues in your chosen dataset.
+            </p>
+          </introduction>
+          <task>
+            <statement>
+              <p>
+                Identify at least three ways in which your dataset might not fully represent the population you're interested in studying.
+              </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                Consider how these representation issues might affect the conclusions you can draw from your analysis.
+              </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                Propose at least two strategies for acknowledging or addressing these representation issues in your investigation.
+              </p>
+            </statement>
+          </task>
+        </activity>
+      </section>
+
+      <section xml:id="sec-unit2-summary">
+        <title>Unit 2 Summary</title>
+        
+        <p>
+          In this unit, we've explored:
+        </p>
+        
+        <ul>
+          <li>
+            <p>The data investigation framework developed by Hollylynne Lee and colleagues, which provides a structured approach to data analysis</p>
+          </li>
+          <li>
+            <p>How to formulate effective statistical questions that anticipate variability and can be answered with data</p>
+          </li>
+          <li>
+            <p>The components of a comprehensive investigation plan, including research questions, data requirements, analysis approaches, and potential challenges</p>
+          </li>
+          <li>
+            <p>Fundamental concepts of statistical thinking, particularly the importance of understanding and accounting for variability</p>
+          </li>
+          <li>
+            <p>Ethical considerations regarding representation in data and how they affect the conclusions we can draw</p>
+          </li>
+        </ul>
+        
+        <p>
+          By the end of this unit, you should have a clear investigation plan for your project dataset, including well-formulated statistical questions and a strategy for analysis. This plan will guide your work in the upcoming units as we dive deeper into data moves and visualization techniques.
+        </p>
+        
+        <exercise xml:id="exercise-unit2-reflection">
+          <title>Unit 2 Reflection</title>
+          <statement>
+            <p>
+              Take some time to reflect on what you've learned in this unit:
+            </p>
+            <ul>
+              <li>
+                <p>How has the data investigation framework changed your approach to analyzing data?</p>
+              </li>
+              <li>
+                <p>What was most challenging about formulating effective statistical questions?</p>
+              </li>
+              <li>
+                <p>How does understanding variability influence the way you think about data?</p>
+              </li>
+              <li>
+                <p>What aspects of your investigation plan are you most confident about, and which might need refinement as you proceed?</p>
+              </li>
+            </ul>
+          </statement>
+        </exercise>
+        
+        <exercise xml:id="mc-unit2-review">
+          <title>Unit 2 Review</title>
+          <statement>
+            <p>Which of the following BEST describes the main purpose of the data investigation framework?</p>
+          </statement>
+          <choices>
+            <choice>
+              <statement>
+                <p>To provide a rigid, linear sequence of steps that must be followed in every data analysis</p>
+              </statement>
+              <feedback>
+                <p>The framework is not meant to be rigid or strictly linear. Real investigations often involve cycling back through earlier phases as new insights emerge.</p>
+              </feedback>
+            </choice>
+            <choice>
+              <statement>
+                <p>To replace critical thinking with standardized procedures for data analysis</p>
+              </statement>
+              <feedback>
+                <p>The framework is designed to enhance critical thinking, not replace it. It provides a structure while still requiring judgment and creativity.</p>
+              </feedback>
+            </choice>
+            <choice correct="yes">
+              <statement>
+                <p>To provide a structured approach that ensures all important aspects of data investigation are considered</p>
+              </statement>
+              <feedback>
+                <p>Correct! The framework serves as a guide to help ensure that important elements like question formulation, data quality assessment, appropriate analysis, and careful interpretation are all addressed.</p>
+              </feedback>
+            </choice>
+            <choice>
+              <statement>
+                <p>To automate the process of analyzing data so that minimal human intervention is required</p>
+              </statement>
+              <feedback>
+                <p>The framework does not automate analysis; it provides a conceptual structure for human investigators to follow while still requiring substantial judgment and expertise.</p>
+              </feedback>
+            </choice>
+          </choices>
+        </exercise>
+      </section>
+    </chapter>
