@@ -15,6 +15,9 @@
     <xi:include href="./ch-foundations-of-data-science.ptx" />
     <xi:include href="./ch-data-investigation-process.ptx" />
     <xi:include href="./ch-essential-data-moves.ptx" />
+    <xi:include href="./ch-data-vis-and-comm.ptx" />
+    <xi:include href="./ch-course-project.ptx" />
+    <xi:include href="./ch-codap.ptx" />
     
 
 

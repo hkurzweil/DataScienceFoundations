@@ -1,0 +1,1292 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <chapter xml:id="ch-codap-guide">
+      <title>CODAP Reference Guide</title>
+      
+      <introduction>
+        <p>
+          Common Online Data Analysis Platform (CODAP) is the primary tool we'll use throughout this course to explore, analyze, and visualize data. Developed by the Concord Consortium specifically for educational purposes, CODAP provides a user-friendly interface for working with data without requiring programming knowledge.
+        </p>
+        <p>
+          This chapter serves as a reference guide to CODAP, covering basic functionality, advanced features, and helpful tips and tricks. You can return to this chapter whenever you need guidance on specific CODAP operations as you work on course activities and your project.
+        </p>
+      </introduction>
+
+      <section xml:id="sec-codap-basics">
+        <title>Getting Started with CODAP</title>
+        
+        <subsection xml:id="subsec-accessing-codap">
+          <title>Accessing CODAP</title>
+          
+          <p>
+            CODAP is a free, web-based application that runs in your browser. There's no need to download or install anything.
+          </p>
+          
+          <ul>
+            <li>
+              <p>Access CODAP at <url href="https://codap.concord.org" visual="codap.concord.org">codap.concord.org</url></p>
+            </li>
+            <li>
+              <p>No account is required to use CODAP, though creating an account allows you to save your work to the cloud</p>
+            </li>
+            <li>
+              <p>Documents can be saved locally to your computer as .codap files even without an account</p>
+            </li>
+            <li>
+              <p>CODAP works in all modern browsers (Chrome, Firefox, Safari, Edge)</p>
+            </li>
+          </ul>
+          
+          <figure xml:id="fig-codap-homepage">
+            <caption>CODAP Homepage</caption>
+            <image source="codap-homepage.png" width="90%">
+              <description>Screenshot of the CODAP homepage showing the welcome screen with options to create a new document, open examples, or open a local file.</description>
+            </image>
+          </figure>
+        </subsection>
+        
+        <subsection xml:id="subsec-interface-overview">
+          <title>Interface Overview</title>
+          
+          <p>
+            When you first open CODAP, you'll see a blank document with a menu bar at the top. The main workspace is where you'll create and arrange data views.
+          </p>
+          
+          <p>
+            The primary components of the CODAP interface include:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Main Menu</title>
+              <p>
+                Located at the top, providing access to file operations, examples, help, and tools.
+              </p>
+            </li>
+            <li>
+              <title>Document Toolbar</title>
+              <p>
+                Contains buttons for adding tables, graphs, text objects, maps, and other components.
+              </p>
+            </li>
+            <li>
+              <title>Workspace</title>
+              <p>
+                The main area where tables, graphs, and other components are displayed and arranged.
+              </p>
+            </li>
+            <li>
+              <title>Component Windows</title>
+              <p>
+                Individual windows for tables, graphs, etc., which can be moved, resized, minimized, or closed.
+              </p>
+            </li>
+          </dl>
+          
+          <figure xml:id="fig-codap-interface2">
+            <caption>CODAP Interface Elements</caption>
+            <image source="codap-interface.png" width="90%">
+              <description>Labeled screenshot showing the main elements of the CODAP interface including the menu bar, toolbar, workspace, and component windows.</description>
+            </image>
+          </figure>
+          
+          <p>
+            Key features of the CODAP interface:
+          </p>
+          
+          <ul>
+            <li>
+              <p>All components (tables, graphs, etc.) can be freely arranged in the workspace</p>
+            </li>
+            <li>
+              <p>Components can be resized by dragging their edges</p>
+            </li>
+            <li>
+              <p>Multiple components can be open simultaneously and interact with each other</p>
+            </li>
+            <li>
+              <p>Selected elements in one component are automatically highlighted in others</p>
+            </li>
+          </ul>
+        </subsection>
+        
+        <subsection xml:id="subsec-importing-data">
+          <title>Importing Data</title>
+          
+          <p>
+            There are several ways to get data into CODAP:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Opening Example Documents</title>
+              <p>
+                From the main menu, select "Example Documents" to explore pre-made CODAP files with data.
+              </p>
+            </li>
+            <li>
+              <title>Importing from CSV or other file formats</title>
+              <p>
+                From the main menu, select "Import..." to bring data from a local file.
+              </p>
+            </li>
+            <li>
+              <title>Copy and Paste</title>
+              <p>
+                Copy data from a spreadsheet and paste it directly into a CODAP table.
+              </p>
+            </li>
+            <li>
+              <title>Manual Entry</title>
+              <p>
+                Create a new table and enter data manually.
+              </p>
+            </li>
+            <li>
+              <title>Using Plugins</title>
+              <p>
+                Some plugins allow importing data from specific sources like Google Sheets.
+              </p>
+            </li>
+          </dl>
+          
+          <p>
+            To create a new table:
+          </p>
+          
+          <ol>
+            <li>
+              <p>Click the "Table" button in the toolbar</p>
+            </li>
+            <li>
+              <p>Name your table when prompted</p>
+            </li>
+            <li>
+              <p>Click "+" to add attributes (columns)</p>
+            </li>
+            <li>
+              <p>Enter data or use the import options described above</p>
+            </li>
+          </ol>
+          
+          <figure xml:id="fig-codap-import">
+            <caption>Data Import Options in CODAP</caption>
+            <image source="codap-import.png" width="80%">
+              <description>Screenshot showing the CODAP import menu with various options for bringing data into the platform.</description>
+            </image>
+          </figure>
+          
+          <exercise xml:id="exercise-codap-import">
+            <title>Practice Importing Data</title>
+            <statement>
+              <p>
+                Try these steps to practice importing data into CODAP:
+              </p>
+              <ol>
+                <li>
+                  <p>Go to <url href="https://codap.concord.org" visual="codap.concord.org">codap.concord.org</url></p>
+                </li>
+                <li>
+                  <p>Click on "Example Documents" from the main menu</p>
+                </li>
+                <li>
+                  <p>Select "Mammals" from the list of examples</p>
+                </li>
+                <li>
+                  <p>Explore the data table that appears</p>
+                </li>
+                <li>
+                  <p>Now, try downloading a CSV file from <url href="https://data.gov" visual="data.gov">data.gov</url> or another source</p>
+                </li>
+                <li>
+                  <p>In a new CODAP document, use the Import feature to bring in your downloaded file</p>
+                </li>
+              </ol>
+            </statement>
+          </exercise>
+        </subsection>
+      </section>
+
+      <section xml:id="sec-core-features">
+        <title>Core CODAP Features</title>
+        
+        <subsection xml:id="subsec-working-with-tables">
+          <title>Working with Tables</title>
+          
+          <p>
+            Tables are the primary way to view and edit data in CODAP. Key operations include:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Adding and Renaming Attributes</title>
+              <p>
+                <ul>
+                  <li><p>Click "+" in the table header to add a new attribute (column)</p></li>
+                  <li><p>Double-click an attribute name to rename it</p></li>
+                  <li><p>Right-click an attribute for more options</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Sorting Data</title>
+              <p>
+                <ul>
+                  <li><p>Click on an attribute name to sort ascending</p></li>
+                  <li><p>Click again to sort descending</p></li>
+                  <li><p>Click a third time to return to original order</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Editing Values</title>
+              <p>
+                <ul>
+                  <li><p>Click directly on a cell to edit its value</p></li>
+                  <li><p>Press Tab to move to the next cell</p></li>
+                  <li><p>Press Enter to confirm an edit</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Adding Cases (Rows)</title>
+              <p>
+                <ul>
+                  <li><p>Click "+" below the last row to add a new case</p></li>
+                  <li><p>Right-click in the row area for options to insert or delete cases</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Selecting Cases</title>
+              <p>
+                <ul>
+                  <li><p>Click on a row to select a single case</p></li>
+                  <li><p>Shift+click to select a range of cases</p></li>
+                  <li><p>Ctrl/Cmd+click to select multiple non-adjacent cases</p></li>
+                </ul>
+              </p>
+            </li>
+          </dl>
+          
+          <figure xml:id="fig-codap-table">
+            <caption>CODAP Table Features</caption>
+            <image source="codap-table.png" width="90%">
+              <description>Annotated screenshot of a CODAP table showing key elements like attribute headers, cell values, and row selectors.</description>
+            </image>
+          </figure>
+          
+          <p>
+            <term>Tips for working with tables:</term>
+          </p>
+          
+          <ul>
+            <li>
+              <p>Use consistent naming conventions for attributes (e.g., lowercase with underscores, or camelCase)</p>
+            </li>
+            <li>
+              <p>Right-click on attribute names to access additional options like hiding or deleting</p>
+            </li>
+            <li>
+              <p>Resize columns by dragging the dividers between attribute names</p>
+            </li>
+            <li>
+              <p>Hold Shift while resizing to maintain proportions of all columns</p>
+            </li>
+            <li>
+              <p>Use the ruler tool (available in the attribute menu) to create groups within a column</p>
+            </li>
+          </ul>
+        </subsection>
+        
+        <subsection xml:id="subsec-creating-graphs">
+          <title>Creating and Customizing Graphs</title>
+          
+          <p>
+            CODAP's graphing capabilities are powerful yet easy to use. To create a graph:
+          </p>
+          
+          <ol>
+            <li>
+              <p>Click the "Graph" button in the toolbar</p>
+            </li>
+            <li>
+              <p>Drag an attribute from the table to the horizontal (x) axis</p>
+            </li>
+            <li>
+              <p>Drag another attribute to the vertical (y) axis</p>
+            </li>
+            <li>
+              <p>Optionally, drag attributes to the legend area to encode with color, size, or shape</p>
+            </li>
+          </ol>
+          
+          <p>
+            Graph types available in CODAP include:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Scatter Plots</title>
+              <p>
+                Shows the relationship between two numerical attributes.
+              </p>
+            </li>
+            <li>
+              <title>Dot Plots</title>
+              <p>
+                Displays distributions of single attributes, with one axis showing values and the other showing counts.
+              </p>
+            </li>
+            <li>
+              <title>Box Plots</title>
+              <p>
+                Shows distributions with median, quartiles, and outliers.
+              </p>
+            </li>
+            <li>
+              <title>Histograms</title>
+              <p>
+                Displays frequency distributions with bins.
+              </p>
+            </li>
+            <li>
+              <title>Bar Charts</title>
+              <p>
+                Shows counts or other metrics for categorical data.
+              </p>
+            </li>
+          </dl>
+          
+          <figure xml:id="fig-codap-graph-types">
+            <caption>CODAP Graph Types</caption>
+            <image source="codap-graph-types.png" width="90%">
+              <description>Examples of different graph types available in CODAP: scatter plot, dot plot, box plot, histogram, and bar chart.</description>
+            </image>
+          </figure>
+          
+          <p>
+            To customize a graph:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Click the graph type icon to switch between plot types</p>
+            </li>
+            <li>
+              <p>Click on axis labels to adjust scales, titles, and other properties</p>
+            </li>
+            <li>
+              <p>Use the ruler tool to add reference lines or divide data into groups</p>
+            </li>
+            <li>
+              <p>Click on the palette icon to customize colors, point sizes, or other visual properties</p>
+            </li>
+            <li>
+              <p>Click "Plot Options" for additional settings specific to the current plot type</p>
+            </li>
+          </ul>
+          
+          <p>
+            <term>Tips for effective graphs:</term>
+          </p>
+          
+          <ul>
+            <li>
+              <p>Choose the appropriate graph type for your data and question</p>
+            </li>
+            <li>
+              <p>Use color, size, or shape to add additional dimensions to your visualization</p>
+            </li>
+            <li>
+              <p>Add meaningful axis labels by clicking on the default labels</p>
+            </li>
+            <li>
+              <p>Adjust axis scales if the default doesn't show your data effectively</p>
+            </li>
+            <li>
+              <p>For histograms, experiment with different bin widths to find meaningful patterns</p>
+            </li>
+            <li>
+              <p>Remember that selections in graphs automatically highlight corresponding data in tables and other graphs</p>
+            </li>
+          </ul>
+        </subsection>
+        
+        <subsection xml:id="subsec-calculated-attributes">
+          <title>Creating Calculated Attributes</title>
+          
+          <p>
+            One of CODAP's most powerful features is the ability to create new attributes based on calculations using existing data. To create a calculated attribute:
+          </p>
+          
+          <ol>
+            <li>
+              <p>Click "+" in the table header to add a new attribute</p>
+            </li>
+            <li>
+              <p>Name your new attribute</p>
+            </li>
+            <li>
+              <p>Click the "calculator" icon that appears in the attribute header</p>
+            </li>
+            <li>
+              <p>Enter a formula in the formula editor</p>
+            </li>
+            <li>
+              <p>Click "Apply" to create the calculated attribute</p>
+            </li>
+          </ol>
+          
+          <figure xml:id="fig-codap-calculator">
+            <caption>CODAP Formula Editor</caption>
+            <image source="codap-calculator.png" width="70%">
+              <description>Screenshot of the CODAP formula editor showing the interface for creating calculated attributes.</description>
+            </image>
+          </figure>
+          
+          <p>
+            Common operators and functions available in the formula editor:
+          </p>
+          
+          <table>
+            <title>CODAP Formula Elements</title>
+            <tabular>
+              <row header="yes">
+                <cell>Category</cell>
+                <cell>Examples</cell>
+                <cell>Description</cell>
+              </row>
+              <row>
+                <cell>Basic Operators</cell>
+                <cell><c>+, -, *, /, ^</c></cell>
+                <cell>Addition, subtraction, multiplication, division, exponentiation</cell>
+              </row>
+              <row>
+                <cell>Comparison Operators</cell>
+                <cell><c>&lt;, &gt;, =, &lt;=, &gt;=, !=</c></cell>
+                <cell>Less than, greater than, equal to, etc.</cell>
+              </row>
+              <row>
+                <cell>Logical Operators</cell>
+                <cell><c>and, or, not</c></cell>
+                <cell>Combine conditions</cell>
+              </row>
+              <row>
+                <cell>Math Functions</cell>
+                <cell><c>sqrt(), abs(), round(), log()</c></cell>
+                <cell>Square root, absolute value, rounding, logarithm</cell>
+              </row>
+              <row>
+                <cell>Text Functions</cell>
+                <cell><c>concat(), length(), upper()</c></cell>
+                <cell>Combine text, get length, convert to uppercase</cell>
+              </row>
+              <row>
+                <cell>Conditional Functions</cell>
+                <cell><c>if(condition, trueValue, falseValue)</c></cell>
+                <cell>Return different values based on a condition</cell>
+              </row>
+            </tabular>
+          </table>
+          
+          <example xml:id="example-calculations">
+            <title>Example Calculations in CODAP</title>
+            <statement>
+              <p>
+                Here are some useful calculations you might create:
+              </p>
+              <ul>
+                <li>
+                  <p>Convert units: <c>temperature_c * 9/5 + 32</c> (Celsius to Fahrenheit)</p>
+                </li>
+                <li>
+                  <p>Calculate a ratio: <c>weight / height^2</c> (Body Mass Index)</p>
+                </li>
+                <li>
+                  <p>Create a category: <c>if(score &gt;= 90, "A", if(score &gt;= 80, "B", if(score &gt;= 70, "C", "D")))</c></p>
+                </li>
+                <li>
+                  <p>Calculate percent change: <c>(new_value - old_value) / old_value * 100</c></p>
+                </li>
+                <li>
+                  <p>Combine text: <c>concat(first_name, " ", last_name)</c></p>
+                </li>
+              </ul>
+            </statement>
+          </example>
+          
+          <p>
+            <term>Tips for calculated attributes:</term>
+          </p>
+          
+          <ul>
+            <li>
+              <p>Use descriptive names for calculated attributes</p>
+            </li>
+            <li>
+              <p>Formulas automatically update if the source attributes change</p>
+            </li>
+            <li>
+              <p>You can reference other calculated attributes in your formulas</p>
+            </li>
+            <li>
+              <p>For complex calculations, consider breaking them into multiple attributes</p>
+            </li>
+            <li>
+              <p>Use the formula history to retrieve previous calculations</p>
+            </li>
+            <li>
+              <p>Right-click on attribute names to edit existing formulas</p>
+            </li>
+          </ul>
+        </subsection>
+        
+        <subsection xml:id="subsec-mapping">
+          <title>Geographic Mapping</title>
+          
+          <p>
+            CODAP includes basic mapping capabilities for visualizing geographic data:
+          </p>
+          
+          <ol>
+            <li>
+              <p>Click the "Map" button in the toolbar to create a map</p>
+            </li>
+            <li>
+              <p>Drag attributes containing latitude and longitude to the appropriate fields</p>
+            </li>
+            <li>
+              <p>Optionally, drag another attribute to the legend to color points by category or value</p>
+            </li>
+          </ol>
+          
+          <p>
+            Map features include:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Pan by dragging the map background</p>
+            </li>
+            <li>
+              <p>Zoom using the + and - buttons or scroll wheel</p>
+            </li>
+            <li>
+              <p>Change the base map using the layers icon</p>
+            </li>
+            <li>
+              <p>Select points on the map to highlight corresponding data in tables and graphs</p>
+            </li>
+            <li>
+              <p>Adjust point appearance using the point style controls</p>
+            </li>
+          </ul>
+          
+          <figure xml:id="fig-codap-map">
+            <caption>CODAP Map View</caption>
+            <image source="codap-map.png" width="80%">
+              <description>Screenshot of a CODAP map showing geographic data points with controls for zoom, layers, and styling.</description>
+            </image>
+          </figure>
+          
+          <p>
+            <term>Requirements for mapping:</term>
+          </p>
+          
+          <ul>
+            <li>
+              <p>Data must include latitude and longitude coordinates in decimal degrees</p>
+            </li>
+            <li>
+              <p>Latitude ranges from -90° (South) to 90° (North)</p>
+            </li>
+            <li>
+              <p>Longitude ranges from -180° (West) to 180° (East)</p>
+            </li>
+            <li>
+              <p>For data with location names but no coordinates, you may need to add coordinate attributes</p>
+            </li>
+          </ul>
+        </subsection>
+      </section>
+
+      <section xml:id="sec-advanced-techniques">
+        <title>Advanced CODAP Techniques</title>
+        
+        <subsection xml:id="subsec-hierarchical-data">
+          <title>Working with Hierarchical Data</title>
+          
+          <p>
+            CODAP supports hierarchical data structures, where cases at one level contain cases at another level. Examples include:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Schools containing students</p>
+            </li>
+            <li>
+              <p>Countries containing cities</p>
+            </li>
+            <li>
+              <p>Experiments containing trials</p>
+            </li>
+          </ul>
+          
+          <p>
+            To create hierarchical data:
+          </p>
+          
+          <ol>
+            <li>
+              <p>Create a new collection (table) using the "New Collection..." option in the table menu</p>
+            </li>
+            <li>
+              <p>Specify the parent-child relationship between collections</p>
+            </li>
+            <li>
+              <p>Add attributes to each collection as needed</p>
+            </li>
+          </ol>
+          
+          <p>
+            Benefits of hierarchical data:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Organize data at different levels of granularity</p>
+            </li>
+            <li>
+              <p>Analyze aggregated data (e.g., average test scores per school)</p>
+            </li>
+            <li>
+              <p>Easily filter across related collections</p>
+            </li>
+            <li>
+              <p>Maintain relationships between different units of analysis</p>
+            </li>
+          </ul>
+          
+          <figure xml:id="fig-hierarchical-data">
+            <caption>Hierarchical Data Structure in CODAP</caption>
+            <image source="hierarchical-data.png" width="90%">
+              <description>Screenshot showing a hierarchical data structure in CODAP with parent and child collections.</description>
+            </image>
+          </figure>
+        </subsection>
+        
+        <subsection xml:id="subsec-filtering-techniques">
+          <title>Advanced Filtering Techniques</title>
+          
+          <p>
+            CODAP offers several ways to filter your data:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Selection Filtering</title>
+              <p>
+                <ul>
+                  <li><p>Select cases in any view (table, graph, map)</p></li>
+                  <li><p>Use the "eyeball" icon in the table to show only selected cases</p></li>
+                  <li><p>Click again to show all cases</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Formula-Based Filtering</title>
+              <p>
+                <ul>
+                  <li><p>Click the filter icon in the table header</p></li>
+                  <li><p>Enter a formula that evaluates to true or false (e.g., <c>price &lt; 100</c>)</p></li>
+                  <li><p>Only cases where the formula is true will be shown</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Creating Subsets</title>
+              <p>
+                <ul>
+                  <li><p>Select cases of interest</p></li>
+                  <li><p>Use "New Collection From Selection" from the table menu</p></li>
+                  <li><p>This creates a new collection containing only the selected cases</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Using Categorical Attributes</title>
+              <p>
+                <ul>
+                  <li><p>Create a categorical attribute using a formula (e.g., <c>if(score &gt; 70, "Pass", "Fail")</c>)</p></li>
+                  <li><p>Use this attribute in graphs to separate data into groups</p></li>
+                  <li><p>Select specific categories to filter the data</p></li>
+                </ul>
+              </p>
+            </li>
+          </dl>
+          
+          <p>
+            Complex filtering examples:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Multiple conditions: <c>(price &lt; 100) and (rating &gt;= 4)</c></p>
+            </li>
+            <li>
+              <p>Either/or conditions: <c>(category = "Electronics") or (category = "Appliances")</c></p>
+            </li>
+            <li>
+              <p>Exclusion: <c>not(state = "California")</c></p>
+            </li>
+            <li>
+              <p>Range filtering: <c>(age &gt;= 18) and (age &lt;= 65)</c></p>
+            </li>
+            <li>
+              <p>Text contains: <c>contains(name, "Smith")</c></p>
+            </li>
+          </ul>
+        </subsection>
+        
+        <subsection xml:id="subsec-data-import-export">
+          <title>Advanced Data Import and Export</title>
+          
+          <p>
+            Beyond basic CSV importing, CODAP provides several advanced data handling options:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Importing from Plugins</title>
+              <p>
+                <ul>
+                  <li><p>Click the "Plugins" button in the toolbar</p></li>
+                  <li><p>Select data connectors like "Google Sheets" or "Data Interactives"</p></li>
+                  <li><p>Follow the plugin-specific instructions to import data</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Importing Multiple Tables</title>
+              <p>
+                <ul>
+                  <li><p>Import each table separately</p></li>
+                  <li><p>Use "Relate Collections..." to establish relationships between tables</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Exporting Data</title>
+              <p>
+                <ul>
+                  <li><p>Use "Export Case Data..." from the table menu</p></li>
+                  <li><p>Choose CSV or tab-delimited format</p></li>
+                  <li><p>Select which attributes to include</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Saving and Sharing CODAP Documents</title>
+              <p>
+                <ul>
+                  <li><p>Use "Save" to download as a .codap file</p></li>
+                  <li><p>Use "Share" to generate a shareable link (requires account)</p></li>
+                  <li><p>Use "Create Poster" to create a static view for presentation</p></li>
+                </ul>
+              </p>
+            </li>
+          </dl>
+          
+          <p>
+            <term>Tips for data handling:</term>
+          </p>
+          
+          <ul>
+            <li>
+              <p>Keep original data intact by working with copies when making significant changes</p>
+            </li>
+            <li>
+              <p>Save your work frequently as CODAP files</p>
+            </li>
+            <li>
+              <p>When importing CSV files, check that numeric data is recognized correctly (not imported as text)</p>
+            </li>
+            <li>
+              <p>Use text attributes for identification codes, even if they contain numbers</p>
+            </li>
+            <li>
+              <p>Export your processed data if you need to use it in other applications</p>
+            </li>
+          </ul>
+        </subsection>
+        
+        <subsection xml:id="subsec-building-dashboards">
+          <title>Building Interactive Dashboards</title>
+          
+          <p>
+            CODAP's flexible interface allows you to create interactive dashboards by combining multiple components:
+          </p>
+          
+          <ol>
+            <li>
+              <p>Create tables, graphs, maps, and text objects that provide different views of your data</p>
+            </li>
+            <li>
+              <p>Arrange these components in a logical layout by dragging and resizing</p>
+            </li>
+            <li>
+              <p>Use text objects to add titles, explanations, or context</p>
+            </li>
+            <li>
+              <p>Take advantage of CODAP's automatic linking between components</p>
+            </li>
+          </ol>
+          
+          <p>
+            Dashboard features to utilize:
+          </p>
+          
+          <ul>
+            <li>
+              <p><term>Linked selection</term>: Selecting items in one view highlights them in all views</p>
+            </li>
+            <li>
+              <p><term>Show/hide components</term>: Minimize components temporarily using the minimize button</p>
+            </li>
+            <li>
+              <p><term>Text objects</term>: Add context with the "Text" button in the toolbar</p>
+            </li>
+            <li>
+              <p><term>Colored backgrounds</term>: Use the gear icon in component windows to change background colors</p>
+            </li>
+            <li>
+              <p><term>Multiple representations</term>: Show the same data in different ways (e.g., table, graph, map)</p>
+            </li>
+          </ul>
+          
+          <figure xml:id="fig-codap-dashboard">
+            <caption>Example CODAP Dashboard</caption>
+            <image source="codap-dashboard.png" width="100%">
+              <description>Screenshot of a CODAP dashboard with multiple linked components including tables, graphs, and explanatory text.</description>
+            </image>
+          </figure>
+          
+          <p>
+            <term>Dashboard design tips:</term>
+          </p>
+          
+          <ul>
+            <li>
+              <p>Place the most important visualizations prominently</p>
+            </li>
+            <li>
+              <p>Organize components in a logical flow (e.g., overview to detail)</p>
+            </li>
+            <li>
+              <p>Use consistent colors and styles across components</p>
+            </li>
+            <li>
+              <p>Include brief text explanations to guide users</p>
+            </li>
+            <li>
+              <p>Test the dashboard by selecting different data points to ensure linking works correctly</p>
+            </li>
+            <li>
+              <p>Resize the browser window to check how your dashboard adapts to different screen sizes</p>
+            </li>
+          </ul>
+        </subsection>
+      </section>
+
+      <section xml:id="sec-tips-tricks">
+        <title>CODAP Tips, Tricks, and Troubleshooting</title>
+        
+        <subsection xml:id="subsec-keyboard-shortcuts">
+          <title>Keyboard Shortcuts and Efficiency Tips</title>
+          
+          <p>
+            Use these keyboard shortcuts and techniques to work more efficiently in CODAP:
+          </p>
+          
+          <table>
+            <title>Useful CODAP Shortcuts</title>
+            <tabular>
+              <row header="yes">
+                <cell>Action</cell>
+                <cell>Windows/Linux</cell>
+                <cell>Mac</cell>
+              </row>
+              <row>
+                <cell>Copy selected cells</cell>
+                <cell>Ctrl+C</cell>
+                <cell>Cmd+C</cell>
+              </row>
+              <row>
+                <cell>Paste into table</cell>
+                <cell>Ctrl+V</cell>
+                <cell>Cmd+V</cell>
+              </row>
+              <row>
+                <cell>Cut selection</cell>
+                <cell>Ctrl+X</cell>
+                <cell>Cmd+X</cell>
+              </row>
+              <row>
+                <cell>Select all cases</cell>
+                <cell>Ctrl+A</cell>
+                <cell>Cmd+A</cell>
+              </row>
+              <row>
+                <cell>Undo</cell>
+                <cell>Ctrl+Z</cell>
+                <cell>Cmd+Z</cell>
+              </row>
+              <row>
+                <cell>Redo</cell>
+                <cell>Ctrl+Y or Ctrl+Shift+Z</cell>
+                <cell>Cmd+Y or Cmd+Shift+Z</cell>
+              </row>
+              <row>
+                <cell>Save document</cell>
+                <cell>Ctrl+S</cell>
+                <cell>Cmd+S</cell>
+              </row>
+            </tabular>
+          </table>
+          
+          <p>
+            Efficiency tips:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Duplicating Components</title>
+              <p>
+                Right-click on a component's title bar and select "Duplicate" to create a copy.
+              </p>
+            </li>
+            <li>
+              <title>Quick Graph Creation</title>
+              <p>
+                Select attributes in the table by Ctrl/Cmd+clicking their headers, then click the graph button.
+              </p>
+            </li>
+            <li>
+              <title>Batch Editing</title>
+              <p>
+                Select multiple cells in a column, right-click, and choose "Edit Values" to change them all at once.
+              </p>
+            </li>
+            <li>
+              <title>Rearranging Components</title>
+              <p>
+                Hold Shift while moving components to maintain their alignment with other components.
+              </p>
+            </li>
+            <li>
+              <title>Quick Selections in Graphs</title>
+              <p>
+                Click and drag to select multiple points in a graph; double-click background to select all points.
+              </p>
+            </li>
+          </dl>
+        </subsection>
+        
+        <subsection xml:id="subsec-common-issues">
+          <title>Common Issues and Solutions</title>
+          
+          <p>
+            If you encounter problems in CODAP, try these solutions for common issues:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Data Not Importing Correctly</title>
+              <p>
+                <ul>
+                  <li><p>Check that your CSV file uses consistent delimiters (commas or tabs)</p></li>
+                  <li><p>Ensure text with commas is properly quoted in CSV files</p></li>
+                  <li><p>Try opening the CSV in a text editor to check for formatting issues</p></li>
+                  <li><p>For large files, try importing in smaller chunks</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Formulas Not Working</title>
+              <p>
+                <ul>
+                  <li><p>Check for typos in attribute names (they are case-sensitive)</p></li>
+                  <li><p>Verify parentheses are balanced</p></li>
+                  <li><p>Make sure you're using the correct operators (e.g., = for equality, not ==)</p></li>
+                  <li><p>Confirm that referenced attributes contain appropriate data types</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Performance Issues</title>
+              <p>
+                <ul>
+                  <li><p>Close unnecessary components to reduce memory usage</p></li>
+                  <li><p>Work with a subset of data if the full dataset is very large</p></li>
+                  <li><p>Limit the number of simultaneously open graphs and tables</p></li>
+                  <li><p>Save your work frequently to prevent loss from browser crashes</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Display Issues</title>
+              <p>
+                <ul>
+                  <li><p>Try refreshing the browser if components aren't displaying correctly</p></li>
+                  <li><p>Use a different browser if persistent display problems occur</p></li>
+                  <li><p>Check that your browser is updated to the latest version</p></li>
+                  <li><p>Adjust browser zoom level if components appear too large or small</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Data Not Linking Between Components</title>
+              <p>
+                <ul>
+                  <li><p>Verify that all components are using the same data context (collection)</p></li>
+                  <li><p>Check if any filters are applied that might be hiding selected data</p></li>
+                  <li><p>Ensure that the components were created within the same document</p></li>
+                </ul>
+              </p>
+            </li>
+          </dl>
+          
+          <p>
+            If problems persist:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Try the "Help" menu for documentation and resources</p>
+            </li>
+            <li>
+              <p>Check the CODAP User Community at <url href="https://codap.concord.org/help" visual="codap.concord.org/help">codap.concord.org/help</url></p>
+            </li>
+            <li>
+              <p>Save your work and refresh the browser</p>
+            </li>
+            <li>
+              <p>Try a different browser (Chrome and Firefox work best with CODAP)</p>
+            </li>
+          </ul>
+        </subsection>
+        
+        <subsection xml:id="subsec-advanced-tricks">
+          <title>Advanced CODAP Tricks</title>
+          
+          <p>
+            These advanced techniques can help you get the most out of CODAP:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Using the Ruler Tool</title>
+              <p>
+                The ruler tool allows you to create reference lines, divide data into segments, and more:
+                <ul>
+                  <li><p>Click the ruler icon in graph axes or attribute headers</p></li>
+                  <li><p>Click on the axis/column to place dividers</p></li>
+                  <li><p>Drag dividers to adjust their position</p></li>
+                  <li><p>Use for creating bins, thresholds, or reference points</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Creating Aggregate Functions</title>
+              <p>
+                Calculate summaries across groups:
+                <ul>
+                  <li><p>Create a graph with the grouping variable on one axis</p></li>
+                  <li><p>Drag the variable to summarize to the other axis</p></li>
+                  <li><p>Click the axis to change from "Count" to other aggregates (mean, median, sum)</p></li>
+                  <li><p>Add these summaries back to your data using the "Edit..." menu option</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Custom Color Palettes</title>
+              <p>
+                Create custom color schemes for your data:
+                <ul>
+                  <li><p>Drag an attribute to the legend area of a graph</p></li>
+                  <li><p>Click on individual colors to change them</p></li>
+                  <li><p>Use the color palette button to select from preset schemes</p></li>
+                  <li><p>Choose colors that are colorblind-friendly for accessibility</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Data Transformations</title>
+              <p>
+                Transform data for better visualization:
+                <ul>
+                  <li><p>Use <c>log()</c> for skewed distributions</p></li>
+                  <li><p>Use <c>(value - min) / (max - min)</c> for normalization</p></li>
+                  <li><p>Use <c>(value - mean) / standardDeviation</c> for standardization</p></li>
+                  <li><p>Create binned categories with nested <c>if()</c> statements</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Creating Custom Interactive Controls</title>
+              <p>
+                Use formula-based approaches to create interactive controls:
+                <ul>
+                  <li><p>Create a new collection with control parameters (e.g., threshold values)</p></li>
+                  <li><p>Reference these values in formulas in your main dataset</p></li>
+                  <li><p>Adjust the controls to see immediate effects on visualizations</p></li>
+                </ul>
+              </p>
+            </li>
+          </dl>
+          
+          <figure xml:id="fig-codap-ruler">
+            <caption>CODAP Ruler Tool in Action</caption>
+            <image source="codap-ruler.png" width="80%">
+              <description>Screenshot showing the ruler tool being used to create segments in a graph.</description>
+            </image>
+          </figure>
+        </subsection>
+        
+        <subsection xml:id="subsec-best-practices">
+          <title>CODAP Best Practices</title>
+          
+          <p>
+            Follow these best practices for effective and efficient work in CODAP:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Document Organization</title>
+              <p>
+                <ul>
+                  <li><p>Use descriptive titles for all components</p></li>
+                  <li><p>Group related components together in the workspace</p></li>
+                  <li><p>Add text objects to provide context and explanations</p></li>
+                  <li><p>Organize your workflow from data import to final visualization</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Data Management</title>
+              <p>
+                <ul>
+                  <li><p>Keep original data intact and use derived attributes for transformations</p></li>
+                  <li><p>Use consistent naming conventions for attributes</p></li>
+                  <li><p>Document the meaning of derived attributes and formulas</p></li>
+                  <li><p>Save your work frequently and create backups</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Visualization Practices</title>
+              <p>
+                <ul>
+                  <li><p>Choose appropriate visualization types for your data and questions</p></li>
+                  <li><p>Use clear titles and labels for all visualizations</p></li>
+                  <li><p>Apply consistent color schemes across related visualizations</p></li>
+                  <li><p>Ensure visualizations are accessible (adequate contrast, colorblind-friendly)</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Analysis Workflow</title>
+              <p>
+                <ul>
+                  <li><p>Start with exploratory visualizations to understand your data</p></li>
+                  <li><p>Progress to focused visualizations that address specific questions</p></li>
+                  <li><p>Create calculations to quantify relationships and patterns</p></li>
+                  <li><p>Develop a comprehensive dashboard to communicate findings</p></li>
+                </ul>
+              </p>
+            </li>
+          </dl>
+          
+          <p>
+            By following these best practices, you'll create more effective, efficient, and communicative CODAP documents.
+          </p>
+        </subsection>
+      </section>
+
+      <section xml:id="sec-codap-resources">
+        <title>Additional CODAP Resources</title>
+        
+        <p>
+          To continue developing your CODAP skills, explore these additional resources:
+        </p>
+        
+        <dl>
+          <li>
+            <title>Official CODAP Documentation</title>
+            <p>
+              <url href="https://codap.concord.org/help" visual="codap.concord.org/help">codap.concord.org/help</url> - Comprehensive documentation, tutorials, and examples.
+            </p>
+          </li>
+          <li>
+            <title>CODAP Sample Documents</title>
+            <p>
+              Accessible from the CODAP homepage under "Example Documents" - Explore these to see diverse applications of CODAP.
+            </p>
+          </li>
+          <li>
+            <title>Video Tutorials</title>
+            <p>
+              <url href="https://www.youtube.com/playlist?list=PLLjT2XxQzXGhfBXFkXUEVDZwT2thbzjha" visual="YouTube: CODAP Tutorials">YouTube: CODAP Tutorials</url> - Step-by-step video guides for various CODAP features.
+            </p>
+          </li>
+          <li>
+            <title>CODAP User Forum</title>
+            <p>
+              <url href="https://codap.concord.org/forums" visual="codap.concord.org/forums">codap.concord.org/forums</url> - Community discussions, questions, and answers.
+            </p>
+          </li>
+          <li>
+            <title>Data Science Education Resources</title>
+            <p>
+              <url href="https://hirise.fi.ncsu.edu/projects-activities/" visual="hirise.fi.ncsu.edu">HI-RiSE: Data Science Education Resources</url> - Teaching materials using CODAP from Hollylynne Lee and colleagues.
+            </p>
+          </li>
+        </dl>
+        
+        <p>
+          Remember that the best way to learn CODAP is through practice. Experiment with different features, try new approaches, and don't be afraid to explore. The more you use CODAP, the more comfortable and proficient you'll become.
+        </p>
+        
+        <exercise xml:id="exercise-codap-exploration">
+          <title>CODAP Exploration Challenge</title>
+          <statement>
+            <p>
+              To practice your CODAP skills, try this challenge:
+            </p>
+            <ol>
+              <li>
+                <p>Open the "Mammals" example document in CODAP</p>
+              </li>
+              <li>
+                <p>Create at least three different visualizations of the data (e.g., scatter plot, box plot, dot plot)</p>
+              </li>
+              <li>
+                <p>Create a calculated attribute that represents the brain weight as a percentage of body weight</p>
+              </li>
+              <li>
+                <p>Use the ruler tool to divide mammals into categories based on the new brain-to-body ratio</p>
+              </li>
+              <li>
+                <p>Create a dashboard that includes your visualizations, the data table, and a text object explaining what you've found</p>
+              </li>
+              <li>
+                <p>Save your CODAP document</p>
+              </li>
+            </ol>
+            <p>
+              This challenge will help you practice many of the skills described in this guide while exploring an interesting dataset.
+            </p>
+          </statement>
+        </exercise>
+      </section>
+    </chapter>

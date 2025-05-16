@@ -1,0 +1,2371 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <chapter xml:id="ch-unit4">
+      <title>Unit 4: Data Visualization and Communication</title>
+      
+      <introduction>
+        <p>
+          Having developed skills in data cleaning, filtering, and summarizing, we now turn our attention to one of the most important aspects of data science: visualization and communication. The ability to create effective visualizations and communicate insights clearly can transform raw data and analysis into actionable knowledge.
+        </p>
+        <p>
+          In this unit, we'll explore the principles of effective data visualization, learn techniques for creating various types of charts and graphs in CODAP, and develop skills for communicating data stories. We'll also examine multi-variable relationships and build comprehensive dashboards to present our findings.
+        </p>
+        <p>
+          By the end of this unit, you'll have created a complete data dashboard for your project and developed a presentation that effectively communicates your key findings and insights.
+        </p>
+      </introduction>
+
+      <section xml:id="sec-visualization-fundamentals">
+        <title>Visualization Fundamentals</title>
+        
+        <subsection xml:id="subsec-why-visualize">
+          <title>The Power of Data Visualization</title>
+          
+          <p>
+            Data visualization serves several crucial functions in the data science process:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Exploration</title>
+              <p>
+                Visualizations help us discover patterns, relationships, and outliers that might not be apparent in raw data or summary statistics.
+              </p>
+            </li>
+            <li>
+              <title>Analysis</title>
+              <p>
+                Visual representations allow us to compare groups, identify trends, and test hypotheses about our data.
+              </p>
+            </li>
+            <li>
+              <title>Communication</title>
+              <p>
+                Well-designed visualizations make complex findings accessible to others, supporting decision-making and action.
+              </p>
+            </li>
+            <li>
+              <title>Engagement</title>
+              <p>
+                Visual elements capture attention and make data more engaging and memorable than text or numbers alone.
+              </p>
+            </li>
+          </dl>
+          
+          <p>
+            The power of visualization is illustrated by Anscombe's Quartet, a set of four datasets with nearly identical statistical properties but dramatically different visual patterns:
+          </p>
+          
+          <figure xml:id="fig-anscombe">
+            <caption>Anscombe's Quartet</caption>
+            <image source="anscombe-quartet.png" width="90%">
+              <description>Four scatter plots showing datasets with identical summary statistics but very different patterns: a linear relationship, a curved relationship, a linear relationship with an outlier, and a vertical line with an outlier.</description>
+            </image>
+            <credit>
+              <url href="https://en.wikipedia.org/wiki/Anscombe%27s_quartet">Wikipedia</url>
+            </credit>
+          </figure>
+          
+          <p>
+            Each of the four datasets in Anscombe's Quartet has the same mean, variance, correlation, and linear regression line. If we relied only on these summary statistics, we'd miss the crucial differences between these datasets. Visualization reveals what statistics alone can hide.
+          </p>
+          
+          <exercise xml:id="mc-viz-purpose">
+            <title>Visualization Purpose</title>
+            <statement>
+              <p>Which of the following is NOT a primary purpose of data visualization?</p>
+            </statement>
+            <choices>
+              <choice>
+                <statement>
+                  <p>To discover patterns and relationships in data</p>
+                </statement>
+                <feedback>
+                  <p>This is a primary purpose of data visualization - helping analysts discover patterns, trends, and relationships that might not be apparent in raw data.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>To communicate insights to diverse audiences</p>
+                </statement>
+                <feedback>
+                  <p>This is a primary purpose of data visualization - making complex findings accessible and understandable to various stakeholders.</p>
+                </feedback>
+              </choice>
+              <choice correct="yes">
+                <statement>
+                  <p>To increase the volume of data that can be presented</p>
+                </statement>
+                <feedback>
+                  <p>Correct! While visualizations can represent large datasets, the primary goal is not to maximize the volume of data presented. In fact, effective visualization often involves carefully selecting what data to present to avoid overwhelming the viewer.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>To identify outliers and unusual patterns</p>
+                </statement>
+                <feedback>
+                  <p>This is a primary purpose of data visualization - making outliers and anomalies in the data immediately visible for further investigation.</p>
+                </feedback>
+              </choice>
+            </choices>
+          </exercise>
+        </subsection>
+        
+        <subsection xml:id="subsec-chart-selection">
+          <title>Choosing the Right Visualization</title>
+          
+          <p>
+            Different types of data and questions call for different visualization approaches. Selecting the right chart type is essential for effectively representing your data.
+          </p>
+          
+          <p>
+            Here are some common visualization types and their appropriate uses:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Bar Charts/Column Charts</title>
+              <p>
+                Best for comparing values across discrete categories.
+                <ul>
+                  <li><p>Vertical bars (columns): Good for comparing values across categories</p></li>
+                  <li><p>Horizontal bars: Useful when category names are long or there are many categories</p></li>
+                  <li><p>Grouped bars: For comparing multiple measurements across categories</p></li>
+                  <li><p>Stacked bars: For showing composition within categories</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Line Charts</title>
+              <p>
+                Best for showing trends over time or continuous variables.
+                <ul>
+                  <li><p>Single line: Shows trend in one variable</p></li>
+                  <li><p>Multiple lines: Compares trends across groups</p></li>
+                  <li><p>Area charts: Emphasize magnitude along with trend</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Scatter Plots</title>
+              <p>
+                Best for examining relationships between two numerical variables.
+                <ul>
+                  <li><p>Simple scatter: Shows correlation between two variables</p></li>
+                  <li><p>Bubble charts: Add a third dimension through point size</p></li>
+                  <li><p>Scatter with groups: Compare relationships across categories</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Pie Charts</title>
+              <p>
+                Best for showing parts of a whole (composition) when there are few categories.
+                <ul>
+                  <li><p>Use only when the sum is meaningful and categories are few (preferably 5 or fewer)</p></li>
+                  <li><p>Consider alternatives like stacked bars for more effective comparison</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Histograms</title>
+              <p>
+                Best for showing the distribution of a single numerical variable.
+                <ul>
+                  <li><p>Shows frequency of values falling within specific ranges (bins)</p></li>
+                  <li><p>Reveals shape of distribution (normal, skewed, bimodal, etc.)</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Box Plots</title>
+              <p>
+                Best for showing distribution summary and comparing distributions.
+                <ul>
+                  <li><p>Shows median, quartiles, range, and outliers</p></li>
+                  <li><p>Excellent for comparing distributions across groups</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Heat Maps</title>
+              <p>
+                Best for showing patterns across two categorical dimensions.
+                <ul>
+                  <li><p>Uses color intensity to represent a third variable</p></li>
+                  <li><p>Good for large datasets with complex patterns</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Maps</title>
+              <p>
+                Best for showing spatial patterns and geographic distributions.
+                <ul>
+                  <li><p>Choropleth maps: Color regions based on data values</p></li>
+                  <li><p>Dot maps: Show individual locations or events</p></li>
+                </ul>
+              </p>
+            </li>
+          </dl>
+          
+          <figure xml:id="fig-chart-types">
+            <caption>Common Chart Types</caption>
+            <image source="chart-types.png" width="90%">
+              <description>Examples of various chart types including bar chart, line chart, scatter plot, pie chart, histogram, box plot, heat map, and map.</description>
+            </image>
+          </figure>
+          
+          <p>
+            When choosing a visualization type, consider:
+          </p>
+          
+          <ul>
+            <li>
+              <p>What question are you trying to answer?</p>
+            </li>
+            <li>
+              <p>What types of variables are you working with (categorical, numerical, time-based)?</p>
+            </li>
+            <li>
+              <p>What relationship or pattern are you trying to show (comparison, composition, distribution, relationship)?</p>
+            </li>
+            <li>
+              <p>Who is your audience and what is their level of data literacy?</p>
+            </li>
+          </ul>
+          
+          <exercise xml:id="matching-chart-selection">
+            <title>Matching Chart Types to Questions</title>
+            <statement>
+              <p>Match each data visualization question with the most appropriate chart type.</p>
+            </statement>
+            <matches>
+              <match>
+                <premise>How has unemployment rate changed over the past 10 years?</premise>
+                <response>Line chart</response>
+              </match>
+              <match>
+                <premise>What is the relationship between study time and test scores?</premise>
+                <response>Scatter plot</response>
+              </match>
+              <match>
+                <premise>How do average incomes compare across different education levels?</premise>
+                <response>Bar chart</response>
+              </match>
+              <match>
+                <premise>What is the distribution of home prices in a neighborhood?</premise>
+                <response>Histogram</response>
+              </match>
+              <match>
+                <premise>How do temperature distributions vary across seasons?</premise>
+                <response>Box plot</response>
+              </match>
+              <match>
+                <premise>How is the city budget allocated across departments?</premise>
+                <response>Pie chart</response>
+              </match>
+            </matches>
+          </exercise>
+          
+          <activity xml:id="activity-chart-selection">
+            <title>Chart Selection for Your Dataset</title>
+            <introduction>
+              <p>
+                In this activity, you'll identify appropriate visualization types for different aspects of your dataset.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Write down at least three specific questions you want to answer with visualizations of your dataset.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  For each question, identify:
+                </p>
+                <ul>
+                  <li>
+                    <p>The variables involved (including their types: categorical, numerical, time-based)</p>
+                  </li>
+                  <li>
+                    <p>The most appropriate visualization type to answer the question</p>
+                  </li>
+                  <li>
+                    <p>Why this visualization type is the best choice for your specific question</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Share your choices with a classmate and provide feedback on each other's selections.
+                </p>
+              </statement>
+            </task>
+          </activity>
+        </subsection>
+        
+        <subsection xml:id="subsec-visualization-principles">
+          <title>Principles of Effective Visualization</title>
+          
+          <p>
+            Creating effective visualizations requires more than just selecting the right chart type. Well-designed visualizations follow these key principles:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Show the Data</title>
+              <p>
+                The primary purpose of a visualization is to clearly present the data. Avoid unnecessary decorations or "chart junk" that distracts from the data.
+              </p>
+            </li>
+            <li>
+              <title>Reduce Cognitive Load</title>
+              <p>
+                Make it as easy as possible for viewers to extract insights. Minimize the mental effort required to interpret the visualization.
+              </p>
+            </li>
+            <li>
+              <title>Focus Attention</title>
+              <p>
+                Use visual elements like color, size, and position to direct attention to the most important aspects of the data.
+              </p>
+            </li>
+            <li>
+              <title>Provide Context</title>
+              <p>
+                Include reference points, comparisons, or baselines that help viewers understand the significance of the data.
+              </p>
+            </li>
+            <li>
+              <title>Be Truthful</title>
+              <p>
+                Represent the data accurately without distortion. Ensure that visual encodings are proportional to the data values.
+              </p>
+            </li>
+          </dl>
+          
+          <p>
+            Specific design principles include:
+          </p>
+          
+          <ul>
+            <li>
+              <p><term>Clear labeling</term>: Include descriptive titles, axis labels, and legends</p>
+            </li>
+            <li>
+              <p><term>Thoughtful color use</term>: Choose accessible color schemes and use color consistently and purposefully</p>
+            </li>
+            <li>
+              <p><term>Appropriate scales</term>: Use scales that accurately represent the data, generally starting at zero for bar charts</p>
+            </li>
+            <li>
+              <p><term>Data-ink ratio</term>: Maximize the ratio of "ink" used to display data versus decorative elements</p>
+            </li>
+            <li>
+              <p><term>Simplicity</term>: Include only what's necessary, removing redundant or distracting elements</p>
+            </li>
+            <li>
+              <p><term>Consistency</term>: Use consistent formats, scales, and styles across related visualizations</p>
+            </li>
+          </ul>
+          
+          <figure xml:id="fig-good-bad-viz">
+            <caption>Good vs. Problematic Visualization</caption>
+            <image source="good-bad-viz.png" width="90%">
+              <description>Two versions of the same chart: one with clear labeling, appropriate scale, and thoughtful design; the other with misleading scale, excessive decoration, and unclear labeling.</description>
+            </image>
+          </figure>
+          
+          <example xml:id="example-viz-health">
+            <title>Visualizing Community Health Data</title>
+            <statement>
+              <p>
+                For our Community Health dataset, effective visualizations might include:
+              </p>
+              <ul>
+                <li>
+                  <p>A scatter plot showing the relationship between air quality index and asthma rates across neighborhoods, with points colored by income level to reveal potential socioeconomic patterns</p>
+                </li>
+                <li>
+                  <p>A grouped bar chart comparing multiple health metrics (asthma, obesity, heart disease) across different regions of the city, allowing for direct comparison of health outcomes</p>
+                </li>
+                <li>
+                  <p>A choropleth map showing the spatial distribution of environmental risk factors across the city, revealing geographic patterns and potential hotspots</p>
+                </li>
+                <li>
+                  <p>Box plots comparing the distribution of health outcomes across neighborhoods with different levels of green space access, showing both central tendency and variation</p>
+                </li>
+                <li>
+                  <p>A connected scatter plot showing how the relationship between environmental factors and health outcomes has changed over time</p>
+                </li>
+              </ul>
+            </statement>
+          </example>
+          
+          <exercise xml:id="parsons-viz-design" adaptive="yes">
+            <title>Steps for Creating Effective Visualizations</title>
+            <statement>
+              <p>Arrange the following steps in a logical order for creating an effective data visualization.</p>
+            </statement>
+            <blocks>
+              <block order="1">
+                <p>Clarify the specific question or insight you want the visualization to address.</p>
+              </block>
+              <block order="2">
+                <choice>
+                  <p>Add as many decorative elements as possible to make the visualization attractive.</p>
+                </choice>
+                <choice correct="yes">
+                  <p>Select the appropriate chart type based on your data and question.</p>
+                </choice>
+                <choice>
+                  <p>Use the most complex visualization possible to impress your audience.</p>
+                </choice>
+              </block>
+              <block order="3">
+                <p>Prepare and transform your data as needed for the visualization.</p>
+              </block>
+              <block order="4">
+                <p>Create a first draft of the visualization with the essential elements.</p>
+              </block>
+              <block order="5">
+                <p>Add clear titles, labels, and other contextual information.</p>
+              </block>
+              <block order="6">
+                <p>Refine the design by removing clutter and emphasizing key insights.</p>
+              </block>
+              <block order="7" correct="no">
+                <p>Manipulate the scales to make patterns look more dramatic.</p>
+              </block>
+            </blocks>
+            <hint>
+              <p>Think about how you would first plan what you want to show before deciding how to show it.</p>
+            </hint>
+          </exercise>
+          
+          <activity xml:id="activity-visualization-critique">
+            <title>Visualization Critique</title>
+            <introduction>
+              <p>
+                In this activity, you'll analyze and critique existing visualizations using the principles we've discussed.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Find three different data visualizations from news articles, reports, or websites. Try to include at least one visualization that you think is particularly effective and one that could be improved.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  For each visualization, evaluate:
+                </p>
+                <ul>
+                  <li>
+                    <p>Is the chart type appropriate for the data and question?</p>
+                  </li>
+                  <li>
+                    <p>How well does it follow the principles of effective visualization?</p>
+                  </li>
+                  <li>
+                    <p>What works well about this visualization?</p>
+                  </li>
+                  <li>
+                    <p>How could it be improved?</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  For the visualization that needs improvement, sketch or describe how you would redesign it to be more effective.
+                </p>
+              </statement>
+            </task>
+          </activity>
+        </subsection>
+        
+        <subsection xml:id="subsec-codap-viz">
+          <title>Creating Visualizations in CODAP</title>
+          
+          <p>
+            CODAP offers a variety of tools for creating interactive visualizations. Let's explore how to use these tools effectively.
+          </p>
+          
+          <p>
+            Key visualization features in CODAP include:
+          </p>
+          
+          <ul>
+            <li>
+              <p><term>Graph tool</term>: Create scatter plots, line plots, and dot plots by dragging attributes to axes</p>
+            </li>
+            <li>
+              <p><term>Plot type menu</term>: Change between dot plots, box plots, histograms, and other display types</p>
+            </li>
+            <li>
+              <p><term>Axis options</term>: Adjust scales, binning, and other axis properties</p>
+            </li>
+            <li>
+              <p><term>Grouping</term>: Split data into categories using the ruler tool</p>
+            </li>
+            <li>
+              <p><term>Legend attributes</term>: Add color, size, or shape encoding by dragging attributes to the legend area</p>
+            </li>
+            <li>
+              <p><term>Connecting lines</term>: Show connections between related points</p>
+            </li>
+            <li>
+              <p><term>Map tool</term>: Display geographic data on interactive maps</p>
+            </li>
+          </ul>
+          
+          <figure xml:id="fig-codap-viz-tools">
+            <caption>CODAP Visualization Tools</caption>
+            <image source="codap-viz-tools.png" width="90%">
+              <description>Screenshot showing CODAP's interface for creating and customizing visualizations, with labeled tools for graphs, plot types, axis options, and other features.</description>
+            </image>
+          </figure>
+          
+          <p>
+            Steps for creating effective visualizations in CODAP:
+          </p>
+          
+          <ol>
+            <li>
+              <p>Open the Graph or Map tool from the main toolbar</p>
+            </li>
+            <li>
+              <p>Drag attributes from your dataset to the axes or legend area</p>
+            </li>
+            <li>
+              <p>Select the appropriate plot type from the menu</p>
+            </li>
+            <li>
+              <p>Adjust axis scales, binning, and other properties as needed</p>
+            </li>
+            <li>
+              <p>Add additional attributes to the legend to encode with color, size, or shape</p>
+            </li>
+            <li>
+              <p>Use the ruler tool to create groupings or reference lines</p>
+            </li>
+            <li>
+              <p>Add text objects with titles, labels, or explanatory notes</p>
+            </li>
+            <li>
+              <p>Arrange multiple visualizations to create a dashboard</p>
+            </li>
+          </ol>
+          
+          <activity xml:id="activity-codap-viz">
+            <title>Creating Visualizations in CODAP</title>
+            <introduction>
+              <p>
+                In this activity, you'll practice creating various types of visualizations in CODAP using your dataset.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Create at least one of each of the following visualization types using your dataset:
+                </p>
+                <ul>
+                  <li>
+                    <p>Scatter plot showing the relationship between two numerical variables</p>
+                  </li>
+                  <li>
+                    <p>Bar chart or dot plot comparing values across categories</p>
+                  </li>
+                  <li>
+                    <p>Histogram showing the distribution of a numerical variable</p>
+                  </li>
+                  <li>
+                    <p>Box plot comparing distributions across groups</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  For each visualization:
+                </p>
+                <ul>
+                  <li>
+                    <p>Add appropriate titles and labels</p>
+                  </li>
+                  <li>
+                    <p>Adjust scales and binning as needed</p>
+                  </li>
+                  <li>
+                    <p>Use color or other visual encodings to add an additional dimension</p>
+                  </li>
+                  <li>
+                    <p>Write a brief interpretation of what the visualization reveals</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Arrange your visualizations to create a simple dashboard with at least three different charts that together tell a story about your data.
+                </p>
+              </statement>
+            </task>
+          </activity>
+          
+          <exercise xml:id="mc-codap-features">
+            <title>CODAP Visualization Features</title>
+            <statement>
+              <p>Which CODAP feature would be MOST appropriate for examining how a relationship between two numerical variables differs across categories?</p>
+            </statement>
+            <choices>
+              <choice>
+                <statement>
+                  <p>Changing from a dot plot to a histogram</p>
+                </statement>
+                <feedback>
+                  <p>Changing to a histogram would show the distribution of a single variable, not the relationship between two variables across categories.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Adding connecting lines between points</p>
+                </statement>
+                <feedback>
+                  <p>Connecting lines are typically used to show sequences or paths between related points, not to distinguish between categories.</p>
+                </feedback>
+              </choice>
+              <choice correct="yes">
+                <statement>
+                  <p>Dragging a categorical attribute to the legend area to color points by category</p>
+                </statement>
+                <feedback>
+                  <p>Correct! By dragging a categorical attribute to the legend area, points in the scatter plot will be colored according to their category, allowing you to visually distinguish how the relationship differs across categories.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Using the ruler tool to add reference lines</p>
+                </statement>
+                <feedback>
+                  <p>While reference lines can be helpful markers, they don't specifically help examine how relationships differ across categories.</p>
+                </feedback>
+              </choice>
+            </choices>
+          </exercise>
+        </subsection>
+      </section>
+
+      <section xml:id="sec-ethics-misleading">
+        <title>Ethics Spotlight: Avoiding Misleading Visualizations</title>
+        
+        <p>
+          Visualizations can powerfully communicate data insights, but they can also mislead viewers if not created responsibly. Understanding common ways visualizations can mislead helps us create more ethical data presentations.
+        </p>
+        
+        <p>
+          Common misleading visualization practices include:
+        </p>
+        
+        <dl>
+          <li>
+            <title>Truncated Axes</title>
+            <p>
+              Starting bar charts or line charts at values other than zero can exaggerate differences. While non-zero baselines can be appropriate for line charts showing trends, they should be clearly indicated.
+            </p>
+          </li>
+          <li>
+            <title>Manipulated Aspect Ratios</title>
+            <p>
+              Changing the height-to-width ratio of a chart can make trends appear steeper or flatter than they actually are.
+            </p>
+          </li>
+          <li>
+            <title>Cherry-Picking Data</title>
+            <p>
+              Selectively including or excluding data points to support a particular narrative rather than showing the complete picture.
+            </p>
+          </li>
+          <li>
+            <title>Problematic Color Scales</title>
+            <p>
+              Using colors that imply judgment (e.g., red/green) for neutral data, or using color scales that perceptually distort the data.
+            </p>
+          </li>
+          <li>
+            <title>3D Charts for 2D Data</title>
+            <p>
+              Using 3D effects for 2D data can distort proportions and make accurate comparisons difficult.
+            </p>
+          </li>
+          <li>
+            <title>Inappropriate Chart Types</title>
+            <p>
+              Using chart types that are not suited to the data or question, leading to misinterpretation.
+            </p>
+          </li>
+          <li>
+            <title>Missing Context</title>
+            <p>
+              Failing to provide necessary context, such as sample sizes, time periods, or relevant comparisons.
+            </p>
+          </li>
+        </dl>
+        
+        <figure xml:id="fig-misleading-viz">
+          <caption>Misleading Visualization Examples</caption>
+          <image source="misleading-viz.png" width="90%">
+            <description>Examples of misleading visualizations: a bar chart with a truncated y-axis making small differences look large, a pie chart with distorted 3D perspective, and a cherry-picked time series showing only a favorable portion of data.</description>
+          </image>
+        </figure>
+        
+        <p>
+          To create ethical visualizations:
+        </p>
+        
+        <ul>
+          <li>
+            <p>Present data completely and accurately</p>
+          </li>
+          <li>
+            <p>Choose appropriate scales and chart types</p>
+          </li>
+          <li>
+            <p>Provide necessary context and uncertainty information</p>
+          </li>
+          <li>
+            <p>Use color and design elements thoughtfully</p>
+          </li>
+          <li>
+            <p>Consider diverse audience perspectives</p>
+          </li>
+          <li>
+            <p>Be transparent about data sources and processing</p>
+          </li>
+        </ul>
+        
+        <example xml:id="example-ethical-viz-health">
+          <title>Ethical Considerations in Community Health Visualization</title>
+          <statement>
+            <p>
+              When visualizing our Community Health data, ethical considerations might include:
+            </p>
+            <ul>
+              <li>
+                <p>Ensuring bar charts comparing health outcomes across neighborhoods start at zero to avoid exaggerating differences</p>
+              </li>
+              <li>
+                <p>Including confidence intervals or other uncertainty indicators when showing health metrics based on small sample sizes</p>
+              </li>
+              <li>
+                <p>Using culturally sensitive color schemes when mapping data by neighborhood to avoid reinforcing stereotypes</p>
+              </li>
+              <li>
+                <p>Providing context about historical factors that might explain environmental disparities rather than just showing current differences</p>
+              </li>
+              <li>
+                <p>Being careful about implying causation when visualizing correlations between environmental factors and health outcomes</p>
+              </li>
+              <li>
+                <p>Including complete data rather than cherry-picking neighborhoods or time periods that support a particular narrative</p>
+              </li>
+            </ul>
+          </statement>
+        </example>
+        
+        <exercise xml:id="exercise-misleading-viz">
+          <title>Identifying Misleading Visualizations</title>
+          <introduction>
+            <p>For each visualization description, identify the primary way it might mislead viewers.</p>
+          </introduction>
+          <exercise>
+            <statement>
+              <p>A bar chart comparing company profits starts the y-axis at $50 million instead of zero, making a $5 million difference between competitors look very large.</p>
+            </statement>
+            <choices>
+              <choice correct="yes">
+                <statement>
+                  <p>Truncated axis</p>
+                </statement>
+                <feedback>
+                  <p>Correct! Starting the y-axis above zero on a bar chart violates the principle that the length of bars should be proportional to the values they represent. This exaggerates the differences between values.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Cherry-picking data</p>
+                </statement>
+                <feedback>
+                  <p>There's no indication that data points were selectively included or excluded; rather, the issue is with how the included data is presented.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>3D effects</p>
+                </statement>
+                <feedback>
+                  <p>The description doesn't mention any 3D effects being used in the visualization.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Inappropriate chart type</p>
+                </statement>
+                <feedback>
+                  <p>A bar chart is an appropriate type for comparing values across categories; the issue is with the scaling, not the chart type itself.</p>
+                </feedback>
+              </choice>
+            </choices>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>A line chart shows a company's stock performance over only the three months when it performed best, without indicating that this is a selected portion of a longer time series.</p>
+            </statement>
+            <choices>
+              <choice>
+                <statement>
+                  <p>Problematic color scale</p>
+                </statement>
+                <feedback>
+                  <p>The description doesn't mention any issues with color usage in the visualization.</p>
+                </feedback>
+              </choice>
+              <choice correct="yes">
+                <statement>
+                  <p>Cherry-picking data</p>
+                </statement>
+                <feedback>
+                  <p>Correct! By selectively showing only the three best-performing months without proper context, the visualization presents an incomplete and potentially misleading picture of the company's overall performance.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Manipulated aspect ratio</p>
+                </statement>
+                <feedback>
+                  <p>While aspect ratio manipulation could make the trend look steeper, the primary issue described is the selective inclusion of only favorable data points.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Missing uncertainty information</p>
+                </statement>
+                <feedback>
+                  <p>While context is missing, the primary issue is the selective inclusion of only favorable data points rather than the omission of uncertainty information.</p>
+                </feedback>
+              </choice>
+            </choices>
+          </exercise>
+        </exercise>
+        
+        <activity xml:id="activity-ethical-viz">
+          <title>Creating Ethical Alternatives</title>
+          <introduction>
+            <p>
+              In this activity, you'll practice identifying and correcting misleading visualizations.
+            </p>
+          </introduction>
+          <task>
+            <statement>
+              <p>
+                Working with a partner, create a deliberately misleading visualization using your dataset (or the Community Health dataset) in CODAP. Use at least one of the misleading techniques discussed.
+              </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                Exchange your misleading visualization with another pair of students. For the visualization you receive:
+              </p>
+              <ul>
+                <li>
+                  <p>Identify how the visualization might mislead viewers</p>
+                </li>
+                <li>
+                  <p>Create an ethical alternative that presents the same data more accurately</p>
+                </li>
+                <li>
+                  <p>Explain why your alternative is more ethical and effective</p>
+                </li>
+              </ul>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                Discuss as a class: What responsibility do data scientists have to create ethical visualizations? How can we balance creating impactful visualizations with ensuring they're not misleading?
+              </p>
+            </statement>
+          </task>
+        </activity>
+      </section>
+
+      <section xml:id="sec-advanced-visualization">
+        <title>Advanced Visualization and Analysis</title>
+        
+        <subsection xml:id="subsec-multi-variable">
+          <title>Visualizing Multi-Variable Relationships</title>
+          
+          <p>
+            Real-world data often involves complex relationships between multiple variables. Advanced visualization techniques help us explore and communicate these multi-dimensional relationships.
+          </p>
+          
+          <p>
+            Techniques for visualizing multi-variable relationships include:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Adding Dimensions with Visual Encodings</title>
+              <p>
+                <ul>
+                  <li><p><term>Color</term>: Encoding categorical or numerical variables with color</p></li>
+                  <li><p><term>Size</term>: Encoding numerical variables with point or line size</p></li>
+                  <li><p><term>Shape</term>: Encoding categorical variables with different point shapes</p></li>
+                  <li><p><term>Transparency</term>: Using opacity to handle overplotting or indicate certainty</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Small Multiples</title>
+              <p>
+                Creating a series of similar charts for different categories or time periods, allowing for comparison across a third variable.
+              </p>
+            </li>
+            <li>
+              <title>Faceting</title>
+              <p>
+                Splitting a single visualization into multiple panels based on categories, creating a grid of related charts.
+              </p>
+            </li>
+            <li>
+              <title>Layering</title>
+              <p>
+                Overlaying multiple series or variables on the same visualization, using different colors or styles to distinguish them.
+              </p>
+            </li>
+            <li>
+              <title>Interactive Techniques</title>
+              <p>
+                <ul>
+                  <li><p><term>Brushing and linking</term>: Selections in one visualization highlight corresponding points in others</p></li>
+                  <li><p><term>Filtering</term>: Dynamically including or excluding data based on selection</p></li>
+                  <li><p><term>Details on demand</term>: Showing additional information when hovering over or selecting elements</p></li>
+                </ul>
+              </p>
+            </li>
+          </dl>
+          
+          <figure xml:id="fig-multi-variable">
+            <caption>Multi-Variable Visualization Techniques</caption>
+            <image source="multi-variable-viz.png" width="90%">
+              <description>Examples of multi-variable visualizations: a scatter plot with color and size encoding, small multiples showing the same relationship across different categories, and a visualization with interactive elements.</description>
+            </image>
+          </figure>
+          
+          <example xml:id="example-multi-var-health">
+            <title>Multi-Variable Community Health Visualizations</title>
+            <statement>
+              <p>
+                For our Community Health dataset, advanced multi-variable visualizations might include:
+              </p>
+              <ul>
+                <li>
+                  <p>A scatter plot showing the relationship between green space access and asthma rates, with points colored by income level and sized by population density</p>
+                </li>
+                <li>
+                  <p>Small multiples displaying the air quality-health relationship separately for each region of the city</p>
+                </li>
+                <li>
+                  <p>A layered line chart showing trends in multiple health metrics over time, highlighting their relative changes</p>
+                </li>
+                <li>
+                  <p>An interactive dashboard with linked visualizations where selecting high-pollution areas highlights corresponding neighborhoods in health outcome charts</p>
+                </li>
+                <li>
+                  <p>A composite environmental quality score visualized as color on a map, with the ability to filter by different health outcome ranges</p>
+                </li>
+              </ul>
+            </statement>
+          </example>
+          
+          <p>
+            When creating multi-variable visualizations, be careful to:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Avoid overwhelming viewers with too much information at once</p>
+            </li>
+            <li>
+              <p>Ensure that each additional variable adds meaningful insight</p>
+            </li>
+            <li>
+              <p>Use visual encodings that are easy to distinguish and interpret</p>
+            </li>
+            <li>
+              <p>Provide clear legends and explanations for all encodings</p>
+            </li>
+            <li>
+              <p>Consider accessibility (e.g., colorblind-friendly palettes)</p>
+            </li>
+          </ul>
+          
+          <exercise xml:id="mc-multi-var-techniques">
+            <title>Multi-Variable Visualization Techniques</title>
+            <statement>
+              <p>Which technique would be MOST appropriate for examining how the relationship between income and health outcomes varies across different regions of a city?</p>
+            </statement>
+            <choices>
+              <choice>
+                <statement>
+                  <p>A pie chart showing the proportion of total health issues by region</p>
+                </statement>
+                <feedback>
+                  <p>A pie chart would only show the distribution of a single variable across regions, not the relationship between income and health outcomes.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>A 3D scatter plot with x=income, y=health, z=region</p>
+                </statement>
+                <feedback>
+                  <p>Since region is a categorical variable, a 3D scatter plot with region as the z-axis would not be appropriate and would likely be difficult to interpret.</p>
+                </feedback>
+              </choice>
+              <choice correct="yes">
+                <statement>
+                  <p>Small multiples showing income-health scatter plots separately for each region</p>
+                </statement>
+                <feedback>
+                  <p>Correct! Small multiples would create a separate scatter plot for each region, allowing direct comparison of how the income-health relationship varies across regions while maintaining the ability to see the full relationship within each region.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>A stacked bar chart of health outcomes for each income bracket</p>
+                </statement>
+                <feedback>
+                  <p>A stacked bar chart would show composition but would make it difficult to clearly see the relationship between income and health outcomes across different regions.</p>
+                </feedback>
+              </choice>
+            </choices>
+          </exercise>
+          
+          <activity xml:id="activity-multi-var">
+            <title>Creating Multi-Variable Visualizations</title>
+            <introduction>
+              <p>
+                In this activity, you'll create advanced visualizations that incorporate multiple variables from your dataset.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Create a scatter plot in CODAP that shows the relationship between two numerical variables in your dataset. Then enhance it by:
+                </p>
+                <ul>
+                  <li>
+                    <p>Adding color to represent a categorical variable</p>
+                  </li>
+                  <li>
+                    <p>Using point size to represent a third numerical variable</p>
+                  </li>
+                  <li>
+                    <p>Adding reference lines or other annotations to highlight patterns</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Create small multiples for your data by:
+                </p>
+                <ul>
+                  <li>
+                    <p>Identifying a key categorical variable in your dataset</p>
+                  </li>
+                  <li>
+                    <p>Creating separate but identical visualizations for each category</p>
+                  </li>
+                  <li>
+                    <p>Arranging them in a grid for easy comparison</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Explore the interactive capabilities of CODAP by:
+                </p>
+                <ul>
+                  <li>
+                    <p>Creating multiple linked visualizations of your data</p>
+                  </li>
+                  <li>
+                    <p>Testing how selections in one visualization highlight corresponding points in others</p>
+                  </li>
+                  <li>
+                    <p>Using this interactivity to identify patterns or relationships that weren't apparent in single visualizations</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+          </activity>
+        </subsection>
+        
+        <subsection xml:id="subsec-dashboards">
+          <title>Building Effective Dashboards</title>
+          
+          <p>
+            Dashboards combine multiple visualizations into a cohesive whole, allowing viewers to see different aspects of the data and gain a more comprehensive understanding. Well-designed dashboards can powerfully communicate complex findings.
+          </p>
+          
+          <definition xml:id="def-dashboard">
+            <statement>
+              <p>
+                A <term>dashboard</term> is a collection of multiple visual displays organized on a single screen to monitor conditions, track performance, or communicate insights. Dashboards typically include charts, graphs, maps, and other visual elements that together tell a coherent data story.
+              </p>
+            </statement>
+          </definition>
+          
+          <p>
+            Principles for effective dashboard design:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Purpose-Driven Design</title>
+              <p>
+                Design around specific questions or decisions the dashboard should inform, not just to display available data.
+              </p>
+            </li>
+            <li>
+              <title>Logical Organization</title>
+              <p>
+                Arrange visualizations in a meaningful sequence or grouping that guides the viewer through the data story.
+              </p>
+            </li>
+            <li>
+              <title>Visual Hierarchy</title>
+              <p>
+                Make the most important information most prominent, with secondary information less visually dominant.
+              </p>
+            </li>
+            <li>
+              <title>Consistency</title>
+              <p>
+                Use consistent colors, scales, and design elements across visualizations to create unity.
+              </p>
+            </li>
+            <li>
+              <title>Complementary Views</title>
+              <p>
+                Include visualizations that show different aspects of the data or answer different but related questions.
+              </p>
+            </li>
+            <li>
+              <title>Appropriate Context</title>
+              <p>
+                Provide necessary reference points, comparison values, or explanatory text to help interpret the visualizations.
+              </p>
+            </li>
+            <li>
+              <title>Interactivity</title>
+              <p>
+                When possible, include interactive elements that allow viewers to explore details, filter data, or change perspective.
+              </p>
+            </li>
+          </dl>
+          
+          <figure xml:id="fig-dashboard-example">
+            <caption>Example Dashboard Layout</caption>
+            <image source="dashboard-example.png" width="90%">
+              <description>A sample dashboard layout showing multiple related visualizations arranged in a logical flow with a clear visual hierarchy and consistent design elements.</description>
+            </image>
+          </figure>
+          
+          <example xml:id="example-dashboard-health">
+            <title>Community Health Dashboard</title>
+            <statement>
+              <p>
+                For our Community Health project, an effective dashboard might include:
+              </p>
+              <ul>
+                <li>
+                  <p><term>Central visualization</term>: A map showing neighborhoods colored by an environmental health risk index</p>
+                </li>
+                <li>
+                  <p><term>Supporting charts</term>:</p>
+                  <ul>
+                    <li><p>A scatter plot showing the relationship between air quality and asthma rates</p></li>
+                    <li><p>Bar charts comparing key health metrics across regions</p></li>
+                    <li><p>A small multiples display showing health trends over time</p></li>
+                  </ul>
+                </li>
+                <li>
+                  <p><term>Interactive elements</term>:</p>
+                  <ul>
+                    <li><p>The ability to select neighborhoods on the map and see corresponding data points highlighted in other charts</p></li>
+                    <li><p>Filters to focus on specific regions or income brackets</p></li>
+                    <li><p>Options to toggle between different health metrics</p></li>
+                  </ul>
+                </li>
+                <li>
+                  <p><term>Context</term>: Brief text explaining key findings, methodology, and important caveats</p>
+                </li>
+              </ul>
+            </statement>
+          </example>
+          
+          <p>
+            CODAP allows you to create simple dashboards by:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Creating multiple visualizations using different tools (graphs, maps, tables)</p>
+            </li>
+            <li>
+              <p>Arranging these visualizations on the workspace by dragging and resizing</p>
+            </li>
+            <li>
+              <p>Creating links between visualizations so selections in one affect others</p>
+            </li>
+            <li>
+              <p>Adding text objects to provide context, explanations, or titles</p>
+            </li>
+            <li>
+              <p>Saving the entire configuration as a single CODAP document</p>
+            </li>
+          </ul>
+          
+          <exercise xml:id="matching-dashboard-elements">
+            <title>Dashboard Elements and Purposes</title>
+            <statement>
+              <p>Match each dashboard element with its primary purpose.</p>
+            </statement>
+            <matches>
+              <match>
+                <premise>Overview visualization (e.g., map or summary chart)</premise>
+                <response>Providing a big-picture view and orientation to the data</response>
+              </match>
+              <match>
+                <premise>Linked selection across visualizations</premise>
+                <response>Helping viewers identify the same entities across different views of the data</response>
+              </match>
+              <match>
+                <premise>Consistent color scheme across charts</premise>
+                <response>Creating visual unity and reducing cognitive load for interpretation</response>
+              </match>
+              <match>
+                <premise>Text annotations and highlights</premise>
+                <response>Directing attention to key insights and providing necessary context</response>
+              </match>
+              <match>
+                <premise>Interactive filters</premise>
+                <response>Allowing viewers to focus on specific subsets of data relevant to their questions</response>
+              </match>
+            </matches>
+          </exercise>
+          
+          <activity xml:id="activity-dashboard">
+            <title>Creating a Dashboard in CODAP</title>
+            <introduction>
+              <p>
+                In this activity, you'll create a comprehensive dashboard for your project dataset.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Plan your dashboard by:
+                </p>
+                <ul>
+                  <li>
+                    <p>Identifying 3-5 key questions your dashboard should answer</p>
+                  </li>
+                  <li>
+                    <p>Sketching a layout with placeholder visualizations</p>
+                  </li>
+                  <li>
+                    <p>Deciding on a logical flow or organization for your visualizations</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Create the individual visualizations needed for your dashboard, including:
+                </p>
+                <ul>
+                  <li>
+                    <p>An overview visualization that provides a big-picture view of your data</p>
+                  </li>
+                  <li>
+                    <p>Supporting visualizations that show different aspects or details</p>
+                  </li>
+                  <li>
+                    <p>Any necessary reference information or context</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Arrange your visualizations in CODAP to create your dashboard:
+                </p>
+                <ul>
+                  <li>
+                    <p>Position elements according to your planned layout</p>
+                  </li>
+                  <li>
+                    <p>Resize visualizations as needed for visual hierarchy</p>
+                  </li>
+                  <li>
+                    <p>Add text objects for titles, explanations, and context</p>
+                  </li>
+                  <li>
+                    <p>Ensure that visualizations are linked so selections in one affect others</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Test your dashboard with a classmate. Ask them to:
+                </p>
+                <ul>
+                  <li>
+                    <p>Navigate through your dashboard without instruction</p>
+                  </li>
+                  <li>
+                    <p>Identify the main insights or findings</p>
+                  </li>
+                  <li>
+                    <p>Provide feedback on clarity, organization, and effectiveness</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+          </activity>
+        </subsection>
+        
+        <subsection xml:id="subsec-statistical-relationships">
+          <title>Statistical Thinking: Correlation and Relationships</title>
+          
+          <p>
+            As we create more complex visualizations, it's important to develop statistical thinking about the relationships we observe. Understanding correlation and other statistical relationships helps us interpret our visualizations more accurately.
+          </p>
+          
+          <definition xml:id="def-correlation">
+            <statement>
+              <p>
+                <term>Correlation</term> is a statistical measure that expresses the extent to which two variables are linearly related. The correlation coefficient (r) ranges from -1 to +1, with values closer to +/-1 indicating stronger relationships and 0 indicating no linear relationship.
+              </p>
+            </statement>
+          </definition>
+          
+          <p>
+            Key concepts in understanding relationships:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Correlation vs. Causation</title>
+              <p>
+                Correlation indicates that two variables change together but does not necessarily imply that one causes the other. Causal relationships require additional evidence beyond correlation.
+              </p>
+            </li>
+            <li>
+              <title>Types of Relationships</title>
+              <p>
+                <ul>
+                  <li><p><term>Linear</term>: Variables change at a constant rate relative to each other</p></li>
+                  <li><p><term>Non-linear</term>: The relationship follows a curve or more complex pattern</p></li>
+                  <li><p><term>Monotonic</term>: Variables change in the same direction but not necessarily at a constant rate</p></li>
+                  <li><p><term>No relationship</term>: Changes in one variable are not associated with changes in the other</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Strength of Relationships</title>
+              <p>
+                <ul>
+                  <li><p><term>Strong</term>: Points closely follow a pattern with little scatter</p></li>
+                  <li><p><term>Moderate</term>: Points generally follow a pattern but with noticeable scatter</p></li>
+                  <li><p><term>Weak</term>: Points loosely follow a pattern with substantial scatter</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Direction of Relationships</title>
+              <p>
+                <ul>
+                  <li><p><term>Positive</term>: Variables increase or decrease together</p></li>
+                  <li><p><term>Negative</term>: As one variable increases, the other decreases</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Confounding Variables</title>
+              <p>
+                Variables not included in the analysis that affect both variables being studied, potentially creating or masking relationships.
+              </p>
+            </li>
+            <li>
+              <title>Simpson's Paradox</title>
+              <p>
+                A phenomenon where a trend appears in several different groups of data but disappears or reverses when these groups are combined.
+              </p>
+            </li>
+          </dl>
+          
+          <figure xml:id="fig-correlation-types">
+            <caption>Types of Statistical Relationships</caption>
+            <image source="correlation-types.png" width="90%">
+              <description>A grid of scatter plots showing different types of relationships: strong positive linear, weak positive linear, strong negative linear, no relationship, and various non-linear relationships.</description>
+            </image>
+          </figure>
+          
+          <example xml:id="example-correlation-health">
+            <title>Relationships in Community Health Data</title>
+            <statement>
+              <p>
+                In our Community Health dataset, we might observe various relationships:
+              </p>
+              <ul>
+                <li>
+                  <p>A negative correlation between green space access and asthma rates, suggesting that neighborhoods with more green space tend to have lower asthma prevalence</p>
+                </li>
+                <li>
+                  <p>A non-linear relationship between air pollution and distance from major highways, with pollution decreasing rapidly at first but then leveling off</p>
+                </li>
+                <li>
+                  <p>No apparent relationship between neighborhood age and obesity rates, suggesting these variables aren't directly connected</p>
+                </li>
+                <li>
+                  <p>A relationship between income and health outcomes that appears strong overall but weakens when examining specific regions separately (a potential Simpson's Paradox)</p>
+                </li>
+                <li>
+                  <p>A correlation between air quality and asthma that might be confounded by income, as lower-income areas often have both worse air quality and less access to healthcare</p>
+                </li>
+              </ul>
+            </statement>
+          </example>
+          
+          <p>
+            When interpreting relationships in visualizations:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Look for patterns but be cautious about inferring causation</p>
+            </li>
+            <li>
+              <p>Consider potential confounding variables</p>
+            </li>
+            <li>
+              <p>Examine relationships within subgroups, not just overall</p>
+            </li>
+            <li>
+              <p>Be aware that correlation measures only capture linear relationships</p>
+            </li>
+            <li>
+              <p>Consider whether outliers are affecting the apparent relationship</p>
+            </li>
+            <li>
+              <p>Look for contextual factors that might explain observed relationships</p>
+            </li>
+          </ul>
+          
+          <exercise xml:id="mc-correlation-interpretation">
+            <title>Interpreting Correlations</title>
+            <statement>
+              <p>A data scientist finds a strong positive correlation (r = 0.85) between ice cream sales and drowning incidents in a coastal city. Which of the following is the MOST appropriate interpretation?</p>
+            </statement>
+            <choices>
+              <choice>
+                <statement>
+                  <p>Eating ice cream causes people to drown.</p>
+                </statement>
+                <feedback>
+                  <p>This incorrectly assumes causation from correlation. There's no logical mechanism by which ice cream consumption would directly cause drowning.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>The correlation must be coincidental since these variables are unrelated.</p>
+                </statement>
+                <feedback>
+                  <p>This dismisses the strong correlation without considering possible explanations. A high correlation coefficient (0.85) suggests a relationship, even if indirect.</p>
+                </feedback>
+              </choice>
+              <choice correct="yes">
+                <statement>
+                  <p>A third factor, such as hot weather or summer season, likely influences both variables.</p>
+                </statement>
+                <feedback>
+                  <p>Correct! This recognizes the correlation while identifying a plausible confounding variable. Hot weather/summer likely increases both ice cream consumption and swimming activity (which increases drowning risk), creating an indirect relationship between the variables.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Drowning incidents cause increased ice cream sales.</p>
+                </statement>
+                <feedback>
+                  <p>This incorrectly assumes causation in the reverse direction, which is even less plausible than ice cream causing drowning.</p>
+                </feedback>
+              </choice>
+            </choices>
+          </exercise>
+          
+          <activity xml:id="activity-relationships">
+            <title>Exploring Relationships in Your Dataset</title>
+            <introduction>
+              <p>
+                In this activity, you'll explore and analyze relationships between variables in your dataset.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Create scatter plots for at least three different pairs of numerical variables in your dataset. For each pair:
+                </p>
+                <ul>
+                  <li>
+                    <p>Describe the pattern you observe (linear, non-linear, no relationship)</p>
+                  </li>
+                  <li>
+                    <p>Estimate the strength (strong, moderate, weak) and direction (positive, negative) of any relationship</p>
+                  </li>
+                  <li>
+                    <p>Calculate the correlation coefficient using CODAP's calculator</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Select the strongest relationship you found and explore it further by:
+                </p>
+                <ul>
+                  <li>
+                    <p>Creating separate scatter plots for different subgroups (using a categorical variable)</p>
+                  </li>
+                  <li>
+                    <p>Comparing the relationship across these subgroups</p>
+                  </li>
+                  <li>
+                    <p>Looking for evidence of Simpson's Paradox or other subgroup differences</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  For the relationship you've been exploring:
+                </p>
+                <ul>
+                  <li>
+                    <p>Identify potential confounding variables that might influence both variables</p>
+                  </li>
+                  <li>
+                    <p>Discuss whether the relationship might indicate causation or just correlation</p>
+                  </li>
+                  <li>
+                    <p>Consider how you would communicate this relationship, including appropriate caveats, in your final presentation</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+          </activity>
+        </subsection>
+      </section>
+
+      <section xml:id="sec-data-storytelling">
+        <title>Project Synthesis and Presentation</title>
+        
+        <subsection xml:id="subsec-data-storytelling">
+          <title>Data Storytelling Principles</title>
+          
+          <p>
+            Data storytelling combines data analysis, visualization, and narrative to effectively communicate insights and inspire action. A good data story makes complex findings accessible, engaging, and memorable.
+          </p>
+          
+          <definition xml:id="def-data-storytelling">
+            <statement>
+              <p>
+                <term>Data storytelling</term> is the practice of building a narrative around data to help an audience understand the context, significance, and implications of the data. It combines analytical, visual, and narrative elements to transform data into insights that drive understanding and action.
+              </p>
+            </statement>
+          </definition>
+          
+          <p>
+            Key elements of effective data storytelling:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Narrative Structure</title>
+              <p>
+                A clear beginning, middle, and end that guides the audience through the data journey.
+                <ul>
+                  <li><p><term>Setup</term>: Introduce the context, question, or problem</p></li>
+                  <li><p><term>Conflict/Tension</term>: Present the data, challenges, or unexpected findings</p></li>
+                  <li><p><term>Resolution</term>: Share insights, implications, and potential actions</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Audience Focus</title>
+              <p>
+                Tailoring the presentation to the specific needs, interests, and technical literacy of your audience.
+              </p>
+            </li>
+            <li>
+              <title>Clear Message</title>
+              <p>
+                A central insight or "so what" that the audience should remember.
+              </p>
+            </li>
+            <li>
+              <title>Compelling Visuals</title>
+              <p>
+                Well-designed visualizations that support and enhance the narrative.
+              </p>
+            </li>
+            <li>
+              <title>Context and Relevance</title>
+              <p>
+                Information that helps the audience understand why the data matters and how it connects to broader issues.
+              </p>
+            </li>
+            <li>
+              <title>Human Element</title>
+              <p>
+                Connecting data to human experiences, decisions, or impacts to increase engagement.
+              </p>
+            </li>
+          </dl>
+          
+          <figure xml:id="fig-story-structure">
+            <caption>Data Story Structure</caption>
+            <image source="data-story-structure.png" width="80%">
+              <description>A diagram showing the flow of a data story from context/question through data presentation to insights and actions, with annotations for key elements at each stage.</description>
+            </image>
+          </figure>
+          
+          <p>
+            Common data storytelling approaches:
+          </p>
+          
+          <ul>
+            <li>
+              <p><term>Change over time</term>: Showing evolution, trends, or transformations</p>
+            </li>
+            <li>
+              <p><term>Comparison</term>: Highlighting similarities and differences between groups</p>
+            </li>
+            <li>
+              <p><term>Connection</term>: Revealing relationships or networks</p>
+            </li>
+            <li>
+              <p><term>Outlier</term>: Focusing on exceptional cases or anomalies</p>
+            </li>
+            <li>
+              <p><term>Zoom in/out</term>: Moving between big picture and specific details</p>
+            </li>
+            <li>
+              <p><term>Personal relevance</term>: Connecting broad patterns to individual experiences</p>
+            </li>
+          </ul>
+          
+          <example xml:id="example-storytelling-health">
+            <title>Community Health Data Story</title>
+            <statement>
+              <p>
+                A data story for our Community Health project might follow this structure:
+              </p>
+              <ul>
+                <li>
+                  <p><term>Setup</term>:</p>
+                  <ul>
+                    <li><p>Introduce the context of environmental health disparities in the city</p></li>
+                    <li><p>Establish the key questions about how environmental factors relate to health outcomes</p></li>
+                    <li><p>Provide background on why this matters for public health and equity</p></li>
+                  </ul>
+                </li>
+                <li>
+                  <p><term>Data Presentation</term>:</p>
+                  <ul>
+                    <li><p>Share a map visualizing health indicators across neighborhoods</p></li>
+                    <li><p>Show key relationships between environmental factors and health outcomes</p></li>
+                    <li><p>Highlight unexpected patterns or particularly affected areas</p></li>
+                  </ul>
+                </li>
+                <li>
+                  <p><term>Insights</term>:</p>
+                  <ul>
+                    <li><p>Present the three most significant findings about environmental health relationships</p></li>
+                    <li><p>Discuss how socioeconomic factors interact with these relationships</p></li>
+                    <li><p>Address limitations and areas of uncertainty in the analysis</p></li>
+                  </ul>
+                </li>
+                <li>
+                  <p><term>Resolution/Call to Action</term>:</p>
+                  <ul>
+                    <li><p>Suggest potential interventions based on the findings</p></li>
+                    <li><p>Identify neighborhoods most in need of environmental health improvements</p></li>
+                    <li><p>Propose next steps for research or policy consideration</p></li>
+                  </ul>
+                </li>
+              </ul>
+            </statement>
+          </example>
+          
+          <exercise xml:id="mc-storytelling">
+            <title>Data Storytelling Approaches</title>
+            <statement>
+              <p>Which data storytelling approach would be MOST effective for communicating how unequal access to healthcare affects different demographic groups?</p>
+            </statement>
+            <choices>
+              <choice>
+                <statement>
+                  <p>A technical analysis focusing on statistical significance and p-values</p>
+                </statement>
+                <feedback>
+                  <p>A highly technical approach focusing on statistical details would likely not be as effective for communicating inequities to a broad audience or driving understanding of human impact.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>A comprehensive dashboard with all available metrics without narrative structure</p>
+                </statement>
+                <feedback>
+                  <p>While comprehensive data is valuable, presenting all metrics without a narrative structure or focus on human impact would make it difficult for the audience to identify key inequities or their implications.</p>
+                </feedback>
+              </choice>
+              <choice correct="yes">
+                <statement>
+                  <p>A narrative that combines broad patterns of inequality with specific examples of how these affect individuals</p>
+                </statement>
+                <feedback>
+                  <p>Correct! This approach effectively combines data-driven patterns with human impact, making the inequities both statistically clear and emotionally resonant. Connecting aggregate data to individual experiences helps the audience understand both the scope and the human consequences of healthcare access disparities.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>A presentation focused primarily on data collection methodology and limitations</p>
+                </statement>
+                <feedback>
+                  <p>While methodology and limitations are important to address, making them the primary focus would detract from communicating the actual inequities and their impact.</p>
+                </feedback>
+              </choice>
+            </choices>
+          </exercise>
+          
+          <activity xml:id="activity-story-planning">
+            <title>Planning Your Data Story</title>
+            <introduction>
+              <p>
+                In this activity, you'll develop a structured data story for your project.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Define your data story by answering these questions:
+                </p>
+                <ul>
+                  <li>
+                    <p>Who is your primary audience? (e.g., classmates, general public, specific stakeholders)</p>
+                  </li>
+                  <li>
+                    <p>What is the main message or insight you want to communicate?</p>
+                  </li>
+                  <li>
+                    <p>Why should your audience care about this topic?</p>
+                  </li>
+                  <li>
+                    <p>What action or response do you hope to inspire?</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Create an outline for your data story with these components:
+                </p>
+                <ul>
+                  <li>
+                    <p><term>Introduction</term>: Context, motivation, and key questions</p>
+                  </li>
+                  <li>
+                    <p><term>Main sections</term>: 2-4 key findings or insights, each supported by visualizations</p>
+                  </li>
+                  <li>
+                    <p><term>Conclusion</term>: Summary of main message, implications, and potential next steps</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  For each section of your story, identify:
+                </p>
+                <ul>
+                  <li>
+                    <p>The specific data or visualization that will support this part of the narrative</p>
+                  </li>
+                  <li>
+                    <p>How you'll transition from one point to the next to create a coherent flow</p>
+                  </li>
+                  <li>
+                    <p>Any potential questions or objections from your audience that you should address</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+          </activity>
+        </subsection>
+        
+        <subsection xml:id="subsec-presentation-techniques">
+          <title>Effective Presentation Techniques</title>
+          
+          <p>
+            Once you've developed your data story, you need to present it effectively to your audience. Good presentation techniques help ensure your insights are understood, remembered, and potentially acted upon.
+          </p>
+          
+          <p>
+            Key aspects of effective data presentations:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Clear Structure</title>
+              <p>
+                A logical flow that guides the audience through your analysis and findings.
+                <ul>
+                  <li><p>Begin with a clear introduction of the topic and its importance</p></li>
+                  <li><p>Present main findings in a logical sequence</p></li>
+                  <li><p>End with conclusions, implications, and next steps</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Visual Support</title>
+              <p>
+                Well-designed slides or materials that enhance understanding.
+                <ul>
+                  <li><p>Use consistent, clean design with minimal text</p></li>
+                  <li><p>Ensure visualizations are large enough to be clearly visible</p></li>
+                  <li><p>Highlight key points visually (through color, size, or position)</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Engagement Techniques</title>
+              <p>
+                Methods to maintain audience interest and involvement.
+                <ul>
+                  <li><p>Start with a compelling hook or question</p></li>
+                  <li><p>Use storytelling to create narrative flow</p></li>
+                  <li><p>Include examples or scenarios that make data relevant</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Clarity and Accessibility</title>
+              <p>
+                Making your content understandable for your specific audience.
+                <ul>
+                  <li><p>Define technical terms if necessary</p></li>
+                  <li><p>Explain visualization types if they might be unfamiliar</p></li>
+                  <li><p>Focus on insights rather than technical details (unless relevant for your audience)</p></li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <title>Verbal Delivery</title>
+              <p>
+                How you speak and present yourself.
+                <ul>
+                  <li><p>Practice to ensure comfortable delivery and timing</p></li>
+                  <li><p>Speak clearly and at an appropriate pace</p></li>
+                  <li><p>Make eye contact with the audience</p></li>
+                </ul>
+              </p>
+            </li>
+          </dl>
+          
+          <p>
+            Tips for presenting data findings:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Start with the "so what" - the main insight or takeaway</p>
+            </li>
+            <li>
+              <p>Show the visualization, then explain what it shows (don't make the audience read and listen simultaneously)</p>
+            </li>
+            <li>
+              <p>Focus on the most important patterns or findings rather than describing every detail</p>
+            </li>
+            <li>
+              <p>Address limitations honestly but don't undermine your key findings</p>
+            </li>
+            <li>
+              <p>Be prepared for questions about methodology or alternative interpretations</p>
+            </li>
+            <li>
+              <p>End with clear implications or recommendations if appropriate</p>
+            </li>
+          </ul>
+          
+          <figure xml:id="fig-presentation-example">
+            <caption>Example Presentation Slide Layout</caption>
+            <image source="presentation-slide.png" width="80%">
+              <description>Example slide layout showing a clear title, concise text for context, a large visualization as the focal point, and a key insight or takeaway highlighted at the bottom.</description>
+            </image>
+          </figure>
+          
+          <exercise xml:id="parsons-presentation" adaptive="yes">
+            <title>Organizing a Data Presentation</title>
+            <statement>
+              <p>Arrange the following elements in a logical order for a data science presentation.</p>
+            </statement>
+            <blocks>
+              <block order="1">
+                <p>Introduction: Hook the audience with a compelling question or problem statement related to your data.</p>
+              </block>
+              <block order="2">
+                <p>Context: Briefly explain the dataset, its sources, and why this analysis matters.</p>
+              </block>
+              <block order="3">
+                <choice>
+                  <p>Technical details: Spend most of your time explaining data cleaning procedures and statistical methods.</p>
+                </choice>
+                <choice correct="yes">
+                  <p>Key findings: Present your most important insights, supported by clear visualizations.</p>
+                </choice>
+                <choice>
+                  <p>Literature review: Extensively discuss how your work relates to previous research.</p>
+                </choice>
+              </block>
+              <block order="4">
+                <p>Implications: Discuss what your findings mean for understanding the issue or making decisions.</p>
+              </block>
+              <block order="5">
+                <p>Limitations: Acknowledge constraints of your data or analysis to establish credibility.</p>
+              </block>
+              <block order="6">
+                <p>Conclusion: Summarize key takeaways and suggest potential next steps or actions.</p>
+              </block>
+              <block order="7" correct="no">
+                <p>Detailed methodology appendix: Present all technical procedures in exhaustive detail.</p>
+              </block>
+            </blocks>
+            <hint>
+              <p>Think about the logical flow of information that would help an audience understand and engage with your findings.</p>
+            </hint>
+          </exercise>
+          
+          <activity xml:id="activity-presentation-prep">
+            <title>Preparing Your Presentation</title>
+            <introduction>
+              <p>
+                In this activity, you'll prepare for your final project presentation.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Create an outline for your presentation, including:
+                </p>
+                <ul>
+                  <li>
+                    <p>Introduction: Hook, context, and main question(s)</p>
+                  </li>
+                  <li>
+                    <p>Methods: Brief overview of your data sources and approach</p>
+                  </li>
+                  <li>
+                    <p>Findings: 2-4 key insights from your analysis</p>
+                  </li>
+                  <li>
+                    <p>Implications: What these findings mean and why they matter</p>
+                  </li>
+                  <li>
+                    <p>Conclusion: Summary and potential next steps</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Develop presentation materials:
+                </p>
+                <ul>
+                  <li>
+                    <p>Decide on presentation format (slides, live demo of CODAP dashboard, etc.)</p>
+                  </li>
+                  <li>
+                    <p>Select key visualizations that best communicate your findings</p>
+                  </li>
+                  <li>
+                    <p>Create any needed additional materials (handouts, reference sheets, etc.)</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Practice your presentation:
+                </p>
+                <ul>
+                  <li>
+                    <p>Time yourself to ensure you stay within the allocated time</p>
+                  </li>
+                  <li>
+                    <p>Practice explaining your visualizations clearly</p>
+                  </li>
+                  <li>
+                    <p>Prepare for potential questions about your data or analysis</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Peer review: Exchange presentation materials with a classmate and provide feedback on:
+                </p>
+                <ul>
+                  <li>
+                    <p>Clarity of main message</p>
+                  </li>
+                  <li>
+                    <p>Effectiveness of visualizations</p>
+                  </li>
+                  <li>
+                    <p>Flow and structure of the presentation</p>
+                  </li>
+                  <li>
+                    <p>Any areas that might be confusing or need further explanation</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+          </activity>
+        </subsection>
+        
+        <subsection xml:id="subsec-effective-communication">
+          <title>Communicating Data Ethically and Effectively</title>
+          
+          <p>
+            The way we communicate data findings carries responsibility. Ethical and effective communication ensures that our analysis leads to understanding rather than misinterpretation.
+          </p>
+          
+          <p>
+            Principles for ethical data communication:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Accuracy and Honesty</title>
+              <p>
+                Present findings accurately without distortion, exaggeration, or omission of important context.
+              </p>
+            </li>
+            <li>
+              <title>Transparency</title>
+              <p>
+                Be open about data sources, methods, limitations, and uncertainties.
+              </p>
+            </li>
+            <li>
+              <title>Respect for Audience</title>
+              <p>
+                Avoid manipulation, oversimplification, or complexification that disrespects audience capabilities.
+              </p>
+            </li>
+            <li>
+              <title>Cultural Sensitivity</title>
+              <p>
+                Consider how findings might be interpreted by different groups and avoid reinforcing harmful stereotypes.
+              </p>
+            </li>
+            <li>
+              <title>Privacy and Confidentiality</title>
+              <p>
+                Protect individuals' privacy when communicating findings, especially with sensitive data.
+              </p>
+            </li>
+            <li>
+              <title>Balanced Representation</title>
+              <p>
+                Present multiple perspectives or interpretations when appropriate, rather than a single narrative.
+              </p>
+            </li>
+          </dl>
+          
+          <p>
+            Strategies for effective communication across different audiences:
+          </p>
+          
+          <ul>
+            <li>
+              <p><term>For technical audiences</term>: Include methodological details, statistical significance, and nuanced findings</p>
+            </li>
+            <li>
+              <p><term>For general audiences</term>: Focus on clear insights, relatable examples, and visual explanation</p>
+            </li>
+            <li>
+              <p><term>For decision-makers</term>: Emphasize implications, recommendations, and actionable insights</p>
+            </li>
+            <li>
+              <p><term>For diverse stakeholders</term>: Consider multiple perspectives and potential impacts on different groups</p>
+            </li>
+          </ul>
+          
+          <example xml:id="example-communication-health">
+            <title>Communicating Community Health Findings</title>
+            <statement>
+              <p>
+                When communicating findings from our Community Health project, we might:
+              </p>
+              <ul>
+                <li>
+                  <p>Acknowledge limitations in our data, such as potential underreporting of health conditions in areas with less healthcare access</p>
+                </li>
+                <li>
+                  <p>Present environmental disparities in historical and systemic context rather than implying they result from individual choices</p>
+                </li>
+                <li>
+                  <p>Use neutral terminology when discussing neighborhood differences to avoid stigmatizing communities</p>
+                </li>
+                <li>
+                  <p>Include perspectives from community members alongside statistical findings when possible</p>
+                </li>
+                <li>
+                  <p>Be careful about how we present relationships between demographic factors and health outcomes to avoid reinforcing stereotypes</p>
+                </li>
+                <li>
+                  <p>Clearly distinguish between correlation and causation in our environmental health findings</p>
+                </li>
+              </ul>
+            </statement>
+          </example>
+          
+          <exercise xml:id="mc-ethical-communication">
+            <title>Ethical Data Communication</title>
+            <statement>
+              <p>Which of the following represents the MOST ethical approach to communicating findings about educational achievement gaps between different demographic groups?</p>
+            </statement>
+            <choices>
+              <choice>
+                <statement>
+                  <p>Avoid presenting the data entirely to prevent reinforcing stereotypes about any group.</p>
+                </statement>
+                <feedback>
+                  <p>While sensitivity is important, completely avoiding relevant data prevents understanding real disparities that might need addressing. Ethical communication involves presenting accurate information with appropriate context.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Present only the data that shows narrowing achievement gaps to focus on positive trends.</p>
+                </statement>
+                <feedback>
+                  <p>Selectively presenting only positive data creates an incomplete and potentially misleading picture. This approach lacks transparency and accuracy.</p>
+                </feedback>
+              </choice>
+              <choice correct="yes">
+                <statement>
+                  <p>Present comprehensive data alongside contextual factors like historical inequities in school funding and resources.</p>
+                </statement>
+                <feedback>
+                  <p>Correct! This approach maintains accuracy by presenting the complete data while providing crucial context about systemic factors that influence educational outcomes. This helps audiences understand the complexities behind achievement gaps without reinforcing simplistic narratives about group differences.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>Use dramatic visualizations to emphasize the gaps and create urgency for immediate action.</p>
+                </statement>
+                <feedback>
+                  <p>Using dramatic or exaggerated visualizations to evoke an emotional response can distort the data and manipulate the audience, which violates principles of accuracy and respect.</p>
+                </feedback>
+              </choice>
+            </choices>
+          </exercise>
+          
+          <activity xml:id="activity-communication-review">
+            <title>Communication Review</title>
+            <introduction>
+              <p>
+                In this activity, you'll review and refine the communication aspects of your project.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Review your dashboard, presentation, or other communication materials with these questions:
+                </p>
+                <ul>
+                  <li>
+                    <p>Are there any ways your visualizations or narrative might inadvertently mislead viewers?</p>
+                  </li>
+                  <li>
+                    <p>Have you adequately addressed limitations and uncertainty in your data and analysis?</p>
+                  </li>
+                  <li>
+                    <p>Are there multiple perspectives or interpretations that should be acknowledged?</p>
+                  </li>
+                  <li>
+                    <p>Does your communication respect the communities or populations represented in your data?</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Based on your review, make at least three specific improvements to your communication materials to make them more ethical and effective.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Write a brief reflection (1-2 paragraphs) on the ethical considerations most relevant to your specific project and how you've addressed them in your communication.
+                </p>
+              </statement>
+            </task>
+          </activity>
+        </subsection>
+      </section>
+
+      <section xml:id="sec-unit4-summary">
+        <title>Unit 4 Summary</title>
+        
+        <p>
+          In this unit, we've explored the art and science of data visualization and communication:
+        </p>
+        
+        <ul>
+          <li>
+            <p><term>Visualization Fundamentals</term>: We learned about the power of visualizations, principles for choosing the right chart types, and techniques for creating effective visual representations.</p>
+          </li>
+          <li>
+            <p><term>Ethics in Visualization</term>: We examined how visualizations can mislead and how to create ethical representations that accurately convey data.</p>
+          </li>
+          <li>
+            <p><term>Advanced Visualization</term>: We explored techniques for showing multi-variable relationships and building comprehensive dashboards to present our findings.</p>
+          </li>
+          <li>
+            <p><term>Statistical Thinking</term>: We developed our understanding of correlation and other relationships, learning to interpret patterns with appropriate caution.</p>
+          </li>
+          <li>
+            <p><term>Data Storytelling</term>: We discovered how to build compelling narratives around data that engage audiences and communicate insights effectively.</p>
+          </li>
+          <li>
+            <p><term>Presentation Techniques</term>: We practiced methods for delivering our findings clearly and persuasively to different audiences.</p>
+          </li>
+          <li>
+            <p><term>Ethical Communication</term>: We considered our responsibility to communicate findings accurately, transparently, and respectfully.</p>
+          </li>
+        </ul>
+        
+        <p>
+          By applying these skills to both our Community Health dataset and your own chosen datasets, you've created visualizations, dashboards, and presentations that effectively communicate your findings and insights. These communication skills complement the technical data analysis abilities we've developed throughout the course, enabling you to not just analyze data but to share your discoveries in ways that inform, engage, and inspire action.
+        </p>
+        
+        <exercise xml:id="exercise-unit4-reflection">
+          <title>Unit 4 Reflection</title>
+          <statement>
+            <p>
+              Take some time to reflect on what you've learned in this unit and throughout the course:
+            </p>
+            <ul>
+              <li>
+                <p>What was the most valuable skill or concept you learned about data visualization and communication?</p>
+              </li>
+              <li>
+                <p>How has your understanding of effective data presentation changed during this unit?</p>
+              </li>
+              <li>
+                <p>What was the biggest challenge you faced in communicating your data findings, and how did you address it?</p>
+              </li>
+              <li>
+                <p>How might you apply the data science skills from this course in your future academic or professional work?</p>
+              </li>
+            </ul>
+          </statement>
+        </exercise>
+        
+        <exercise xml:id="mc-unit4-review">
+          <title>Unit 4 Review</title>
+          <statement>
+            <p>Which of the following BEST describes the relationship between data analysis and data communication?</p>
+          </statement>
+          <choices>
+            <choice>
+              <statement>
+                <p>Data analysis is the only important aspect; communication is secondary and mainly for non-technical audiences.</p>
+              </statement>
+              <feedback>
+                <p>This undervalues communication, which is essential for all audiences. Even the most sophisticated analysis has limited impact if not effectively communicated.</p>
+              </feedback>
+            </choice>
+            <choice>
+              <statement>
+                <p>Data communication is about simplifying complex findings so non-experts can understand them.</p>
+              </statement>
+              <feedback>
+                <p>While making findings accessible is important, effective data communication is not just about simplification; it's about conveying accurate insights appropriate to the audience and context.</p>
+              </feedback>
+            </choice>
+            <choice>
+              <statement>
+                <p>Data visualization can make up for weaknesses in data analysis by making results look more impressive.</p>
+              </statement>
+              <feedback>
+                <p>This approach would be misleading and unethical. Visualization should accurately represent analysis, not mask its weaknesses.</p>
+              </feedback>
+            </choice>
+            <choice correct="yes">
+              <statement>
+                <p>Data analysis and communication are equally essential parts of the data science process, with each informing and enhancing the other.</p>
+              </statement>
+              <feedback>
+                <p>Correct! Analysis and communication are complementary, interdependent aspects of data science. Good analysis leads to meaningful insights, while effective communication ensures those insights are understood and can lead to action. The process is often iterative, with communication revealing needs for additional analysis.</p>
+              </feedback>
+            </choice>
+          </choices>
+        </exercise>
+      </section>
+    </chapter>

@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <chapter xml:id="ch-project-guide">
+      <title>Data Science Project Guide</title>
+      
+      <introduction>
+        <p>
+          Throughout this course, you'll develop a comprehensive data science project that applies the concepts, tools, and techniques we explore each week. This chapter serves as your guide to the project, outlining expectations, workflow, timeline, and assessment criteria. By completing this project, you'll gain hands-on experience with the entire data science process, from initial questions to final presentations.
+        </p>
+        <p>
+          The project follows a parallel structure to our course content, with each phase building on previous work. While our class examples focus on the Community Health and Environment dataset, your project will allow you to explore a dataset aligned with your own interests, making the learning experience more personally relevant and engaging.
+        </p>
+      </introduction>
+
+      <section xml:id="sec-project-overview">
+        <title>Project Overview</title>
+        
+        <p>
+          The course project is a semester-long data science investigation where you will:
+        </p>
+        
+        <ul>
+          <li>
+            <p>Select a dataset aligned with your interests</p>
+          </li>
+          <li>
+            <p>Formulate meaningful statistical questions</p>
+          </li>
+          <li>
+            <p>Clean, organize, and transform the data</p>
+          </li>
+          <li>
+            <p>Create insightful visualizations</p>
+          </li>
+          <li>
+            <p>Build an interactive dashboard in CODAP</p>
+          </li>
+          <li>
+            <p>Present your findings in a clear, compelling manner</p>
+          </li>
+        </ul>
+        
+        <p>
+          This project accounts for 60% of your overall course grade, with the remaining 40% coming from weekly assignments and participation. The project is designed to be completed incrementally throughout the semester, with specific milestones aligned to each unit of course content.
+        </p>
+        
+        <subsection xml:id="subsec-learning-objectives">
+          <title>Learning Objectives</title>
+          
+          <p>
+            Through this project, you will demonstrate your ability to:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Apply data science concepts and techniques to real-world questions</p>
+            </li>
+            <li>
+              <p>Work effectively with data of varying quality and complexity</p>
+            </li>
+            <li>
+              <p>Create clear, accurate, and insightful data visualizations</p>
+            </li>
+            <li>
+              <p>Develop a coherent data narrative that communicates findings effectively</p>
+            </li>
+            <li>
+              <p>Critically evaluate data sources, limitations, and ethical considerations</p>
+            </li>
+            <li>
+              <p>Use CODAP to perform various data moves and create interactive visualizations</p>
+            </li>
+          </ul>
+        </subsection>
+        
+        <subsection xml:id="subsec-dataset-selection">
+          <title>Dataset Selection Guidelines</title>
+          
+          <p>
+            Selecting an appropriate dataset is crucial for project success. Your dataset should:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Size and Complexity</title>
+              <p>
+                Contain at least 100 records (rows) with at least 8 variables (columns). The dataset should be complex enough to support meaningful analysis but not so large that it becomes unmanageable in CODAP.
+              </p>
+            </li>
+            <li>
+              <title>Variable Types</title>
+              <p>
+                Include a mix of categorical and numerical variables to allow for diverse analysis and visualization techniques.
+              </p>
+            </li>
+            <li>
+              <title>Quality and Completeness</title>
+              <p>
+                Have reasonable completeness, but some missing values or quality issues are acceptable (and even educational to work with).
+              </p>
+            </li>
+            <li>
+              <title>Interest and Relevance</title>
+              <p>
+                Relate to a topic you find personally interesting or relevant, which will help sustain your engagement throughout the semester.
+              </p>
+            </li>
+            <li>
+              <title>Accessibility</title>
+              <p>
+                Be publicly available or properly licensed for educational use. You should be able to share the dataset with the instructor and classmates.
+              </p>
+            </li>
+          </dl>
+          
+          <p>
+            Recommended data repositories include:
+          </p>
+          
+          <ul>
+            <li>
+              <p><url href="https://www.kaggle.com/datasets" visual="kaggle.com/datasets">Kaggle Datasets</url></p>
+            </li>
+            <li>
+              <p><url href="https://data.gov" visual="data.gov">Data.gov</url></p>
+            </li>
+            <li>
+              <p><url href="https://www.gapminder.org/data" visual="gapminder.org/data">Gapminder</url></p>
+            </li>
+            <li>
+              <p><url href="https://www.data.world" visual="data.world">Data.world</url></p>
+            </li>
+            <li>
+              <p><url href="https://www.cdc.gov/datastatistics" visual="cdc.gov/datastatistics">CDC Data &amp; Statistics</url></p>
+            </li>
+            <li>
+              <p><url href="https://data.worldbank.org" visual="data.worldbank.org">World Bank Open Data</url></p>
+            </li>
+          </ul>
+          
+          <exercise xml:id="exercise-dataset-evaluation">
+            <title>Dataset Evaluation Checklist</title>
+            <statement>
+              <p>
+                Use this checklist to evaluate potential datasets for your project. A suitable dataset should meet most of these criteria:
+              </p>
+            </statement>
+            <answer>
+              <ul>
+                <li>
+                  <p>Contains at least 100 records (rows)</p>
+                </li>
+                <li>
+                  <p>Includes at least 8 variables (columns)</p>
+                </li>
+                <li>
+                  <p>Has a mix of categorical and numerical variables</p>
+                </li>
+                <li>
+                  <p>Is on a topic that genuinely interests you</p>
+                </li>
+                <li>
+                  <p>Has documentation about data collection methods and meanings of variables</p>
+                </li>
+                <li>
+                  <p>Is reasonably clean but offers some opportunities for data cleaning practice</p>
+                </li>
+                <li>
+                  <p>Can be easily imported into CODAP</p>
+                </li>
+                <li>
+                  <p>Supports at least three meaningful statistical questions</p>
+                </li>
+                <li>
+                  <p>Contains variables that might have interesting relationships</p>
+                </li>
+                <li>
+                  <p>Is publicly available or properly licensed for educational use</p>
+                </li>
+              </ul>
+            </answer>
+          </exercise>
+        </subsection>
+      </section>
+
+      <section xml:id="sec-project-workflow">
+        <title>Project Workflow and Timeline</title>
+        
+        <p>
+          Your project will develop incrementally throughout the semester, with specific components aligned to the four main units of our course. Each phase builds on previous work, creating a coherent end-to-end data science project.
+        </p>
+        
+        <figure xml:id="fig-project-workflow">
+          <caption>Data Science Project Workflow</caption>
+          <image source="project-workflow.png" width="100%">
+            <description>A circular diagram showing the data science workflow: Ask Questions → Consider Data → Analyze Data → Interpret Results → Communicate Findings, with arrows showing the iterative nature of the process.</description>
+          </image>
+        </figure>
+        
+        <subsection xml:id="subsec-phase1">
+          <title>Phase 1: Dataset Selection and Exploration (Unit 1)</title>
+          
+          <p>
+            During this initial phase, you will:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Research and evaluate potential datasets based on the selection criteria</p>
+            </li>
+            <li>
+              <p>Select a dataset and document its source, contents, and relevance</p>
+            </li>
+            <li>
+              <p>Import your dataset into CODAP and perform initial exploration</p>
+            </li>
+            <li>
+              <p>Identify variable types and basic characteristics of your data</p>
+            </li>
+            <li>
+              <p>Consider potential ethical issues related to your dataset</p>
+            </li>
+          </ul>
+          
+          <p>
+            <term>Deliverable</term>: Dataset Selection Report (5% of project grade)
+          </p>
+          
+          <p>
+            A 1-2 page document that includes:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Dataset name, source, and link</p>
+            </li>
+            <li>
+              <p>Brief description of the dataset contents and context</p>
+            </li>
+            <li>
+              <p>Number of records and variables</p>
+            </li>
+            <li>
+              <p>List of key variables and their types</p>
+            </li>
+            <li>
+              <p>Why you selected this dataset and what interests you about it</p>
+            </li>
+            <li>
+              <p>Preliminary observations from initial exploration</p>
+            </li>
+            <li>
+              <p>Potential ethical considerations</p>
+            </li>
+          </ul>
+        </subsection>
+        
+        <subsection xml:id="subsec-phase2">
+          <title>Phase 2: Investigation Planning (Unit 2)</title>
+          
+          <p>
+            Building on your dataset exploration, you will:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Formulate 3-5 specific, meaningful statistical questions</p>
+            </li>
+            <li>
+              <p>Develop a comprehensive investigation plan</p>
+            </li>
+            <li>
+              <p>Identify data requirements for answering your questions</p>
+            </li>
+            <li>
+              <p>Assess data quality and potential limitations</p>
+            </li>
+            <li>
+              <p>Plan appropriate analysis approaches</p>
+            </li>
+          </ul>
+          
+          <p>
+            <term>Deliverable</term>: Investigation Plan (10% of project grade)
+          </p>
+          
+          <p>
+            A 2-3 page document that includes:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Refined statistical questions (clear, specific, answerable with data)</p>
+            </li>
+            <li>
+              <p>Required variables and data for each question</p>
+            </li>
+            <li>
+              <p>Assessment of data quality and completeness</p>
+            </li>
+            <li>
+              <p>Planned analysis methods and visualization approaches</p>
+            </li>
+            <li>
+              <p>Anticipated challenges and limitations</p>
+            </li>
+            <li>
+              <p>Expected outcomes or insights</p>
+            </li>
+          </ul>
+        </subsection>
+        
+        <subsection xml:id="subsec-phase3">
+          <title>Phase 3: Data Analysis and Processing (Unit 3)</title>
+          
+          <p>
+            In this phase, you will apply essential data moves to prepare your data for analysis:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Clean your dataset by handling missing values and outliers</p>
+            </li>
+            <li>
+              <p>Create derived variables as needed for your analysis</p>
+            </li>
+            <li>
+              <p>Filter and subset data to focus on relevant aspects</p>
+            </li>
+            <li>
+              <p>Calculate summary statistics and identify patterns</p>
+            </li>
+            <li>
+              <p>Group and aggregate data to gain higher-level insights</p>
+            </li>
+            <li>
+              <p>Document all transformations and decisions</p>
+            </li>
+          </ul>
+          
+          <p>
+            <term>Deliverable</term>: Data Processing Documentation (15% of project grade)
+          </p>
+          
+          <p>
+            A CODAP file and 2-3 page document that includes:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Summary of data quality issues encountered and how they were addressed</p>
+            </li>
+            <li>
+              <p>Description of derived variables created and their purpose</p>
+            </li>
+            <li>
+              <p>Documentation of filtering, grouping, and other data moves</p>
+            </li>
+            <li>
+              <p>Preliminary findings from summary statistics and grouping</p>
+            </li>
+            <li>
+              <p>Updated assessment of data limitations</p>
+            </li>
+            <li>
+              <p>CODAP file with processed data and basic visualizations</p>
+            </li>
+          </ul>
+        </subsection>
+        
+        <subsection xml:id="subsec-phase4">
+          <title>Phase 4: Visualization and Communication (Unit 4)</title>
+          
+          <p>
+            In the final phase, you will create effective visualizations and communicate your findings:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Design and create appropriate visualizations for your key findings</p>
+            </li>
+            <li>
+              <p>Build a comprehensive interactive dashboard in CODAP</p>
+            </li>
+            <li>
+              <p>Develop a clear data story based on your analysis</p>
+            </li>
+            <li>
+              <p>Prepare and deliver a final presentation</p>
+            </li>
+            <li>
+              <p>Document insights, implications, and limitations</p>
+            </li>
+          </ul>
+          
+          <p>
+            <term>Deliverables</term>: 
+          </p>
+          
+          <ul>
+            <li>
+              <p>Visualization Dashboard (15% of project grade)</p>
+              <ul>
+                <li><p>CODAP dashboard with multiple linked visualizations</p></li>
+                <li><p>Clear layout and organization</p></li>
+                <li><p>Appropriate visualization types for your data and questions</p></li>
+                <li><p>Interactive elements that enhance exploration</p></li>
+                <li><p>Text explanations and context within the dashboard</p></li>
+              </ul>
+            </li>
+            <li>
+              <p>Final Presentation (15% of project grade)</p>
+              <ul>
+                <li><p>5-7 minute presentation of your project</p></li>
+                <li><p>Clear communication of context, methods, and findings</p></li>
+                <li><p>Effective use of visualizations to support your narrative</p></li>
+                <li><p>Discussion of implications and limitations</p></li>
+                <li><p>Thoughtful responses to questions</p></li>
+              </ul>
+            </li>
+          </ul>
+        </subsection>
+        
+        <figure xml:id="fig-project-timeline">
+          <caption>Project Timeline Aligned with Course Units</caption>
+          <image source="project-timeline.png" width="100%">
+            <description>A timeline showing the four project phases aligned with the four course units, with key deliverables marked at the end of each phase.</description>
+          </image>
+        </figure>
+      </section>
+
+      <section xml:id="sec-project-assessment">
+        <title>Assessment and Grading</title>
+        
+        <p>
+          Your project will be assessed based on how well you demonstrate data science skills and concepts across all phases of the work. The grading emphasizes both technical proficiency and communication effectiveness.
+        </p>
+        
+        <subsection xml:id="subsec-grading-breakdown">
+          <title>Grading Breakdown</title>
+          
+          <p>
+            The project accounts for 60% of your overall course grade, distributed across deliverables as follows:
+          </p>
+          
+          <table>
+            <title>Project Component Weights</title>
+            <tabular>
+              <row header="yes">
+                <cell>Deliverable</cell>
+                <cell>Percentage of Project Grade</cell>
+                <cell>Percentage of Overall Course Grade</cell>
+              </row>
+              <row>
+                <cell>Dataset Selection Report</cell>
+                <cell>5%</cell>
+                <cell>3%</cell>
+              </row>
+              <row>
+                <cell>Investigation Plan</cell>
+                <cell>10%</cell>
+                <cell>6%</cell>
+              </row>
+              <row>
+                <cell>Data Processing Documentation</cell>
+                <cell>15%</cell>
+                <cell>9%</cell>
+              </row>
+              <row>
+                <cell>Visualization Dashboard</cell>
+                <cell>15%</cell>
+                <cell>9%</cell>
+              </row>
+              <row>
+                <cell>Final Presentation</cell>
+                <cell>15%</cell>
+                <cell>9%</cell>
+              </row>
+              <row>
+                <cell><term>Total</term></cell>
+                <cell>60%</cell>
+                <cell>36%</cell>
+              </row>
+            </tabular>
+          </table>
+          
+          <p>
+            The remaining 40% of your course grade comes from weekly assignments (30%) and participation (10%).
+          </p>
+        </subsection>
+        
+        <subsection xml:id="subsec-evaluation-rubrics">
+          <title>Evaluation Rubrics</title>
+          
+          <p>
+            Each project component will be evaluated using the following rubrics:
+          </p>
+          
+          <table xml:id="table-dataset-rubric">
+            <title>Dataset Selection Report Rubric</title>
+            <tabular>
+              <row header="yes">
+                <cell>Criterion</cell>
+                <cell>Excellent (A)</cell>
+                <cell>Satisfactory (B-C)</cell>
+                <cell>Needs Improvement (D-F)</cell>
+              </row>
+              <row>
+                <cell>Dataset Suitability</cell>
+                <cell>Dataset perfectly meets all selection criteria; rich with potential for analysis</cell>
+                <cell>Dataset meets most criteria; adequate for project purposes</cell>
+                <cell>Dataset fails to meet multiple criteria; limited potential for analysis</cell>
+              </row>
+              <row>
+                <cell>Documentation</cell>
+                <cell>Comprehensive documentation of source, contents, and context</cell>
+                <cell>Adequate documentation but missing some details</cell>
+                <cell>Minimal documentation; unclear source or context</cell>
+              </row>
+              <row>
+                <cell>Initial Exploration</cell>
+                <cell>Thorough initial exploration with insightful observations</cell>
+                <cell>Basic exploration with some relevant observations</cell>
+                <cell>Superficial exploration with few or no observations</cell>
+              </row>
+              <row>
+                <cell>Ethical Considerations</cell>
+                <cell>Thoughtful discussion of relevant ethical considerations</cell>
+                <cell>Basic mention of ethical considerations</cell>
+                <cell>No consideration of ethical dimensions</cell>
+              </row>
+            </tabular>
+          </table>
+          
+          <table xml:id="table-investigation-rubric">
+            <title>Investigation Plan Rubric</title>
+            <tabular>
+              <row header="yes">
+                <cell>Criterion</cell>
+                <cell>Excellent (A)</cell>
+                <cell>Satisfactory (B-C)</cell>
+                <cell>Needs Improvement (D-F)</cell>
+              </row>
+              <row>
+                <cell>Statistical Questions</cell>
+                <cell>Clear, specific, meaningful questions that anticipate variability and are answerable with data</cell>
+                <cell>Mostly clear questions, but may lack specificity or clear connection to data</cell>
+                <cell>Vague, overly broad, or unanswerable questions</cell>
+              </row>
+              <row>
+                <cell>Data Assessment</cell>
+                <cell>Comprehensive assessment of data quality, completeness, and limitations</cell>
+                <cell>Basic assessment of data with some gaps</cell>
+                <cell>Minimal or unrealistic assessment of data</cell>
+              </row>
+              <row>
+                <cell>Analysis Approach</cell>
+                <cell>Well-reasoned approaches for each question, with clear justification</cell>
+                <cell>Reasonable approaches but limited justification</cell>
+                <cell>Inappropriate or vague analysis approaches</cell>
+              </row>
+              <row>
+                <cell>Plan Completeness</cell>
+                <cell>Thorough plan addressing all aspects of the investigation</cell>
+                <cell>Adequate plan but missing some elements</cell>
+                <cell>Incomplete or insufficient planning</cell>
+              </row>
+            </tabular>
+          </table>
+          
+          <table xml:id="table-processing-rubric">
+            <title>Data Processing Documentation Rubric</title>
+            <tabular>
+              <row header="yes">
+                <cell>Criterion</cell>
+                <cell>Excellent (A)</cell>
+                <cell>Satisfactory (B-C)</cell>
+                <cell>Needs Improvement (D-F)</cell>
+              </row>
+              <row>
+                <cell>Data Cleaning</cell>
+                <cell>Appropriate handling of missing values, outliers, and other quality issues with clear rationale</cell>
+                <cell>Basic cleaning with some rationale, but may miss some issues</cell>
+                <cell>Inadequate cleaning or inappropriate handling of data issues</cell>
+              </row>
+              <row>
+                <cell>Data Transformation</cell>
+                <cell>Creative and appropriate derived variables, filtering, and other transformations</cell>
+                <cell>Basic transformations that support analysis</cell>
+                <cell>Few or inappropriate transformations</cell>
+              </row>
+              <row>
+                <cell>Documentation</cell>
+                <cell>Clear, comprehensive documentation of all data moves and decisions</cell>
+                <cell>Adequate documentation but missing some details</cell>
+                <cell>Poor or insufficient documentation</cell>
+              </row>
+              <row>
+                <cell>Preliminary Analysis</cell>
+                <cell>Insightful summary statistics and group comparisons</cell>
+                <cell>Basic summary statistics with limited interpretation</cell>
+                <cell>Minimal or incorrect statistical analysis</cell>
+              </row>
+            </tabular>
+          </table>
+          
+          <table xml:id="table-dashboard-rubric">
+            <title>Visualization Dashboard Rubric</title>
+            <tabular>
+              <row header="yes">
+                <cell>Criterion</cell>
+                <cell>Excellent (A)</cell>
+                <cell>Satisfactory (B-C)</cell>
+                <cell>Needs Improvement (D-F)</cell>
+              </row>
+              <row>
+                <cell>Visualization Selection</cell>
+                <cell>Optimal chart types for each question and data type</cell>
+                <cell>Appropriate chart types with minor issues</cell>
+                <cell>Inappropriate or misleading chart types</cell>
+              </row>
+              <row>
+                <cell>Visual Design</cell>
+                <cell>Clear, accessible, and aesthetically pleasing design that enhances understanding</cell>
+                <cell>Functionally clear design with some issues</cell>
+                <cell>Cluttered, confusing, or poorly designed visualizations</cell>
+              </row>
+              <row>
+                <cell>Dashboard Organization</cell>
+                <cell>Logical flow with clear visual hierarchy and purposeful arrangement</cell>
+                <cell>Reasonable organization but lacking some coherence</cell>
+                <cell>Disorganized or illogical arrangement</cell>
+              </row>
+              <row>
+                <cell>Interactivity</cell>
+                <cell>Thoughtful interactive features that enhance exploration</cell>
+                <cell>Basic interactive functionality</cell>
+                <cell>Limited or no effective interactivity</cell>
+              </row>
+              <row>
+                <cell>Context and Labeling</cell>
+                <cell>Comprehensive titles, labels, and explanatory text</cell>
+                <cell>Adequate labeling with some context</cell>
+                <cell>Missing or confusing labels and context</cell>
+              </row>
+            </tabular>
+          </table>
+          
+          <table xml:id="table-presentation-rubric">
+            <title>Final Presentation Rubric</title>
+            <tabular>
+              <row header="yes">
+                <cell>Criterion</cell>
+                <cell>Excellent (A)</cell>
+                <cell>Satisfactory (B-C)</cell>
+                <cell>Needs Improvement (D-F)</cell>
+              </row>
+              <row>
+                <cell>Content</cell>
+                <cell>Comprehensive coverage of context, methods, findings, and implications</cell>
+                <cell>Adequate coverage of key elements but lacking some depth</cell>
+                <cell>Incomplete or superficial treatment of the project</cell>
+              </row>
+              <row>
+                <cell>Data Story</cell>
+                <cell>Compelling narrative that effectively communicates insights</cell>
+                <cell>Clear narrative but lacking some engagement or coherence</cell>
+                <cell>Disjointed or unclear narrative</cell>
+              </row>
+              <row>
+                <cell>Visual Support</cell>
+                <cell>Excellent use of visualizations to support and enhance presentation</cell>
+                <cell>Adequate visual support with minor issues</cell>
+                <cell>Poor or distracting visual elements</cell>
+              </row>
+              <row>
+                <cell>Delivery</cell>
+                <cell>Clear, engaging delivery with strong command of material</cell>
+                <cell>Competent delivery with some room for improvement</cell>
+                <cell>Unclear, disorganized, or difficult to follow</cell>
+              </row>
+              <row>
+                <cell>Q&amp;A Response</cell>
+                <cell>Thoughtful, knowledgeable responses to questions</cell>
+                <cell>Adequate responses to most questions</cell>
+                <cell>Unable to address questions effectively</cell>
+              </row>
+            </tabular>
+          </table>
+        </subsection>
+      </section>
+
+      <section xml:id="sec-project-tips">
+        <title>Tips for Success</title>
+        
+        <p>
+          Based on experiences of previous students, here are some tips to help you succeed in your data science project:
+        </p>
+        
+        <dl>
+          <li>
+            <title>Start with a Great Dataset</title>
+            <p>
+              Invest time in finding a dataset that genuinely interests you and meets the selection criteria. Your enthusiasm for the topic will sustain you through challenges.
+            </p>
+          </li>
+          <li>
+            <title>Work Incrementally</title>
+            <p>
+              Don't wait until the last minute for each deliverable. The project is designed to be developed continuously throughout the semester.
+            </p>
+          </li>
+          <li>
+            <title>Document as You Go</title>
+            <p>
+              Keep detailed notes on your data moves, decisions, and observations. This will make writing the documentation much easier.
+            </p>
+          </li>
+          <li>
+            <title>Seek Feedback Early</title>
+            <p>
+              Share your work with classmates and the instructor to get feedback at each stage, not just when deliverables are due.
+            </p>
+          </li>
+          <li>
+            <title>Focus on Quality over Quantity</title>
+            <p>
+              It's better to thoroughly explore a few meaningful questions than to superficially address many questions.
+            </p>
+          </li>
+          <li>
+            <title>Embrace the Iterative Process</title>
+            <p>
+              Be prepared to revisit and revise earlier work as you gain new insights. Data science is rarely a linear process.
+            </p>
+          </li>
+          <li>
+            <title>Practice Your Presentation</title>
+            <p>
+              Rehearse your final presentation multiple times to ensure clear communication and appropriate timing.
+            </p>
+          </li>
+        </dl>
+        
+        <p>
+          Remember that data science is both an art and a science. Technical skills matter, but so does the ability to ask good questions, find meaningful patterns, and communicate insights effectively.
+        </p>
+        
+        <subsection xml:id="subsec-common-challenges">
+          <title>Common Challenges and Solutions</title>
+          
+          <p>
+            Here are some common challenges students face in their projects and strategies to address them:
+          </p>
+          
+          <dl>
+            <li>
+              <title>Dataset Too Large for CODAP</title>
+              <p>
+                Solution: Consider using a relevant subset of the data, or aggregate the data at a higher level (e.g., monthly instead of daily).
+              </p>
+            </li>
+            <li>
+              <title>Too Many Missing Values</title>
+              <p>
+                Solution: Determine if the missing values follow a pattern. You might focus on a subset with more complete data or use the missing data pattern itself as an insight.
+              </p>
+            </li>
+            <li>
+              <title>Not Finding Clear Patterns</title>
+              <p>
+                Solution: Try different groupings, transformations, or visualization approaches. Sometimes, finding that expected relationships don't exist is itself an important finding.
+              </p>
+            </li>
+            <li>
+              <title>Questions Too Broad or Narrow</title>
+              <p>
+                Solution: Refine your questions based on initial data exploration. Iteratively adjust the scope to match what your data can reasonably answer.
+              </p>
+            </li>
+            <li>
+              <title>Difficulty Telling a Coherent Story</title>
+              <p>
+                Solution: Start with your most interesting finding and build your narrative around it. Consider how different insights relate to each other and to your central question.
+              </p>
+            </li>
+          </dl>
+        </subsection>
+        
+        <exercise xml:id="exercise-project-reflection">
+          <title>Project Planning Reflection</title>
+          <statement>
+            <p>
+              Take some time to reflect on your approach to the project:
+            </p>
+            <ul>
+              <li>
+                <p>What topics or datasets are you most interested in exploring?</p>
+              </li>
+              <li>
+                <p>What specific skills from the course do you most want to develop through this project?</p>
+              </li>
+              <li>
+                <p>What do you anticipate being the most challenging aspect of the project for you?</p>
+              </li>
+              <li>
+                <p>What strategies will you use to stay on track throughout the semester?</p>
+              </li>
+              <li>
+                <p>How will you ensure that your final project effectively communicates your findings?</p>
+              </li>
+            </ul>
+          </statement>
+        </exercise>
+      </section>
+    </chapter>
