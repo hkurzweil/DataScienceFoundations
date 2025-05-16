@@ -1,0 +1,1337 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+    <chapter xml:id="ch-unit1">
+      <title>Unit 1: Foundations of Data Science</title>
+      
+      <introduction>
+        <p>
+          In this unit, we'll explore the fundamental concepts of data science, understand why data literacy matters in today's world, and learn about different types of data. We'll also introduce CODAP, the tool we'll use throughout this course, and begin our data science journey by selecting datasets for our projects.
+        </p>
+      </introduction>
+
+      <section xml:id="sec-what-is-data-science">
+        <title>What is Data Science?</title>
+        
+        <subsection xml:id="subsec-defining-data-science">
+          <title>Defining Data Science</title>
+          
+          <p>
+            Data science is an interdisciplinary field that combines domain knowledge, programming skills, and statistical techniques to extract meaningful insights from data. At its core, data science is about using data to answer questions, solve problems, and make decisions.
+          </p>
+
+          <figure xml:id="fig-data-science-venn">
+          <caption>The Data Science Venn Diagram</caption>
+          <image source="data-science-venn.png" width="60%">
+            <description>A Venn diagram showing data science as the intersection of domain expertise, mathematics/statistics, and computer science.</description>
+          </image>
+          <credit> 
+            <url href="https://www.researchgate.net/publication/365946272_Software_Engineering_A_Practitioner%27s_Approach_9_th_Edition#pf2">Software Engineering: A Practitioner's Approach</url>
+          </credit>
+          </figure>
+          
+          <p>
+            The field of data science has evolved from statistics, computer science, and specific domain applications. While statisticians have been analyzing data for centuries, modern data science incorporates newer tools and techniques to handle larger, more complex datasets and to gain deeper insights into the data to solve real world problems.
+          </p>
+          <exercise xml:id="mc-data-science-concepts">
+            <title>Data Science Concepts</title>
+            <statement>
+              <p>Which of the following best describes data science?</p>
+            </statement>
+            <choices randomize="yes">
+              <choice correct="yes">
+                <statement>
+                  <p>An interdisciplinary field that combines domain knowledge, programming skills, and statistical techniques to extract insights from data</p>
+                </statement>
+                <feedback>
+                  <p>Correct! Data science combines multiple disciplines to analyze and interpret data.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>A branch of computer science focused exclusively on machine learning algorithms</p>
+                </statement>
+                <feedback>
+                  <p>While machine learning is part of data science, data science is broader and includes other disciplines.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>A synonym for statistics that uses modern technology</p>
+                </statement>
+                <feedback>
+                  <p>Statistics is a component of data science, but data science also incorporates programming, domain expertise, and other skills.</p>
+                </feedback>
+              </choice>
+              <choice>
+                <statement>
+                  <p>The process of creating visual representations of large datasets</p>
+                </statement>
+                <feedback>
+                  <p>Data visualization is an important part of data science, but data science encompasses much more.</p>
+                </feedback>
+              </choice>
+            </choices>
+          </exercise>
+          
+          <activity xml:id="activity-data-science-history">
+            <title>Exploring Data Science History: Snow's Cholera Map</title>
+            <introduction>
+              <p>
+                Long before the term "data science" existed, people were using data to solve important problems. One of the most famous historical examples is Dr. John Snow's investigation of a cholera outbreak in London in 1854.
+              </p>
+              
+              <p>
+                During a severe cholera outbreak in the Soho district of London, Dr. Snow collected data on the locations of cholera deaths and plotted them on a map. By carefully mapping each case, he noticed a pattern: the deaths clustered around a specific water pump on Broad Street. This spatial analysis led him to hypothesize that contaminated water, not "bad air" (the prevailing theory at the time), was responsible for spreading the disease.
+              </p>
+              
+              <figure xml:id="fig-snow-map">
+                <caption>John Snow's Original Cholera Map (1854)</caption>
+                <image source="snow-cholera-map.png" width="70%">
+                  <description>John Snow's map showing cholera cases clustered around the Broad Street pump in London.</description>
+                </image>
+                <credit> 
+              <url href="https://education.nationalgeographic.org/resource/mapping-a-london-epidemic/">National Geographic</url>
+              </credit>
+              </figure>
+              
+              <p>
+                Snow's methods included:
+              </p>
+              <ul>
+                <li>
+                  <p>Data collection: Recording the locations of cholera deaths</p>
+                </li>
+                <li>
+                  <p>Spatial analysis: Plotting cases on a map to identify patterns</p>
+                </li>
+                <li>
+                  <p>Hypothesis testing: Testing his theory by investigating the water source</p>
+                </li>
+                <li>
+                  <p>Intervention: Recommending the removal of the pump handle, which helped end the outbreak</p>
+                </li>
+              </ul>
+              
+              <p>
+                This early example of data-driven decision making saved lives and helped establish the field of epidemiology.
+              </p>
+            </introduction>
+            
+            <task>
+              <statement>
+                <p>
+                  How is Snow's approach similar to modern data science methods? Identify at least two similarities.
+                </p>
+              </statement>
+            </task>
+            
+            <task>
+              <statement>
+                <p>
+                  What limitations did Snow face in his data collection and analysis? How might these have affected his conclusions?
+                </p>
+              </statement>
+            </task>
+            
+            <task>
+              <statement>
+                <p>
+                  If Snow had access to modern data science tools (like CODAP, GIS systems, or statistical software), how might his analysis have been enhanced or expanded?
+                </p>
+              </statement>
+            </task>
+          </activity>
+        </subsection>
+        
+        <subsection xml:id="subsec-why-data-literacy">
+          <title>Why Data Literacy Matters</title>
+          
+          <p>
+            Data literacy—the ability to read, work with, analyze, and communicate with data—has become an essential skill in the 21st century. Whether you're making personal decisions, participating in civic discussions, or pursuing a career, understanding data helps you:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Make informed decisions based on evidence rather than intuition alone</p>
+            </li>
+            <li>
+              <p>Critically evaluate claims that others make using data</p>
+            </li>
+            <li>
+              <p>Communicate your own findings effectively</p>
+            </li>
+            <li>
+              <p>Identify misleading presentations of data</p>
+            </li>
+            <li>
+              <p>Understand complex systems and patterns in the world</p>
+            </li>
+          </ul>
+          
+          <example xml:id="example-data-literacy-everyday">
+            <statement>
+              <p>
+                Consider a news article that claims "Violent crime has surged by 30% this year." A data-literate person would ask:
+              </p>
+              <ul>
+                <li>
+                  <p>Compared to what baseline? (Last year? Five years ago? The lowest point ever recorded?)</p>
+                </li>
+                <li>
+                  <p>What specific crimes are included in "violent crime"?</p>
+                </li>
+                <li>
+                  <p>What geographic area does this apply to?</p>
+                </li>
+                <li>
+                  <p>Has the way crimes are reported or recorded changed?</p>
+                </li>
+                <li>
+                  <p>Is a percentage the most appropriate measure, or would raw numbers provide important context?</p>
+                </li>
+              </ul>
+            </statement>
+          </example>
+          
+          <activity xml:id="activity-data-literacy-news">
+            <title>Data Literacy in the News</title>
+            <introduction>
+              <p>
+                In this activity, we'll practice data literacy by examining news articles.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Go to Google and navigate to the News tab. Type in <em>Data about</em> and enter in a topic you're interested in. Choose an article that looks interesting to you. 
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Identify at least three questions you would ask to better understand the data behind the claim.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  If possible, find the original data source and determine if the article's interpretation seems accurate.
+                </p>
+              </statement>
+            </task>
+          </activity>
+        </subsection>
+
+        <exercise xml:id="matching-data-literacy">
+        <title>Data Literacy Skills</title>
+        <statement>
+          <p>Match each data literacy skill with its appropriate example.</p>
+        </statement>
+        <matches>
+          <match>
+            <premise>Critical evaluation of claims</premise>
+            <response>Questioning a news headline about crime statistics by examining the source data</response>
+          </match>
+          <match>
+            <premise>Making informed decisions</premise>
+            <response>Choosing between job offers by comparing salary and benefits data</response>
+          </match>
+          <match>
+            <premise>Identifying misleading presentations</premise>
+            <response>Noticing that a graph's y-axis doesn't start at zero, exaggerating differences</response>
+          </match>
+          <match>
+            <premise>Effective communication of findings</premise>
+            <response>Creating a clear visualization that shows the key trends in your research</response>
+          </match>
+          <match>
+            <premise>Understanding complex patterns</premise>
+            <response>Recognizing seasonal variations in multiple years of sales data</response>
+          </match>
+        </matches>
+      </exercise>
+        
+        <subsection xml:id="subsec-applications">
+          <title>Applications of Data Science</title>
+          
+          <p>
+            Data science methods are transforming virtually every field:
+          </p>
+          
+          <sidebyside widths="47% 47%">
+            <stack>
+              <p><term>Healthcare</term></p>
+              <ul>
+                <li><p>Predicting disease outbreaks</p></li>
+                <li><p>Personalizing treatment plans</p></li>
+                <li><p>Improving diagnostic accuracy</p></li>
+                <li><p>Optimizing hospital operations</p></li>
+              </ul>
+            </stack>
+            
+            <stack>
+              <p><term>Business</term></p>
+              <ul>
+                <li><p>Customer segmentation</p></li>
+                <li><p>Demand forecasting</p></li>
+                <li><p>Process optimization</p></li>
+                <li><p>Fraud detection</p></li>
+              </ul>
+            </stack>
+          </sidebyside>
+          
+          <sidebyside widths="47% 47%">
+            <stack>
+              <p><term>Environmental Science</term></p>
+              <ul>
+                <li><p>Climate modeling</p></li>
+                <li><p>Ecosystem monitoring</p></li>
+                <li><p>Pollution tracking</p></li>
+                <li><p>Resource management</p></li>
+              </ul>
+            </stack>
+            
+            <stack>
+              <p><term>Social Sciences</term></p>
+              <ul>
+                <li><p>Analyzing social networks</p></li>
+                <li><p>Studying behavioral patterns</p></li>
+                <li><p>Evaluating program effectiveness</p></li>
+                <li><p>Understanding demographic trends</p></li>
+              </ul>
+            </stack>
+          </sidebyside>
+          
+          <activity xml:id="activity-field-exploration">
+            <title>Data Science in Your Field of Interest</title>
+            <introduction>
+              <p>
+                In this activity, you'll explore how data science is used in a field that interests you.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Select a field or industry that interests you.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Research and identify at least three specific ways data science is being applied in this field.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  For one application, describe the data that might be collected, how it might be analyzed, and what insights it provides.
+                </p>
+              </statement>
+            </task>
+          </activity>
+        </subsection>
+      </section>
+
+      <section xml:id="sec-intro-to-codap">
+        <title>Introduction to CODAP</title>
+        
+        <p>
+          CODAP (Common Online Data Analysis Platform) is a free, web-based data analysis tool designed specifically for educational purposes. It provides an intuitive interface for exploring data without requiring programming knowledge.
+        </p>
+        
+        <subsection xml:id="subsec-codap-interface">
+          <title>The CODAP Interface</title>
+          
+          <p>
+            Let's explore the basic components of the CODAP interface:
+          </p>
+          
+          <figure xml:id="fig-codap-interface">
+            <caption>The CODAP Interface</caption>
+            <image source="codap-interface.png" width="90%">
+              <description>Screenshot of the CODAP interface showing the built-in Mammal example.</description>
+            </image>
+          </figure>
+          
+          <p>
+            Key components include:
+          </p>
+          
+          <ul>
+            <li>
+              <p><term>Tables</term>: Display data in rows and columns</p>
+            </li>
+            <li>
+              <p><term>Graphs</term>: Create visual representations of data</p>
+            </li>
+            <li>
+              <p><term>Calculator</term>: Perform calculations and create new attributes</p>
+            </li>
+            <li>
+              <p><term>Map</term>: Plot geographic data</p>
+            </li>
+            <li>
+              <p><term>Text</term>: Add explanatory notes to your document</p>
+            </li>
+          </ul>
+          
+            <p>
+              You can access CODAP at <url href="https://codap.concord.org/" visual="codap.concord.org">codap.concord.org</url>. No login is required to get started, though you can save files to your local computer or link it to your Google drive, if you have one.
+            </p>
+        </subsection>
+        
+        <subsection xml:id="subsec-first-codap-exploration">
+          <title>Your First CODAP Exploration</title>
+          
+          <p>
+            Let's dive into CODAP with a simple dataset.
+          </p>
+          
+          <activity xml:id="activity-codap-basics">
+            <title>CODAP Basics</title>
+            <introduction>
+              <p>
+                In this activity, we'll explore a simple dataset in CODAP to get familiar with the interface.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Open CODAP in your web browser by going to <url href="https://codap.concord.org/" visual="codap.concord.org">codap.concord.org</url>.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Click on "Examples" in the main menu and select "Mammals" from the list.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Explore the table by:
+                </p>
+                <ul>
+                  <li>
+                    <p>Scrolling through the data</p>
+                  </li>
+                  <li>
+                    <p>Sorting columns by clicking on column headers</p>
+                  </li>
+                  <li>
+                    <p>Resizing columns by dragging the column borders</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Create a graph by:
+                </p>
+                <ol>
+                  <li>
+                    <p>Clicking on "Graph" in the main toolbar</p>
+                  </li>
+                  <li>
+                    <p>Dragging "Body Weight" from the table to the horizontal axis</p>
+                  </li>
+                  <li>
+                    <p>Dragging "Brain Weight" from the table to the vertical axis</p>
+                  </li>
+                </ol>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Explore the relationship between body weight and brain weight by examining the graph. What patterns do you notice?
+                </p>
+              </statement>
+            </task>
+          </activity>
+          
+          <p>
+            This basic exploration gives you a sense of how CODAP makes it easy to view and visualize data. Throughout this course, we'll build on these skills to perform more sophisticated analyses.
+          </p>
+        </subsection>
+      </section>
+
+      <exercise xml:id="tf-codap-features">
+      <title>CODAP Features</title>
+      <introduction>
+        <p>Indicate whether each statement about CODAP is true or false.</p>
+      </introduction>
+      <exercise>
+        <statement>
+          <p>CODAP requires programming knowledge to create visualizations.</p>
+        </statement>
+        <answer>False</answer>
+        <solution>
+          <p>False. CODAP is designed to be accessible without programming knowledge. It uses a drag-and-drop interface to create visualizations.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>In CODAP, you can create multiple linked visualizations of the same dataset.</p>
+        </statement>
+        <answer>True</answer>
+        <solution>
+          <p>True. CODAP allows you to create multiple visualizations (tables, graphs, maps) that are dynamically linked. Selections in one visualization highlight the corresponding data in others.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>CODAP can calculate new attributes based on existing data columns.</p>
+        </statement>
+        <answer>True</answer>
+        <solution>
+          <p>True. CODAP's calculator feature allows you to create new attributes by performing calculations on existing attributes.</p>
+        </solution>
+      </exercise>
+    </exercise>
+
+      <section xml:id="sec-project-launch">
+        <title>Project Launch: Community Health and Environment</title>
+        
+        <subsection xml:id="subsec-sample-project">
+          <title>The Sample Project</title>
+          
+          <p>
+            Throughout this course, we'll work with a Community Health and Environment dataset to demonstrate data science concepts. Versions can be found on the <url href="https://data.cdc.gov/browse?category=500+Cities+%26+Places&amp;q=2024&amp;sortBy=relevance&amp;tags=places&amp;pageSize=20">CDC's website</url> where you'll navigate to the most recent file, click Export in the top right-hand corner, and download it as a .csv file. This dataset contains information about:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Health indicators (asthma rates, heart disease prevalence)</p>
+            </li>
+            <li>
+              <p>Environmental factors (air quality, green space access)</p>
+            </li>
+            <li>
+              <p>Demographic information (income, education, location)</p>
+            </li>
+          </ul>
+          
+          <p>
+            Using this dataset, we'll explore questions such as:
+          </p>
+          
+          <ul>
+            <li>
+              <p>How do environmental factors relate to health outcomes?</p>
+            </li>
+            <li>
+              <p>Do these relationships vary across different demographic groups?</p>
+            </li>
+            <li>
+              <p>What interventions might improve community health based on our findings?</p>
+            </li>
+          </ul>
+          
+          <figure xml:id="fig-sample-dataset">
+            <caption>Sample Community Health Dataset</caption>
+            <image source="health-dataset-preview.png" width="90%">
+              <description>Screenshot showing a preview of the community health and environment dataset with columns for neighborhood, health indicators, and environmental factors.</description>
+            </image>
+          </figure>
+        </subsection>
+        
+        <subsection xml:id="subsec-student-projects">
+          <title>Selecting Your Own Dataset</title>
+          
+          <p>
+            While I'll demonstrate concepts using the Community Health dataset, you'll select and work with your own dataset throughout this course. Your chosen dataset should:
+          </p>
+          
+          <ul>
+            <li>
+              <p>Contain at least 100 records (rows) of data</p>
+            </li>
+            <li>
+              <p>Include at least 8 variables (columns)</p>
+            </li>
+            <li>
+              <p>Include a mix of categorical and numerical data</p>
+            </li>
+            <li>
+              <p>Be complex enough to support interesting questions</p>
+            </li>
+            <li>
+              <p>Be available for download so you can work with the file</p>
+            </li>
+          </ul>
+          
+          <p>
+            Here are some potential topics for your project:
+          </p>
+          
+          <sidebyside widths="30% 30% 30%">
+            <stack>
+              <p><term>Sports</term></p>
+              <ul>
+                <li><p>Team or player statistics</p></li>
+                <li><p>Game outcomes</p></li>
+                <li><p>Performance metrics</p></li>
+              </ul>
+            </stack>
+            
+            <stack>
+              <p><term>Entertainment</term></p>
+              <ul>
+                <li><p>Music streaming trends</p></li>
+                <li><p>Movie or TV ratings</p></li>
+                <li><p>Social media metrics</p></li>
+              </ul>
+            </stack>
+            
+            <stack>
+              <p><term>Local Issues</term></p>
+              <ul>
+                <li><p>Traffic patterns</p></li>
+                <li><p>Business performance</p></li>
+                <li><p>Educational outcomes</p></li>
+              </ul>
+            </stack>
+          </sidebyside>
+          <sidebyside>
+            <stack>
+            <p><term>Health &amp; Wellness</term></p>
+            <ul>
+              <li><p>Fitness tracking data</p></li>
+              <li><p>Nutrition databases</p></li>
+              <li><p>Public health statistics</p></li>
+              <li><p>Sleep pattern analysis</p></li>
+            </ul>
+          </stack>
+
+          <stack>
+            <p><term>Environment &amp; Climate</term></p>
+            <ul>
+              <li><p>Weather patterns</p></li>
+              <li><p>Air/water quality</p></li>
+              <li><p>Energy consumption</p></li>
+              <li><p>Biodiversity metrics</p></li>
+            </ul>
+          </stack>
+
+          <stack>
+            <p><term>Economics &amp; Finance</term></p>
+            <ul>
+              <li><p>Consumer spending patterns</p></li>
+              <li><p>Housing market trends</p></li>
+              <li><p>Stock market data</p></li>
+              <li><p>Small business statistics</p></li>
+            </ul>
+          </stack>
+          </sidebyside>
+          <sidebyside>
+            <stack>
+            <p><term>Technology &amp; Innovation</term></p>
+            <ul>
+              <li><p>Mobile app usage statistics</p></li>
+              <li><p>Technology adoption rates</p></li>
+              <li><p>Social media metrics</p></li>
+              <li><p>Internet accessibility worldwide</p></li>
+            </ul>
+          </stack>
+
+          <stack>
+            <p><term>Transportation</term></p>
+            <ul>
+              <li><p>Public transit ridership data</p></li>
+              <li><p>Vehicle safety statistics</p></li>
+              <li><p>Bike sharing program usage</p></li>
+              <li><p>Commuting patterns</p></li>
+            </ul>
+          </stack>
+
+          <stack>
+            <p><term>Education &amp; Learning</term></p>
+            <ul>
+              <li><p>Student performance metrics</p></li>
+              <li><p>Higher education statistics</p></li>
+              <li><p>Educational technology usage</p></li>
+              <li><p>Learning outcomes by teaching method</p></li>
+            </ul>
+          </stack>
+          </sidebyside>
+          
+          <activity xml:id="activity-dataset-exploration">
+            <title>Dataset Exploration</title>
+            <introduction>
+              <p>
+                In this activity, you'll explore potential datasets for your project.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Visit at least two of these data repositories:
+                </p>
+                <ul>
+                  <li>
+                    <p><url href="https://www.kaggle.com/datasets" visual="kaggle.com/datasets">Kaggle Datasets</url></p>
+                  </li>
+                  <li>
+                    <p><url href="https://data.gov" visual="data.gov">Data.gov</url></p>
+                  </li>
+                  <li>
+                    <p><url href="https://www.gapminder.org/data" visual="gapminder.org/data">Gapminder</url></p>
+                  </li>
+                  <li>
+                    <p><url href="https://www.data.world" visual="data.world">Data.world</url></p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Identify three potential datasets that match our criteria and interest you.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  For each dataset, record in a working file for this project:
+                </p>
+                <ul>
+                  <li>
+                    <p>The source and a brief description</p>
+                  </li>
+                  <li>
+                    <p>The number of records and variables</p>
+                  </li>
+                  <li>
+                    <p>At least two questions you might investigate with this dataset</p>
+                  </li>
+                </ul>
+              </statement>
+            </task>
+          </activity>
+          
+          <p>
+            To stay on time for this project, you should have selected your dataset and begun exploring it in CODAP by the end of this week.
+          </p>
+        </subsection>
+      </section>
+
+      <section xml:id="sec-data-types">
+        <title>Understanding Data Types</title>
+        
+        <subsection xml:id="subsec-qualitative-quantitative">
+          <title>Qualitative vs. Quantitative Data</title>
+          
+          <p>
+            One of the most fundamental distinctions in data is between qualitative and quantitative data:
+          </p>
+          
+          <definition xml:id="def-qualitative-data">
+            <statement>
+              <p>
+                <term>Qualitative data</term> (also called categorical data) represents characteristics that can be observed but not measured numerically. Qualitative data can be classified into categories.
+              </p>
+            </statement>
+          </definition>
+          
+          <definition xml:id="def-quantitative-data">
+            <statement>
+              <p>
+                <term>Quantitative data</term> represents information that can be measured numerically and can be used in calculations.
+              </p>
+            </statement>
+          </definition>
+          
+          <example xml:id="example-qual-quant">
+            <statement>
+              <p>
+                Consider the following variables from our Community Health dataset:
+              </p>
+              <ul>
+                <li>
+                  <p><term>Qualitative</term>: Neighborhood name, zip code, predominant housing type</p>
+                </li>
+                <li>
+                  <p><term>Quantitative</term>: Asthma rate (%), air quality index, median household income ($), number of parks</p>
+                </li>
+              </ul>
+            </statement>
+          </example>
+          
+          <activity xml:id="activity-identify-data-types">
+            <title>Identifying Data Types</title>
+            <introduction>
+              <p>
+                In this activity, you'll practice identifying qualitative and quantitative data.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  For the sample Community Health dataset, identify whether each variable is qualitative or quantitative:
+                </p>
+                <ul>
+                  <li><p>Neighborhood</p></li>
+                  <li><p>Population density</p></li>
+                  <li><p>Predominant land use</p></li>
+                  <li><p>Percent green space</p></li>
+                  <li><p>Average temperature (°F)</p></li>
+                  <li><p>Healthcare access rating</p></li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Now examine your chosen dataset and classify each variable as qualitative or quantitative.
+                </p>
+              </statement>
+            </task>
+          </activity>
+        </subsection>
+
+        <exercise xml:id="mc-data-types">
+        <title>Identifying Data Types</title>
+        <statement>
+          <p>Which of the following is an example of quantitative data?</p>
+        </statement>
+        <choices>
+          <choice>
+            <statement>
+              <p>Hair color</p>
+            </statement>
+            <feedback>
+              <p>Hair color is qualitative (categorical) data as it represents a characteristic that can be categorized but not measured numerically.</p>
+            </feedback>
+          </choice>
+          <choice>
+            <statement>
+              <p>Zip code</p>
+            </statement>
+            <feedback>
+              <p>Although zip codes contain numbers, they are actually qualitative data because they represent categories (geographic regions) rather than measurements.</p>
+            </feedback>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p>Height in centimeters</p>
+            </statement>
+            <feedback>
+              <p>Correct! Height in centimeters is quantitative data because it represents a numerical measurement that can be used in calculations.</p>
+            </feedback>
+          </choice>
+          <choice>
+            <statement>
+              <p>Blood type</p>
+            </statement>
+            <feedback>
+              <p>Blood type (A, B, AB, O) is qualitative data as it represents categories rather than numerical measurements.</p>
+            </feedback>
+          </choice>
+        </choices>
+      </exercise>
+        
+        <subsection xml:id="subsec-measurement-scales">
+          <title>Measurement Scales</title>
+          
+          <p>
+            Data can be further classified by measurement scale, which affects what operations and analyses make sense for that data.
+          </p>
+          
+          <definition xml:id="def-nominal">
+            <statement>
+              <p>
+                <term>Nominal data</term> represents categories with no inherent order. The only valid operation is determining equality (same or different).
+              </p>
+            </statement>
+          </definition>
+          
+          <definition xml:id="def-ordinal">
+            <statement>
+              <p>
+                <term>Ordinal data</term> represents categories with a meaningful order or ranking, but the differences between values may not be consistent or meaningful.
+              </p>
+            </statement>
+          </definition>
+          
+          <definition xml:id="def-interval">
+            <statement>
+              <p>
+                <term>Interval data</term> has consistent differences between values, but lacks a meaningful zero point.
+              </p>
+            </statement>
+          </definition>
+          
+          <definition xml:id="def-ratio">
+            <statement>
+              <p>
+                <term>Ratio data</term> has consistent differences between values and a meaningful zero point (zero represents the absence of the quantity).
+              </p>
+            </statement>
+          </definition>
+          
+          <example xml:id="example-measurement-scales">
+            <statement>
+              <p>
+                Examples from our Community Health dataset:
+              </p>
+              <ul>
+                <li>
+                  <p><term>Nominal</term>: Neighborhood name, predominant land use (residential, commercial, industrial, mixed)</p>
+                </li>
+                <li>
+                  <p><term>Ordinal</term>: Healthcare access rating (poor, fair, good, excellent), air quality category (unhealthy, moderate, good)</p>
+                </li>
+                <li>
+                  <p><term>Interval</term>: Temperature (°F or °C) - the difference between 70°F and 80°F is the same as between 80°F and 90°F, but 0°F doesn't represent the absence of temperature</p>
+                </li>
+                <li>
+                  <p><term>Ratio</term>: Asthma rate (%), income ($), number of parks, population - zero means none, and the difference between values is consistent</p>
+                </li>
+              </ul>
+            </statement>
+          </example>
+          
+          <insight>
+            <p>
+              Understanding measurement scales helps you determine appropriate:
+            </p>
+            <ul>
+              <li><p>Summary statistics (mean, median, mode)</p></li>
+              <li><p>Visualization methods (bar charts, histograms, scatter plots)</p></li>
+              <li><p>Analysis techniques (correlation, regression, categorical tests)</p></li>
+            </ul>
+          </insight>
+          
+          <activity xml:id="activity-measurement-scales">
+            <title>Classifying by Measurement Scale</title>
+            <introduction>
+              <p>
+                In this activity, you'll practice identifying measurement scales.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  For each variable below, identify its measurement scale (nominal, ordinal, interval, or ratio):
+                </p>
+                <ul>
+                  <li><p>ZIP code</p></li>
+                  <li><p>Education level (no high school, high school, bachelor's, graduate)</p></li>
+                  <li><p>Annual rainfall (inches)</p></li>
+                  <li><p>Birth month</p></li>
+                  <li><p>Satisfaction rating (1-5 scale)</p></li>
+                  <li><p>Distance from city center (miles)</p></li>
+                </ul>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Now examine your chosen dataset and classify each variable by measurement scale.
+                </p>
+              </statement>
+            </task>
+          </activity>
+        </subsection>
+
+        <exercise xml:id="matching-measurement-scales">
+        <title>Measurement Scales</title>
+        <statement>
+          <p>Match each variable with its appropriate measurement scale.</p>
+        </statement>
+        <matches>
+          <match>
+            <premise>Temperature in degrees Fahrenheit</premise>
+            <response>Interval</response>
+          </match>
+          <match>
+            <premise>Brand preference (Favorite soda brand)</premise>
+            <response>Nominal</response>
+          </match>
+          <match>
+            <premise>Customer satisfaction rating (1-5 stars)</premise>
+            <response>Ordinal</response>
+          </match>
+          <match>
+            <premise>Height in centimeters</premise>
+            <response>Ratio</response>
+          </match>
+          <match>
+            <premise>Academic letter grades (A, B, C, D, F)</premise>
+            <response>Ordinal</response>
+          </match>
+          <match>
+            <premise>Weight in kilograms</premise>
+            <response>Ratio</response>
+          </match>
+        </matches>
+      </exercise>
+        
+        <subsection xml:id="subsec-other-classifications">
+          <title>Other Data Classifications</title>
+          
+          <p>
+            Beyond the qualitative/quantitative and measurement scale distinctions, there are other useful ways to classify data:
+          </p>
+          
+          <definition xml:id="def-discrete-continuous">
+            <statement>
+              <p>
+                <term>Discrete data</term> can only take specific values (usually whole numbers), while <term>continuous data</term> can take any value within a range.
+              </p>
+            </statement>
+          </definition>
+          
+          <example xml:id="example-discrete-continuous">
+            <statement>
+              <p>
+                From our Community Health dataset:
+              </p>
+              <ul>
+                <li>
+                  <p><term>Discrete</term>: Number of parks, number of healthcare facilities, population count</p>
+                </li>
+                <li>
+                  <p><term>Continuous</term>: Air quality index, median income, percent green space, asthma rate</p>
+                </li>
+              </ul>
+            </statement>
+          </example>
+          
+          <definition xml:id="def-structured-unstructured">
+            <statement>
+              <p>
+                <term>Structured data</term> is organized in a predefined format (like a spreadsheet or database), while <term>unstructured data</term> doesn't conform to a predefined data model (text, images, audio).
+              </p>
+            </statement>
+          </definition>
+          
+          <p>
+            In this course, we'll primarily work with structured data, but it's important to know that unstructured data constitutes the majority of data generated today.
+          </p>
+
+          <exercise xml:id="mc-data-type-review">
+          <title>Data Type Review</title>
+          <statement>
+            <p>Which of the following statements about data types and classifications is correct?</p>
+          </statement>
+          <choices>
+            <choice>
+              <statement>
+                <p>All numerical data is quantitative and all text data is qualitative.</p>
+              </statement>
+              <feedback>
+                <p>Not all numerical data is quantitative. For example, zip codes are numerical but are considered qualitative (nominal) data.</p>
+              </feedback>
+            </choice>
+            <choice>
+              <statement>
+                <p>Nominal and ordinal scales are types of quantitative data.</p>
+              </statement>
+              <feedback>
+                <p>Nominal and ordinal scales are actually types of qualitative (categorical) data.</p>
+              </feedback>
+            </choice>
+            <choice>
+              <statement>
+                <p>Interval data has a true zero point, while ratio data does not.</p>
+              </statement>
+              <feedback>
+                <p>This is reversed. Ratio data has a true zero point (representing the absence of the quantity), while interval data does not.</p>
+              </feedback>
+            </choice>
+            <choice correct="yes">
+              <statement>
+                <p>Discrete data can only take specific values, while continuous data can take any value within a range.</p>
+              </statement>
+              <feedback>
+                <p>Correct! Discrete data is limited to specific values (usually whole numbers), while continuous data can take any value within a range, including fractional values.</p>
+              </feedback>
+            </choice>
+          </choices>
+        </exercise>
+          
+          <definition xml:id="def-tidy-data">
+            <statement>
+              <p>
+                <term>Tidy data</term> is a specific way of organizing data where:
+              </p>
+              <ul>
+                <li><p>Each variable forms a column</p></li>
+                <li><p>Each observation forms a row</p></li>
+                <li><p>Each type of observational unit forms a table</p></li>
+              </ul>
+            </statement>
+          </definition>
+          
+          <figure xml:id="fig-untidy-data">
+            <caption>Untidy Data</caption>
+            <image source="untidy-data-ex.png" width="80%">
+              <description>The untidy data format has values that are spread across multiple columns.</description>
+            </image>
+          </figure>
+          <figure xml:id="fig-tidy-data">
+            <caption>Tidy Data</caption>
+            <image source="tidy-data-ex.png" width="80%">
+              <description>The tidy data format has variables as columns and observations as rows.</description>
+            </image>
+          </figure>
+          
+          <p>
+            Tidy data makes analysis and visualization more straightforward, as most analysis tools (including CODAP) are designed to work with data in this format.
+          </p>
+          
+          <activity xml:id="activity-tidy-data">
+            <title>Identifying Tidy Data</title>
+            <introduction>
+              <p>
+                In this activity, you'll practice identifying tidy and untidy data.
+              </p>
+            </introduction>
+            <task>
+              <statement>
+                <p>
+                  Examine the following datasets in CODAP:
+                </p>
+                <ol>
+                  <li>
+                    <p>Open a new CODAP document</p>
+                  </li>
+                  <li>
+                    <p>Click on "Example Documents" in the main menu</p>
+                  </li>
+                  <li>
+                    <p>Open both "Mammals" and "Speed Trap"</p>
+                  </li>
+                </ol>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  For each dataset, determine if it follows the principles of tidy data. If not, explain what would need to change to make it tidy.
+                </p>
+              </statement>
+            </task>
+            <task>
+              <statement>
+                <p>
+                  Examine your chosen project dataset. Is it in tidy format? If not, what would need to change?
+                </p>
+              </statement>
+            </task>
+          </activity>
+        </subsection>
+      </section>
+
+      <exercise xml:id="fillin-tidy-data">
+        <title>Tidy Data Principles</title>
+        <statement>
+          <p>Complete the following statement about tidy data principles:</p>
+          <p>In tidy data, each <fillin characters="8"/> forms a column, each <fillin characters="11"/> forms a row, and each type of <fillin characters="18"/> forms a table.</p>
+        </statement>
+        <setup>
+          <var name="$answer1">variable</var>
+          <var name="$answer2">observation</var>
+          <var name="$answer3">observational unit</var>
+        </setup>
+        <answer>
+          <p>variable; observation; observational unit</p>
+        </answer>
+        <solution>
+          <p>In tidy data, each variable forms a column, each observation forms a row, and each type of observational unit forms a table.</p>
+        </solution>
+      </exercise>
+
+      <section xml:id="sec-ethics-spotlight-data-collection">
+        <title>Ethics Spotlight: Ethical Data Collection</title>
+        
+        <p>
+          Before we conclude Unit 1, it's important to consider the ethical dimensions of data science. The data we collect and how we collect it has real impacts on people's lives.
+        </p>
+        
+        <p>
+          Key ethical considerations in data collection include:
+        </p>
+        
+        <ul>
+          <li>
+            <p><term>Consent</term>: Were people informed about how their data would be used?</p>
+          </li>
+          <li>
+            <p><term>Privacy</term>: Is sensitive information protected?</p>
+          </li>
+          <li>
+            <p><term>Representativeness</term>: Does the data collection process exclude certain groups?</p>
+          </li>
+          <li>
+            <p><term>Transparency</term>: Is the collection process clear and documented?</p>
+          </li>
+          <li>
+            <p><term>Minimization</term>: Is only necessary data collected?</p>
+          </li>
+        </ul>
+        
+        <example xml:id="example-ethics-health">
+          <statement>
+            <p>
+              In our Community Health dataset, consider these ethical questions:
+            </p>
+            <ul>
+              <li>
+                <p>Are the neighborhoods defined in ways that might reinforce historical segregation?</p>
+              </li>
+              <li>
+                <p>Does the dataset include communities that are often underrepresented in research?</p>
+              </li>
+              <li>
+                <p>Is the aggregation level appropriate to protect individual privacy while still being useful?</p>
+              </li>
+              <li>
+                <p>Were community members involved in deciding what data to collect about their neighborhoods?</p>
+              </li>
+            </ul>
+          </statement>
+        </example>
+        
+        <activity xml:id="activity-ethics-discussion">
+          <title>Data Ethics Discussion</title>
+          <introduction>
+            <p>
+              In this activity, we'll discuss ethical considerations for our datasets.
+            </p>
+          </introduction>
+          <task>
+            <statement>
+              <p>
+                For the Community Health dataset, identify at least two potential ethical concerns and how you might address them.
+              </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                For your chosen project dataset, consider:
+              </p>
+              <ul>
+                <li>
+                  <p>What was the original purpose of this data collection?</p>
+                </li>
+                <li>
+                  <p>Who collected it and how?</p>
+                </li>
+                <li>
+                  <p>Who might be missing from or underrepresented in this dataset?</p>
+                </li>
+                <li>
+                  <p>Are there privacy concerns with this data?</p>
+                </li>
+              </ul>
+            </statement>
+          </task>
+        </activity>
+      </section>
+
+      <exercise xml:id="parsons-ethics-considerations" adaptive="yes">
+        <title>Organizing Ethical Considerations</title>
+        <statement>
+          <p>Arrange the following steps in a logical order for ethically approaching a new dataset.</p>
+        </statement>
+        <blocks>
+          <block order="3">
+            <p>Evaluate how representative the dataset is of the population of interest.</p>
+          </block>
+          <block order="5">
+            <p>Consider how results might be misinterpreted or misused.</p>
+          </block>
+          <block order="1">
+            <p>Identify the original purpose and context of data collection.</p>
+          </block>
+          <block order="2">
+            <choice>
+              <p>Skip any ethical considerations to save time.</p>
+            </choice>
+            <choice correct="yes">
+              <p>Determine if appropriate consent was obtained from data subjects.</p>
+            </choice>
+            <choice>
+              <p>Immediately publish all raw data online for transparency.</p>
+            </choice>
+          </block>
+          <block order="4">
+            <p>Assess potential privacy concerns and identifiability of individuals.</p>
+          </block>
+          <block order="6" correct="no">
+            <p>Use all data regardless of quality or ethical considerations.</p>
+          </block>
+        </blocks>
+        <hint>
+          <p>Think about what information you would need to know first before proceeding with analysis.</p>
+        </hint>
+      </exercise>
+
+      <section xml:id="sec-unit1-summary">
+        <title>Unit 1 Summary</title>
+        
+        <p>
+          In this unit, we've explored:
+        </p>
+        
+        <ul>
+          <li>
+            <p>What data science is and why data literacy matters</p>
+          </li>
+          <li>
+            <p>Applications of data science across different domains</p>
+          </li>
+          <li>
+            <p>The basics of CODAP, our data analysis platform</p>
+          </li>
+          <li>
+            <p>The Community Health sample project and guidelines for your own project</p>
+          </li>
+          <li>
+            <p>Different data types and classification systems</p>
+          </li>
+          <li>
+            <p>Ethical considerations in data collection</p>
+          </li>
+        </ul>
+        
+        <p>
+          In Unit 2, we'll dive deeper into the data investigation process, learning how to formulate meaningful questions and plan our analysis.
+        </p>
+        
+        <exercise xml:id="exercise-unit1-reflection">
+          <title>Unit 1 Reflection</title>
+          <statement>
+            <p>
+              Take some time to reflect on what you've learned in this unit:
+            </p>
+            <ul>
+              <li>
+                <p>What aspect of data science interests you most and why?</p>
+              </li>
+              <li>
+                <p>What surprised you about the different types of data and their classifications?</p>
+              </li>
+              <li>
+                <p>How might data science skills be valuable in your current or future career?</p>
+              </li>
+              <li>
+                <p>What questions do you have about your project dataset so far?</p>
+              </li>
+            </ul>
+          </statement>
+        </exercise>
+      </section>
+    </chapter>

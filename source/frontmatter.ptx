@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This frontmatter division will contain all content before the -->
+<!-- first chapter. Fill in and comment/uncomment to see how this -->
+<!-- works. -->
+
+<frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="frontmatter">
+
+  <bibinfo>
+
+    <author>
+      <personname>Hannah Kurzweil</personname>
+      <institution>Data Science 4 Everyone</institution>
+    </author>
+    <date>
+      <today />
+    </date>
+
+    <website>
+      <url href="https://pretextbook.org">My Website</url>
+    </website>
+
+    <copyright>
+      <year>2020<ndash />2024</year>
+      <holder>You</holder>
+      <shortlicense> This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <url href="http://creativecommons.org/licenses/by-sa/4.0/" visual="creativecommons.org/licenses/by-sa/4.0"> CreativeCommons.org</url>
+      </shortlicense>
+    </copyright>
+  
+  </bibinfo>
+
+  <titlepage>
+    <titlepage-items/>
+  </titlepage>
+
+   <introduction>
+      <p> Data shapes our world through countless decisions every day. From personalized music recommendations to content algorithms, and even critical determinations like educational assistance eligibility—data science powers it all. Behind these systems are algorithms—structured sets of rules that computers follow to transform raw information into actionable insights. </p>
+      <p> The field of data science harnesses these algorithmic tools to extract meaning from vast datasets, offering powerful capabilities while requiring careful consideration. When data-driven systems determine academic outcomes or financial opportunities, we must question how these mechanisms work and who designs them. Transparency matters. </p>
+      <p> In this introduction to data science course, you'll explore the fundamental concepts behind data collection, analysis, and interpretation. You'll discover how personal data fuels decision-making processes and the real-world impacts these decisions have on individuals and communities. By understanding both the technical aspects and ethical dimensions of data science, you'll be equipped to harness its potential responsibly while recognizing its limitations. </p>
+      <p>This book introduces foundational concepts in data science through a project-based approach using CODAP, a free web-based data analysis platform that will help you unlock insights into complex datasets from the world around you.</p> 
+      <p> This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit CreativeCommons.org </p>
+    </introduction>
+
+</frontmatter>
